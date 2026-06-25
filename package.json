@@ -1,0 +1,37 @@
+{
+  "name": "the-uncovering",
+  "productName": "案件推演",
+  "version": "1.5.0",
+  "main": "main.js",
+  "description": "案件推演 - 终极手账版",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --mac"
+  },
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.lemuria.the-uncovering",
+    "productName": "案件推演",
+    "files": [
+      "**/*",
+      "!node_modules",
+      "!.git"
+    ],
+    "mac": {
+      "category": "public.app-category.games",
+      "target": ["dmg", "zip"],
+      "icon": "icon.icns"
+    },
+    "win": {
+      "target": ["nsis", "zip"],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}

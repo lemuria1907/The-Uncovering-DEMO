@@ -1,0 +1,2107 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>案件推演 - 终极手账版</title>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+    /* ================= 网点漫画核心色卡与素材 ================= */
+    :root {
+        --bg-tile-img: none;
+        --bg-main-img: none;
+        --menu-bg-img: none;
+        --bg-haze-blue: #fffef7;
+        --bg-haze-dark: #4b6070;
+        --paper-white: #ffffff;
+        --paper-note: #fff0cf;
+        --tag-bg: #faf3e0;
+        --tag-border: #b5c2ad;
+        --ink-black: #0a0a0a;
+        --stamp-red: #e62e2e;
+        --tape-bg: rgba(240, 235, 220, 0.8);
+        --tape-shadow: 0 1px 2px rgba(0,0,0,0.2);
+        --text-player: #ffffff;
+        --text-npc: #8ce141;
+        --text-system: #ffd966;
+        --border-dark: #1f1f1f;
+        --accent-yellow: #f2b84e;
+        --accent-orange: #ffb347;
+        --shadow-hard: 0 0 0 rgba(0,0,0,0.2);
+    }
+
+    body {
+        margin: 0; padding: 2vh 3vw;
+        background-color: #2b241c;
+        background-image: radial-gradient(circle at 25% 40%, rgba(255,215,150,0.15) 2%, transparent 2.5%);
+        background-size: 28px 28px;
+        font-family: 'Comic Neue', 'Chakra Petch', 'Microsoft YaHei', sans-serif;
+        display: flex; height: 100vh; overflow: hidden; user-select: none; box-sizing: border-box;
+    }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-thumb { background: #df9422; border-radius: 20px; border: 1px solid black; }
+    ::-webkit-scrollbar-track { background: #f3e1be; }
+
+    /* ================= 主菜单 UI ================= */
+    #main-menu {
+        position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: #2b241c;
+        background-image: radial-gradient(circle at 20% 30%, rgba(255,215,150,0.25) 1%, transparent 1.5%),
+                          radial-gradient(circle at 80% 70%, rgba(0,0,0,0.4) 1%, transparent 1.5%);
+        background-size: 40px 40px, 50px 50px;
+        display: none; flex-direction: column; align-items: center; justify-content: center;
+        gap: 24px; color: #f0e7d8; z-index: 2000;
+        border: 4px solid #121212;
+        box-shadow: inset 0 0 20px rgba(0,0,0,0.5);
+    }
+    #main-menu h1 {
+        font-size: 60px; text-shadow: 4px 4px 0 rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.6);
+        letter-spacing: 0.15em; margin: 0;
+        font-family: 'Chakra Petch', monospace; color: #ffeaac;
+    }
+    .menu-btn {
+        width: 240px; padding: 14px 0; font-size: 22px; font-weight: bold;
+        background: rgba(20,20,20,0.8); border: 3px solid #c5bcaa; color: #f0e7d8;
+        cursor: pointer; transition: 0.2s; letter-spacing: 0.08em; text-align: center;
+        box-shadow: 6px 6px 0 rgba(0,0,0,0.4); font-family: 'Chakra Petch', sans-serif;
+        border-radius: 40px;
+    }
+    .menu-btn:hover {
+        background: #2b2b2b; border-color: #ffb347; color: #fff;
+        transform: scale(1.03); box-shadow: 8px 8px 0 rgba(0,0,0,0.5);
+    }
+    .menu-btn:active { transform: scale(0.96); }
+    #version-info { position: absolute; bottom: 15px; right: 20px; color: #aaa; font-size: 13px; letter-spacing: 0.06em; }
+
+    /* ================= 华丽大标题全屏动效 ================= */
+    #title-card-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: rgba(5, 5, 10, 0.98); z-index: 9999; display: none; flex-direction: column; justify-content: center; align-items: center; cursor: pointer; overflow: hidden;
+    }
+    #title-card-content { display: flex; flex-direction: column; align-items: center; opacity: 0; }
+    .fancy-border { border-top: 2px solid #8b0000; border-bottom: 2px solid #8b0000; padding: 40px 0; position: relative; width: 80vw; max-width: 900px; text-align: center; }
+    .fancy-border::before, .fancy-border::after { content: "◆"; position: absolute; color: #8b0000; font-size: 24px; left: 50%; transform: translateX(-50%); }
+    .fancy-border::before { top: -16px; } .fancy-border::after { bottom: -16px; }
+    #title-card-text { color: #ff2a2a; font-size: 64px; font-weight: 900; font-family: "Georgia", serif; letter-spacing: 10px; animation: bloodPulse 1.5s infinite alternate; text-shadow: 0 0 20px rgba(179, 74, 54, 0.6), 2px 4px 5px rgba(0,0,0,0.8);}
+    .pulse-hint { color: #888; font-size: 16px; margin-top: 60px; letter-spacing: 4px; animation: pulseFade 1.5s infinite alternate; }
+
+    @keyframes smashIn { 0% { transform: scale(3) translateY(-50px); opacity: 0; filter: blur(20px); } 50% { opacity: 1; } 100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); } }
+    @keyframes smashOut { 0% { transform: scale(1); opacity: 1; filter: blur(0); } 100% { transform: scale(1.5) translateY(50px); opacity: 0; filter: blur(20px); } }
+    @keyframes bloodPulse { 0% { text-shadow: 0 0 10px #ff2a2a, 0 0 20px #8b0000; } 100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000, 0 0 90px #8b0000; } }
+    @keyframes pulseFade { 0% { opacity: 0.2; } 100% { opacity: 1; } }
+
+    /* ================= 主游戏界面 UI ================= */
+    #game-container {
+        display: grid; grid-template-columns: 1fr 2.4fr 1fr; width: 100%; max-width: 1600px; margin: 0 auto; gap: 20px;
+        background: #fffef7;
+        background-image: 
+            repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 2px, transparent 2px, transparent 8px),
+            radial-gradient(circle at 30% 20%, rgba(0,0,0,0.03) 1px, transparent 1px);
+        background-size: 12px 12px, 24px 24px;
+        padding: 25px;
+        border: 4px solid #121212;
+        border-radius: 48px 48px 40px 40px;
+        box-shadow: 16px 16px 0 rgba(0,0,0,0.2), 0 20px 35px -8px black;
+        box-sizing: border-box; position: relative; display: none;
+    }
+
+    #loading-screen { position: absolute; top:50%; left:50%; transform: translate(-50%, -50%); color: #fff; font-size: 20px; font-weight: bold; text-align: center; line-height: 1.6; background: rgba(0,0,0,0.7); padding: 20px 40px; border-radius: 8px; z-index: 3000; }
+
+    #chapter-badge {
+        position: absolute; top: 16px; right: 18px; z-index: 25;
+        color: #f2b84e; font-weight: bold; text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
+        pointer-events: none;
+        font-family: 'Chakra Petch', monospace; font-size: 12px;
+    }
+
+    /* 命数桃心（场景上部中央） */
+    #lives-container {
+        position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
+        display: flex; gap: 10px; z-index: 30; pointer-events: none;
+    }
+    .life-heart {
+        width: 18px; height: 18px; background: #e62e2e;
+        clip-path: polygon(50% 80%, 0% 30%, 0% 15%, 15% 5%, 30% 5%, 50% 20%, 70% 5%, 85% 5%, 100% 15%, 100% 30%);
+        border: 2px solid #121212; box-shadow: 1px 1px 0 #121212;
+        transition: all 0.2s;
+    }
+    .life-heart.lost { background: #ddd; opacity: 0.3; box-shadow: none; }
+    .life-heart.popping { animation: heartPop 0.35s ease-out forwards; }
+    @keyframes heartPop {
+        0%   { transform: scale(1); opacity: 1; }
+        50%  { transform: scale(1.4); opacity: 0.6; }
+        100% { transform: scale(0); opacity: 0; }
+    }
+
+    /* 侧边存档标签 */
+    #side-tabs { position: absolute; top: 40px; left: -34px; display: flex; flex-direction: column; gap: 15px; z-index: 10; }
+    .side-tab {
+        background: #ffd966; color: #121212; border: 3px solid #121212; border-right: none;
+        border-radius: 8px 0 0 8px; padding: 12px 8px; font-size: 15px; font-weight: bold;
+        text-align: center; line-height: 1.4; cursor: pointer;
+        box-shadow: -4px 4px 0 rgba(0,0,0,0.3); transition: 0.2s;
+        font-family: 'Chakra Petch', monospace;
+    }
+    .save-tab:hover, .load-tab:hover {
+        transform: translateX(-5px);
+        background: #ffb347; color: #fff;
+        border-color: #ffb347;
+        box-shadow: 5px 0 0 #ffb347, -4px 4px 0 rgba(0,0,0,0.4);
+    }
+
+    /* 左下角调试面板 */
+    #debug-panel {
+        position: fixed; bottom: 10px; left: 10px; background: rgba(26, 26, 26, 0.6);
+        border: 1px solid #444; border-left: 3px solid var(--accent-yellow);
+        padding: 8px 12px; border-radius: 4px; display: flex; flex-direction: column; gap: 6px;
+        z-index: 9000; transform: scale(0.8); transform-origin: bottom left; opacity: 0.5; transition: 0.3s;
+    }
+    #debug-panel:hover { opacity: 1; transform: scale(1); background: rgba(26, 26, 26, 0.95); box-shadow: 2px 3px 10px rgba(0,0,0,0.5); }
+    #debug-chap-name { color: var(--text-player); font-size: 13px; font-weight: bold; margin-bottom: 2px; }
+    .debug-btn {
+        background: #333; color: #fff; border: 2px solid #555; padding: 4px 8px;
+        border-radius: 20px; cursor: pointer; font-size: 12px; transition: 0.2s; text-align: left;
+        font-family: 'Chakra Petch', monospace;
+    }
+    .debug-btn:hover { background: var(--stamp-red); transform: translateX(3px); border-color: var(--stamp-red); }
+
+    .panel {
+        background: #ffffff;
+        background-image: radial-gradient(circle at 10% 20%, rgba(0,0,0,0.02) 1px, transparent 1px);
+        background-size: 20px 20px;
+        display: flex; flex-direction: column; overflow: hidden; min-height: 0;
+        box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        position: relative; border-radius: 32px; padding-top: 5px;
+        border: 3px solid var(--border-dark);
+        transition: all 0.25s cubic-bezier(0.2, 0.9, 0.4, 1.2);
+    }
+    .panel:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 12px 12px 0 rgba(0,0,0,0.25);
+        border-color: #f09d2c;
+        background: #fffbf0;
+    }
+    .panel-title {
+        background: #0a0a0a; color: #ffde9c;
+        padding: 4px 12px; font-weight: bold; letter-spacing: 2px; font-size: 13px;
+        text-transform: uppercase; display: inline-block; align-self: flex-start;
+        margin-left: -4px; margin-bottom: 10px;
+        box-shadow: 2px 2px 0 #aa7a2c;
+        transform: rotate(-1.5deg); border-radius: 30px;
+        border: 2px solid #f5b642;
+        font-family: 'Chakra Petch', monospace;
+    }
+
+    #col-1 { display: flex; flex-direction: column; gap: 20px; min-height: 0; height: 100%; }
+    #col-1 .panel { flex: 1 1 0; min-height: 0; display: flex; flex-direction: column; overflow: hidden; }
+    #col-1 .panel > :not(.panel-title) { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; }
+    #location-list { flex: 1; min-height: 0; padding: 10px; display: flex; flex-direction: column; gap: 10px; overflow-y: auto; overflow-x: hidden; }
+    .list-container { flex: 1; min-height: 0; overflow-y: auto; overflow-x: hidden; padding: 10px; display: flex; flex-direction: column; gap: 10px; }
+
+    .list-item {
+        position: relative; height: 64px; flex: 0 0 64px; cursor: pointer; transition: 0.25s;
+        border-radius: 10px; overflow: hidden; border: 2px solid var(--border-dark);
+        background-size: cover; background-position: center;
+        filter: grayscale(100%) brightness(0.55);
+    }
+    .list-item:hover {
+        filter: none; transform: scale(1.03);
+        border-color: #f09d2c; box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+    }
+    .list-item.active {
+        filter: none; transform: scale(1.03);
+        border-color: var(--yellow); box-shadow: 0 0 0 3px var(--yellow);
+    }
+    .loc-label {
+        position: absolute; bottom: 0; left: 0; right: 0;
+        background: rgba(0,0,0,0.7); color: #fff;
+        font-size: 13px; font-weight: bold; padding: 4px 10px;
+        font-family: 'Comic Neue', sans-serif;
+    }
+    .char-name { font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 6px;}
+    .dot-matrix { display: inline-block; width: 11px; height: 15px; background-image: radial-gradient(currentColor 40%, transparent 40%); background-size: 4px 4px; background-position: 0 0; background-repeat: repeat; opacity: 0.9; margin-right: 4px; }
+
+    .photo-wall { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; padding: 8px 5px; overflow-y: auto; flex: 1; align-content: start; }
+    .photo-card {
+        position: relative; background: #fff; padding: 6px 6px 28px 6px;
+        box-shadow: 4px 4px 0 rgba(0,0,0,0.2); border-radius: 4px;
+        cursor: pointer; transition: transform 0.2s, box-shadow 0.2s;
+        width: calc(50% - 6px); max-width: 187px; box-sizing: border-box;
+        border: 2px solid var(--border-dark);
+    }
+    .photo-card:hover { transform: scale(1.05) rotate(0deg) !important; box-shadow: 6px 6px 0 rgba(0,0,0,0.3); z-index: 5;}
+    .photo-card.active { box-shadow: 0 0 0 3px #0a0a0a, 5px 5px 0 rgba(0,0,0,0.4); transform: rotate(0deg) scale(1.05); z-index: 5;}
+    .photo-pin { position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; z-index: 5; background: radial-gradient(circle, #aaa 40%, #666 60%, #333 100%); box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
+    .photo-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: 50% 8%; display: block; background: #d0d8e0; filter: grayscale(50%) sepia(20%) hue-rotate(175deg) saturate(40%) brightness(0.85); transition: filter 0.35s ease; }
+    .photo-card:hover .photo-img, .photo-card.active .photo-img { filter: none; }
+    .photo-name { position: absolute; bottom: 6px; left: 4px; right: 4px; text-align: center; font-family: "Comic Neue", "Microsoft YaHei", sans-serif; font-size: 13px; font-weight: bold; color: var(--ink-black); letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+    #col-2 { display: flex; flex-direction: column; gap: 20px; min-height: 0;}
+    #scene-window {
+        flex: 2.4; position: relative; background-color: #fff; overflow: hidden;
+        box-shadow: 8px 8px 0 rgba(0,0,0,0.2);
+        padding: 8px 8px 40px 8px; border-radius: 32px;
+        border: 3px solid var(--border-dark);
+    }
+    #scene-inner { position: relative; width: 100%; height: 100%; background: #111; overflow: hidden; box-shadow: inset 0 0 15px rgba(0,0,0,0.8); border-radius: 12px; }
+
+    .tape { position: absolute; top: -10px; left: 50%; transform: translateX(-50%) rotate(-2deg); width: 130px; height: 28px; background: var(--tape-bg); box-shadow: var(--tape-shadow); z-index: 100; }
+
+    #search-btn {
+        position: absolute; top: 15px; left: 15px; transform: rotate(-3deg);
+        background: #0a0a0a; color: #ffde9c;
+        border: 2px solid #f5b642; padding: 6px 15px;
+        cursor: pointer; font-weight: bold; font-size: 14px; z-index: 20;
+        box-shadow: 3px 3px 0 #82612e; transition: 0.2s; border-radius: 40px;
+        font-family: 'Chakra Petch', monospace;
+    }
+    #search-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
+
+    #scene-bg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: cover; background-position: center; transition: background-image 0.5s; opacity: 0.8;}
+    #character-sprite { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 95%; background-size: contain; background-repeat: no-repeat; background-position: bottom center; pointer-events: none; transition: opacity 0.5s ease-in, background-image 0.3s; z-index: 5; opacity: 0;}
+
+    #dialogue-box {
+        position: absolute; bottom: 10px; left: 10px; right: 10px; height: 100px;
+        background: rgba(15, 15, 15, 0.9); border: 3px solid #f2b84e; border-radius: 20px;
+        cursor: pointer; display: flex; align-items: center; padding: 10px 45px; box-sizing: border-box;
+        z-index: 10; box-shadow: 6px 6px 0 rgba(0,0,0,0.25);
+        display: none;
+    }
+    .dialogue-controls { position: absolute; top: -12px; right: 10px; display: flex; gap: 8px; z-index: 20; }
+    .ctrl-btn {
+        background: #0a0a0a; color: #ffde9c; font-size: 11px; padding: 2px 8px;
+        border-radius: 20px; cursor: pointer; border: 2px solid #f5b642; font-weight: bold;
+        letter-spacing: 1px; transition: 0.2s; box-shadow: 2px 2px 0 #82612e;
+    }
+    .ctrl-btn:hover { background: #ffb347; color: #121212; }
+    .ctrl-btn.active { color: #ffb347; border-color: #ffb347; }
+
+    #dialogue-text {
+        font-size: 18px; line-height: 1.5; width: 100%; max-height: 80px; overflow-y: auto; overflow-x: hidden;
+        text-shadow: 1px 1px 1px #000; font-family: 'Comic Neue', sans-serif; font-weight: normal; letter-spacing: 1px; pointer-events: auto;
+        color: #ffd966;
+    }
+    #dialogue-text::-webkit-scrollbar { width: 5px; } #dialogue-text::-webkit-scrollbar-thumb { background: #666; border-radius: 3px;}
+
+    .arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 24px; color: #ccc; cursor: pointer; padding: 10px; z-index: 5;} .arrow:hover { color: var(--paper-white); }
+    #arrow-left { left: 0px; } #arrow-right { right: 0px; }
+
+    .topic-container { flex: 1; background: transparent; box-shadow: none; display: flex; flex-direction: column; overflow: hidden; max-height: 38vh; }
+    #topic-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; row-gap: 12px; padding: 10px; overflow-y: auto; overflow-x: hidden; flex: 1; align-content: start; }
+    .topic-item {
+        padding: 12px 12px 12px 20px;
+        background-color: #fff0cf;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%234b6070' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+        background-repeat: repeat-y; background-position: left top;
+        cursor: pointer; font-size: 14px; font-weight: bold; color: #121212;
+        border: 2px solid var(--border-dark); border-left: none;
+        box-shadow: 3px 3px 0 rgba(0,0,0,0.2); transition: 0.2s; word-break: break-word;
+        border-radius: 8px; transform: rotate(-0.3deg); position: relative; line-height: 1.4;
+        font-family: 'Comic Neue', sans-serif;
+    }
+    .topic-item:nth-child(odd) { transform: rotate(0.4deg) translateX(2px); } .topic-item:nth-child(even) { transform: rotate(-0.6deg) translateX(-2px); } .topic-item:nth-child(3n) { transform: rotate(0.2deg) translateY(-1px); }
+    .topic-item:hover {
+        background-color: #fff; transform: scale(1.02) rotate(0deg); z-index: 5;
+        box-shadow: 5px 5px 0 rgba(0,0,0,0.25); border-color: #f09d2c;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%23b34a36' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+    }
+    .topic-item.active-topic {
+        background-color: #0a0a0a; color: #ffde9c; transform: scale(1.04) rotate(0deg); z-index: 5;
+        border-left-color: #ffb347 !important; box-shadow: 4px 4px 0 #ffb347;
+        background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%23b34a36' fill='none' stroke-width='2.5'/%3E%3C/svg%3E");
+    }
+
+    .new-badge { display: inline-block; background: #ff3a3a; color: #fff; border: none; border-radius: 20px; font-size: 10px; padding: 2px 9px; margin-left: 6px; vertical-align: middle; transform: rotate(-5deg); font-family: 'Chakra Petch', sans-serif; font-weight: 900; line-height: 1.4; letter-spacing: 0.5px; box-shadow: 2px 2px 0 #9b2e2e; }
+    .topic-glow { animation: topicGlowPulse 1.8s ease-in-out 4; }
+    @keyframes topicGlowPulse { 0%,100%{ box-shadow:0 0 0 rgba(242,184,78,0); } 50%{ box-shadow:0 0 20px rgba(242,184,78,0.65),0 0 6px rgba(242,184,78,0.3); } }
+
+    #col-3 { display: flex; flex-direction: column; gap: 20px; min-height: 0; height: 100%;}
+    .half-panel, .third-panel { flex: 1 1 0; display: flex; flex-direction: column; min-height: 0; background: #ffffff; box-shadow: 8px 8px 0 rgba(0,0,0,0.2); position: relative; padding-top: 5px; border-radius: 32px; border: 3px solid var(--border-dark); }
+    .third-panel { flex-basis: 0; }
+    .grid-list { overflow-y: auto; overflow-x: hidden; padding: 12px; display: grid; grid-template-columns: 1fr 1fr; grid-auto-rows: min-content; gap: 12px; flex: 1; }
+    .third-panel .grid-list { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+
+    .ev-item {
+        padding: 12px 8px; background: #fff0cf; cursor: grab; font-size: 13px; text-align: center;
+        color: #121212; box-shadow: 3px 3px 0 rgba(0,0,0,0.2); position: relative; font-weight: bold;
+        display: flex; flex-direction: column; align-items: center; gap: 3px;
+        border: 2px solid var(--border-dark); word-break: break-word; border-radius: 12px;
+        transition: 0.2s;
+    }
+    .ev-item::before { content: ""; position: absolute; top: -6px; left: 50%; transform: translateX(-50%) rotate(4deg); width: 35px; height: 14px; background: var(--tape-bg); box-shadow: var(--tape-shadow); }
+    .ev-item:nth-child(even) { transform: rotate(1.5deg); } .ev-item:nth-child(odd) { transform: rotate(-1.5deg); }
+    .ev-item:hover { transform: scale(1.05); z-index: 10; border-color: #f09d2c; box-shadow: 5px 5px 0 rgba(0,0,0,0.3);}
+    .ev-item:active { cursor: grabbing; transform: scale(0.95); box-shadow: none;}
+
+    #action-buttons { display: flex; gap: 15px; height: 60px; flex-shrink: 0; margin-top: 5px; }
+    .action-btn {
+        flex: 1; position: relative; font-size: 18px; font-weight: 900; cursor: pointer;
+        background: #ffd966; color: #121212;
+        border: 3px solid var(--border-dark);
+        box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
+        transition: 0.2s; letter-spacing: 4px; font-family: 'Chakra Petch', monospace;
+        transform: rotate(-1deg); display: flex; align-items: center; justify-content: center;
+        border-radius: 60px;
+    }
+    .action-btn::after { content: ""; position: absolute; top: -8px; left: 50%; transform: translateX(-50%) rotate(-3deg); width: 40px; height: 16px; background: var(--tape-bg); box-shadow: var(--tape-shadow); z-index: 10; }
+    .action-btn:nth-child(2) { transform: rotate(1.5deg); background: #ffffff; }
+    .action-btn:nth-child(2)::after { transform: translateX(-50%) rotate(4deg); width: 45px; }
+    .action-btn:hover { background: #fff; color: var(--stamp-red); border-color: var(--stamp-red); transform: scale(1.05) rotate(0deg); box-shadow: 6px 6px 0 rgba(0,0,0,0.4); }
+    .sort-btn { background: transparent; border: 1.5px solid #bbb; color: #666; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: 'Chakra Petch', monospace; vertical-align: middle; }
+    .sort-btn:hover { background: #f2b84e; color: #121212; border-color: #f2b84e; }
+
+    /* ================= 统一弹窗体系 ================= */
+    .modal-box {
+        position: fixed; width: 340px; background: #fffef7;
+        background-image: radial-gradient(circle at 10% 20%, rgba(0,0,0,0.02) 1px, transparent 1px);
+        background-size: 20px 20px;
+        border: 3px solid var(--border-dark); z-index: 4000; display: none;
+        box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
+        padding-top: 15px; border-radius: 32px;
+    }
+    .modal-header { padding: 5px 15px; color: var(--ink-black); cursor: move; text-align: left; font-weight: bold; font-size: 18px; border-bottom: 2px dashed #f2b84e; margin: 0 10px; font-family: 'Chakra Petch', monospace; }
+    .modal-body { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; max-height: 70vh; overflow-y: auto; }
+    .settings-body { padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 18px; align-items: stretch; }
+    .settings-row { display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: center; color: #2a241d; }
+    .settings-label { font-weight: 800; font-size: 14px; letter-spacing: 0.03em; }
+    .settings-control { display: flex; align-items: center; justify-content: flex-end; gap: 10px; min-width: 0; }
+    .settings-control input[type="range"] { width: 150px; accent-color: var(--stamp-red); }
+    .settings-btn { margin: 0; text-align: center; min-width: 78px; justify-content: center; }
+    .test-sfx-btn { min-width: 54px; padding: 4px 10px; text-align: center; }
+
+    .modal-close { position: absolute; right: 15px; top: -22px; width: 42px; height: 48px; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%236a8296' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E") no-repeat center / contain; cursor: pointer; transition: 0.2s; filter: drop-shadow(1px 2px 2px rgba(0,0,0,0.3)); z-index: 10; }
+    .modal-close:hover { transform: scale(1.1) rotate(5deg); filter: drop-shadow(2px 3px 3px rgba(0,0,0,0.4)); background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23b34a36' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48'/%3E%3C/svg%3E"); }
+
+    .nav-arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 18px; color: #888; cursor: pointer; padding: 5px; z-index: 10; transition: 0.2s; background: rgba(255,255,255,0.7); border-radius: 4px; box-shadow: 1px 1px 3px rgba(0,0,0,0.1);}
+    .nav-arrow:hover { color: var(--stamp-red); transform: translateY(-50%) scale(1.1); background: #fff;}
+    .nav-arrow.left-arrow { left: -12px; } .nav-arrow.right-arrow { right: -12px; }
+
+    /* 三选一弹窗 */
+    #choice-modal { display: none; flex-direction: column; align-items: center; justify-content: flex-start; z-index: 5500;}
+    #choice-options { display: flex; flex-direction: column; width: 100%; box-sizing: border-box;}
+    .choice-btn {
+        width: 100%; background: #fff0cf; border: 2px solid var(--border-dark); padding: 12px 15px;
+        font-weight: bold; cursor: pointer; transition: 0.2s; text-align: left; font-size: 15px;
+        border-radius: 12px; box-shadow: 2px 3px 5px rgba(0,0,0,0.15); box-sizing: border-box;
+        font-family: 'Comic Neue', sans-serif;
+    }
+    .choice-btn:hover { background: var(--stamp-red); color: #fff; border-color: var(--stamp-red); transform: scale(1.02); }
+
+    .drop-zone { width: 100%; height: 90px; border: 2px dashed #999; display: flex; justify-content: center; align-items: center; color: #666; background: #faf8f5; font-weight: bold; text-align: center; padding: 10px; box-sizing: border-box; border-radius: 12px; }
+    .drop-zone.dragover { background: rgba(179, 74, 54, 0.1); border-color: var(--stamp-red); color: var(--stamp-red); }
+    .confirm-btn { padding: 8px 25px; background: var(--ink-black); color: #fff; font-weight: bold; border: 2px solid var(--ink-black); cursor: pointer; box-shadow: 3px 3px 0 #444; font-size: 15px; border-radius: 40px; font-family: 'Chakra Petch', monospace; }
+    .confirm-btn:hover { background: var(--stamp-red); border-color: var(--stamp-red); }
+
+    .hotspot-group { width: 100%; border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 10px; display: flex; flex-direction: column; align-items: center;}
+    .hotspot-title { font-size: 15px; font-weight: bold; color: var(--stamp-red); margin-bottom: 8px; text-align: center; }
+
+    .slot-item { display: flex; justify-content: space-between; align-items: center; width: 100%; padding: 12px; background: var(--paper-note); border: 1px solid rgba(0,0,0,0.08); border-left: 5px solid var(--bg-haze-dark); margin-bottom: 10px; cursor: pointer; transition: 0.2s; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); box-sizing: border-box; border-radius: 12px; }
+    .slot-item:hover { transform: translateX(5px); border-left-color: var(--stamp-red); background: #fff;}
+    .slot-empty { color: #888; font-style: italic; font-size: 14px; width: 100%; text-align: center;}
+    .delete-btn { background: var(--stamp-red); color: #fff; border: 1px solid #000; padding: 4px 8px; cursor: pointer; font-weight: bold; font-size: 12px; box-shadow: 1px 1px 0 #000; border-radius: 20px; }
+    .delete-btn:hover { transform: scale(1.1); background: #000;}
+
+    #flying-notifs { position: fixed; top: 15%; left: 0; width: 100%; pointer-events: none; z-index: 7000; display: flex; flex-direction: column; gap: 10px;}
+    .fly-item { align-self: center; background: var(--paper-note); color: var(--ink-black); padding: 10px 30px; font-size: 16px; font-weight: bold; border-left: 6px solid var(--stamp-red); box-shadow: 4px 6px 15px rgba(0,0,0,0.2); animation: flyAcross 2.5s ease-in-out forwards; opacity: 0; transform: translateX(50vw);}
+    @keyframes flyAcross { 0% { transform: translateX(50vw); opacity: 0; } 15% { transform: translateX(0); opacity: 1; } 85% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(-50vw); opacity: 0; } }
+
+    #sys-msg { position: fixed; top: 30px; left: 50%; transform: translateX(-50%); background: var(--ink-black); color: var(--paper-white); padding: 10px 30px; z-index: 7000; display: none; font-weight: bold; box-shadow: 4px 4px 0 var(--stamp-red); font-size: 16px; letter-spacing: 1px; border-radius: 40px; font-family: 'Chakra Petch', monospace; }
+
+    /* 章节结束弹窗 */
+    #chapter-end-overlay {
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.8); z-index: 8000; display: none;
+        justify-content: center; align-items: center;
+    }
+    #chapter-end-box {
+        background: #fffef7; border: 4px solid #121212;
+        border-radius: 32px; padding: 30px; text-align: center;
+        box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
+    }
+    #chapter-end-box h2 { color: #e62e2e; font-family: 'Chakra Petch', monospace; }
+    #chapter-end-box button { margin-top: 20px; }
+
+    #cutscene-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: #0a0a0a;
+        background-image: radial-gradient(circle at 30% 70%, rgba(80,30,30,0.4) 1px, transparent 1px);
+        background-size: 30px 30px;
+        z-index: 9000; display: none; flex-direction: column;
+        justify-content: center; align-items: center; gap: 30px;
+        cursor: pointer; opacity: 0; transition: opacity 1s ease;
+    }
+    .cutscene-speech-bubble {
+        background: #fffef7;
+        border: 4px solid #121212;
+        border-radius: 30px;
+        padding: 24px 30px;
+        max-width: 520px;
+        font-size: 20px; font-weight: 700; line-height: 1.7;
+        color: #121212; letter-spacing: 0.02em; text-align: left;
+        box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
+        position: relative;
+        animation: textPopIn 0.5s ease;
+        font-family: 'Comic Neue', sans-serif;
+        min-height: 40px;
+    }
+    .cutscene-speech-bubble::before {
+        content: "◆"; position: absolute; top: -14px; left: 24px;
+        color: #e62e2e; font-size: 18px;
+    }
+    @keyframes textPopIn { 0%{opacity:0;transform:translateY(16px);} 100%{opacity:1;transform:translateY(0);} }
+    #cutscene-next-btn {
+        display: none; background: #1f1f1f; color: #ffde9c;
+        border: 2px solid #f5b642; padding: 10px 28px;
+        border-radius: 40px; font-weight: bold; cursor: pointer;
+        font-size: 15px; letter-spacing: 1px;
+        box-shadow: 3px 3px 0 #82612e; transition: 0.15s;
+        font-family: 'Chakra Petch', monospace;
+    }
+    #cutscene-next-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
+
+</style>
+</head>
+<body>
+
+<div id="loading-screen">
+    📁 正在读取卷宗数据... <br><br>
+    <span style="font-size:14px; font-weight:normal;">请确保使用 VS Code 的 "Live Server" 插件运行网页。</span>
+</div>
+
+<div id="main-menu">
+    <h1>案件推演</h1>
+    <button class="menu-btn" onclick="playSound('click');continueGame()">继续游戏</button>
+    <button class="menu-btn" onclick="playSound('click');newGame()">新游戏</button>
+    <button class="menu-btn" onclick="playSound('click');showChapterSelect()">选择章节</button>
+    <button class="menu-btn" onclick="showSettings()">设置</button>
+    <button class="menu-btn" onclick="showCredits()">制作团队</button>
+    <button class="menu-btn" onclick="playSound('click');exitGame()" style="color: #b34a36; border-color: #b34a36;">退出</button>
+    <div id="version-info">ver 1.5</div>
+</div>
+
+<div id="flying-notifs"></div>
+<div id="sys-msg">提示信息</div>
+
+<div id="title-card-overlay" onclick="closeTitleCard()">
+    <div id="title-card-content">
+        <div class="fancy-border">
+            <div id="title-card-text">这里是标题</div>
+        </div>
+        <div class="pulse-hint">- 点击屏幕继续勘察 -</div>
+    </div>
+</div>
+
+<div id="game-container">
+
+    <div id="side-tabs">
+        <div class="side-tab save-tab" onclick="openSaveLoadModal('save')">存<br>档</div>
+        <div class="side-tab load-tab" onclick="openSaveLoadModal('load')">读<br>档</div>
+    </div>
+    
+    <div id="debug-panel">
+        <div id="debug-chap-name">载入中...</div>
+        <button class="debug-btn" onclick="skipToNextActionOrEnd()">⏭️ 剧情快进跳跃</button>
+        <button class="debug-btn" onclick="forceNextChapter()" style="color:var(--stamp-red); border-color:var(--stamp-red);">⏭️ 强切下一章节</button>
+        <button class="debug-btn" onclick="jumpToTensionTest()" style="color:#f2b84e; border-color:#f2b84e;">🔊 音效测试（s2石辉·明淇）</button>
+        <button class="debug-btn" onclick="jumpToCutscene()" style="color:#f2b84e; border-color:#f2b84e;">🎬 跳到过场前</button>
+    </div>
+
+    <div id="col-1">
+        <div class="panel">
+            <div class="panel-title">Location 地点</div>
+            <div id="location-list" class="list-container"></div>
+        </div>
+        <div class="panel">
+            <div class="panel-title">Persons 现场人物</div>
+            <div id="character-list" class="photo-wall"></div>
+        </div>
+    </div>
+
+    <div id="col-2">
+        <div id="scene-window">
+            <div class="tape" style="top:-12px; width:140px; transform:translateX(-50%) rotate(1.5deg);"></div>
+            <div id="scene-inner">
+                <button id="search-btn" onclick="observeScene()">👁 观察现场</button>
+                <div id="chapter-badge">1-1 载入中…</div>
+                <div id="scene-bg"></div>
+                <div id="character-sprite"></div>
+                <!-- 桃心容器 -->
+                <div id="lives-container">
+                    <div class="life-heart" id="life1"></div>
+                    <div class="life-heart" id="life2"></div>
+                    <div class="life-heart" id="life3"></div>
+                    <div class="life-heart" id="life4"></div>
+                    <div class="life-heart" id="life5"></div>
+                    <div class="life-heart" id="life6"></div>
+                    <div class="life-heart" id="life7"></div>
+                    <div class="life-heart" id="life8"></div>
+                </div>
+                
+                <div id="dialogue-box" onclick="advanceDialogue(event)">
+                    <div class="dialogue-controls">
+                        <div id="speed-btn" class="ctrl-btn" onclick="toggleSpeed(event)">Speed: 1x</div>
+                        <div id="auto-play-btn" class="ctrl-btn" onclick="toggleAutoPlay(event)">Auto: OFF</div>
+                    </div>
+                    <div class="arrow" id="arrow-left" onclick="event.stopPropagation(); prevDialogue()">◀</div>
+                    <div id="dialogue-text"></div>
+                    <div class="arrow" id="arrow-right" onclick="event.stopPropagation(); nextDialogue()">▶</div>
+                </div>
+            </div>
+        </div>
+        <div class="topic-container">
+            <div class="panel-title" style="margin:0; margin-bottom:10px; background:transparent; color:var(--ink-black); border-left:none; padding:0; text-shadow:1px 1px 0 #ccc; box-shadow:none; transform:none;">
+                <span style="background:var(--ink-black); color:#fff; padding:4px 12px; transform:rotate(-1deg); display:inline-block; box-shadow:2px 2px 5px rgba(0,0,0,0.3);">Topics 话题</span>
+            </div>
+            <div id="topic-list" class="list-container" style="padding:0;"></div>
+        </div>
+    </div>
+
+    <div id="col-3">
+        <div class="panel third-panel">
+            <div class="panel-title" style="margin-left:-2px;">Profiles 人物</div>
+            <div id="profile-list" class="grid-list"></div>
+        </div>
+        <div class="panel third-panel">
+            <div class="panel-title" style="margin-left:-2px;">Evidence 证物</div>
+            <div id="evidence-list" class="grid-list"></div>
+        </div>
+        <div class="panel third-panel">
+            <div class="panel-title" style="margin-left:-2px;">Statements 证言 <button class="sort-btn" onclick="sortTestimony()" title="按供述人整理">⇅</button></div>
+            <div id="testimony-list" class="grid-list"></div>
+        </div>
+        <div id="action-buttons">
+            <button class="action-btn" onclick="doQuestion()">追问</button>
+            <button class="action-btn" onclick="openPresentModal(false, null)">举证</button>
+        </div>
+    </div>
+
+    <!-- 章节结束弹窗 -->
+    <div id="chapter-end-overlay">
+        <div id="chapter-end-box">
+            <h2>本部分内容结束</h2>
+            <p>你已经完成了当前阶段的调查。</p>
+            <button class="confirm-btn" onclick="confirmChapterEnd()">进入下一节</button>
+        </div>
+    </div>
+</div>
+
+<!-- ================= 弹窗集群 ================= -->
+<div id="detail-modal" class="modal-box" style="width: 480px; z-index: 5700;">
+    <div class="tape"></div>
+    <div class="modal-close" onclick="closeModal('detail-modal')"></div>
+    <div class="nav-arrow left-arrow" onclick="navDetail(-1)">◀</div>
+    <div class="nav-arrow right-arrow" onclick="navDetail(1)">▶</div>
+    <div class="modal-header" style="border:none;">档案记录</div>
+    <div class="modal-body" style="align-items:flex-start; padding: 10px 35px 25px 35px; max-height: 55vh; overflow-y: auto;">
+        <img id="detail-img" src="" style="width:100%; max-height: 300px; object-fit: contain; margin-bottom: 15px; display: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
+        <div id="detail-title" style="font-size:18px; font-weight:bold; color:var(--stamp-red); margin-bottom:8px;"></div>
+        <div id="detail-desc" style="font-size:15px; line-height:1.6; color:#333;"></div>
+    </div>
+</div>
+
+<div id="present-modal" class="modal-box" style="z-index: 5500; width: 340px;">
+    <div class="modal-close" onclick="closeModal('present-modal')"></div>
+    <div class="modal-header" id="present-header">请出示人物/证据/线索</div>
+    <div class="modal-body">
+        <div id="drop-zone-present" class="drop-zone" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropPresent(event)">拖拽卡片至此</div>
+        <button class="confirm-btn" onclick="confirmPresent()">确认出示</button>
+    </div>
+</div>
+
+<div id="choice-modal" class="modal-box" style="width: 420px; z-index: 5500;">
+    <div class="tape"></div>
+    <div class="modal-header" style="border:none; text-align:center; padding: 15px 15px 0 15px; width: 100%; box-sizing: border-box;">
+        <span id="choice-question" style="font-size:18px; color:var(--stamp-red); display:block; padding-bottom: 12px; border-bottom: 2px dashed #aaa; font-weight: bold; line-height: 1.4;">请选择</span>
+    </div>
+    <div class="modal-body" id="choice-options" style="gap: 12px; padding: 15px 25px 25px 25px; width: 100%; box-sizing: border-box;"></div>
+</div>
+
+<div id="investigate-modal" class="modal-box" style="z-index: 5500; width: 340px;">
+    <div class="modal-close" onclick="closeModal('investigate-modal')"></div>
+    <div class="modal-header">异常点调查</div>
+    <div class="modal-body" id="investigate-body"></div>
+</div>
+
+<div id="saveload-modal" class="modal-box" style="width:400px; z-index: 6000;">
+    <div class="modal-close" onclick="closeModal('saveload-modal')"></div>
+    <div class="modal-header" id="sl-modal-title">卷宗记录</div>
+    <div class="modal-body" id="sl-slots-container" style="align-items:stretch; padding:15px;"></div>
+</div>
+
+<script>
+// ================= 引擎底层逻辑 =================
+let EVIDENCE_DICT = {}; let PROFILE_DICT = {}; let GAME_DATA = {}; let CHAR_COLORS = {};
+let state = {
+    unlockedLocs:[], unlockedProfiles:[], unlockedEv:[], unlockedTopics:[],
+    newLocs:[], newTopics:[], newProfiles:[], newEv:[], readGreetings:[], seenLines:[],
+    currLoc: null, currChar: null, currTopic: null,
+    dialogueMode: "none", activeDialogue:[], dialogueIdx: 0, tempDialogueState: null,
+    isTyping: false, typingInterval: null, hasSeenIntro: false, pendingHotspots:[],
+    autoPlay: false, fastSpeed: false, waitingForAction: false, sfxVolume: 0.6,
+    storyIndex: null, currentChapterIdx: 0,
+    lives: 8,
+    visitedLocs: [],
+    pendingCharSelect: null,
+    completedChapters: []
+};
+
+let currentSLMode = "save"; let bgmAudio = null; let tensionAudio = null; let customBgmAudio = null; let audioCtx = null;
+let autoPlayTimer = null; let detailCtx = { type: 'ev', id: null };
+let currentBGM = "main"; let bgmFadeTimer = null;
+
+document.addEventListener('keydown', (e) => {
+    if(e.code === 'Space') { e.preventDefault(); advanceDialogue(null); }
+    if(e.code === 'Escape') {
+        if(blockDuringChoice()) return;
+        const mainMenu = document.getElementById("main-menu"); const gameContainer = document.getElementById("game-container");
+        if(mainMenu.style.display === "none") {
+            gameContainer.style.display = "none"; mainMenu.style.display = "flex";
+            if(bgmAudio) bgmAudio.pause(); if(tensionAudio) tensionAudio.pause(); currentBGM = "main"; document.querySelectorAll(".modal-box").forEach(m => m.style.display="none");
+            if(state.autoPlay) toggleAutoPlay();
+        } else if(state.hasSeenIntro) {
+            mainMenu.style.display = "none"; gameContainer.style.display = "grid";
+            if(bgmAudio) bgmAudio.play().catch(()=>{});
+        }
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('open_load_menu') === 'true') {
+        localStorage.removeItem('open_load_menu'); bootGame(true); 
+    } else { bootGame(false); }
+});
+
+async function bootGame(directLoad) {
+    try {
+        const sharedRes = await fetch('data/shared.json'); const sharedData = await sharedRes.json();
+        EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {}; 
+        PROFILE_DICT = sharedData.PROFILE_DICT || {}; 
+        CHAR_COLORS = sharedData.CHAR_COLORS || {};
+
+        const storyRes = await fetch('data/story_index.json');
+        state.storyIndex = await storyRes.json();
+        // 恢复已完成的章节
+        try { state.completedChapters = JSON.parse(localStorage.getItem('rdsm_completed_chapters') || '[]'); } catch(e) { state.completedChapters = []; }
+
+        if(!directLoad) {
+            state.currentChapterIdx = 0;
+            await fetchChapterData(state.currentChapterIdx);
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("main-menu").style.display = "flex";
+            initBGM();
+        } else {
+            await fetchChapterData(0);
+            document.getElementById("loading-screen").style.display = "none";
+            document.getElementById("game-container").style.display = "grid";
+            renderAll(); openSaveLoadModal('load');
+        }
+    } catch (error) {
+        document.getElementById("loading-screen").innerHTML = "❌ 发生错误！<br><br>必须在 VS Code 中使用 'Live Server' 插件打开网页。<br><br>" + error.message;
+    }
+}
+
+async function fetchChapterData(idx) {
+    if (!state.storyIndex || !state.storyIndex.chapters[idx]) return;
+    state.currentChapterIdx = idx;
+    const chapInfo = state.storyIndex.chapters[idx];
+    const res = await fetch('data/' + chapInfo.file);
+    GAME_DATA = await res.json();
+    
+    GAME_DATA.locations = GAME_DATA.locations || {};
+    GAME_DATA.characters = GAME_DATA.characters || {};
+    GAME_DATA.greetings = GAME_DATA.greetings || {};
+    GAME_DATA.globalPresent = GAME_DATA.globalPresent || {};
+    GAME_DATA.topics = GAME_DATA.topics || {};
+
+    updateChapterBadge(idx);
+    state.unlockedLocs = Object.keys(GAME_DATA.locations).length > 0 ? [Object.keys(GAME_DATA.locations)[0]] :[];
+    state.currLoc = state.unlockedLocs.length > 0 ? state.unlockedLocs[0] : null;
+    state.currChar = null;
+    state.pendingCharSelect = null;
+    state.lives = 8;
+    updateLivesDisplay();
+}
+
+function updateChapterBadge(idx = state.currentChapterIdx) {
+    const chapInfo = state.storyIndex?.chapters?.[idx];
+    if (!chapInfo) return;
+    const fileMatch = (chapInfo.file || "").match(/c(\d+)_s(\d+)/);
+    const chapter = chapInfo.chapter || (fileMatch ? fileMatch[1] : 1);
+    const section = chapInfo.section || (fileMatch ? fileMatch[2] : idx + 1);
+    const chapterName = chapInfo.name || "";
+    document.getElementById("debug-chap-name").innerText = chapterName;
+    const badge = document.getElementById("chapter-badge");
+    if (!badge) return;
+    badge.innerText = `${chapter}-${section} ${chapterName}`;
+}
+
+async function forceNextChapter() {
+    playSound('click');
+    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg("这已经是最后一章了！"); return; }
+    const unlockedEvCount = unlockEvidenceFromChapter(state.currentChapterIdx, true);
+    const unlockedProfileCount = unlockProfilesFromChapter(state.currentChapterIdx, true);
+    const advanced = await goToNextChapter();
+    if (!advanced) return;
+    const unlockMsg = [];
+    if (unlockedEvCount > 0) unlockMsg.push(`${unlockedEvCount} 条线索`);
+    if (unlockedProfileCount > 0) unlockMsg.push(`${unlockedProfileCount} 份人物档案`);
+    showSysMsg(unlockMsg.length > 0 ? `已成功进入下一章节！已归档本章 ${unlockMsg.join("、")}。` : "已成功进入下一章节！");
+    autoSave(0);
+}
+
+async function goToNextChapter() {
+    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg("这已经是最后一章了！"); return false; }
+    state.currentChapterIdx++;
+    await fetchChapterData(state.currentChapterIdx);
+    closeDialogue();
+    renderAll();
+    if (GAME_DATA.introDialogue) {
+        state.hasSeenIntro = true;
+        startDialogue(GAME_DATA.introDialogue, "greeting");
+    }
+    return true;
+}
+
+function getChapterSourceKey(idx) {
+    const chapInfo = state.storyIndex?.chapters?.[idx];
+    return chapInfo?.file ? chapInfo.file.replace(/\.json$/i, "") : "";
+}
+
+function unlockEvidenceFromChapter(idx, silent=false) {
+    const sourceChapter = getChapterSourceKey(idx);
+    if (!sourceChapter) return 0;
+    const evIds = Object.keys(EVIDENCE_DICT).filter(id => {
+        return EVIDENCE_DICT[id]?.sourceChapter === sourceChapter && !state.unlockedEv.includes(id);
+    });
+    if (evIds.length > 0) unlockEvidence(evIds, silent);
+    return evIds.length;
+}
+
+function unlockProfilesFromChapter(idx, silent=false) {
+    const sourceChapter = getChapterSourceKey(idx);
+    if (!sourceChapter) return 0;
+    const profileIds = Object.keys(PROFILE_DICT).filter(id => {
+        return PROFILE_DICT[id]?.sourceChapter === sourceChapter && !state.unlockedProfiles.includes(id);
+    });
+    if (profileIds.length > 0) unlockProfile(profileIds, silent);
+    return profileIds.length;
+}
+
+function jumpToCutscene() {
+    // Search all dialogue in GAME_DATA for _cutscene lines
+    function findIn(arr, path) {
+        if(!arr) return null;
+        for(let i=0;i<arr.length;i++){
+            if(arr[i]._cutscene) return {arr, idx:Math.max(0,i-3)};
+            if(arr[i].question){const r=findIn(arr[i].question.dialogue);if(r)return r;}
+            if(arr[i].present){for(const k in arr[i].present){const r=findIn(arr[i].present[k].dialogue);if(r)return r;}}
+        }
+        return null;
+    }
+    // Check introDialogue (linear chapters)
+    let result=null;
+    if(GAME_DATA.introDialogue) result=findIn(GAME_DATA.introDialogue);
+    // Check topics
+    if(!result && GAME_DATA.topics){
+        for(const tid in GAME_DATA.topics){
+            result=findIn(GAME_DATA.topics[tid].dialogue);
+            if(result){
+                // Unlock this topic and select its character
+                if(!state.unlockedTopics.includes(tid)) state.unlockedTopics.push(tid);
+                state.currChar=GAME_DATA.topics[tid].char;
+                state.currTopic=tid;
+                break;
+            }
+        }
+    }
+    if(!result){showSysMsg("本节没有过场标记");return;}
+
+    closeDialogue();
+    state.activeDialogue=result.arr;state.dialogueIdx=result.idx;
+    state.dialogueMode="topic";state.waitingForAction=false;state.isTyping=false;
+    document.getElementById("dialogue-box").style.display="flex";
+    renderDialogueLine();
+    showSysMsg("已跳到过场前3句，点几下即可看到过场");
+}
+
+async function jumpToTensionTest() {
+    if (state.currentChapterIdx !== 1) await fetchChapterData(1); // s2 = c1_s2, idx=1
+    if (!state.unlockedTopics.includes('t_s2_23')) state.unlockedTopics.push('t_s2_23');
+    state.currChar = 'char_shihui';
+    state.currTopic = 't_s2_23';
+    state.dialogueMode = 'topic';
+    document.getElementById('dialogue-box').style.display = 'flex';
+    document.getElementById('game-container').style.display = 'grid';
+    document.getElementById('main-menu').style.display = 'none';
+    startBGM();
+    renderAll();
+    startDialogue(GAME_DATA.topics.t_s2_23.dialogue, 'topic');
+    showSysMsg('已跳到s2石辉·前演出主管明淇，BGM将渐变为tension');
+}
+
+function skipToNextActionOrEnd() {
+    playSound('click');
+    if (!state.activeDialogue || state.activeDialogue.length === 0) { showSysMsg("当前没有进行中的剧情对话。"); return; }
+    let targetIdx = state.dialogueIdx;
+    while(targetIdx < state.activeDialogue.length - 1) {
+        let line = state.activeDialogue[targetIdx];
+        if(line.choices || line.autoPresent || line.titleCard || line.present || line.question) break;
+        if(line.unlockEv) unlockEvidence(line.unlockEv, true);
+        if(line.unlockProfile) unlockProfile(line.unlockProfile, true);
+        if(line.unlockLoc) unlockLocation(line.unlockLoc, true);
+        if(line.unlockTopic) unlockTopic(line.unlockTopic, true);
+        if(line.updateEv) {
+            if(!EVIDENCE_DICT[line.updateEv.id]) EVIDENCE_DICT[line.updateEv.id] = {name: line.updateEv.id, desc: ""};
+            EVIDENCE_DICT[line.updateEv.id].desc = line.updateEv.desc;
+        }
+        targetIdx++;
+    }
+    state.dialogueIdx = targetIdx; state.isTyping = false; clearInterval(state.typingInterval); clearTimeout(autoPlayTimer); renderDialogueLine();
+}
+
+function exitGame() {
+    showConfirm("确定已保存进度并退出吗？", () => {
+        window.opener = null; window.open('', '_self'); window.close();
+        setTimeout(() => { window.location.href = "about:blank"; }, 500);
+    });
+}
+
+function newGame() {
+    showConfirm("确定要开始新游戏吗？<br>当前未保存的进度将丢失。", async () => {
+        localStorage.removeItem('rdsm_autosave');
+        localStorage.removeItem('mystery_game_saves');
+        await fetchChapterData(0);
+        state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
+        state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
+        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null;
+        document.getElementById("main-menu").style.display = "none"; document.getElementById("game-container").style.display = "grid";
+        startBGM(); initGame();
+    });
+}
+async function continueGame() {
+    startBGM();
+    const idx = getLatestSaveIndex();
+    if (idx >= 0) {
+        document.getElementById("main-menu").style.display = "none";
+        document.getElementById("game-container").style.display = "grid";
+        await loadGame(idx, true);
+    } else {
+        showSysMsg("暂无存档，请先开始新游戏。");
+    }
+}
+function startGameFromMenu() { newGame(); }
+function loadGameFromMenu() { continueGame(); }
+
+function initBGM() {
+    if (!bgmAudio) { bgmAudio = new Audio('audio/bgm_main.mp3'); bgmAudio.loop = true; bgmAudio.volume = Number(document.getElementById('bgm-volume')?.value || 40) / 100; }
+    if (!tensionAudio) { tensionAudio = new Audio('audio/tension.mp3'); tensionAudio.loop = true; tensionAudio.volume = 0; }
+}
+function startBGM() { initBGM(); bgmAudio.play().catch(() => {}); }
+function getAudioByTarget(target) {
+    if (target === "main") return bgmAudio;
+    if (target === "tension") return tensionAudio;
+    if (!customBgmAudio || customBgmAudio._name !== target) {
+        if (customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
+        customBgmAudio = new Audio('audio/' + target + '.mp3');
+        customBgmAudio.loop = true;
+        customBgmAudio._name = target;
+    }
+    return customBgmAudio;
+}
+function getBgmVolume() {
+    return Number(document.getElementById('bgm-volume')?.value || 40) / 100;
+}
+function isAudioAudible(audio) {
+    return !!(audio && !audio.paused && audio.volume > 0.005);
+}
+function crossfadeBGM(target, duration = 2000, force = false) {
+    initBGM();
+    if (currentBGM === target && !force) return;
+    const toAudio = getAudioByTarget(target);
+    let fromAudio = getAudioByTarget(currentBGM);
+    if (target === "main" && isAudioAudible(tensionAudio)) fromAudio = tensionAudio;
+    if (!toAudio || !fromAudio || fromAudio === toAudio) return;
+    currentBGM = target;
+    if (bgmFadeTimer) cancelAnimationFrame(bgmFadeTimer);
+    const vol = getBgmVolume();
+    const enteringTension = target === "tension";
+    const fadeDuration = enteringTension ? Math.max(duration, 5600) : duration;
+    const startTime = performance.now();
+    const fromStartVolume = Math.min(fromAudio.volume || vol, vol);
+    const toStartVolume = Math.min(toAudio.volume || 0, vol);
+    if (fromAudio.paused) { fromAudio.volume = fromStartVolume; fromAudio.play().catch(() => {}); }
+    if (enteringTension) toAudio.currentTime = 0;
+    toAudio.volume = toStartVolume;
+    toAudio.play().catch(() => {});
+    const easeInOut = p => p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
+    const slowTensionIn = p => p < 0.18 ? 0 : Math.pow((p - 0.18) / 0.82, 2.6);
+    const slowMainOut = p => 1 - Math.pow(p, 2.2);
+    const tick = (now) => {
+        const progress = Math.min((now - startTime) / fadeDuration, 1);
+        const outGain = enteringTension ? slowMainOut(progress) : 1 - easeInOut(progress);
+        const inGain = enteringTension ? slowTensionIn(progress) : easeInOut(progress);
+        fromAudio.volume = Math.max(0, fromStartVolume * outGain);
+        toAudio.volume = Math.min(vol, toStartVolume + (vol - toStartVolume) * inGain);
+        if (progress < 1) {
+            bgmFadeTimer = requestAnimationFrame(tick);
+        } else {
+            bgmFadeTimer = null;
+            fromAudio.pause();
+            fromAudio.volume = 0;
+            toAudio.volume = vol;
+        }
+    };
+    bgmFadeTimer = requestAnimationFrame(tick);
+}
+function resetBGMForDialogue(dialogueArr) {
+    if (dialogueArr?.[0]?.bgm === "tension") return;
+    if (currentBGM === "tension" || isAudioAudible(tensionAudio)) crossfadeBGM("main", 2000, true);
+}
+function playSound(name) { try { const audio = new Audio(`audio/${name}.mp3`); audio.volume = state.sfxVolume || 0.6; audio.play().catch(()=>{}); } catch (e) {} }
+function testSfxVolume() { playSound('click'); }
+function getLatestSaveIndex() {
+    const saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
+    let latestIdx = -1; let latestTime = -Infinity;
+    saves.forEach((save, idx) => {
+        if (!save || !save.stateData) return;
+        const t = Date.parse(save.time || '') || 0;
+        if (t >= latestTime) { latestTime = t; latestIdx = idx; }
+    });
+    return latestIdx;
+}
+function playTypewriterSound(speakerId) {
+    if (!speakerId || speakerId === 'none' || speakerId === 'system') return;
+    if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    // 角色音高手动校准（性别/年龄适配），其余用 ID hash 自动生成
+    const freqMap = { char_zhencheng: 680, char_ayou: 380, char_xiaozhi: 750, char_changwei: 420, char_shihui: 340, char_andy: 500, char_qin: 460, char_mingqi: 440, char_meiyu: 700, char_rulan: 720, char_aling: 710, char_antong: 550 };
+    let freq = freqMap[speakerId];
+    if (!freq) {
+        let hash = 0;
+        for (let i = 0; i < speakerId.length; i++) { hash = ((hash << 5) - hash) + speakerId.charCodeAt(i); hash |= 0; }
+        freq = 350 + (Math.abs(hash) % 450);
+    }
+    const osc = audioCtx.createOscillator(); const gain = audioCtx.createGain();
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.type = 'square'; osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+    gain.gain.setValueAtTime(0.08, audioCtx.currentTime); gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.04);
+    osc.start(audioCtx.currentTime); osc.stop(audioCtx.currentTime + 0.04);
+}
+
+function initGame() {
+    renderAll();
+    if(!state.hasSeenIntro && GAME_DATA.introDialogue) { state.hasSeenIntro = true; startDialogue(GAME_DATA.introDialogue, "greeting"); }
+    autoSave(0);
+}
+
+function renderAll() { renderLocations(); renderSceneChars(); renderProfiles(); renderEvidence(); updateSceneUI(); renderTopics(); updateLivesDisplay(); }
+
+let progressTotal = 0;
+
+// ================= 命数系统 =================
+function updateLivesDisplay() {
+    for (let i = 1; i <= 8; i++) {
+        const heart = document.getElementById(`life${i}`);
+        if (heart) heart.classList.toggle('lost', i > state.lives);
+    }
+}
+function loseLife() {
+    if (state.lives <= 0) return;
+    state.lives--;
+    updateLivesDisplay();
+    playSound('heart_break');
+    showFlyingNotif(`推理次数剩余：${state.lives}`);
+    if (state.lives <= 0) {
+        setTimeout(() => {
+            alert("你的推理机会已经用尽。\n返回本节开头重新开始。");
+            restartCurrentSection();
+        }, 300);
+    }
+}
+async function restartCurrentSection() {
+    state.lives = 8;
+    updateLivesDisplay();
+    await fetchChapterData(state.currentChapterIdx);
+    closeDialogue();
+    renderAll();
+    if (GAME_DATA.introDialogue) {
+        state.hasSeenIntro = true;
+        startDialogue(GAME_DATA.introDialogue, "greeting");
+    }
+}
+
+// ================= 章节结束提醒 =================
+function checkChapterEnd() {
+    const line = state.activeDialogue?.[state.dialogueIdx];
+    if (line && line.endChapter) {
+        state.waitingForAction = true;
+        document.getElementById('chapter-end-overlay').style.display = 'flex';
+        return true;
+    }
+    return false;
+}
+function confirmChapterEnd() {
+    document.getElementById('chapter-end-overlay').style.display = 'none';
+    state.waitingForAction = false;
+    autoSave(0);
+    goToNextChapter();
+}
+
+// ================= 自动存档 =================
+function autoSave(slot = 0) {
+    saveGame(slot);
+}
+
+// ================= SL 存档 =================
+function openSaveLoadModal(mode) {
+    playSound('click'); currentSLMode = mode; document.getElementById("sl-modal-title").innerText = mode === 'save' ? '💾 归档记录' : '📂 提取卷宗';
+    renderSaveSlots(); showModalAtCenter(document.getElementById("saveload-modal"), 0.5, 0.4);
+}
+function renderSaveSlots() {
+    const container = document.getElementById("sl-slots-container"); container.innerHTML = "";
+    let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[null,null,null,null,null]');
+    for (let i=0;i<5;i++) {
+        let slotDiv = document.createElement("div"); slotDiv.className = "slot-item";
+        const isAutoSlot = (i === 0);
+        if(saves[i]) {
+            let infoDiv = document.createElement("div"); infoDiv.style.flex="1";
+            const chapterInfo = saves[i].chapterText ? `<br><span style="font-size:12px;color:#888;">${saves[i].chapterText}</span>` : "";
+            const autoTag = isAutoSlot ? ` <span style="font-size:10px;color:#e67e22;font-weight:normal;">[自动存档]</span>` : "";
+            infoDiv.innerHTML = `<strong style="color:${isAutoSlot?'#e67e22':'var(--stamp-red)'}">档案 0${i+1}${autoTag}</strong>${chapterInfo}<br><span style="font-size:12px;color:#555;">${saves[i].locName} - ${saves[i].time}</span>`;
+            if (currentSLMode === 'save' && isAutoSlot) {
+                infoDiv.onclick = () => { playSound('click'); showSysMsg("自动存档档位不可手动覆盖，请使用其他档位。"); };
+            } else {
+                infoDiv.onclick = ()=> { playSound('click'); currentSLMode==='save' ? saveGame(i) : loadGame(i); };
+            }
+            if (!isAutoSlot) {
+                let delBtn = document.createElement("button"); delBtn.className="delete-btn"; delBtn.innerText="X 销毁";
+                delBtn.onclick=(e)=>{ e.stopPropagation(); deleteSave(i); };
+                slotDiv.appendChild(infoDiv); slotDiv.appendChild(delBtn);
+            } else {
+                slotDiv.appendChild(infoDiv);
+            }
+        } else {
+            if (isAutoSlot) {
+                slotDiv.innerHTML = `<div class="slot-empty" style="color:#b7956b;">档案 01 <span style="font-size:10px;color:#c9a87c;">[自动存档]</span> - 等待自动存档</div>`;
+            } else {
+                slotDiv.innerHTML = `<div class="slot-empty">档案 0${i+1} - 空白卷宗</div>`;
+                slotDiv.onclick = ()=>{ if(currentSLMode==='save') saveGame(i); };
+            }
+        }
+        container.appendChild(slotDiv);
+    }
+}
+function getChapterLabel() {
+    const chapInfo = state.storyIndex?.chapters?.[state.currentChapterIdx];
+    if (!chapInfo) return { text: "未知章节", id: "?-?" };
+    const fileMatch = (chapInfo.file || "").match(/c(\d+)_s(\d+)/);
+    const ch = chapInfo.chapter || (fileMatch ? fileMatch[1] : state.currentChapterIdx + 1);
+    const sec = chapInfo.section || (fileMatch ? fileMatch[2] : 1);
+    const cid = `${ch}-${sec}`;
+    const cname = chapInfo.name || "";
+    return { id: cid, name: cname, text: cname ? `${cid} ${cname}` : cid };
+}
+function saveGame(index) {
+    playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[null,null,null,null,null]');
+    const cl = getChapterLabel();
+    saves[index] = {
+        time: new Date().toLocaleString(), locName: GAME_DATA.locations[state.currLoc]?.name || "未知",
+        chapterId: cl.id, chapterName: cl.name, chapterText: cl.text,
+        stateData: JSON.parse(JSON.stringify(state)), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
+    };
+    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("💾 卷宗已成功归档！"); renderSaveSlots();
+}
+async function loadGame(index, silent=false) {
+    if(!silent) playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
+    if(saves[index] && saves[index].stateData) {
+        let loadedState = saves[index].stateData;
+        state.currentChapterIdx = loadedState.currentChapterIdx || 0;
+        await fetchChapterData(state.currentChapterIdx);
+        state = loadedState; 
+        if(saves[index].topicsData) GAME_DATA.topics = saves[index].topicsData;
+        if(saves[index].greetingsData) GAME_DATA.greetings = saves[index].greetingsData;
+        
+        if (state.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; } 
+        else if (state.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.activeDialogue = GAME_DATA.greetings[state.currChar]; }
+        if (state.tempDialogueState) {
+            if (state.tempDialogueState.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.tempDialogueState.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; } 
+            else if (state.tempDialogueState.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.tempDialogueState.activeDialogue = GAME_DATA.greetings[state.currChar]; }
+        }
+        closeModal("saveload-modal"); showSysMsg("📂 卷宗提取成功！"); renderAll();
+        if(state.activeDialogue && state.activeDialogue.length > 0) { document.getElementById("dialogue-box").style.display="flex"; renderDialogueLine(); } 
+        else { document.getElementById("dialogue-box").style.display="none"; }
+    }
+}
+function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("🗑️ 档案已销毁。"); renderSaveSlots(); }
+function closeModal(modalId) { document.getElementById(modalId).style.display="none"; }
+
+// ================= UI 提示 =================
+function showFlyingNotif(text) { const container = document.getElementById("flying-notifs"); const el = document.createElement("div"); el.className="fly-item"; el.innerText=text; container.appendChild(el); setTimeout(()=>{ if(el.parentNode) el.remove(); }, 3000); }
+function showSysMsg(msg) { const el = document.getElementById("sys-msg"); el.innerHTML=msg; el.style.display="block"; setTimeout(()=> el.style.display="none", 2500); }
+
+function showDetail(type, id) {
+    if(blockDuringChoice()) return;
+    detailCtx.type = type; detailCtx.id = id; updateDetailContent();
+    const choiceOpen = document.getElementById("choice-modal").style.display !== "none";
+    const presentOpen = document.getElementById("present-modal").style.display !== "none";
+    const ox = (choiceOpen || presentOpen) ? 0.04 : 0;
+    const oy = (choiceOpen || presentOpen) ? 0.05 : 0;
+    showModalAtCenter(document.getElementById("detail-modal"), 0.5 + ox, 0.4 + oy);
+}
+function navDetail(dir) {
+    playSound('click'); let list = detailCtx.type === 'ev' ? state.unlockedEv : state.unlockedProfiles;
+    if(list.length === 0) return; let idx = list.indexOf(detailCtx.id); if(idx === -1) return;
+    idx = (idx + dir + list.length) % list.length; detailCtx.id = list[idx]; updateDetailContent();
+}
+function updateDetailContent() {
+    const imgEl = document.getElementById("detail-img");
+    let dict = detailCtx.type === 'ev' ? EVIDENCE_DICT : PROFILE_DICT; let data = dict[detailCtx.id];
+    document.getElementById("detail-title").innerText = data?.name || "未知";
+    document.getElementById("detail-desc").innerText = data?.desc || "";
+    if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
+    removeNewBadge(detailCtx.type, detailCtx.id);
+}
+
+function showTitleCard(text) {
+    const overlay = document.getElementById("title-card-overlay"); const content = document.getElementById("title-card-content");
+    document.getElementById("title-card-text").innerText = text; overlay.style.display = "flex"; void overlay.offsetWidth;
+    content.style.animation = "smashIn 1.2s cubic-bezier(0.1, 0.9, 0.2, 1) forwards"; state.waitingForAction = true; 
+}
+function closeTitleCard() {
+    const overlay = document.getElementById("title-card-overlay"); const content = document.getElementById("title-card-content");
+    content.style.animation = "smashOut 0.8s ease-in forwards";
+    setTimeout(() => { overlay.style.display = "none"; state.waitingForAction = false; nextDialogue(); }, 700);
+}
+
+// ================= 观察现场 & 异常点调查 =================
+function observeScene() {
+    playSound('click');
+    if(blockDuringChoice()) return;
+    if (!state.currLoc || !GAME_DATA.locations[state.currLoc]) return;
+    const loc = GAME_DATA.locations[state.currLoc];
+    let hotspots = loc.hotspots || [];
+    let unlockedHotspots = [];
+
+    hotspots.forEach(h => {
+        if (state.unlockedEv.includes(h.giveEv)) return;
+        if (!h.isLocked) {
+            unlockEvidence(h.giveEv);
+        } else {
+            unlockedHotspots.push(h);
+        }
+    });
+
+    if (unlockedHotspots.length > 0) {
+        state.pendingHotspots = unlockedHotspots;
+        openInvestigateModal();
+    } else {
+        showSysMsg(`观察现场：${loc.desc || '一切如常，没有新的发现。'}`);
+    }
+}
+
+function openInvestigateModal() {
+    const modal = document.getElementById("investigate-modal");
+    const body = document.getElementById("investigate-body");
+    body.innerHTML = "";
+    if (state.pendingHotspots.length === 0) { closeModal('investigate-modal'); return; }
+
+    state.pendingHotspots.forEach(h => {
+        const group = document.createElement("div"); group.className = "hotspot-group";
+        const title = document.createElement("div"); title.className = "hotspot-title"; title.innerText = h.title;
+        const desc = document.createElement("div"); desc.style.fontSize="13px"; desc.style.color="#555"; desc.style.marginBottom="10px";
+        desc.innerText = h.desc_locked;
+        const dropZone = document.createElement("div"); dropZone.className = "drop-zone"; dropZone.style.height="70px"; dropZone.innerText = "拖拽证据至此";
+        dropZone.setAttribute("data-hotspot-id", h.id);
+        dropZone.ondragover = allowDrop;
+        dropZone.ondragleave = dragLeave;
+        dropZone.ondrop = (ev) => dropInvestigate(ev, h.id);
+        const btn = document.createElement("button"); btn.className = "confirm-btn"; btn.innerText = "调查";
+        btn.onclick = () => confirmInvestigate(h.id);
+
+        group.appendChild(title); group.appendChild(desc); group.appendChild(dropZone); group.appendChild(btn);
+        body.appendChild(group);
+    });
+
+    showModalAtCenter(modal, 0.5, 0.38);
+}
+
+function dropInvestigate(ev, hsId) {
+    ev.preventDefault(); ev.currentTarget.classList.remove("dragover");
+    const data = ev.dataTransfer.getData("text");
+    if (data) {
+        let name = (EVIDENCE_DICT[data] || PROFILE_DICT[data])?.name || data;
+        ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">已装载: ${name}</strong>`;
+        ev.currentTarget.dataset.itemId = data;
+    }
+}
+
+function confirmInvestigate(hsId) {
+    const hot = state.pendingHotspots.find(h => h.id === hsId);
+    if (!hot) return;
+    const dropZone = document.querySelector(`.drop-zone[data-hotspot-id="${hsId}"]`);
+    const itemId = dropZone?.dataset.itemId;
+    if (!itemId) { showSysMsg("请先拖入调查证据！"); return; }
+    if (itemId === hot.unlockItem) {
+        if (!state.unlockedEv.includes(hot.giveEv)) unlockEvidence(hot.giveEv);
+        showSysMsg("调查成功！获得了新的线索。");
+        state.pendingHotspots = state.pendingHotspots.filter(h => h.id !== hsId);
+        closeModal("investigate-modal");
+    } else {
+        showSysMsg("证据不匹配，再试试别的。");
+        dropZone.innerHTML = "拖拽证据至此";
+        dropZone.dataset.itemId = "";
+    }
+}
+
+// ================= 面板渲染 =================
+function renderLocations() {
+    const box = document.getElementById("location-list"); box.innerHTML="";
+    state.unlockedLocs.forEach(locId=>{
+        const locData = GAME_DATA.locations[locId];
+        const div = document.createElement("div"); let extraClass = state.newLocs.includes(locId) ? "anim-slide-in" : "";
+        div.className = "list-item " + extraClass + (state.currLoc === locId ? " active" : "");
+        div.style.backgroundImage = locData?.bg ? `url("${locData.bg}")` : "none";
+        let newBadge = state.newLocs.includes(locId) ? `<span class="new-badge">NEW</span>` : "";
+        div.innerHTML = `<div class="loc-label">${locData?.name || locId} ${newBadge}</div>`;
+        div.onclick = () => {
+            playSound('ui_click');
+            if(blockDuringChoice()) return;
+            if(state.dialogueMode === "greeting") { showSysMsg("请先完成当前剧情！"); return; }
+            if(state.newLocs.includes(locId)) state.newLocs = state.newLocs.filter(i=>i!==locId); goToLocation(locId);
+        };
+        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        box.appendChild(div);
+    });
+    if (state.newLocs.length > 0) {
+        const newEl = box.querySelector(".anim-slide-in");
+        if (newEl) newEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+}
+function removeNewBadge(type, id) {
+    if(type==='profile' && state.newProfiles.includes(id)) { state.newProfiles = state.newProfiles.filter(x=>x!==id); renderProfiles(); } 
+    else if (type==='ev' && state.newEv.includes(id)) { state.newEv = state.newEv.filter(x=>x!==id); renderEvidence(); }
+}
+function renderProfiles() {
+    const box = document.getElementById("profile-list"); box.innerHTML="";
+    [...state.unlockedProfiles].reverse().forEach(id=>{
+        const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
+        div.ondragstart = handleDragStart;
+        div.onclick = () => { playSound('ui_click'); showDetail('profile', id); };
+        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        let newBadge = state.newProfiles.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
+        let color = CHAR_COLORS[id] || "#000";
+        div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${PROFILE_DICT[id]?.name || id}</span></div>` + newBadge;
+        box.appendChild(div);
+    });
+}
+function renderEvidence() {
+    const box = document.getElementById("evidence-list");
+    const testimonyBox = document.getElementById("testimony-list");
+    box.innerHTML="";
+    if(testimonyBox) testimonyBox.innerHTML="";
+    [...state.unlockedEv].reverse().forEach(id=>{
+        const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
+        div.ondragstart = handleDragStart;
+        div.onclick = () => { playSound('ui_click'); showDetail('ev', id); };
+        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
+        let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
+        div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${EVIDENCE_DICT[id]?.name || id}</span></div>` + newBadge;
+        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|anonymous_post|tourist_at_back)$/.test(id);
+        const targetBox = (testimonyBox && isTestimony) ? testimonyBox : box;
+        targetBox.appendChild(div);
+    });
+}
+function sortTestimony() {
+    playSound('click');
+    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|anonymous_post|tourist_at_back)$/.test(id);
+    const testIds = state.unlockedEv.filter(isTest);
+    const otherIds = state.unlockedEv.filter(id => !isTest(id));
+    testIds.sort((a, b) => {
+        const oa = EVIDENCE_DICT[a]?.origin || ""; const ob = EVIDENCE_DICT[b]?.origin || "";
+        if (oa !== ob) return oa.localeCompare(ob);
+        const na = EVIDENCE_DICT[a]?.name || ""; const nb = EVIDENCE_DICT[b]?.name || "";
+        return (na.match(/供述(\d+)/)?.[1]||"0").localeCompare(nb.match(/供述(\d+)/)?.[1]||"0", undefined, {numeric:true});
+    });
+    state.unlockedEv = [...otherIds, ...testIds];
+    state.newEv = [];
+    renderEvidence();
+}
+
+let cutsceneTimer = null;
+function showCutsceneLine(line) {
+    document.getElementById("dialogue-box").style.display = "none";
+    const overlay = document.getElementById("cutscene-overlay");
+    overlay.style.display = "flex";
+    requestAnimationFrame(() => { overlay.style.opacity = "1"; });
+    const textDiv = document.getElementById("cutscene-text");
+    textDiv.style.animation = "none"; textDiv.offsetHeight; textDiv.style.animation = "fadeInUp 0.6s ease";
+    // Apply unlocks silently
+    if(line.speaker && PROFILE_DICT[line.speaker] && !state.unlockedProfiles.includes(line.speaker)) unlockProfile(line.speaker);
+    if(line.unlockEv) unlockEvidence(line.unlockEv, true);
+    if(line.unlockProfile) unlockProfile(line.unlockProfile, true);
+    if(line.unlockLoc) unlockLocation(line.unlockLoc, true);
+    if(line.unlockTopic) unlockTopic(line.unlockTopic, true);
+    // Typewriter effect on cutscene text
+    clearInterval(cutsceneTimer);
+    textDiv.textContent = ""; let idx = 0; const txt = line.t || "";
+    cutsceneTimer = setInterval(() => {
+        if(idx < txt.length) { textDiv.textContent += txt[idx]; idx++; playTypewriterSound(line.speaker); }
+        else { clearInterval(cutsceneTimer); cutsceneTimer = null;
+            if(line.endChapter || line.endGame) {
+                const btn = document.getElementById("cutscene-next-btn");
+                btn.style.display = "block";
+                btn.innerText = line.endGame ? "结束并返回主界面" : "📁 保存并进入下一节";
+                state.waitingForAction = true;
+            }
+        }
+    }, state.fastSpeed ? 35 : 55);
+}
+function advanceCutscene(e) {
+    if(e && e.target.id === "cutscene-next-btn") return;
+    if(state.waitingForAction) return;
+    if(cutsceneTimer) return; // 打字未完成，禁止跳过
+    const line = state.activeDialogue[state.dialogueIdx];
+    document.getElementById("cutscene-text").textContent = line.t || "";
+    if(line.endChapter || line.endGame) {
+        const btn = document.getElementById("cutscene-next-btn");
+        btn.style.display = "block";
+        btn.innerText = line.endGame ? "结束并返回主界面" : "📁 保存并进入下一节";
+        state.waitingForAction = true;
+    } else {
+        nextDialogue();
+    }
+}
+function finishCutscene() {
+    playSound('click');
+    const overlay = document.getElementById("cutscene-overlay");
+    overlay.style.opacity = "0";
+    document.getElementById("cutscene-next-btn").style.display = "none";
+    setTimeout(() => { overlay.style.display = "none"; }, 1000);
+    const line = state.activeDialogue?.[state.dialogueIdx];
+    state.waitingForAction = false;
+    if(line && line.endGame) {
+        // 游戏结束，返回主界面
+        document.getElementById("game-container").style.display = "none";
+        document.getElementById("main-menu").style.display = "flex";
+        if(bgmAudio) bgmAudio.pause(); if(tensionAudio) tensionAudio.pause(); currentBGM = "main";
+        autoSave(0);
+        return;
+    }
+    // 检查是否完成了当前章的最后一节
+    const cur = state.storyIndex?.chapters?.[state.currentChapterIdx];
+    if (cur) {
+        const sameChapter = state.storyIndex.chapters.filter(c => c.chapter === cur.chapter);
+        const lastSection = Math.max(...sameChapter.map(c => c.section));
+        if (cur.section === lastSection && !state.completedChapters.includes(cur.chapter)) {
+            state.completedChapters.push(cur.chapter);
+            localStorage.setItem('rdsm_completed_chapters', JSON.stringify(state.completedChapters));
+        }
+    }
+    autoSave(0);
+    goToNextChapter();
+}
+
+function renderSceneChars() {
+    const box = document.getElementById("character-list"); box.innerHTML = "";
+    const locChars = GAME_DATA.locations[state.currLoc]?.chars ||[];
+    if (locChars.length === 0) { box.innerHTML = '<div style="color:#888;text-align:center;width:100%;padding:20px;">剧情人物</div>'; return; }
+    locChars.forEach(charId => {
+        const charData = GAME_DATA.characters[charId];
+        const baseName = charId.replace('char_', '').replace(/_p\d+$/, '');
+        const photoUrl = `images/P_${baseName}.png`;
+        const isActive = state.currChar === charId; const card = document.createElement("div"); card.className = "photo-card" + (isActive ? " active" : "");
+        if (!isActive) card.style.transform = `rotate(${(Math.random() - 0.5) * 4}deg)`;
+        const pin = document.createElement("div"); pin.className = "photo-pin"; card.appendChild(pin);
+        const img = document.createElement("img"); img.src = photoUrl; img.className = "photo-img"; img.onerror = () => { img.style.background = "#d0d8e0"; }; card.appendChild(img);
+        const name = document.createElement("div"); name.className = "photo-name"; name.innerText = charData ? charData.name : charId; card.appendChild(name);
+        card.onclick = () => selectCharacter(charId); card.addEventListener('mouseenter', () => playSound('ui_hover')); box.appendChild(card);
+    });
+}
+function renderTopics() {
+    const box = document.getElementById("topic-list"); box.innerHTML = "";
+    if(!state.currChar || state.dialogueMode==="greeting" || state.dialogueMode==="temp_wrong" || !GAME_DATA.topics) return; 
+    let hasNew = false;
+    Object.keys(GAME_DATA.topics).forEach(tid=>{
+        const tData = GAME_DATA.topics[tid];
+        if(tData.char === state.currChar && state.unlockedTopics.includes(tid)) {
+            const div = document.createElement("div");
+            const isNew = state.newTopics.includes(tid);
+            if (isNew) hasNew = true;
+            let newBadge = isNew ? `<span class="new-badge">NEW</span>` : "";
+            div.className = "topic-item " + (isNew ? "anim-slide-in topic-glow" : "") + (state.currTopic === tid ? " active-topic" : "");
+            div.innerHTML = `<span>▶ ${tData.title}</span> ${newBadge}`;
+            div.onclick = () => { playSound('click'); if(blockDuringChoice()) return; if(state.newTopics.includes(tid)) state.newTopics = state.newTopics.filter(i=>i!==tid); state.currTopic = tid; renderTopics(); startDialogue(tData.dialogue, "topic"); };
+            box.appendChild(div);
+        }
+    });
+    if (hasNew) {
+        const newEl = box.querySelector(".topic-glow");
+        if (newEl) newEl.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    }
+}
+function updateSceneUI() {
+    const bgDiv = document.getElementById("scene-bg"); const locBg = GAME_DATA.locations[state.currLoc]?.bg;
+    bgDiv.style.backgroundImage = locBg ? `url("${locBg}")` : "none";
+    const spriteDiv = document.getElementById("character-sprite");
+    if(state.currChar && GAME_DATA.characters[state.currChar]) { spriteDiv.style.opacity = 1; spriteDiv.style.backgroundImage = `url("${GAME_DATA.characters[state.currChar].sprite}")`; }
+    else { spriteDiv.style.opacity = 0; }
+}
+function changeSpriteBySpeaker(speakerId, customSprite) {
+    const spriteDiv = document.getElementById("character-sprite");
+    if(customSprite) { spriteDiv.style.opacity=1; spriteDiv.style.backgroundImage=`url("${customSprite}")`; } 
+    else if(speakerId && speakerId!=="none" && GAME_DATA.characters[speakerId]) { spriteDiv.style.opacity=1; spriteDiv.style.backgroundImage=`url("${GAME_DATA.characters[speakerId].sprite}")`; }
+    else if (state.currChar && GAME_DATA.characters[state.currChar]) { spriteDiv.style.opacity=1; spriteDiv.style.backgroundImage=`url("${GAME_DATA.characters[state.currChar].sprite}")`; }
+    else { spriteDiv.style.opacity=0; }
+}
+
+function goToLocation(locId) {
+    state.pendingCharSelect = null;
+    state.currLoc = locId;
+    state.currChar = null;
+    const loc = GAME_DATA.locations[locId];
+    if (!loc) return;
+
+    closeDialogue();
+    renderLocations();
+    renderSceneChars();
+    updateSceneUI();
+
+    if (Array.isArray(loc.onEnter) && loc.onEnter.length > 0 && !state.visitedLocs.includes(locId)) {
+        state.visitedLocs.push(locId);
+        state.pendingCharSelect = loc.chars?.[0];
+        startDialogue(loc.onEnter, "greeting");
+        return;
+    }
+
+    const locChars = loc.chars || [];
+    if (locChars.length === 1) {
+        selectCharacter(locChars[0]);
+    } else {
+        state.currChar = null;
+        renderTopics();
+    }
+}
+
+function selectPendingCharacterAfterDialogue() {
+    const charId = state.pendingCharSelect;
+    state.pendingCharSelect = null;
+    if (charId && GAME_DATA.locations[state.currLoc]?.chars?.includes(charId)) {
+        selectCharacter(charId);
+    }
+}
+
+function selectCharacter(charId) {
+    playSound('ui_click');
+    if(blockDuringChoice()) return;
+    if(state.dialogueMode==="greeting") { showSysMsg("请先完成当前剧情！"); return; }
+    if(state.currChar===charId && state.dialogueMode!=="temp_wrong") { state.currChar=null; closeDialogue(); } 
+    else {
+        state.currChar = charId; closeDialogue();
+        if(!state.readGreetings.includes(charId) && GAME_DATA.greetings && GAME_DATA.greetings[charId]) {
+            state.readGreetings.push(charId); startDialogue(GAME_DATA.greetings[charId], "greeting");
+        } else { state.dialogueMode = "none"; }
+    }
+    renderSceneChars(); updateSceneUI(); renderTopics();
+}
+
+// 三选一（底部字幕显示错误回复）
+function positionActionModal(modal) {
+    const dialogueBox = document.getElementById("dialogue-box");
+    if(!dialogueBox || dialogueBox.style.display === "none") {
+        modal.style.left = "50%";
+        modal.style.top = "32%";
+        modal.style.transform = "translateX(-50%)";
+        return;
+    }
+    const rect = dialogueBox.getBoundingClientRect();
+    const modalHeight = modal.offsetHeight || 220;
+    const top = Math.max(18, rect.top - modalHeight - 18);
+    modal.style.left = `${rect.left + rect.width / 2}px`;
+    modal.style.top = `${top}px`;
+    modal.style.transform = "translateX(-50%)";
+}
+
+function hasPendingPresent(line) {
+    if(!line || !line.present) return false;
+    return Object.values(line.present).some(pData => pData && !pData.resolved);
+}
+function isChoiceModalActive() {
+    const modal = document.getElementById("choice-modal");
+    if (modal && modal.dataset.choiceLock === "true" && modal.style.display !== "none") return true;
+    const line = state.activeDialogue?.[state.dialogueIdx];
+    return !!(line?.choices && !line.choices.resolved && state.waitingForAction);
+}
+function blockDuringChoice() {
+    if (!isChoiceModalActive()) return false;
+    showSysMsg("请先完成当前选择。");
+    return true;
+}
+function releaseChoiceModalLock(modal=document.getElementById("choice-modal")) {
+    if (modal) modal.dataset.choiceLock = "false";
+}
+
+function showChoicesModal(choiceData) {
+    if(choiceData.resolved) { state.waitingForAction = false; nextDialogue(); return; }
+    document.getElementById("arrow-left").style.display = "none";
+    document.getElementById("arrow-right").style.display = "none";
+    const modal = document.getElementById("choice-modal");
+    modal.dataset.choiceLock = "true";
+    state.waitingForAction = true;
+    const closeBtn = modal.querySelector(".modal-close");
+    if (closeBtn) closeBtn.style.display = "none";
+    const title = document.getElementById("choice-question");
+    const container = document.getElementById("choice-options");
+    title.innerText = choiceData.question; container.innerHTML = "";
+    choiceData.options.forEach(opt => {
+        let btn = document.createElement("div"); btn.className = "choice-btn"; btn.innerText = opt.text;
+        btn.onclick = () => {
+            playSound('click');
+            if(opt.correct) {
+                playSound('present_seccess'); 
+                modal.style.display = "none";
+                releaseChoiceModalLock(modal);
+                choiceData.resolved = true;
+                state.waitingForAction = false;
+                nextDialogue();
+            } else {
+                modal.style.display = "none";
+                releaseChoiceModalLock(modal);
+                state.waitingForAction = false;
+                playSound('present_fail');
+                loseLife();
+                // 保存状态，显示错误回复
+                state.tempDialogueState = {
+                    activeDialogue: state.activeDialogue,
+                    dialogueIdx: state.dialogueIdx,
+                    dialogueMode: state.dialogueMode,
+                    waitingForAction: false
+                };
+                state.activeDialogue = [{
+                    s: "npc",
+                    speaker: state.activeDialogue[state.dialogueIdx].speaker,
+                    t: opt.reply || "不对哦……"
+                }];
+                state.dialogueIdx = 0;
+                state.dialogueMode = "temp_wrong";
+                renderDialogueLine();
+            }
+        };
+        container.appendChild(btn);
+    });
+    modal.style.display = "flex";
+    requestAnimationFrame(() => positionActionModal(modal));
+}
+
+function startDialogue(dialogueArr, mode) {
+    resetBGMForDialogue(dialogueArr);
+    state.activeDialogue = dialogueArr; state.dialogueMode = mode; state.dialogueIdx = 0; state.waitingForAction = false;
+    document.getElementById("dialogue-box").style.display = "flex";
+    if(mode==="greeting" || mode==="temp_wrong") { state.currTopic=null; renderTopics(); }
+    renderDialogueLine();
+}
+
+function renderDialogueLine() {
+    if(!state.activeDialogue || state.activeDialogue.length === 0) return;
+    const line = state.activeDialogue[state.dialogueIdx];
+    if(line.bgm) crossfadeBGM(line.bgm);
+    if(line._cutscene || line.endChapter || line.endGame) { showCutsceneLine(line); return; }
+    const textDiv = document.getElementById("dialogue-text");
+    
+    if(line.speaker && PROFILE_DICT[line.speaker] && !state.unlockedProfiles.includes(line.speaker)) unlockProfile(line.speaker);
+    if(line.unlockEv) unlockEvidence(line.unlockEv, false); if(line.unlockProfile) unlockProfile(line.unlockProfile, false);
+    if(line.unlockLoc) unlockLocation(line.unlockLoc, false); if(line.unlockTopic) unlockTopic(line.unlockTopic, false);
+    
+    let badgeHtml = (line.isNew && !line.autoPresent && !line.choices) ? `<span class="new-badge">NEW</span> ` : ""; line.isNew = false;
+    
+    if(line.titleCard) {
+        textDiv.innerHTML = ""; state.waitingForAction = true;
+        setTimeout(() => showTitleCard(line.titleCard), 200); return; 
+    }
+
+    if(line.s==="system") { textDiv.style.color="var(--text-system)"; textDiv.style.fontStyle="italic"; }
+    else if(line.s==="player") { textDiv.style.color="var(--text-player)"; textDiv.style.fontStyle="normal"; }
+    else { textDiv.style.color="var(--text-npc)"; textDiv.style.fontStyle="normal"; }
+    
+    changeSpriteBySpeaker(line.speaker, line.sprite);
+    
+    const arrLeft = document.getElementById("arrow-left"), arrRight = document.getElementById("arrow-right");
+    if(state.dialogueMode==="greeting" || state.dialogueMode==="temp_wrong") { arrLeft.style.display="none"; arrRight.style.display="none"; } 
+    else {
+        arrLeft.style.display="block"; arrRight.style.display="block";
+        arrLeft.style.visibility = state.dialogueIdx>0 ? "visible" : "hidden";
+        arrRight.style.visibility = state.dialogueIdx<state.activeDialogue.length-1 ? "visible" : "hidden";
+    }
+    
+    clearInterval(state.typingInterval); clearTimeout(autoPlayTimer);
+    const lineId = encodeURI(line.t); 
+    
+    if(state.seenLines.includes(lineId)) {
+        state.isTyping = false; textDiv.innerHTML = badgeHtml + line.t; textDiv.scrollTop = textDiv.scrollHeight; 
+        checkLineActions(line); 
+        if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
+    } else {
+        state.seenLines.push(lineId); state.isTyping = true; textDiv.innerHTML = badgeHtml; let i = 0;
+        let typeSpeed = state.fastSpeed ? 40 : 60; 
+        state.typingInterval = setInterval(() => {
+            textDiv.innerHTML += line.t.charAt(i); playTypewriterSound(line.speaker);
+            i++; textDiv.scrollTop = textDiv.scrollHeight;
+            if(i >= line.t.length) { 
+                clearInterval(state.typingInterval); state.isTyping = false; 
+                checkLineActions(line); 
+                if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
+            }
+        }, typeSpeed); 
+    }
+}
+
+function checkLineActions(line) {
+    if(line.choices && !line.choices.resolved) {
+        state.waitingForAction = true;
+        setTimeout(() => showChoicesModal(line.choices), 800);
+    }
+    else if (line.autoPresent && hasPendingPresent(line)) {
+        state.waitingForAction = true;
+        setTimeout(() => openPresentModal(false, line.autoPresent), 800);
+    } else {
+        state.waitingForAction = false;
+    }
+}
+
+async function advanceDialogue(e) {
+    if(e && e.stopPropagation) e.stopPropagation(); 
+    if(state.waitingForAction) return; 
+    clearTimeout(autoPlayTimer); 
+    if(state.isTyping) {
+        clearInterval(state.typingInterval); state.isTyping = false; const line = state.activeDialogue[state.dialogueIdx];
+        document.getElementById("dialogue-text").innerHTML = (line.isNew && !line.autoPresent && !line.choices ? `<span class="new-badge">NEW</span> ` : "") + line.t; 
+        document.getElementById("dialogue-text").scrollTop = document.getElementById("dialogue-text").scrollHeight; 
+        checkLineActions(line);
+        if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
+        return;
+    }
+    if(state.dialogueMode==="greeting") {
+        if(state.dialogueIdx < state.activeDialogue.length - 1) { state.dialogueIdx++; renderDialogueLine(); }
+        else {
+            if (!checkChapterEnd()) {
+                closeDialogue();
+                if (state.pendingCharSelect) selectPendingCharacterAfterDialogue();
+                // 首次进入当前地点时自动触发 onEnter（修复 intro 对话后 onEnter 被跳过的问题）
+                const loc = GAME_DATA.locations[state.currLoc];
+                if (loc && loc.onEnter && loc.onEnter.length > 0 && !state.visitedLocs.includes(state.currLoc)) {
+                    state.visitedLocs.push(state.currLoc);
+                    state.pendingCharSelect = loc.chars?.[0] || null;
+                    startDialogue(loc.onEnter, "greeting");
+                    return;
+                }
+                renderTopics();
+            }
+        }
+    } else if (state.dialogueMode==="temp_wrong") {
+        state.activeDialogue = state.tempDialogueState.activeDialogue;
+        state.dialogueIdx = state.tempDialogueState.dialogueIdx;
+        state.dialogueMode = state.tempDialogueState.dialogueMode;
+        state.tempDialogueState = null;
+        renderDialogueLine();
+    } else { nextDialogue(); }
+}
+
+async function nextDialogue() { 
+    if(state.waitingForAction) return;
+    if(!state.isTyping && state.dialogueIdx < state.activeDialogue.length - 1) { state.dialogueIdx++; renderDialogueLine(); playSound('dialogue_next'); } 
+    else {
+        if (!checkChapterEnd()) {
+            if(state.autoPlay && !state.waitingForAction) { toggleAutoPlay(); }
+        }
+    }
+}
+function prevDialogue() { if(!state.isTyping && state.dialogueIdx > 0) { state.dialogueIdx--; renderDialogueLine(); } }
+function closeDialogue() {
+    clearInterval(state.typingInterval);
+    clearTimeout(autoPlayTimer);
+    if (currentBGM === "tension" || isAudioAudible(tensionAudio)) crossfadeBGM("main", 2000, true);
+    state.isTyping = false;
+    state.waitingForAction = false;
+    document.getElementById("dialogue-box").style.display="none"; state.activeDialogue=[]; state.dialogueMode="none"; state.currTopic=null; changeSpriteBySpeaker(null); renderTopics();
+    document.getElementById("dialogue-text").innerHTML = "";
+}
+
+function unlockProfile(ids, silent=false) { 
+    let added = false; let arr = Array.isArray(ids)?ids:[ids];
+    arr.forEach(id=>{ if(!state.unlockedProfiles.includes(id)&&PROFILE_DICT[id]) { state.unlockedProfiles.push(id); state.newProfiles.push(id); added=true; } });
+    if(added && !silent) { showFlyingNotif("你得到了新的人物档案"); renderProfiles(); playSound('unlock'); } else if(added && silent) renderProfiles();
+}
+function unlockEvidence(ids, silent=false) {
+    let added = false; let arr = Array.isArray(ids)?ids:[ids];
+    arr.forEach(id=>{ if(!state.unlockedEv.includes(id)&&EVIDENCE_DICT[id]) { state.unlockedEv.push(id); state.newEv.push(id); added=true; } });
+    if(added && !silent) { showFlyingNotif("你得到了一条新线索"); renderEvidence(); playSound('unlock'); autoSave(0); }
+    else if(added && silent) renderEvidence();
+}
+function unlockLocation(ids, silent=false) { 
+    let added = false; let arr = Array.isArray(ids)?ids:[ids];
+    arr.forEach(id=>{ if(!state.unlockedLocs.includes(id)) { state.unlockedLocs.push(id); state.newLocs.push(id); added=true; } });
+    if(added && !silent) { showFlyingNotif("你得到了新的可探索地点"); renderLocations(); playSound('unlock'); } else if(added && silent) renderLocations();
+}
+function unlockTopic(ids, silent=false) { 
+    let added = false; let arr = Array.isArray(ids)?ids:[ids];
+    arr.forEach(id=>{ if(!state.unlockedTopics.includes(id)) { state.unlockedTopics.push(id); state.newTopics.push(id); added=true; } });
+    if(added && !silent) { showFlyingNotif("你开启了一个新的话题"); renderTopics(); playSound('unlock'); } else if(added && silent) renderTopics();
+}
+
+function doQuestion() {
+    if(blockDuringChoice()) return;
+    if(state.dialogueMode!=="topic" || state.activeDialogue.length===0) return;
+    const line = state.activeDialogue[state.dialogueIdx];
+    if(line.s==="player") { showSysMsg("无法对自己进行追问。"); return; }
+    playSound('click');
+    if(line.question && !line.question.resolved) {
+        playSound('present_seccess'); showSysMsg("追问成功！"); let newLines = line.question.dialogue.map(l=>({...l, isNew:true}));
+        state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); line.question.resolved=true;
+        if(line.question.unlockEv) unlockEvidence(line.question.unlockEv); if(line.question.unlockProfile) unlockProfile(line.question.unlockProfile);
+        if(line.question.unlockLoc) unlockLocation(line.question.unlockLoc); if(line.question.unlockTopic) unlockTopic(line.question.unlockTopic);
+        nextDialogue();
+    } else if(line.question && line.question.resolved) { showSysMsg("关于这点似乎没有什么好追问的了。"); } 
+    else { showSysMsg("对方似乎没有什么好说的。"); }
+}
+
+function openPresentModal(isGlobal=false, promptText=null) {
+    if(blockDuringChoice()) return;
+    if(!isGlobal && !state.waitingForAction && (state.dialogueMode!=="topic" || state.activeDialogue.length===0)) { showSysMsg("请在深入调查阶段出示证据！"); return; }
+    if(!isGlobal && !state.waitingForAction && state.activeDialogue[state.dialogueIdx].s==="player") { showSysMsg("请在对方发言(绿字)时出示证据！"); return; }
+    playSound('click');
+    document.getElementById("arrow-left").style.display = "none";
+    document.getElementById("arrow-right").style.display = "none";
+    const m = document.getElementById("present-modal"); m.style.display="block";
+    const dz = document.getElementById("drop-zone-present"); 
+    document.getElementById("present-header").innerText = promptText ? "请出示人物/证据/线索" : "出示证据";
+    dz.innerText = promptText || "拖拽卡片至此"; 
+    dz.dataset.itemId=""; dz.classList.remove("dragover");
+    dz.dataset.isGlobal = isGlobal ? "true" : "false";
+    requestAnimationFrame(() => positionActionModal(m));
+}
+function openGlobalPresentModal() { openPresentModal(true); }
+
+function handleDragStart(ev) { ev.dataTransfer.setData("text", ev.target.id.replace("drag_", "")); }
+function allowDrop(ev) { ev.preventDefault(); ev.currentTarget.classList.add("dragover"); }
+function dragLeave(ev) { ev.currentTarget.classList.remove("dragover"); }
+
+function dropPresent(ev) {
+    ev.preventDefault(); ev.currentTarget.classList.remove("dragover"); const data = ev.dataTransfer.getData("text");
+    if(data) { let name = (EVIDENCE_DICT[data]||PROFILE_DICT[data]).name; ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">已装载: ${name}</strong>`; ev.currentTarget.dataset.itemId = data; }
+}
+
+function confirmPresent() {
+    const dz = document.getElementById("drop-zone-present"); const itemId = dz.dataset.itemId; const isGlobal = dz.dataset.isGlobal==="true";
+    if(!itemId) { showSysMsg("请先拖入证据！"); return; } 
+    
+    const line = state.activeDialogue[state.dialogueIdx];
+    if(line && line.autoPresent) {
+        if(line.present && line.present[itemId]) {
+            let pData = line.present[itemId];
+            if(!pData.resolved) {
+                closeModal('present-modal'); showSysMsg("举证正确！"); 
+                let newLines = pData.dialogue.map(l=>({...l, isNew:false})); 
+                state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); 
+                pData.resolved=true; state.waitingForAction = false;
+                nextDialogue(); playSound('present_seccess');
+            }
+        } else {
+            showSysMsg("不对，线索似乎不匹配...再仔细想想！"); playSound('present_fail');
+            loseLife();
+        }
+        return; 
+    }
+    
+    closeModal('present-modal');
+    if(isGlobal) {
+        if(GAME_DATA.globalPresent && GAME_DATA.globalPresent[state.currChar] && GAME_DATA.globalPresent[state.currChar][itemId]) {
+            let gpData = GAME_DATA.globalPresent[state.currChar][itemId];
+            if(!gpData.resolved) { showSysMsg("对方有了反应！"); gpData.resolved=true; if(gpData.unlockTopic) unlockTopic(gpData.unlockTopic); startDialogue(gpData.dialogue, "topic"); playSound('present_seccess'); } 
+            else { showSysMsg("已经出示过这个了。"); }
+        } else {
+            state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
+            state.activeDialogue =[{ s:"npc", speaker: state.currChar, t:"……你给我看这个是什么意思？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+            loseLife();
+        }
+        return;
+    }
+
+    if(line.present && line.present[itemId]) {
+        let pData = line.present[itemId];
+        if(!pData.resolved) {
+            showSysMsg("举证成功！"); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
+            state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); pData.resolved=true;
+            if(pData.unlockEv) unlockEvidence(pData.unlockEv); if(pData.unlockProfile) unlockProfile(pData.unlockProfile);
+            if(pData.unlockLoc) unlockLocation(pData.unlockLoc); if(pData.unlockTopic) unlockTopic(pData.unlockTopic);
+            nextDialogue(); playSound('present_seccess');
+        } else { showSysMsg("这个证据已经出示过了。"); }
+    } else {
+        state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
+        state.activeDialogue =[{ s:"npc", speaker: line.speaker, t:"我不知道你在说什么。这跟我刚才说的话有关系吗？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+        loseLife();
+    }
+}
+
+// 章节选择
+function showModalAtCenter(modal, xRatio=0.5, yRatio=0.42) {
+    if (!modal) return;
+    modal.style.display = "block";
+    modal.style.transform = "none";
+    const rect = modal.getBoundingClientRect();
+    modal.style.left = Math.round(window.innerWidth * xRatio - rect.width / 2) + "px";
+    modal.style.top = Math.round(window.innerHeight * yRatio - rect.height / 2) + "px";
+}
+function showSettings() {
+    playSound('click');
+    startBGM();
+    showModalAtCenter(document.getElementById("settings-modal"), 0.5, 0.42);
+}
+function setBgmVolume(v) {
+    initBGM();
+    const vol = v / 100;
+    getAudioByTarget(currentBGM).volume = vol;
+    if (currentBGM !== "tension" && isAudioAudible(tensionAudio)) tensionAudio.volume = vol;
+}
+function setSfxVolume(v) {
+    state.sfxVolume = v/100;
+}
+function setWindowSize(w, h) {
+    try {
+        const win = nw.Window.get();
+        if (w === 'fullscreen') {
+            win.enterFullscreen();
+        } else {
+            win.leaveFullscreen();
+            win.resizeTo(w, h);
+            win.center();
+        }
+    } catch(e) { showSysMsg('窗口调整仅支持桌面版'); }
+}
+function showCredits() {
+    playSound('click');
+    showModalAtCenter(document.getElementById("credits-modal"), 0.5, 0.4);
+}
+
+let confirmCallback = null;
+function showConfirm(msg, onOk) {
+    document.getElementById("confirm-msg").innerHTML = msg;
+    confirmCallback = onOk;
+    const modal = document.getElementById("confirm-modal");
+    modal.style.display = "block";
+    modal.style.left = "50%";
+    modal.style.top = "45%";
+    modal.style.transform = "translate(-50%, -50%)";
+}
+document.addEventListener("click", (e) => {
+    if (e.target.id === "confirm-ok-btn") {
+        playSound('click'); closeModal("confirm-modal");
+        if (confirmCallback) { const cb = confirmCallback; confirmCallback = null; cb(); }
+    } else if (e.target.id === "confirm-cancel-btn") {
+        playSound('click'); closeModal("confirm-modal"); confirmCallback = null;
+    }
+});
+
+function showChapterSelect() {
+    if(!state.storyIndex || !state.storyIndex.chapters) return;
+    const modal = document.getElementById("choice-modal");
+    releaseChoiceModalLock(modal);
+    let closeBtn = modal.querySelector(".modal-close");
+    if (!closeBtn) {
+        closeBtn = document.createElement("div"); closeBtn.className = "modal-close";
+        closeBtn.onclick = () => closeModal("choice-modal");
+        modal.insertBefore(closeBtn, modal.firstChild);
+    }
+    closeBtn.style.display = "block";
+    document.getElementById("choice-question").innerText = "选择章节";
+    const container = document.getElementById("choice-options"); container.innerHTML = "";
+    const chapterSet = new Set(state.storyIndex.chapters.map(c => c.chapter));
+    const sortedChapters = [...chapterSet].sort((a,b) => a - b);
+    const chapterInfo = state.storyIndex.chapterInfo || {};
+    sortedChapters.forEach(chNum => {
+        const info = chapterInfo[String(chNum)] || {};
+        const cName = info.name || `第${chNum}章`;
+        const unlocked = chNum === 1 || state.completedChapters.includes(chNum - 1);
+        const btn = document.createElement("div"); btn.className = "choice-btn";
+        if (unlocked) {
+            btn.innerHTML = `第${chNum}章 - ${cName}`;
+            btn.onclick = () => jumpToChapter(chNum);
+        } else {
+            btn.innerHTML = `第${chNum}章 - ${cName} <span style="color:#999;">（待解锁）</span>`;
+            btn.style.opacity = "0.5"; btn.style.cursor = "not-allowed";
+        }
+        container.appendChild(btn);
+    });
+    showModalAtCenter(modal, 0.5, 0.45);
+}
+
+async function jumpToChapter(chapterNum) {
+    const firstIdx = state.storyIndex.chapters.findIndex(c => c.chapter === chapterNum);
+    if (firstIdx < 0) return;
+    closeModal("choice-modal");
+    document.getElementById("main-menu").style.display = "none";
+    document.getElementById("game-container").style.display = "grid";
+    startBGM();
+    const savedEv = [...state.unlockedEv];
+    const savedProfiles = [...state.unlockedProfiles];
+    await fetchChapterData(firstIdx);
+    state.unlockedEv = savedEv;
+    state.unlockedProfiles = savedProfiles;
+    state.currLoc = Object.keys(GAME_DATA.locations)[0] || null;
+    state.currChar = null; state.currTopic = null; state.activeDialogue = []; state.pendingCharSelect = null;
+    state.dialogueMode = "none"; state.hasSeenIntro = false;
+    state.seenLines = []; state.readGreetings = [];
+    state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
+    autoUnlockChapterRefs();
+    closeDialogue(); renderAll();
+    if(GAME_DATA.introDialogue) { state.hasSeenIntro = true; startDialogue(GAME_DATA.introDialogue, "greeting"); }
+}
+
+function autoUnlockChapterRefs() {
+    const evSet = new Set(state.unlockedEv);
+    const profSet = new Set(state.unlockedProfiles);
+    function scan(obj) {
+        if (!obj || typeof obj !== 'object') return;
+        if (Array.isArray(obj)) { obj.forEach(scan); return; }
+        // hotspot giveEv
+        if (obj.giveEv && EVIDENCE_DICT[obj.giveEv]) evSet.add(obj.giveEv);
+        // unlockEv
+        if (obj.unlockEv) {
+            (Array.isArray(obj.unlockEv) ? obj.unlockEv : [obj.unlockEv]).forEach(k => {
+                if (EVIDENCE_DICT[k]) evSet.add(k);
+            });
+        }
+        // unlockProfile
+        if (obj.unlockProfile) {
+            (Array.isArray(obj.unlockProfile) ? obj.unlockProfile : [obj.unlockProfile]).forEach(k => {
+                if (PROFILE_DICT[k]) profSet.add(k);
+            });
+        }
+        // present keys = evidence/profile IDs
+        if (obj.present) {
+            Object.keys(obj.present).forEach(k => {
+                if (EVIDENCE_DICT[k]) evSet.add(k);
+                if (PROFILE_DICT[k]) profSet.add(k);
+                scan(obj.present[k]);
+            });
+        }
+        // question
+        if (obj.question) scan(obj.question);
+        // choices
+        if (obj.choices) scan(obj.choices);
+        // recurse object values, but skip already-scanned top-level keys
+        Object.values(obj).forEach(scan);
+    }
+    scan(GAME_DATA.topics);
+    scan(GAME_DATA.greetings);
+    scan(GAME_DATA.locations);
+    scan(GAME_DATA.globalPresent);
+    state.unlockedEv = [...evSet];
+    state.unlockedProfiles = [...profSet];
+}
+
+// Speed & Auto
+function toggleSpeed(event) {
+    event.stopPropagation();
+    state.fastSpeed = !state.fastSpeed;
+    const btn = document.getElementById("speed-btn");
+    btn.innerText = `Speed: ${state.fastSpeed ? '1.5x' : '1x'}`;
+    btn.classList.toggle("active", state.fastSpeed);
+    playSound('click');
+}
+
+function toggleAutoPlay(event) {
+    event.stopPropagation();
+    state.autoPlay = !state.autoPlay;
+    const btn = document.getElementById("auto-play-btn");
+    btn.innerText = `Auto: ${state.autoPlay ? 'ON' : 'OFF'}`;
+    btn.classList.toggle("active", state.autoPlay);
+    playSound('click');
+    if (state.autoPlay && !state.isTyping && state.activeDialogue.length > 0 && !state.waitingForAction) {
+        autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500);
+    } else {
+        clearTimeout(autoPlayTimer);
+    }
+}
+
+let dragModal = null, dragOX = 0, dragOY = 0, dragStarted = false;
+document.addEventListener("mousedown", (e) => {
+    const header = e.target.closest(".modal-header");
+    if (!header) return;
+    const modal = header.closest(".modal-box");
+    if (!modal || modal.style.display === "none") return;
+    dragModal = modal; dragStarted = false;
+    const rect = modal.getBoundingClientRect();
+    modal.style.transform = "none";
+    modal.style.left = rect.left + "px";
+    modal.style.top = rect.top + "px";
+    dragOX = e.clientX - rect.left;
+    dragOY = e.clientY - rect.top;
+});
+document.addEventListener("mousemove", (e) => {
+    if (!dragModal) return;
+    dragStarted = true;
+    dragModal.style.left = (e.clientX - dragOX) + "px";
+    dragModal.style.top = (e.clientY - dragOY) + "px";
+});
+document.addEventListener("mouseup", () => { dragModal = null; });
+</script>
+
+<div id="cutscene-overlay" onclick="advanceCutscene(event)">
+    <div class="cutscene-speech-bubble" id="cutscene-text"></div>
+    <button id="cutscene-next-btn" onclick="event.stopPropagation(); finishCutscene()">保存并进入下一节</button>
+</div>
+
+<div id="settings-modal" class="modal-box" style="width: 390px; z-index: 5600;">
+    <div class="modal-close" onclick="closeModal('settings-modal')"></div>
+    <div class="modal-header">设置</div>
+    <div class="settings-body">
+        <div class="settings-row">
+            <span class="settings-label">窗口大小</span>
+            <div class="settings-control" style="gap:4px;">
+                <button class="debug-btn settings-btn" onclick="setWindowSize('fullscreen')">全屏</button>
+                <button class="debug-btn settings-btn" onclick="setWindowSize(1280,800)">1280</button>
+                <button class="debug-btn settings-btn" onclick="setWindowSize(1024,700)">1024</button>
+            </div>
+        </div>
+        <div class="settings-row">
+            <span class="settings-label">语言</span>
+            <div class="settings-control"><button class="debug-btn settings-btn" onclick="showSysMsg('正在装修中')">中文</button></div>
+        </div>
+        <div class="settings-row">
+            <span class="settings-label">BGM 音量</span>
+            <div class="settings-control"><input type="range" id="bgm-volume" min="0" max="100" value="40" oninput="setBgmVolume(this.value)"></div>
+        </div>
+        <div class="settings-row">
+            <span class="settings-label">音效音量</span>
+            <div class="settings-control">
+                <input type="range" id="sfx-volume" min="0" max="100" value="60" oninput="setSfxVolume(this.value)">
+                <button class="debug-btn test-sfx-btn" onclick="testSfxVolume()">试听</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="credits-modal" class="modal-box" style="width: 400px; z-index: 5600;">
+    <div class="modal-close" onclick="closeModal('credits-modal')"></div>
+    <div class="modal-header">制作团队</div>
+    <div class="modal-body" style="padding:22px 28px; line-height:2; font-size:14px; color:#444; text-align:center; align-items:center;">
+        文案 / 程序 / 美术：YIFANG（@灰烬马戏团）；音乐：Mubert免费音乐 ；
+        音效：https://mowangblog.github.io/game-sfx-generator-web/免费音效生成器 ；
+        视觉特效：https://yachih2000.github.io/Mirage-stylizer/免费图像风格化应用
+    </div>
+</div>
+
+<div id="confirm-modal" class="modal-box" style="width: 370px; z-index: 5800;">
+    <div class="modal-close" onclick="closeModal('confirm-modal');confirmCallback=null;"></div>
+    <div class="tape"></div>
+    <div class="modal-header" style="border:none; text-align:center; padding-bottom:0;">提示</div>
+    <div class="modal-body" style="gap: 22px; padding: 12px 28px 25px 28px;">
+        <div id="confirm-msg" style="font-size:16px; color:#333; text-align:center; line-height:1.7;"></div>
+        <div style="display:flex; gap:18px; justify-content:center;">
+            <button class="confirm-btn" id="confirm-ok-btn">确定</button>
+            <button class="confirm-btn" id="confirm-cancel-btn" style="background:#fff; color:var(--ink-black); border-color:#aaa;">取消</button>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

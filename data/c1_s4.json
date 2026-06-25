@@ -1,0 +1,1950 @@
+{
+  "locations": {
+    "ghost_house_gate_c1s4": {
+      "name": "鬼屋门口",
+      "desc": "地点：鬼屋门口",
+      "chars": [
+        "char_xiaozhi",
+        "char_andy",
+        "char_qin"
+      ],
+      "bg": "images/bg_ghost_entranceday.jpg",
+      "onEnter": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "需要跑腿的事情，可以找我哟，姐姐。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "需要我们帮你调查的，也可也随时和我说。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "跟乐园有关系的调查，就交给我吧！"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "在话题内对我们举证，并且告诉我们调查方向，我们会帮姐姐做深入调查呀！"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "当你问询并梳理线索之后，务必来找我，我们一起把事情的前因后果都梳理一遍。"
+        }
+      ],
+      "hotspots": []
+    },
+    "interrogation_c1s4": {
+      "name": "问询区域",
+      "desc": "地点：问询区域",
+      "chars": [
+        "char_antong",
+        "char_rulan",
+        "char_zhencheng",
+        "char_ayou"
+      ],
+      "bg": "images/bg_interrogation.jpg",
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_qin": {
+      "name": "琴警官",
+      "info": "老相识",
+      "sprite": "images/char_qin.png"
+    },
+    "char_andy": {
+      "name": "Andy",
+      "info": "乐园员工",
+      "sprite": "images/char_andy.png"
+    },
+    "char_xiaozhi": {
+      "name": "小枝",
+      "info": "侦探助手",
+      "sprite": "images/char_xiaozhi.png"
+    },
+    "char_antong": {
+      "name": "安童",
+      "info": "扒手",
+      "sprite": "images/char_antong.png"
+    },
+    "char_rulan": {
+      "name": "茹兰",
+      "info": "常威的女友",
+      "sprite": "images/char_rulan.png"
+    },
+    "char_zhencheng": {
+      "name": "真橙",
+      "info": "鬼屋演员",
+      "sprite": "images/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "阿祐",
+      "info": "鬼屋演员",
+      "sprite": "images/char_ayou.png"
+    },
+    "char_aling": {
+      "name": "阿凌",
+      "info": "肖桦的未婚妻",
+      "sprite": "images/char_aling.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "2025年10月29日，12时30分，朝夜游乐园，鬼屋门口"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "琴警官一脸严肃地看着你，看起来是有什么话要说。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "泉，我这边的调查有了一些新的进展。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "我们的一名警员，本想通过监控调查一下当时鬼屋的游客里是不是有可疑的人，可惜，排队处有凉棚遮挡，出口处只能看见背影，无法辨认面孔。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "但有个意外收获。我们发现，案发当天游客报失的手机，的确是被偷的。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "有个从出口出来的人，过了两个小时，出现在鬼屋附近的休息亭里，并且弯腰把东西放放进草丛，这件事很可疑。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "经和门卫比对、调查，我们找到了这个扒手，他叫做安童，但是奇怪的是，他没有任何盗窃记录，就是说，不是惯犯。",
+      "unlockProfile": [
+        "char_antong"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "还有，关于演员被骚扰引起舆论风波的事情，我们调查发现，当事人已经删帖，警员们找到了当年看到这件事、并截图了的网友，还原了重点信息。",
+      "unlockEv": [
+        "ev_public_outcry_screenshot"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "另外，有位警员非常谨慎，给美羽妈妈住院的医院打了电话，医院说，那两天并没有这位病人的住院记录。也就是说，美羽说谎了。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "那么，在这种情况下，美羽就有和母亲一同伪造不在场证明的嫌疑。于是，我们又去查证了美羽的行程，发现她并没有在出行这件事上说谎。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "她的确只购买了往返两张票，并且都有乘车记录。也就是说，她的嫌疑基本可以排除了。",
+      "unlockEv": [
+        "ev_meiyu_lie"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "我们还调查了肖桦生前的人际关系，他的父母和家人都不在本市，也没有往返本市的乘车记录，可以排除他们的嫌疑。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "肖桦曾经有个未婚妻叫阿凌，他们之前的邻居说，肖桦死后，阿凌悲痛欲绝，很快就搬离本市，似乎是回老家生活了。",
+      "unlockProfile": [
+        "char_aling"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "同时，我们还查了死者常威的女友，叫做茹兰，在本市一个动物救助中心工作。",
+      "unlockProfile": [
+        "char_rulan"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "扒手安童和她应该都到问询区域了，稍后你可以去和他们聊聊。",
+      "unlockLoc": [
+        "ghost_house_gate_c1s4",
+        "interrogation_c1s4"
+      ],
+      "unlockTopic": [
+        "t_qin_truth_so_far",
+        "t_andy_public_outcry",
+        "t_xiaozhi_investigate1",
+        "t_antong_theft",
+        "t_rulan_relation",
+        "t_rulan_relationships",
+        "t_rulan_day",
+        "t_zhencheng_theft",
+        "t_zhencheng_xiaohua_relation",
+        "t_zhencheng_public_outcry",
+        "t_ayou_theft",
+        "t_ayou_public_outcry"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_qin": [
+      {
+        "s": "npc",
+        "speaker": "char_qin",
+        "t": "有什么新发现，和我说说看。"
+      }
+    ],
+    "char_andy": [
+      {
+        "s": "npc",
+        "speaker": "char_andy",
+        "t": "跟乐园有关系的调查，就交给我吧！"
+      }
+    ],
+    "char_xiaozhi": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "最佳侦探助手小枝诚挚为您服务！"
+      }
+    ],
+    "char_antong": [
+      {
+        "s": "npc",
+        "speaker": "char_antong",
+        "t": "我知道错了行吗！东西我也还回去了，别逮捕我行吗！"
+      }
+    ],
+    "char_rulan": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "茹兰的眼睛红得发肿，看起来非常的憔悴。这两天，她大概都没怎么睡吧。"
+      }
+    ],
+    "char_zhencheng": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "真橙不安地绞着手指。"
+      }
+    ],
+    "char_ayou": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "阿祐看起来非常紧张。"
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_qin_truth_so_far": {
+      "char": "char_qin",
+      "title": "截至目前已得到的真相",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "问询结果如何？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "先说三年前肖桦的死亡一事吧，经过你的调查，当天到底发生了什么？",
+          "present": {
+            "ev_ayou_testimony3": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_qin",
+                  "t": "原来如此。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_qin",
+                  "t": "那么，三年前的事件里，匿名贴和明淇的骚扰事件，真相是怎样的？",
+                  "present": {
+                    "ev_zhencheng_testimony5": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "这样都说得通了。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "我们抓到的那个扒手，他为什么把盗窃的物品放到草丛里？",
+                          "present": {
+                            "ev_antong_testimony1": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_qin",
+                                  "t": "没想到这件事情甚至也和常威的死亡有关。"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_qin",
+                                  "t": "所以，我们可以排除一部分嫌疑人的证据或证言是？",
+                                  "present": {
+                                    "ev_tourist_at_back": {
+                                      "resolved": false,
+                                      "dialogue": [
+                                        {
+                                          "s": "npc",
+                                          "speaker": "char_qin",
+                                          "t": "原来如此，这样就说明了，凶手在案发当晚有可能是作为游客进入鬼屋的。"
+                                        },
+                                        {
+                                          "s": "npc",
+                                          "speaker": "char_qin",
+                                          "t": "关于肖桦的女友阿凌，你有发现什么值得注意的事吗？",
+                                          "present": {
+                                            "ev_zhencheng_testimony4": {
+                                              "resolved": false,
+                                              "dialogue": [
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "虽然现在没法确认这个信息，但之后或许用得上。另外，常威女友的不在场证明，你觉得有问题吗？"
+                                                },
+                                                {
+                                                  "s": "player",
+                                                  "speaker": "none",
+                                                  "t": "她给了我当晚电影的票根。"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "她之前也和我们的警官陈述了当晚的情况。对了，你有没有找到当天那个影院的排片表？",
+                                                  "autoPresent": "请出示影院的排片表",
+                                                  "present": {
+                                                    "ev_cinema_schedule": {
+                                                      "resolved": false,
+                                                      "dialogue": [
+                                                        {
+                                                          "s": "player",
+                                                          "speaker": "none",
+                                                          "t": "有的，就在这里。"
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "好的，这样就可以进行证词比对了。"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "另外，美羽为什么要在她的行程上撒谎？到底是谁杀了常威？凶手是怎么做的？我相信你已经有答案了吧。"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "那么，接下来，明天就是最终揭露真相的时刻了。"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "今天，我们就先到这里吧！明天一定要打起十二分精神，一举把所有疑点都清理掉！"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_xiaozhi",
+                                                  "t": "打起二十分精神！"
+                                                },
+                                                {
+                                                  "s": "player",
+                                                  "speaker": "none",
+                                                  "t": "哈哈，我已经准备好了！"
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "离开问询区后，你把刚刚听到的重要线索在脑子里梳理了一遍。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "三年前肖桦的死是一场被伪装成自杀的事故，常威为了保全自己，让当时正对他言听计从的阿祐伪造了现场。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "真橙是那场舆论风波的当事人，她发帖控诉的原本是另外一个人，而在常威激进的行动之下，她觉得必须做点什么来回报他。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "美羽和常威有过矛盾，她谎称母亲住院，撒谎的动机却仍不明确。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "再说阿祐和安童，他们计划了一场笨拙的盗窃，可偏偏就在那天，常威死了。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "你已经有了关于真凶是谁的答案，但还有很多疑问，依然盘旋在你的脑海中。",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "明天，就是揭开所有真相的时刻了。",
+                                                  "endChapter": true,
+                                                  "bgm": "main"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bgm": "tension"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_andy_public_outcry": {
+      "char": "char_andy",
+      "title": "三年前的舆论风波",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "哎，你还在查明淇被人在网络上曝光的那件事吗？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "对，明淇有明确说自己没有做过那样的事，大家也普遍没有反映说自己经历或看到明淇做出不妥的举动。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "琴警官提供的这张截图所示，发帖者Uka控诉的是某位乐园领导，那么，有没有可能根本不是指明淇呢？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "现在发帖者的回答那么模棱两可，其实有些可疑。我们需要锁定一下发帖者到底是谁，她控诉的又是谁？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "好的，你现在心里有调查的人选吗？",
+          "present": {
+            "ev_ayou_testimony4": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "小琳、高欢。真橙的话，我可以自行去问询。"
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "Andy低头敲着手机，似乎在调取人事资料。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "有了！这是我能找到的信息。小琳，27岁，在乐园餐饮部工作，负责饮料摊位。大概一年半前离职，离职原因是有新的工作机会；高欢，24岁，负责入园检票，半年前离职，离职原因是打算备考公务员。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "对了，餐饮部员工和检票员都需要工作服吧？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "是，一般在乐园期间都要穿着。有裙装和裤装两组衣服。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "那演出部的演员们呢？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "他们也有各自的演出服，但着装管理没有那么严格啦。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "然后，那段时间离职的领导只有一个，是行政组的王喆。",
+                  "unlockEv": [
+                    "ev_andy_investigation"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_xiaozhi_investigate1": {
+      "char": "char_xiaozhi",
+      "title": "需要调查的事情1",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "有什么需要我帮忙的吗，姐姐？",
+          "present": {
+            "ev_rulan_ticket": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "我需要确认一下茹兰的不在场证明，比如可以问一下电影院的工作人员，茹兰是不是真的检过票、出现在影院。你可以带着她的照片去。"
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "约30分钟后，小枝回来了。看来往返电影院和鬼屋，单程需要十几分钟。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "姐姐，我和当天晚上的检票员确认过了，因为正赶上节日而且是周末，那晚的几场电影人都特别多，她完全不记得自己剪过票的人的面孔。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "但是检票员认出了茹兰，是因为影片中途她从放映厅出来去厕所，当时大厅里没什么人，她就显得很显眼，说是腹泻，脸色非常不好，隔了十几分钟才回来。",
+                  "unlockEv": [
+                    "ev_ticket_checker_testimony"
+                  ]
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "干得好！"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "如果有需要，请继续找我！",
+                  "unlockTopic": [
+                    "t_xiaozhi_investigate2"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_xiaozhi_investigate2": {
+      "char": "char_xiaozhi",
+      "title": "需要调查的事情2",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "最佳侦探助手小枝诚挚为您服务！",
+          "present": {
+            "ev_rulan_testimony2": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "茹兰说在观影中途因肚子疼去上了厕所。大概演到南瓜王偷到魔法杖之后。你能帮我确认一下这个情节是在影片上映后后多长时间吗？"
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "一段时间后。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "我知道啦！这个情节发生在影片开场后40分钟左右。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "也就是说，是在19:10左右，茹兰从放映厅内出来上洗手间。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "这么说，可以排除她的嫌疑了。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "看上去是这样……但是我还是有一点疑惑，你帮我看一下耀华电影院那晚上的排片可以吗？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "这个好办！查一下就知道了！",
+                  "unlockEv": [
+                    "ev_cinema_schedule"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_theft": {
+      "char": "char_antong",
+      "title": "关于偷窃行为",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "哎呀，快放我走吧，我可是空着手离开乐园的！按理说，不能算偷！"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "别狡辩了，你从游客兜里拿东西出来这个行为就是偷！话说，你偷完东西为什么还还回去呢？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "我听说你们这儿出事了！演出都停了！我还以为是要查我！我当然就把手机放回去了！"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "你知道有人去世了吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "当时不知道，现在知道了！跟我一点关系都没有！"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "你都偷了什么东西？说说看。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "就一部手机！"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "只有一部手机？这些东西，不是你偷偷放在那里的吗？",
+          "autoPresent": "请指出其他疑似被盗物品",
+          "present": {
+            "ev_cello_case_items": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "当然不是！我们小偷是有尊严的！这么便宜的东西，根本不值得我们下手！",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "说到这个，我也很好奇，你当小偷很久了吗？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_antong",
+                        "t": "当然！你不要质疑我的从业经验！"
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "那就怪了……",
+                        "autoPresent": "请指出能反驳安童的证据",
+                        "present": {
+                          "char_antong": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "警方那里怎么没有你的犯罪记录呢？"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_antong",
+                                "t": "呃，那当然因为……我可是一级厉害的神偷！超级无敌强的技术流！没人能抓得到我！",
+                                "question": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "那你怎么还被监控录像拍到了呢？你没提前摸点吗？"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_antong",
+                                      "t": "啊啊啊……我大意了！马失前蹄！"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "行了，别装了，这一切意味着……",
+                                      "choices": {
+                                        "question": "这意味着……",
+                                        "options": [
+                                          {
+                                            "text": "A 你根本不是专业的",
+                                            "correct": true
+                                          },
+                                          {
+                                            "text": "B 你是故意被拍到的",
+                                            "correct": false,
+                                            "reply": "你说是就是吧！"
+                                          },
+                                          {
+                                            "text": "C 你就是杀人凶手",
+                                            "correct": false,
+                                            "reply": "我才不是！你这是诽谤！"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "你根本不是干这个的吧？说吧，你偷手机的真正原因是什么？再支支吾吾的，我就让琴警官先拘留你七天。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_antong",
+                                      "t": "哎……你这人真烦呐！",
+                                      "unlockTopic": [
+                                        "t_antong_true_reason"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_true_reason": {
+      "char": "char_antong",
+      "title": "偷东西的真正原因",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "的确是有人让我这么做的。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "但原因比较复杂。而且我并不是真的要偷手机卖钱。做这件事，主要是为了引起别人的注意，让大家查到……某个人身上。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "某个人？谁啊？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "已经不重要了……",
+          "present": {
+            "char_changwei": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "你指的是他吧？人已经死了，所以不重要了。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "是……是的。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "那么，我猜测，大提琴箱内的口红、化妆镜等物品，其实是常威从游客身上偷的吧？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "哎，是的。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "但是他从来不偷贵重物品，所以一直没有游客报案，或者说，往往游客发现时，早已经离开鬼屋了，自己也并不能确定是在哪里丢的。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "手机这种东西不一样，使用频次那么高，被偷后可能很快就会被发现。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "所以你故意偷一个容易被发现的东西，想嫁祸给惯犯常威，然后引乐园追查到他身上。我说得没错吧？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "没、没错……"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "你又不是乐园的员工，怎么对常威的事那么了解呢？一定是这个人告诉你的吧？",
+                  "choices": {
+                    "question": "一定是这个人告诉你的吧？",
+                    "options": [
+                      {
+                        "text": "A 真橙",
+                        "correct": false,
+                        "reply": "啊哈哈……"
+                      },
+                      {
+                        "text": "B 石辉",
+                        "correct": false,
+                        "reply": "这是谁啊？"
+                      },
+                      {
+                        "text": "C 阿祐",
+                        "correct": true
+                      }
+                    ]
+                  },
+                  "bgm": "tension"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "不一定吧，也有可能是那个跳舞的小姐姐。对吧？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "不可能是她。原因是……",
+                  "autoPresent": "请指出能证明不是真橙的原因",
+                  "present": {
+                    "ev_zhencheng_locker": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "根据真橙的储物柜看，她和常威有着一样的在纸上贴标签的习惯。恐怕，那是他们……",
+                          "choices": {
+                            "question": "恐怕，那是他们……",
+                            "options": [
+                              {
+                                "text": "A 用于计数的东西",
+                                "correct": true
+                              },
+                              {
+                                "text": "B 神秘的暗号",
+                                "correct": false,
+                                "reply": "哇哦，暗号耶，好厉害。"
+                              },
+                              {
+                                "text": "C 喝奶茶的次数",
+                                "correct": false,
+                                "reply": "那家奶茶确实好喝！"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "那是他们用于给自己偷盗的物品计数的东西吧。一开始我就觉得奇怪，为什么他们箱子内都有这样的东西。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "后来我才联想到，这件事上，他俩或许是共犯。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "哎，是的……这都让你发现了啊……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "阿祐是我哥们儿，他觉得那两个人这样做非常不妥，但他自己又没有勇气上报这件事。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "就托我帮他偷个容易被发现的东西，让这件事情彻查、曝光。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "没想到，那天晚上，常威竟然死了。",
+                          "unlockEv": [
+                            "ev_antong_testimony1"
+                          ],
+                          "unlockTopic": [
+                            "t_antong_night"
+                          ],
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_night": {
+      "char": "char_antong",
+      "title": "案发当天的情况",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "其实我挺紧张的。我上大学的时候，有个师傅教过我当扒手的小技巧。但其实我没怎么干过这事，所以在阿祐委托我之后，我还练习了好几天呢。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "那天，我是在第三、四场进场的。第三场的时候，我感觉没法下手，就空着手出来了。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "第四场，在排队的时候，我更仔细地观察每个人放东西的位置，然后进去之后，终于摸黑偷了个手机出来。我紧张得整个手心都在冒汗，一直紧紧贴着人群。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "你有感觉哪里有声音、或不对劲吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "没有。我从1号点位往2号走的时候，就一直是在队伍最后。而且我特别注意了最外层的观众，就怕常威或真橙也在附近。还好，那俩人全程都不在，我那场挺顺利。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "不过，这么说来，好像是有一点奇怪的事情……"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "是什么？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "我感觉在出口处，有个人走在我身后。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "嗯？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "因为我担心自己被看到嘛，就反复确认自己是不是处于队伍的最尾端。但往6号点位走的时候，我发现我背后还有个人。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "什么？你确定不是演员在跟着你吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "确定，演员的装束我认得。我用余光看到……对方应该只是个普通游客。",
+          "unlockEv": [
+            "ev_tourist_at_back"
+          ]
+        }
+      ]
+    },
+    "t_rulan_relation": {
+      "char": "char_rulan",
+      "title": "和常威的关系",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "我……我是他女朋友，大约交往一年多了……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "我觉得他人不错……虽然还没有同居，但也有这样的打算……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "没想到，竟然出了这样的事情……"
+        }
+      ]
+    },
+    "t_rulan_relationships": {
+      "char": "char_rulan",
+      "title": "死者的人际关系",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "他……大部分朋友好像都是乐园同事。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "跟你提过比较多的是？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "他不怎么提同事的名字……"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "如果说有矛盾的人……他脾气不太好，和街坊邻居多少都发生过一些冲突……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "我也经常听他说看不惯某某、或者跟某某又吵架……有挺多类似这种的事情。这种脾气的确为他带来不少麻烦……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "对我的话……喝酒之后会乱发脾气，其他也没什么。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "那你胳膊和手上的伤口是怎么回事？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "哦，这些是猫咪挠的，我家里养了猫。"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_rulan_day": {
+      "char": "char_rulan",
+      "title": "案发当天的情况",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "那天虽然是周日，但我因为倒班，从早晨9点到晚上5点都在工作。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "我知道近期是常威他们演出的时间，会忙到比较晚，所以也没有去打扰他。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "你有看过他们鬼屋的表演吗？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "啊……没有……我比较害怕这种。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "那你有在白天来过吗？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "白天……白天来过，跟他稍微看了一下他工作的地方。",
+                "unlockEv": [
+                  "ev_rulan_testimony1"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "因为现在是万圣节期间，我也想体验一下节日气氛，下班后就去看了场电影《万圣节奇妙夜》。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "你是看的几点场？有票据证明吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "是18:30场，票、票根正好还没扔，您需要吗……",
+          "unlockEv": [
+            "ev_rulan_ticket"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "电影很好看，看完之后，大概不到八点，我就回家了。",
+          "present": {
+            "ev_ticket_checker_testimony": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "据说你中途上厕所去了很长时间。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_rulan",
+                  "t": "是的，看电影的过程当中有点肚子疼，后来实在忍不住了就出去上了个厕所。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "大概是演到什么情节的时候去上的厕所呢？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_rulan",
+                  "t": "大概是……南瓜王从博物馆偷到魔法杖之后……",
+                  "unlockEv": [
+                    "ev_rulan_testimony2"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "直到昨天才知道，他已经……"
+        }
+      ]
+    },
+    "t_zhencheng_theft": {
+      "char": "char_zhencheng",
+      "title": "关于鬼屋发生的偷窃行为",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我不知道，偷手机什么的，跟我没有关系。你们不是找到小偷了吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "不要问我这种事情了。我什么都不知道。",
+          "present": {
+            "ev_antong_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "你和常威为什么偷游客东西？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "……"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "你、你怎么发现的？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "今天抓到的扒手安童说的，他说阿祐早就知道你和常威在做的事情。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "什、什么？阿祐那家伙……真叫人生气啊……明明他也是受害者。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "他要是不想让我们继续，可以直接来找我和威哥说啊？背后暗算我们算什么事？真是够了。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "所以，你的确和常威在偷游客的东西？为什么？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "呵呵。你知道吗，鬼屋的道具，经常失窃、被损坏，这种事情发生过好多次了。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "你知道那些手欠的成年人、撞来撞去的小孩有多烦人么？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "仿真面具丢过三次，三号点位的灯架倒过四次，还有无数的小玩意、小装饰……每次出问题，我们都要填《道具损坏/遗失报告表》，一式两份，一份交演出部，一份交运营部。简直烦死了。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "演出部说让我们自己加强看管，运营部说演出道具归演出部管。皮球踢来踢去，也没人帮我们加个围栏、贴个醒目提示、或者在广播里提醒游客文明观演。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "威哥找过石辉，他态度很好，说回头跟运营协调一下。然后呢？没有然后。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "后来我听同事说，他去协调了，运营那边觉得增加围栏影响游客体验，别的措施，也都一一驳回了。石辉就窝窝囊囊地抠演出部的预算买备用道具。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "我和威哥真的很生气。有一次喝酒，威哥提议，我们也去搞游客吧。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "实际上我们只是拿一点小东西！也没有被发现过！相比于花很多钱买的备用道具，这些根本不算什么吧！"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_zhencheng_xiaohua_relation": {
+      "char": "char_zhencheng",
+      "title": "肖桦的人际关系",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "同事的话，我觉得肖桦和每个人都保持着普通同事的关系，好像没有那种走得特别近的。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我听说过他有个女朋友，不过没有见过，不认识。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "他有女朋友，是听谁说的？肖桦自己提过吗？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "他自己提的，说和女朋友关系很好，提到说想要结婚的事情。名字叫什么来着？唔……",
+                "present": {
+                  "char_aling": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "是阿凌吗？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "你这么一说，好像是类似的名字。"
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "你虽然没见过，但有没有听肖桦提起过对方的职业、年龄或者怎么认识的？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "唔……没什么印象……",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "有什么生活上的小细节，也可以说说。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_zhencheng",
+                              "t": "嗯……哦，想起来一个，可能他女朋友身体不太好？据说经常去医院打针。肖桦每次提起来都一脸心疼的表情。这么说来，他们俩感情应该挺不错的吧。",
+                              "unlockEv": [
+                                "ev_zhencheng_testimony4"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_zhencheng_public_outcry": {
+      "char": "char_zhencheng",
+      "title": "明淇的舆论风波",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "网上的帖子，我也看到过，但是我没有参与讨论。",
+          "present": {
+            "ev_ayou_testimony4": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "但你当时也有相似的困扰吧？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "……"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "困扰什么？因为谁困扰？你倒是说清楚啊。",
+                  "present": {
+                    "ev_andy_investigation": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "你认识这个王喆吗？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……不认识。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "看你的脸色，可不像不认识的样子啊……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "你就是那个帖子的发帖人吧？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "这么多人抱怨过他，为什么你会觉得是我？",
+                          "choices": {
+                            "question": "请选择：",
+                            "options": [
+                              {
+                                "text": "A 因为时间对不上",
+                                "correct": false,
+                                "reply": "……"
+                              },
+                              {
+                                "text": "B 因为服装",
+                                "correct": true
+                              },
+                              {
+                                "text": "C 因为工作内容",
+                                "correct": false,
+                                "reply": "……"
+                              }
+                            ]
+                          },
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "因为服装。我特意问过Andy，乐园关于服装的规定。餐饮部员工和检票员，因为代表着乐园对外的形象，在园区里需要一直穿着工服。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "而那个帖子里，有提过骚扰者的一句话——裙子真短，是故意穿给他看的吗？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "那又怎样？其他员工也有裙子啊？"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "的确，大家都有裙装，但关键问题是在于……",
+                          "choices": {
+                            "question": "请选择：",
+                            "options": [
+                              {
+                                "text": "A 裙子的长度",
+                                "correct": false,
+                                "reply": "呵，你说得对，为你鼓掌……"
+                              },
+                              {
+                                "text": "B 表达的方式",
+                                "correct": true
+                              },
+                              {
+                                "text": "C 季节",
+                                "correct": false,
+                                "reply": "行，你说什么就是什么吧……"
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "因为骚扰者表达的方式，他说，是“故意”穿给他看的吗？餐饮部或检票组的员工，即使穿着短裙走到他面前，他也不可能说这是“故意”穿的吧？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "啊！"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "上班时间，餐饮部和检票组的员工必须穿园区统一的工服。只有当一名女性穿着便装裙子走到他面前时，这样的表达才成立。非演出时段，只有演员是不需要穿工服的，对吧？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "是我发的。行了吧？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "明淇和王喆都已经离开那么久了，就算你认定是我发的帖子，那又能怎样？告诉石辉？让他们通报批评说我带来了负面影响？"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "被骚扰、发帖的事情并不是你的错，你说出真相，只会证明你是个勇敢的、不畏强权的优秀员工。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "我调查这件事，是因为太多疑点没有理清，我希望能得到完整的真相。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "好吧。你说得对。只是我听到了太多那种故事……没有去解决问题，反而去解决提出问题的人……所以我很担心……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "我会说的……关于那件事，还有常威和那件事的关系。",
+                          "unlockTopic": [
+                            "t_zhencheng_public_outcry_truth"
+                          ],
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_zhencheng_public_outcry_truth": {
+      "char": "char_zhencheng",
+      "title": "舆论风波背后的真相",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "的确，那个帖子说的不是明淇，是行政组的那个人。我都不想提他名字，恶心。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我那时候……确实经常迟到，他总以这个理由把我叫到办公室去，当然，不止我，其他女生也深受其害。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "那段时间，我觉得那个人越来越过分了，就在网上发了贴。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "有次排练之后，常威问我，帖子是不是我发的。我就跟他说了那个人的事情。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "他想了想，就说，让我不要太担心，他会想办法解决。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "后来我才知道，他是在下班之后，叫了几个兄弟，在那个人平常回家的路途上，给他套上麻袋打了一顿。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "还警告他不要再骚扰别人。那个人胆子很小的，这件事之后，不仅是不敢碰我们了，连我们离近了他都害怕，眼神回避着躲开。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "很快，他就提了离职。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "但你的帖子是怎么回事，当别人暗示说是不是明淇的时候，你为什么不反驳？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我原本对网上的胡乱猜测都没有回应。但是……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我知道常威那时候对明淇很不服气，而且好几次，常威对我说，觉得那个人碍眼，要是他也能赶紧离职就好了。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "我就在帖子里回复了一些模棱两可的话……"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "所以，这件事就算在明淇头上了，是吗？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "是的……我……很抱歉……",
+          "unlockEv": [
+            "ev_zhencheng_testimony5"
+          ]
+        }
+      ]
+    },
+    "t_ayou_theft": {
+      "char": "char_ayou",
+      "title": "关于鬼屋发生的偷窃行为",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "呃，我不知道啊？",
+          "present": {
+            "ev_antong_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "行了，别狡辩了。你可太知道了。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "……"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "如果演员偷顾客财物被发现，不仅会导致他们罚款、被开除，还可能会导致演出停摆，你为什么还这么做？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "我猜，是和那件事有关吧。常威死前，经常和其他人暗示，你和肖桦的死有关系。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "他说的，不只是一句玩笑话吧？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "事到如今就不要隐瞒了。肖桦穿着红死魔的服装，吊死在5号点位横梁上。这件事的来龙去脉，请详细和我讲一讲吧。",
+                  "unlockTopic": [
+                    "t_ayou_xiaohua_death_truth"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_ayou_public_outcry": {
+      "char": "char_ayou",
+      "title": "明淇的舆论风波",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "那件事，我有听说过。好像是一个什么帖子？具体怎么说的，我记不清了。",
+          "present": {
+            "ev_public_outcry_screenshot": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "是这个吧，你看看，能不能想起来点什么？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "啊，对……是这个。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "你觉得这上面说的是真的吗？你有没有看到过明淇这样和女演员说话、或有不恰当的肢体动作？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "呃……没有……或者我没注意。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "不过，我好像记得，有人说过之前有另外一个领导好像有这样的行为。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "嗯？你是说三年前有其他人有骚扰女演员的行为吗？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "对……但那个人在我来的时候就离职了，我只是听其他女同事说起来，说那个人终于走了、总算清净了。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "其他女同事是指谁？我们需要查证一下。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "我想想，主要是小琳和高欢。但她们不是演出部的。不过我好像听真橙也提过。",
+                  "unlockEv": [
+                    "ev_ayou_testimony4"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_ayou_xiaohua_death_truth": {
+      "char": "char_ayou",
+      "title": "肖桦死亡的真相",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "好、好吧……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "肖桦的确不是自杀……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "他的死亡是一起不幸的安全事故。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "这件事发生在2025年10月8日，大家都因为很快就要到来的万圣节鬼屋特别活动而做准备。我也开始了演出相关的练习。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "当然，我负责一部分道具工作，所以，我是最常在鬼屋进进出出的人。那时候，我经常看见常威指导肖桦和真橙的排演。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "常威尝试过使用吊起的假人做红死魔之后，觉得不满意。他就让肖桦练习在吊绳上做动作。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "出事那天，应该是他第一次做这样的测试，为了达到足够的高度，他除了箱子之外，还垫了一个塑料凳。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "那天下午四点多，我正在搬东西过来，看到红死魔挂在顶梁上，刚开始还以为是道具，就想收拾一下。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "结果，我发现那并不是道具……他的一个安全锁扣脱开了，绳子缠上他的脖子。大概是挣扎的时候，不小心踢到了塑料凳子，凳子掉落到箱子一侧。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "其实他的双脚真的只是和道具箱差一丁点距离，但就是这一点距离，要了他的命……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我很快叫来了常威，他看到之后，非常的震惊。他问我，有没有跟别人说这件事。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我说没有，我只叫了他。他就说，如果这件事以安全事故定性的话，可能今年鬼屋项目就无法开演了。并且，他会成为事故的第一责任人，可能面临着开除的风险。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我说……我会在这件事上帮助他。因为……那时候，他给了我很多鼓励，我天然地把他当作大哥，面对这种场面，我说我会听他的。",
+          "unlockTopic": [
+            "t_ayou_changwei_past"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "常威想到了一个办法，让我拆下安全锁扣，把用于安全防护的绳索挂在肖桦脖子上，当作自杀用的绳索。对外说是肖桦想不开自杀。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "正好就在那之前，明淇因为对肖桦的表演不满，在排练后当着很多人的面训斥了肖桦。常威就以此做文章，夸大事情的严重性，到处和人说肖桦因为这个事很多天情绪低落。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我内心原本还为他的所作所为开脱。但这件事让我看到常威颠倒黑白的样子……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "后来，我脑内反复重现当时他发现尸体的那一刻……当时，我被内心的焦急和恐惧冲昏了头脑……他说什么，我就直接照做了……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "后来我越发意识到，他这么冷静地分析利弊，把死去的同事当作道具一样摆弄……这真的是一个正常人该有的反应吗？我感到一阵恶寒。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "之后……我越发地疏远他，他对我的态度也是越来越差。我觉得，不能这样继续下去了……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我希望乐园能发现常威他们在做什么，带来惩罚也好，开除他们、甚至把我一并开除也好……我不想再这样演下去了。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "但是……我很犹豫……如果说出来，常威会不会继续抹黑我？如果我说当时是常威指使的，真的会有人信吗？常威会不会反咬我一口？我不敢……所以我一直保持沉默……真、真的很抱歉……",
+          "unlockEv": [
+            "ev_ayou_testimony3"
+          ]
+        }
+      ]
+    },
+    "t_ayou_changwei_past": {
+      "char": "char_ayou",
+      "title": "常威和阿祐的过去",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "你为什么要帮助常威到这种程度？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "这么说可能有点可笑，我从小就对上台表演这事感兴趣。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "但我的家人觉得，做演员是件虚无缥缈的事。而且，我长相很普通，对自己没有信心。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "直到来了这里，制作道具的间隙，我经常着迷地看着肖桦和真橙他们排练，然后，常威就问我，说乐园给的三个演员配置，时间上比较紧张，问我想不想加入演员组。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "我激动极了！马上答应了下来，我愿意加班加点练习，同时我也会继续把道具组的事情做好。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "常威对此非常满意。他说，即使资质平平的普通人，也有追求自己梦想的权力，他愿意给我提供机会。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "按这种情况来说，常威的确是你的贵人。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "是的，我也没有什么报答他的方式，所以，在那件事上……我选择了和他一起掩盖真相。只是后来我才意识到，自己大错特错了。"
+        }
+      ]
+    }
+  }
+}

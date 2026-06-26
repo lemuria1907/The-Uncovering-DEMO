@@ -23,7 +23,8 @@
     "mac": {
       "category": "public.app-category.games",
       "target": ["dmg", "zip"],
-      "icon": "icon.icns"
+      "icon": "icon.icns",
+      "arch": ["x64", "arm64"]
     },
     "win": {
       "target": ["nsis", "zip"],

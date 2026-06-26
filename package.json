@@ -22,8 +22,10 @@
     ],
     "mac": {
       "category": "public.app-category.games",
-      "target": ["dmg", "zip"],
-      "arch": ["x64", "arm64"]
+      "target": [
+        { "target": "dmg", "arch": ["universal"] },
+        { "target": "zip", "arch": ["universal"] }
+      ]
     },
     "win": {
       "target": ["nsis", "zip"],

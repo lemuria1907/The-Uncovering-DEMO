@@ -1023,8 +1023,18 @@ function loseLife() {
 async function restartCurrentSection() {
     state.lives = 8;
     updateLivesDisplay();
+    closeModal("present-modal");
+    closeModal("choice-modal");
+    closeModal("detail-modal");
     await fetchChapterData(state.currentChapterIdx);
     closeDialogue();
+    const currentKey = getChapterSourceKey(state.currentChapterIdx);
+    state.unlockedEv = state.unlockedEv.filter(id => EVIDENCE_DICT[id]?.sourceChapter !== currentKey);
+    state.unlockedProfiles = state.unlockedProfiles.filter(id => PROFILE_DICT[id]?.sourceChapter !== currentKey);
+    state.newEv = [];
+    state.newProfiles = [];
+    state.newLocs = [];
+    state.newTopics = [];
     renderAll();
     if (GAME_DATA.introDialogue) {
         state.hasSeenIntro = true;

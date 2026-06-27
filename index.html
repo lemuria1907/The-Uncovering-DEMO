@@ -1015,8 +1015,15 @@ function loseLife() {
     showFlyingNotif(`推理次数剩余：${state.lives}`);
     if (state.lives <= 0) {
         setTimeout(() => {
-            alert("你的推理机会已经用尽。\n返回本节开头重新开始。");
-            restartCurrentSection();
+            document.getElementById("confirm-cancel-btn").style.display = "none";
+            const closeX = document.querySelector("#confirm-modal .modal-close");
+            const origDisplay = closeX.style.display;
+            closeX.style.display = "none";
+            showConfirm("你的推理机会已经用尽。<br>返回本节开头重新开始。", () => {
+                document.getElementById("confirm-cancel-btn").style.display = "";
+                closeX.style.display = origDisplay;
+                restartCurrentSection();
+            });
         }, 300);
     }
 }

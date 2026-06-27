@@ -1161,12 +1161,9 @@ function updateDetailContent() {
     document.getElementById("detail-title").innerText = data?.name || "未知";
     document.getElementById("detail-desc").innerText = data?.desc || "";
     if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
-    if (data && data.origin && detailCtx.type === 'ev') {
-        let srcName = "";
-        if (data.origin === "system") { srcName = "现场调查"; }
-        else if (data.origin === "none") { srcName = ""; }
-        else { srcName = PROFILE_DICT[data.origin]?.name || data.origin; }
-        if (srcName) { srcEl.innerText = "线索来自：" + srcName; srcEl.style.display = "block"; }
+    if (data && data.sourceChapter && state.storyIndex) {
+        const ch = state.storyIndex.chapters.find(c => data.sourceChapter === c.file.replace('.json',''));
+        if (ch) { srcEl.innerText = "线索来自：" + ch.chapter + "-" + ch.section + " " + ch.name; srcEl.style.display = "block"; }
         else { srcEl.style.display = "none"; }
     } else { srcEl.style.display = "none"; }
     removeNewBadge(detailCtx.type, detailCtx.id);

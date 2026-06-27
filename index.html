@@ -275,7 +275,8 @@
         letter-spacing: 1px; transition: 0.2s; box-shadow: 2px 2px 0 #82612e;
     }
     .ctrl-btn:hover { background: #ffb347; color: #121212; }
-    .ctrl-btn.active { color: #ffb347; border-color: #ffb347; }
+    .ctrl-btn.active { color: #ffb347; border-color: #ffb347; background: #1a1a1a; }
+    .ctrl-btn.active:hover { color: #121212; background: #ffb347; }
 
     #dialogue-text {
         font-size: 18px; line-height: 1.5; width: 100%; max-height: 80px; overflow-y: auto; overflow-x: hidden;
@@ -348,8 +349,8 @@
     .action-btn:nth-child(2) { transform: rotate(1.5deg); background: #ffffff; }
     .action-btn:nth-child(2)::after { transform: translateX(-50%) rotate(4deg); width: 45px; }
     .action-btn:hover { background: #fff; color: var(--stamp-red); border-color: var(--stamp-red); transform: scale(1.05) rotate(0deg); box-shadow: 6px 6px 0 rgba(0,0,0,0.4); }
-    .sort-btn { background: transparent; border: 1.5px solid #bbb; color: #666; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: 'Chakra Petch', monospace; vertical-align: middle; }
-    .sort-btn:hover { background: #f2b84e; color: #121212; border-color: #f2b84e; }
+    .sort-btn { background: #f2b84e; border: 1.5px solid #f2b84e; color: #121212; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: 'Chakra Petch', monospace; vertical-align: middle; font-weight: bold; }
+    .sort-btn:hover { background: #ffc966; color: #000; border-color: #ffc966; transform: scale(1.15); box-shadow: 1px 1px 4px rgba(0,0,0,0.3); }
 
     /* ================= 统一弹窗体系 ================= */
     .modal-box {
@@ -597,6 +598,7 @@
         <img id="detail-img" src="" style="width:100%; max-height: 300px; object-fit: contain; margin-bottom: 15px; display: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
         <div id="detail-title" style="font-size:18px; font-weight:bold; color:var(--stamp-red); margin-bottom:8px;"></div>
         <div id="detail-desc" style="font-size:15px; line-height:1.6; color:#333;"></div>
+       <div id="detail-source" style="font-size:13px; color:#888; margin-top:8px; font-style:italic; display:none;"></div>
     </div>
 </div>
 
@@ -1140,7 +1142,6 @@ function showFlyingNotif(text) { const container = document.getElementById("flyi
 function showSysMsg(msg) { const el = document.getElementById("sys-msg"); el.innerHTML=msg; el.style.display="block"; setTimeout(()=> el.style.display="none", 2500); }
 
 function showDetail(type, id) {
-    if(blockDuringChoice()) return;
     detailCtx.type = type; detailCtx.id = id; updateDetailContent();
     const choiceOpen = document.getElementById("choice-modal").style.display !== "none";
     const presentOpen = document.getElementById("present-modal").style.display !== "none";
@@ -1155,10 +1156,19 @@ function navDetail(dir) {
 }
 function updateDetailContent() {
     const imgEl = document.getElementById("detail-img");
+    const srcEl = document.getElementById("detail-source");
     let dict = detailCtx.type === 'ev' ? EVIDENCE_DICT : PROFILE_DICT; let data = dict[detailCtx.id];
     document.getElementById("detail-title").innerText = data?.name || "未知";
     document.getElementById("detail-desc").innerText = data?.desc || "";
     if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
+    if (data && data.origin && detailCtx.type === 'ev') {
+        let srcName = "";
+        if (data.origin === "system") { srcName = "现场调查"; }
+        else if (data.origin === "none") { srcName = ""; }
+        else { srcName = PROFILE_DICT[data.origin]?.name || data.origin; }
+        if (srcName) { srcEl.innerText = "线索来自：" + srcName; srcEl.style.display = "block"; }
+        else { srcEl.style.display = "none"; }
+    } else { srcEl.style.display = "none"; }
     removeNewBadge(detailCtx.type, detailCtx.id);
 }
 

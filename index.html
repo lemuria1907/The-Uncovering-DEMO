@@ -466,7 +466,7 @@
 <body>
 
 <div id="loading-screen">
-    📁 正在读取卷宗数据... <br><br>
+    正在读取数据... <br><br>
     <span style="font-size:14px; font-weight:normal;">请确保使用 VS Code 的 "Live Server" 插件运行网页。</span>
 </div>
 
@@ -627,7 +627,7 @@
 
 <div id="saveload-modal" class="modal-box" style="width:400px; z-index: 6000;">
     <div class="modal-close" onclick="closeModal('saveload-modal')"></div>
-    <div class="modal-header" id="sl-modal-title">卷宗记录</div>
+    <div class="modal-header" id="sl-modal-title">档案记录</div>
     <div class="modal-body" id="sl-slots-container" style="align-items:stretch; padding:15px;"></div>
 </div>
 
@@ -653,6 +653,12 @@ let autoPlayTimer = null; let detailCtx = { type: 'ev', id: null };
 let currentBGM = "main"; let bgmFadeTimer = null;
 
 document.addEventListener('keydown', (e) => {
+    if (e.ctrlKey && e.code === 'KeyH') {
+        e.preventDefault();
+        const dp = document.getElementById("debug-panel");
+        dp.style.display = dp.style.display === "none" ? "flex" : "none";
+        return;
+    }
     if(e.code === 'Space') { e.preventDefault(); advanceDialogue(null); }
     if(e.code === 'Escape') {
         if(blockDuringChoice()) return;
@@ -1073,7 +1079,7 @@ function autoSave(slot = 0) {
 
 // ================= SL 存档 =================
 function openSaveLoadModal(mode) {
-    playSound('click'); currentSLMode = mode; document.getElementById("sl-modal-title").innerText = mode === 'save' ? '💾 归档记录' : '📂 提取卷宗';
+    playSound('click'); currentSLMode = mode; document.getElementById("sl-modal-title").innerText = mode === 'save' ? '归档记录' : '提取档案';
     renderSaveSlots(); showModalAtCenter(document.getElementById("saveload-modal"), 0.5, 0.4);
 }
 function renderSaveSlots() {
@@ -1103,7 +1109,7 @@ function renderSaveSlots() {
             if (isAutoSlot) {
                 slotDiv.innerHTML = `<div class="slot-empty" style="color:#b7956b;">档案 01 <span style="font-size:10px;color:#c9a87c;">[自动存档]</span> - 等待自动存档</div>`;
             } else {
-                slotDiv.innerHTML = `<div class="slot-empty">档案 0${i+1} - 空白卷宗</div>`;
+                slotDiv.innerHTML = `<div class="slot-empty">档案 0${i+1} - 空白档案</div>`;
                 slotDiv.onclick = ()=>{ if(currentSLMode==='save') saveGame(i); };
             }
         }
@@ -1128,7 +1134,7 @@ function saveGame(index) {
         chapterId: cl.id, chapterName: cl.name, chapterText: cl.text,
         stateData: JSON.parse(JSON.stringify(state)), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
     };
-    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("💾 卷宗已成功归档！"); renderSaveSlots();
+    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("已成功归档！"); renderSaveSlots();
 }
 async function loadGame(index, silent=false) {
     if(!silent) playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
@@ -1146,7 +1152,7 @@ async function loadGame(index, silent=false) {
             if (state.tempDialogueState.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.tempDialogueState.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; } 
             else if (state.tempDialogueState.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.tempDialogueState.activeDialogue = GAME_DATA.greetings[state.currChar]; }
         }
-        closeModal("saveload-modal"); showSysMsg("📂 卷宗提取成功！"); renderAll();
+        closeModal("saveload-modal"); showSysMsg("档案提取成功！"); renderAll();
         if(state.activeDialogue && state.activeDialogue.length > 0) { document.getElementById("dialogue-box").style.display="flex"; renderDialogueLine(); } 
         else { document.getElementById("dialogue-box").style.display="none"; }
     }

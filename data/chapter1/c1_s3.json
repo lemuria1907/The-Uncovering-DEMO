@@ -6,7 +6,7 @@
       "chars": [
         "char_andy"
       ],
-      "bg": "images/bg_locker_room.jpg",
+      "bg": "images/chapter1/bg_locker_room.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -48,7 +48,7 @@
         "char_meiyu",
         "char_mingqi"
       ],
-      "bg": "images/bg_interrogation.jpg",
+      "bg": "images/chapter1/bg_interrogation.jpg",
       "onEnter": [
         {
           "s": "npc",
@@ -74,7 +74,7 @@
       "chars": [
         "char_shihui"
       ],
-      "bg": "images/bg_office.jpg",
+      "bg": "images/chapter1/bg_office.jpg",
       "onEnter": [],
       "hotspots": []
     }
@@ -83,27 +83,27 @@
     "char_andy": {
       "name": "Andy",
       "info": "安保负责人",
-      "sprite": "images/char_andy.png"
+      "sprite": "images/chapter1/char_andy.png"
     },
     "char_meiyu": {
       "name": "美羽",
       "info": "乐园临时演员",
-      "sprite": "images/char_meiyu.png"
+      "sprite": "images/chapter1/char_meiyu.png"
     },
     "char_mingqi": {
       "name": "明淇",
       "info": "前演出部主管",
-      "sprite": "images/char_mingqi.png"
+      "sprite": "images/chapter1/char_mingqi.png"
     },
     "char_shihui": {
       "name": "石辉",
       "info": "演出部主管",
-      "sprite": "images/char_shihui.png"
+      "sprite": "images/chapter1/char_shihui.png"
     },
     "char_qin": {
       "name": "琴警官",
       "info": "老相识",
-      "sprite": "images/char_qin.png"
+      "sprite": "images/chapter1/char_qin.png"
     }
   },
   "introDialogue": [

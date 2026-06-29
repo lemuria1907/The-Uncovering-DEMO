@@ -8,7 +8,7 @@
         "char_andy",
         "char_qin"
       ],
-      "bg": "images/bg_ghost_entranceday.jpg",
+      "bg": "images/chapter1/bg_ghost_entranceday.jpg",
       "onEnter": [
         {
           "s": "npc",
@@ -47,7 +47,7 @@
         "char_zhencheng",
         "char_ayou"
       ],
-      "bg": "images/bg_interrogation.jpg",
+      "bg": "images/chapter1/bg_interrogation.jpg",
       "hotspots": []
     }
   },
@@ -55,42 +55,42 @@
     "char_qin": {
       "name": "琴警官",
       "info": "老相识",
-      "sprite": "images/char_qin.png"
+      "sprite": "images/chapter1/char_qin.png"
     },
     "char_andy": {
       "name": "Andy",
       "info": "乐园员工",
-      "sprite": "images/char_andy.png"
+      "sprite": "images/chapter1/char_andy.png"
     },
     "char_xiaozhi": {
       "name": "小枝",
       "info": "侦探助手",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_antong": {
       "name": "安童",
       "info": "扒手",
-      "sprite": "images/char_antong.png"
+      "sprite": "images/chapter1/char_antong.png"
     },
     "char_rulan": {
       "name": "茹兰",
       "info": "常威的女友",
-      "sprite": "images/char_rulan.png"
+      "sprite": "images/chapter1/char_rulan.png"
     },
     "char_zhencheng": {
       "name": "真橙",
       "info": "鬼屋演员",
-      "sprite": "images/char_zhencheng.png"
+      "sprite": "images/chapter1/char_zhencheng.png"
     },
     "char_ayou": {
       "name": "阿祐",
       "info": "鬼屋演员",
-      "sprite": "images/char_ayou.png"
+      "sprite": "images/chapter1/char_ayou.png"
     },
     "char_aling": {
       "name": "阿凌",
       "info": "肖桦的未婚妻",
-      "sprite": "images/char_aling.png"
+      "sprite": "images/chapter1/char_aling.png"
     }
   },
   "introDialogue": [

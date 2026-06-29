@@ -6,7 +6,7 @@
       "chars": [
         "char_xiaozhi_p0"
       ],
-      "bg": "images/bg_ghost_entrance.jpg",
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -32,7 +32,7 @@
       "chars": [
         "char_xiaozhi_p1"
       ],
-      "bg": "images/bg_room1.jpg",
+      "bg": "images/chapter1/bg_room1.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -65,7 +65,7 @@
       "chars": [
         "char_xiaozhi_p2"
       ],
-      "bg": "images/bg_room5.jpg",
+      "bg": "images/chapter1/bg_room5.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -112,7 +112,7 @@
       "chars": [
         "char_xiaozhi_p3"
       ],
-      "bg": "images/bg_room2.jpg",
+      "bg": "images/chapter1/bg_room2.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -138,7 +138,7 @@
       "chars": [
         "char_xiaozhi_p4"
       ],
-      "bg": "images/bg_room3.jpg",
+      "bg": "images/chapter1/bg_room3.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -159,7 +159,7 @@
       "chars": [
         "char_xiaozhi_p5"
       ],
-      "bg": "images/bg_room4.jpg",
+      "bg": "images/chapter1/bg_room4.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -185,7 +185,7 @@
       "chars": [
         "char_xiaozhi_p6"
       ],
-      "bg": "images/bg_room6.jpg",
+      "bg": "images/chapter1/bg_room6.jpg",
       "onEnter": [
         {
           "s": "system",
@@ -213,7 +213,7 @@
         "char_ayou",
         "char_shihui"
       ],
-      "bg": "images/bg_interrogation.jpg",
+      "bg": "images/chapter1/bg_interrogation.jpg",
       "onEnter": [],
       "hotspots": []
     }
@@ -222,62 +222,62 @@
     "char_xiaozhi_p1": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p2": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p3": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p4": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p5": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p6": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_zhencheng": {
       "name": "真橙",
       "info": "鬼屋演员",
-      "sprite": "images/char_zhencheng.png"
+      "sprite": "images/chapter1/char_zhencheng.png"
     },
     "char_ayou": {
       "name": "阿祐",
       "info": "鬼屋演员",
-      "sprite": "images/char_ayou.png"
+      "sprite": "images/chapter1/char_ayou.png"
     },
     "char_shihui": {
       "name": "石辉",
       "info": "演出部主管",
-      "sprite": "images/char_shihui.png"
+      "sprite": "images/chapter1/char_shihui.png"
     },
     "char_qin": {
       "name": "琴警官",
       "info": "老相识",
-      "sprite": "images/char_qin.png"
+      "sprite": "images/chapter1/char_qin.png"
     },
     "char_xiaozhi": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_xiaozhi_p0": {
       "name": "小枝",
       "info": "妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     }
   },
   "introDialogue": [

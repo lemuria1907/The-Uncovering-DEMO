@@ -474,10 +474,10 @@
     <h1>案件推演</h1>
     <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">继续游戏</button>
     <button class="menu-btn" onclick="playSound('click');newGame()" data-i18n="menu.newGame">新游戏</button>
-    <button class="menu-btn" onclick="playSound('click');showChapterSelect()">选择章节</button>
-    <button class="menu-btn" onclick="showSettings()">设置</button>
-    <button class="menu-btn" onclick="showCredits()">制作团队</button>
-    <button class="menu-btn" onclick="playSound('click');exitGame()" style="color: #b34a36; border-color: #b34a36;">退出</button>
+    <button class="menu-btn" onclick="playSound('click');showChapterSelect()" data-i18n="menu.chapterSelect">选择章节</button>
+    <button class="menu-btn" onclick="showSettings()" data-i18n="menu.settings">设置</button>
+    <button class="menu-btn" onclick="showCredits()" data-i18n="menu.credits">制作团队</button>
+    <button class="menu-btn" onclick="playSound('click');exitGame()" data-i18n="menu.exit" style="color: #b34a36; border-color: #b34a36;">退出</button>
     <div id="version-info">ver 1.5</div>
 </div>
 
@@ -664,6 +664,15 @@ const I18N = {
         "credits.title": "制作团队",
         "menu.newGame": "开始新游戏",
         "menu.continue": "继续游戏",
+        "menu.chapterSelect": "选择章节",
+        "menu.settings": "设置",
+        "menu.credits": "制作团队",
+        "menu.exit": "退出",
+        "menu.confirmNewGame": "确定要开始新游戏吗？<br>当前未保存的进度将丢失。",
+        "menu.confirmExit": "确定已保存进度并退出吗？",
+        "menu.noSave": "暂无存档，请先开始新游戏。",
+        "chapter.selectTitle": "选择章节",
+        "chapter.locked": "待解锁",
         "sort.title": "按供述人整理",
         "sys.livesLeft": "推理次数剩余：",
         "sys.livesUsed": "你的推理机会已经用尽。",
@@ -704,6 +713,15 @@ const I18N = {
         "credits.title": "Credits",
         "menu.newGame": "New Game",
         "menu.continue": "Continue",
+        "menu.chapterSelect": "Chapter Select",
+        "menu.settings": "Settings",
+        "menu.credits": "Credits",
+        "menu.exit": "Exit",
+        "menu.confirmNewGame": "Start a new game?<br>Unsaved progress will be lost.",
+        "menu.confirmExit": "Exit after saving your progress?",
+        "menu.noSave": "No save data. Please start a new game first.",
+        "chapter.selectTitle": "Chapter Select",
+        "chapter.locked": "Locked",
         "sort.title": "Sort by source",
         "sys.livesLeft": "Chances remaining: ",
         "sys.livesUsed": "You have run out of chances.",
@@ -744,6 +762,15 @@ const I18N = {
         "credits.title": "クレジット",
         "menu.newGame": "はじめから",
         "menu.continue": "つづきから",
+        "menu.chapterSelect": "章を選択",
+        "menu.settings": "設定",
+        "menu.credits": "クレジット",
+        "menu.exit": "終了",
+        "menu.confirmNewGame": "新しく始めますか？<br>保存していない進行状況は失われます。",
+        "menu.confirmExit": "進行状況を保存して終了しますか？",
+        "menu.noSave": "セーブデータがありません。先に新しく始めてください。",
+        "chapter.selectTitle": "章を選択",
+        "chapter.locked": "未解放",
         "sort.title": "供述者で整理",
         "sys.livesLeft": "残り推理回数：",
         "sys.livesUsed": "推理の機会を使い果たしました。",
@@ -777,6 +804,20 @@ function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('game_lang', lang);
     applyAllUIText();
+}
+function getStoryDataPath() {
+    return currentLang === 'zh' ? 'data/zh' : `data/${currentLang}`;
+}
+async function fetchJsonWithFallback(path, fallbackPath) {
+    try {
+        const res = await fetch(path);
+        if (res.ok) return res.json();
+    } catch(e) {}
+    if (fallbackPath) {
+        const fallbackRes = await fetch(fallbackPath);
+        if (fallbackRes.ok) return fallbackRes.json();
+    }
+    throw new Error(path);
 }
 
 // ================= 引擎底层逻辑 =================
@@ -829,14 +870,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function bootGame(directLoad) {
     try {
-        const langData = currentLang === 'zh' ? 'data' : 'data/' + currentLang;
-        const sharedRes = await fetch(langData + '/shared.json'); const sharedData = await sharedRes.json();
+        const langData = getStoryDataPath();
+        const fallbackData = 'data/zh';
+        const sharedData = await fetchJsonWithFallback(langData + '/shared.json', fallbackData + '/shared.json');
         EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {};
         PROFILE_DICT = sharedData.PROFILE_DICT || {};
         CHAR_COLORS = sharedData.CHAR_COLORS || {};
 
-        const storyRes = await fetch(langData + '/story_index.json');
-        state.storyIndex = await storyRes.json();
+        state.storyIndex = await fetchJsonWithFallback(langData + '/story_index.json', fallbackData + '/story_index.json');
         // 恢复已完成的章节
         try { state.completedChapters = JSON.parse(localStorage.getItem('rdsm_completed_chapters') || '[]'); } catch(e) { state.completedChapters = []; }
 
@@ -862,9 +903,10 @@ async function fetchChapterData(idx) {
     if (!state.storyIndex || !state.storyIndex.chapters[idx]) return;
     state.currentChapterIdx = idx;
     const chapInfo = state.storyIndex.chapters[idx];
-    const langData = currentLang === 'zh' ? 'data' : 'data/' + currentLang;
-    const res = await fetch(langData + '/' + chapInfo.file);
-    GAME_DATA = await res.json();
+    const langData = getStoryDataPath();
+    const fallbackData = 'data/zh';
+    const chapPath = 'chapter' + chapInfo.chapter + '/' + chapInfo.file;
+    GAME_DATA = await fetchJsonWithFallback(langData + '/' + chapPath, fallbackData + '/' + chapPath);
     
     GAME_DATA.locations = GAME_DATA.locations || {};
     GAME_DATA.characters = GAME_DATA.characters || {};
@@ -1019,14 +1061,14 @@ function skipToNextActionOrEnd() {
 }
 
 function exitGame() {
-    showConfirm("确定已保存进度并退出吗？", () => {
+    showConfirm(t("menu.confirmExit"), () => {
         window.opener = null; window.open('', '_self'); window.close();
         setTimeout(() => { window.location.href = "about:blank"; }, 500);
     });
 }
 
 function newGame() {
-    showConfirm("确定要开始新游戏吗？<br>当前未保存的进度将丢失。", async () => {
+    showConfirm(t("menu.confirmNewGame"), async () => {
         localStorage.removeItem('rdsm_autosave');
         localStorage.removeItem('mystery_game_saves');
         await fetchChapterData(0);
@@ -1045,7 +1087,7 @@ async function continueGame() {
         document.getElementById("game-container").style.display = "grid";
         await loadGame(idx, true);
     } else {
-        showSysMsg("暂无存档，请先开始新游戏。");
+        showSysMsg(t("menu.noSave"));
     }
 }
 function startGameFromMenu() { newGame(); }
@@ -2101,7 +2143,7 @@ function showChapterSelect() {
         modal.insertBefore(closeBtn, modal.firstChild);
     }
     closeBtn.style.display = "block";
-    document.getElementById("choice-question").innerText = "选择章节";
+    document.getElementById("choice-question").innerText = t("chapter.selectTitle");
     const container = document.getElementById("choice-options"); container.innerHTML = "";
     const chapterSet = new Set(state.storyIndex.chapters.map(c => c.chapter));
     const sortedChapters = [...chapterSet].sort((a,b) => a - b);
@@ -2111,11 +2153,12 @@ function showChapterSelect() {
         const cName = info.name || `第${chNum}章`;
         const unlocked = chNum === 1 || state.completedChapters.includes(chNum - 1);
         const btn = document.createElement("div"); btn.className = "choice-btn";
+        const chapterLabel = currentLang === 'en' ? `Chapter ${chNum}` : currentLang === 'ja' ? `第${chNum}章` : `第${chNum}章`;
         if (unlocked) {
-            btn.innerHTML = `第${chNum}章 - ${cName}`;
+            btn.innerHTML = `${chapterLabel} - ${cName}`;
             btn.onclick = () => jumpToChapter(chNum);
         } else {
-            btn.innerHTML = `第${chNum}章 - ${cName} <span style="color:#999;">（待解锁）</span>`;
+            btn.innerHTML = `${chapterLabel} - ${cName} <span style="color:#999;">（${t("chapter.locked")}）</span>`;
             btn.style.opacity = "0.5"; btn.style.cursor = "not-allowed";
         }
         container.appendChild(btn);

@@ -4,7 +4,7 @@
       "name": "鬼屋广场",
       "desc": "朝夜游乐园的鬼屋旁",
       "chars": [],
-      "bg": "images/bg_ghost_entrance.jpg",
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
       "hotspots": []
     }
   },
@@ -12,37 +12,37 @@
     "char_xiaozhi": {
       "name": "小枝",
       "info": "你的妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_andy": {
       "name": "Andy",
       "info": "安保负责人",
-      "sprite": "images/char_andy.png"
+      "sprite": "images/chapter1/char_andy.png"
     },
     "char_shihui": {
       "name": "石辉",
       "info": "演出部主管",
-      "sprite": "images/char_shihui.png"
+      "sprite": "images/chapter1/char_shihui.png"
     },
     "char_zhencheng": {
       "name": "真橙",
       "info": "鬼屋演员",
-      "sprite": "images/char_zhencheng.png"
+      "sprite": "images/chapter1/char_zhencheng.png"
     },
     "char_ayou": {
       "name": "阿祐",
       "info": "鬼屋演员",
-      "sprite": "images/char_ayou.png"
+      "sprite": "images/chapter1/char_ayou.png"
     },
     "char_qin": {
       "name": "琴警官",
       "info": "老相识",
-      "sprite": "images/char_qin.png"
+      "sprite": "images/chapter1/char_qin.png"
     },
     "char_changwei": {
       "name": "常威",
       "info": "死者，鬼屋演员",
-      "sprite": "images/char_changwei.png"
+      "sprite": "images/chapter1/char_changwei.png"
     }
   },
   "introDialogue": [

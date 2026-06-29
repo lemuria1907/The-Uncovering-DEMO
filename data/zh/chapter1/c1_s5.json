@@ -4,7 +4,7 @@
       "name": "问询区域",
       "desc": "朝夜游乐园，游客中心",
       "chars": [],
-      "bg": "images/bg_interrogation.jpg",
+      "bg": "images/chapter1/bg_interrogation.jpg",
       "hotspots": []
     }
   },
@@ -12,57 +12,57 @@
     "char_qin": {
       "name": "琴警官",
       "info": "老相识",
-      "sprite": "images/char_qin.png"
+      "sprite": "images/chapter1/char_qin.png"
     },
     "char_xiaozhi": {
       "name": "小枝",
       "info": "你的妹妹",
-      "sprite": "images/char_xiaozhi.png"
+      "sprite": "images/chapter1/char_xiaozhi.png"
     },
     "char_meiyu": {
       "name": "美羽",
       "info": "乐园临时演员",
-      "sprite": "images/char_meiyu.png"
+      "sprite": "images/chapter1/char_meiyu.png"
     },
     "char_rulan": {
       "name": "茹兰",
       "info": "动物救助中心员工",
-      "sprite": "images/char_rulan.png"
+      "sprite": "images/chapter1/char_rulan.png"
     },
     "char_aling": {
       "name": "阿凌",
       "info": "肖桦的未婚妻",
-      "sprite": "images/char_rulan.png"
+      "sprite": "images/chapter1/char_rulan.png"
     },
     "char_xiaohua": {
       "name": "肖桦",
       "info": "三年前死亡的鬼屋演员",
-      "sprite": "images/char_xiaohua.png"
+      "sprite": "images/chapter1/char_xiaohua.png"
     },
     "char_shihui": {
       "name": "石辉",
       "info": "演出部主管",
-      "sprite": "images/char_shihui.png"
+      "sprite": "images/chapter1/char_shihui.png"
     },
     "char_zhencheng": {
       "name": "真橙",
       "info": "鬼屋演员",
-      "sprite": "images/char_zhencheng.png"
+      "sprite": "images/chapter1/char_zhencheng.png"
     },
     "char_ayou": {
       "name": "阿祐",
       "info": "鬼屋演员",
-      "sprite": "images/char_ayou.png"
+      "sprite": "images/chapter1/char_ayou.png"
     },
     "char_antong": {
       "name": "安童",
       "info": "怪盗",
-      "sprite": "images/char_antong.png"
+      "sprite": "images/chapter1/char_antong.png"
     },
     "char_changwei": {
       "name": "常威",
       "info": "死者，鬼屋演员",
-      "sprite": "images/char_changwei.png"
+      "sprite": "images/chapter1/char_changwei.png"
     }
   },
   "introDialogue": [

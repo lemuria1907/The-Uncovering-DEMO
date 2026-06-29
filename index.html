@@ -472,8 +472,8 @@
 
 <div id="main-menu">
     <h1>案件推演</h1>
-    <button class="menu-btn" onclick="playSound('click');continueGame()">继续游戏</button>
-    <button class="menu-btn" onclick="playSound('click');newGame()">新游戏</button>
+    <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">继续游戏</button>
+    <button class="menu-btn" onclick="playSound('click');newGame()" data-i18n="menu.newGame">新游戏</button>
     <button class="menu-btn" onclick="playSound('click');showChapterSelect()">选择章节</button>
     <button class="menu-btn" onclick="showSettings()">设置</button>
     <button class="menu-btn" onclick="showCredits()">制作团队</button>
@@ -510,11 +510,11 @@
 
     <div id="col-1">
         <div class="panel">
-            <div class="panel-title">Location 地点</div>
+            <div class="panel-title" data-i18n="panel.location">Location 地点</div>
             <div id="location-list" class="list-container"></div>
         </div>
         <div class="panel">
-            <div class="panel-title">Persons 现场人物</div>
+            <div class="panel-title" data-i18n="panel.persons">Persons 现场人物</div>
             <div id="character-list" class="photo-wall"></div>
         </div>
     </div>
@@ -523,7 +523,7 @@
         <div id="scene-window">
             <div class="tape" style="top:-12px; width:140px; transform:translateX(-50%) rotate(1.5deg);"></div>
             <div id="scene-inner">
-                <button id="search-btn" onclick="observeScene()">👁 观察现场</button>
+                <button id="search-btn" onclick="observeScene()" data-i18n="btn.search">👁 观察现场</button>
                 <div id="chapter-badge">1-1 载入中…</div>
                 <div id="scene-bg"></div>
                 <div id="character-sprite"></div>
@@ -552,7 +552,7 @@
         </div>
         <div class="topic-container">
             <div class="panel-title" style="margin:0; margin-bottom:10px; background:transparent; color:var(--ink-black); border-left:none; padding:0; text-shadow:1px 1px 0 #ccc; box-shadow:none; transform:none;">
-                <span style="background:var(--ink-black); color:#fff; padding:4px 12px; transform:rotate(-1deg); display:inline-block; box-shadow:2px 2px 5px rgba(0,0,0,0.3);">Topics 话题</span>
+                <span style="background:var(--ink-black); color:#fff; padding:4px 12px; transform:rotate(-1deg); display:inline-block; box-shadow:2px 2px 5px rgba(0,0,0,0.3);" data-i18n="panel.topics">Topics 话题</span>
             </div>
             <div id="topic-list" class="list-container" style="padding:0;"></div>
         </div>
@@ -560,29 +560,29 @@
 
     <div id="col-3">
         <div class="panel third-panel">
-            <div class="panel-title" style="margin-left:-2px;">Profiles 人物</div>
+            <div class="panel-title" style="margin-left:-2px;" data-i18n="panel.profiles">Profiles 人物</div>
             <div id="profile-list" class="grid-list"></div>
         </div>
         <div class="panel third-panel">
-            <div class="panel-title" style="margin-left:-2px;">Evidence 证物</div>
+            <div class="panel-title" style="margin-left:-2px;" data-i18n="panel.evidence">Evidence 证物</div>
             <div id="evidence-list" class="grid-list"></div>
         </div>
         <div class="panel third-panel">
-            <div class="panel-title" style="margin-left:-2px;">Statements 证言 <button class="sort-btn" onclick="sortTestimony()" title="按供述人整理">⇅</button></div>
+            <div class="panel-title" style="margin-left:-2px;" data-i18n="panel.statements">Statements 证言 <button class="sort-btn" onclick="sortTestimony()" data-i18n-title="sort.title" title="按供述人整理">⇅</button></div>
             <div id="testimony-list" class="grid-list"></div>
         </div>
         <div id="action-buttons">
-            <button class="action-btn" onclick="doQuestion()">追问</button>
-            <button class="action-btn" onclick="openPresentModal(false, null)">举证</button>
+            <button class="action-btn" onclick="doQuestion()" data-i18n="btn.question">追问</button>
+            <button class="action-btn" onclick="openPresentModal(false, null)" data-i18n="btn.present">举证</button>
         </div>
     </div>
 
     <!-- 章节结束弹窗 -->
     <div id="chapter-end-overlay">
         <div id="chapter-end-box">
-            <h2>本部分内容结束</h2>
-            <p>你已经完成了当前阶段的调查。</p>
-            <button class="confirm-btn" onclick="confirmChapterEnd()">进入下一节</button>
+            <h2 data-i18n="chapter.endTitle">本部分内容结束</h2>
+            <p data-i18n="chapter.endDesc">你已经完成了当前阶段的调查。</p>
+            <button class="confirm-btn" onclick="confirmChapterEnd()" data-i18n="chapter.endBtn">进入下一节</button>
         </div>
     </div>
 </div>
@@ -593,7 +593,7 @@
     <div class="modal-close" onclick="closeModal('detail-modal')"></div>
     <div class="nav-arrow left-arrow" onclick="navDetail(-1)">◀</div>
     <div class="nav-arrow right-arrow" onclick="navDetail(1)">▶</div>
-    <div class="modal-header" style="border:none;">档案记录</div>
+    <div class="modal-header" style="border:none;" data-i18n="detail.title">档案记录</div>
     <div class="modal-body" style="align-items:flex-start; padding: 10px 35px 25px 35px; max-height: 55vh; overflow-y: auto;">
         <img id="detail-img" src="" style="width:100%; max-height: 300px; object-fit: contain; margin-bottom: 15px; display: none; border-radius: 4px; box-shadow: 0 2px 8px rgba(0,0,0,0.2);">
         <div id="detail-title" style="font-size:18px; font-weight:bold; color:var(--stamp-red); margin-bottom:8px;"></div>
@@ -604,9 +604,9 @@
 
 <div id="present-modal" class="modal-box" style="z-index: 5500; width: 340px;">
     <div class="modal-close" onclick="closeModal('present-modal')"></div>
-    <div class="modal-header" id="present-header">请出示人物/证据/线索</div>
+    <div class="modal-header" id="present-header" data-i18n="present.title">请出示人物/证据/线索</div>
     <div class="modal-body">
-        <div id="drop-zone-present" class="drop-zone" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropPresent(event)">拖拽卡片至此</div>
+        <div id="drop-zone-present" class="drop-zone" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropPresent(event)" data-i18n="present.drop">拖拽卡片至此</div>
         <button class="confirm-btn" onclick="confirmPresent()">确认出示</button>
     </div>
 </div>
@@ -632,6 +632,153 @@
 </div>
 
 <script>
+// ================= 多语言 I18N =================
+let currentLang = localStorage.getItem('game_lang') || 'zh';
+const I18N = {
+    zh: {
+        "panel.location": "Location 地点",
+        "panel.persons": "Persons 现场人物",
+        "panel.profiles": "Profiles 人物",
+        "panel.evidence": "Evidence 证物",
+        "panel.statements": "Statements 证言",
+        "panel.topics": "Topics 话题",
+        "btn.search": "👁 观察现场",
+        "btn.question": "追问",
+        "btn.present": "举证",
+        "settings.title": "设置",
+        "settings.window": "窗口大小",
+        "settings.fullscreen": "全屏",
+        "settings.lang": "语言",
+        "settings.bgm": "BGM 音量",
+        "settings.sfx": "音效音量",
+        "settings.testSfx": "试听",
+        "detail.title": "档案记录",
+        "present.title": "请出示人物/证据/线索",
+        "present.drop": "拖拽卡片至此",
+        "confirm.title": "提示",
+        "confirm.ok": "确定",
+        "confirm.cancel": "取消",
+        "chapter.endTitle": "本部分内容结束",
+        "chapter.endDesc": "你已经完成了当前阶段的调查。",
+        "chapter.endBtn": "进入下一节",
+        "credits.title": "制作团队",
+        "menu.newGame": "开始新游戏",
+        "menu.continue": "继续游戏",
+        "sort.title": "按供述人整理",
+        "sys.livesLeft": "推理次数剩余：",
+        "sys.livesUsed": "你的推理机会已经用尽。",
+        "sys.livesRestart": "返回本节开头重新开始。",
+        "sys.newEvidence": "你得到了一条新线索",
+        "sys.newProfile": "你得到了新的人物档案",
+        "sys.newLocation": "你得到了新的可探索地点",
+        "sys.newTopic": "你开启了一个新的话题",
+        "sys.autoSaved": "进度已自动保存",
+        "source.from": "线索来自："
+    },
+    en: {
+        "panel.location": "Location",
+        "panel.persons": "Persons",
+        "panel.profiles": "Profiles",
+        "panel.evidence": "Evidence",
+        "panel.statements": "Statements",
+        "panel.topics": "Topics",
+        "btn.search": "👁 Search Scene",
+        "btn.question": "Ask",
+        "btn.present": "Present",
+        "settings.title": "Settings",
+        "settings.window": "Window Size",
+        "settings.fullscreen": "Fullscreen",
+        "settings.lang": "Language",
+        "settings.bgm": "BGM Volume",
+        "settings.sfx": "SFX Volume",
+        "settings.testSfx": "Test",
+        "detail.title": "Archives",
+        "present.title": "Present Character / Evidence / Clue",
+        "present.drop": "Drag card here",
+        "confirm.title": "Notice",
+        "confirm.ok": "OK",
+        "confirm.cancel": "Cancel",
+        "chapter.endTitle": "Section Complete",
+        "chapter.endDesc": "You have finished this part of the investigation.",
+        "chapter.endBtn": "Next Section",
+        "credits.title": "Credits",
+        "menu.newGame": "New Game",
+        "menu.continue": "Continue",
+        "sort.title": "Sort by source",
+        "sys.livesLeft": "Chances remaining: ",
+        "sys.livesUsed": "You have run out of chances.",
+        "sys.livesRestart": "Return to section start.",
+        "sys.newEvidence": "New clue obtained",
+        "sys.newProfile": "New profile obtained",
+        "sys.newLocation": "New location discovered",
+        "sys.newTopic": "New topic unlocked",
+        "sys.autoSaved": "Progress auto-saved",
+        "source.from": "Source: "
+    },
+    ja: {
+        "panel.location": "ロケーション",
+        "panel.persons": "登場人物",
+        "panel.profiles": "プロフィール",
+        "panel.evidence": "証拠",
+        "panel.statements": "証言",
+        "panel.topics": "トピック",
+        "btn.search": "👁 現場調査",
+        "btn.question": "追及",
+        "btn.present": "証拠提示",
+        "settings.title": "設定",
+        "settings.window": "画面サイズ",
+        "settings.fullscreen": "フルスクリーン",
+        "settings.lang": "言語",
+        "settings.bgm": "BGM 音量",
+        "settings.sfx": "効果音 音量",
+        "settings.testSfx": "試聴",
+        "detail.title": "アーカイブ",
+        "present.title": "人物・証拠・手がかりを提示",
+        "present.drop": "カードをドラッグ",
+        "confirm.title": "確認",
+        "confirm.ok": "OK",
+        "confirm.cancel": "キャンセル",
+        "chapter.endTitle": "本章終了",
+        "chapter.endDesc": "この段階の調査が完了しました。",
+        "chapter.endBtn": "次へ",
+        "credits.title": "クレジット",
+        "menu.newGame": "はじめから",
+        "menu.continue": "つづきから",
+        "sort.title": "供述者で整理",
+        "sys.livesLeft": "残り推理回数：",
+        "sys.livesUsed": "推理の機会を使い果たしました。",
+        "sys.livesRestart": "セクションの最初に戻ります。",
+        "sys.newEvidence": "新しい手がかりを入手",
+        "sys.newProfile": "新しいプロフィールを入手",
+        "sys.newLocation": "新しい場所を発見",
+        "sys.newTopic": "新しいトピックを開放",
+        "sys.autoSaved": "自動保存しました",
+        "source.from": "出典："
+    }
+};
+function t(key) { return I18N[currentLang]?.[key] || I18N.zh[key] || key; }
+function applyAllUIText() {
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+        const text = t(el.dataset.i18n);
+        if (text) el.innerText = text;
+    });
+    document.querySelectorAll('[data-i18n-title]').forEach(el => {
+        const text = t(el.dataset.i18nTitle);
+        if (text) el.title = text;
+    });
+    // panel titles with nested structure
+    document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.dataset.i18nHtml;
+        const html = I18N[currentLang]?.[key] || I18N.zh[key] || key;
+        if (html) el.innerHTML = html;
+    });
+}
+function setLanguage(lang) {
+    currentLang = lang;
+    localStorage.setItem('game_lang', lang);
+    applyAllUIText();
+}
+
 // ================= 引擎底层逻辑 =================
 let EVIDENCE_DICT = {}; let PROFILE_DICT = {}; let GAME_DATA = {}; let CHAR_COLORS = {};
 let state = {
@@ -682,12 +829,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function bootGame(directLoad) {
     try {
-        const sharedRes = await fetch('data/shared.json'); const sharedData = await sharedRes.json();
-        EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {}; 
-        PROFILE_DICT = sharedData.PROFILE_DICT || {}; 
+        const langData = currentLang === 'zh' ? 'data' : 'data/' + currentLang;
+        const sharedRes = await fetch(langData + '/shared.json'); const sharedData = await sharedRes.json();
+        EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {};
+        PROFILE_DICT = sharedData.PROFILE_DICT || {};
         CHAR_COLORS = sharedData.CHAR_COLORS || {};
 
-        const storyRes = await fetch('data/story_index.json');
+        const storyRes = await fetch(langData + '/story_index.json');
         state.storyIndex = await storyRes.json();
         // 恢复已完成的章节
         try { state.completedChapters = JSON.parse(localStorage.getItem('rdsm_completed_chapters') || '[]'); } catch(e) { state.completedChapters = []; }
@@ -696,6 +844,7 @@ async function bootGame(directLoad) {
             state.currentChapterIdx = 0;
             await fetchChapterData(state.currentChapterIdx);
             document.getElementById("loading-screen").style.display = "none";
+            applyAllUIText();
             document.getElementById("main-menu").style.display = "flex";
             initBGM();
         } else {
@@ -713,7 +862,8 @@ async function fetchChapterData(idx) {
     if (!state.storyIndex || !state.storyIndex.chapters[idx]) return;
     state.currentChapterIdx = idx;
     const chapInfo = state.storyIndex.chapters[idx];
-    const res = await fetch('data/' + chapInfo.file);
+    const langData = currentLang === 'zh' ? 'data' : 'data/' + currentLang;
+    const res = await fetch(langData + '/' + chapInfo.file);
     GAME_DATA = await res.json();
     
     GAME_DATA.locations = GAME_DATA.locations || {};
@@ -1018,14 +1168,14 @@ function loseLife() {
     state.lives--;
     updateLivesDisplay();
     playSound('heart_break');
-    showFlyingNotif(`推理次数剩余：${state.lives}`);
+    showFlyingNotif(t("sys.livesLeft") + state.lives);
     if (state.lives <= 0) {
         setTimeout(() => {
             document.getElementById("confirm-cancel-btn").style.display = "none";
             const closeX = document.querySelector("#confirm-modal .modal-close");
             const origDisplay = closeX.style.display;
             closeX.style.display = "none";
-            showConfirm("你的推理机会已经用尽。<br>返回本节开头重新开始。", () => {
+            showConfirm(t("sys.livesUsed") + "<br>" + t("sys.livesRestart"), () => {
                 document.getElementById("confirm-cancel-btn").style.display = "";
                 closeX.style.display = origDisplay;
                 restartCurrentSection();
@@ -1192,10 +1342,10 @@ function updateDetailContent() {
             if (data.origin === "system") { srcName = "现场调查"; }
             else if (data.origin === "none") { srcName = ""; }
             else { srcName = PROFILE_DICT[data.origin]?.name || data.origin; }
-            if (srcName) { srcEl.innerText = "线索来自：" + srcName; srcEl.style.display = "block"; }
+            if (srcName) { srcEl.innerText = t("source.from") + srcName; srcEl.style.display = "block"; }
         } else if (!isTest && data.sourceChapter && state.storyIndex) {
             const ch = state.storyIndex.chapters.find(c => data.sourceChapter === c.file.replace('.json',''));
-            if (ch) { srcEl.innerText = "线索来自：" + ch.chapter + "-" + ch.section + " " + ch.name; srcEl.style.display = "block"; }
+            if (ch) { srcEl.innerText = t("source.from") + ch.chapter + "-" + ch.section + " " + ch.name; srcEl.style.display = "block"; }
         }
     }
     removeNewBadge(detailCtx.type, detailCtx.id);
@@ -1768,23 +1918,23 @@ function closeDialogue() {
 function unlockProfile(ids, silent=false) { 
     let added = false; let arr = Array.isArray(ids)?ids:[ids];
     arr.forEach(id=>{ if(!state.unlockedProfiles.includes(id)&&PROFILE_DICT[id]) { state.unlockedProfiles.push(id); state.newProfiles.push(id); added=true; } });
-    if(added && !silent) { showFlyingNotif("你得到了新的人物档案"); renderProfiles(); playSound('unlock'); } else if(added && silent) renderProfiles();
+    if(added && !silent) { showFlyingNotif(t("sys.newProfile")); renderProfiles(); playSound('unlock'); } else if(added && silent) renderProfiles();
 }
 function unlockEvidence(ids, silent=false) {
     let added = false; let arr = Array.isArray(ids)?ids:[ids];
     arr.forEach(id=>{ if(!state.unlockedEv.includes(id)&&EVIDENCE_DICT[id]) { state.unlockedEv.push(id); state.newEv.push(id); added=true; } });
-    if(added && !silent) { showFlyingNotif("你得到了一条新线索"); renderEvidence(); playSound('unlock'); autoSave(0); }
+    if(added && !silent) { showFlyingNotif(t("sys.newEvidence")); renderEvidence(); playSound('unlock'); autoSave(0); }
     else if(added && silent) renderEvidence();
 }
 function unlockLocation(ids, silent=false) { 
     let added = false; let arr = Array.isArray(ids)?ids:[ids];
     arr.forEach(id=>{ if(!state.unlockedLocs.includes(id)) { state.unlockedLocs.push(id); state.newLocs.push(id); added=true; } });
-    if(added && !silent) { showFlyingNotif("你得到了新的可探索地点"); renderLocations(); playSound('unlock'); } else if(added && silent) renderLocations();
+    if(added && !silent) { showFlyingNotif(t("sys.newLocation")); renderLocations(); playSound('unlock'); } else if(added && silent) renderLocations();
 }
 function unlockTopic(ids, silent=false) { 
     let added = false; let arr = Array.isArray(ids)?ids:[ids];
     arr.forEach(id=>{ if(!state.unlockedTopics.includes(id)) { state.unlockedTopics.push(id); state.newTopics.push(id); added=true; } });
-    if(added && !silent) { showFlyingNotif("你开启了一个新的话题"); renderTopics(); playSound('unlock'); } else if(added && silent) renderTopics();
+    if(added && !silent) { showFlyingNotif(t("sys.newTopic")); renderTopics(); playSound('unlock'); } else if(added && silent) renderTopics();
 }
 
 function doQuestion() {
@@ -1812,8 +1962,8 @@ function openPresentModal(isGlobal=false, promptText=null) {
     document.getElementById("arrow-right").style.display = "none";
     const m = document.getElementById("present-modal"); m.style.display="block";
     const dz = document.getElementById("drop-zone-present"); 
-    document.getElementById("present-header").innerText = promptText ? "请出示人物/证据/线索" : "出示证据";
-    dz.innerText = promptText || "拖拽卡片至此"; 
+    document.getElementById("present-header").innerText = promptText || t("present.title");
+    dz.innerText = promptText || t("present.drop"); 
     dz.dataset.itemId=""; dz.classList.remove("dragover");
     dz.dataset.isGlobal = isGlobal ? "true" : "false";
     requestAnimationFrame(() => positionActionModal(m));
@@ -2092,36 +2242,40 @@ document.addEventListener("mouseup", () => { dragModal = null; });
 
 <div id="settings-modal" class="modal-box" style="width: 390px; z-index: 5600;">
     <div class="modal-close" onclick="closeModal('settings-modal')"></div>
-    <div class="modal-header">设置</div>
+    <div class="modal-header" data-i18n="settings.title">设置</div>
     <div class="settings-body">
         <div class="settings-row">
-            <span class="settings-label">窗口大小</span>
+            <span class="settings-label" data-i18n="settings.window">窗口大小</span>
             <div class="settings-control" style="gap:4px;">
-                <button class="debug-btn settings-btn" onclick="setWindowSize('fullscreen')">全屏</button>
+                <button class="debug-btn settings-btn" onclick="setWindowSize('fullscreen')" data-i18n="settings.fullscreen">全屏</button>
                 <button class="debug-btn settings-btn" onclick="setWindowSize(1280,800)">1280</button>
                 <button class="debug-btn settings-btn" onclick="setWindowSize(1024,700)">1024</button>
             </div>
         </div>
         <div class="settings-row">
-            <span class="settings-label">语言</span>
-            <div class="settings-control"><button class="debug-btn settings-btn" onclick="showSysMsg('正在装修中')">中文</button></div>
+            <span class="settings-label" data-i18n="settings.lang">语言</span>
+            <div class="settings-control" style="gap:4px;">
+                <button class="debug-btn settings-btn" onclick="setLanguage('zh')" style="font-size:11px;">中文</button>
+                <button class="debug-btn settings-btn" onclick="setLanguage('en')" style="font-size:11px;">English</button>
+                <button class="debug-btn settings-btn" onclick="setLanguage('ja')" style="font-size:11px;">日本語</button>
+            </div>
         </div>
         <div class="settings-row">
-            <span class="settings-label">BGM 音量</span>
+            <span class="settings-label" data-i18n="settings.bgm">BGM 音量</span>
             <div class="settings-control"><input type="range" id="bgm-volume" min="0" max="100" value="40" oninput="setBgmVolume(this.value)"></div>
         </div>
         <div class="settings-row">
-            <span class="settings-label">音效音量</span>
+            <span class="settings-label" data-i18n="settings.sfx">音效音量</span>
             <div class="settings-control">
                 <input type="range" id="sfx-volume" min="0" max="100" value="60" oninput="setSfxVolume(this.value)">
-                <button class="debug-btn test-sfx-btn" onclick="testSfxVolume()">试听</button>
+                <button class="debug-btn test-sfx-btn" onclick="testSfxVolume()" data-i18n="settings.testSfx">试听</button>
             </div>
         </div>
     </div>
 </div>
 <div id="credits-modal" class="modal-box" style="width: 400px; z-index: 5600;">
     <div class="modal-close" onclick="closeModal('credits-modal')"></div>
-    <div class="modal-header">制作团队</div>
+    <div class="modal-header" data-i18n="credits.title">制作团队</div>
     <div class="modal-body" style="padding:22px 28px; line-height:2; font-size:14px; color:#444; text-align:center; align-items:center;">
         文案 / 程序 / 美术：YIFANG（@灰烬马戏团）；音乐：Mubert免费音乐 ；
         音效：https://mowangblog.github.io/game-sfx-generator-web/免费音效生成器 ；
@@ -2132,12 +2286,12 @@ document.addEventListener("mouseup", () => { dragModal = null; });
 <div id="confirm-modal" class="modal-box" style="width: 370px; z-index: 5800;">
     <div class="modal-close" onclick="closeModal('confirm-modal');confirmCallback=null;"></div>
     <div class="tape"></div>
-    <div class="modal-header" style="border:none; text-align:center; padding-bottom:0;">提示</div>
+    <div class="modal-header" style="border:none; text-align:center; padding-bottom:0;" data-i18n="confirm.title">提示</div>
     <div class="modal-body" style="gap: 22px; padding: 12px 28px 25px 28px;">
         <div id="confirm-msg" style="font-size:16px; color:#333; text-align:center; line-height:1.7;"></div>
         <div style="display:flex; gap:18px; justify-content:center;">
-            <button class="confirm-btn" id="confirm-ok-btn">确定</button>
-            <button class="confirm-btn" id="confirm-cancel-btn" style="background:#fff; color:var(--ink-black); border-color:#aaa;">取消</button>
+            <button class="confirm-btn" id="confirm-ok-btn" data-i18n="confirm.ok">确定</button>
+            <button class="confirm-btn" id="confirm-cancel-btn" style="background:#fff; color:var(--ink-black); border-color:#aaa;" data-i18n="confirm.cancel">取消</button>
         </div>
     </div>
 </div>

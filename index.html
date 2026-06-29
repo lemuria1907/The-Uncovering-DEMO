@@ -1331,7 +1331,7 @@ function showChapterLogo(callback) {
 
     const logoSfx = new Audio('audio/logo.mp3');
     logoSfx.volume = Number(document.getElementById('sfx-volume')?.value || 60) / 100;
-    logoSfx.play().catch(() => {});
+    setTimeout(() => logoSfx.play().catch(() => {}), 1300);
 
     setTimeout(() => {
         logoSfx.pause();

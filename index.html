@@ -1640,7 +1640,8 @@ function renderSceneChars() {
     locChars.forEach(charId => {
         const charData = GAME_DATA.characters[charId];
         const baseName = charId.replace('char_', '').replace(/_p\d+$/, '');
-        const photoUrl = `images/P_${baseName}.png`;
+        const chapNum = state.storyIndex?.chapters?.[state.currentChapterIdx]?.chapter || 1;
+        const photoUrl = (baseName === 'xiaozhi') ? `images/P_xiaozhi.png` : `images/chapter${chapNum}/P_${baseName}.png`;
         const isActive = state.currChar === charId; const card = document.createElement("div"); card.className = "photo-card" + (isActive ? " active" : "");
         if (!isActive) card.style.transform = `rotate(${(Math.random() - 0.5) * 4}deg)`;
         const pin = document.createElement("div"); pin.className = "photo-pin"; card.appendChild(pin);

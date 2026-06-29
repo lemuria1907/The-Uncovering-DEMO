@@ -461,6 +461,39 @@
     }
     #cutscene-next-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
 
+    /* ================= 章间LOGO V7 光耀消散 ================= */
+    #logo-overlay {
+        position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
+        background: #0a0a0a; z-index: 9500; display: none;
+        justify-content: center; align-items: center;
+    }
+    #logo-img {
+        max-width: 47vw; max-height: 42vh; object-fit: contain;
+        position: relative; z-index: 3; opacity: 0;
+    }
+    #logo-img.playing {
+        animation: logoV7Main 3.0s ease-out forwards;
+    }
+    @keyframes logoV7Main {
+        0%   { opacity: 0; transform: scale(1.30); filter: brightness(3.5); }
+        18%  { opacity: 1; transform: scale(1.00); filter: brightness(1.0); }
+        75%  { opacity: 1; filter: brightness(1.0); }
+        100% { opacity: 0; filter: brightness(1.6); transform: scale(1.04); }
+    }
+    #logo-particles {
+        position: absolute; inset: 0; z-index: 2; pointer-events: none;
+    }
+    .logo-particle {
+        position: absolute; width: 5px; height: 5px; background: #f2b84e;
+        border-radius: 50%; box-shadow: 0 0 8px #f2b84e;
+        animation: logoV7Fly var(--dur) ease-out forwards;
+        animation-delay: var(--delay); opacity: 0;
+    }
+    @keyframes logoV7Fly {
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
+    }
+
 </style>
 </head>
 <body>
@@ -1075,8 +1108,11 @@ function newGame() {
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
         state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null;
-        document.getElementById("main-menu").style.display = "none"; document.getElementById("game-container").style.display = "grid";
-        startBGM(); initGame();
+        document.getElementById("main-menu").style.display = "none";
+        showChapterLogo(() => {
+            document.getElementById("game-container").style.display = "grid";
+            startBGM(); initGame();
+        });
     });
 }
 async function continueGame() {
@@ -1261,7 +1297,42 @@ function confirmChapterEnd() {
     document.getElementById('chapter-end-overlay').style.display = 'none';
     state.waitingForAction = false;
     autoSave(0);
-    goToNextChapter();
+    showChapterLogo(() => goToNextChapter());
+}
+
+// ================= 章间LOGO V7 光耀消散 =================
+function showChapterLogo(callback) {
+    const chapNum = (state.storyIndex?.chapters?.[state.currentChapterIdx]?.chapter) || 1;
+    const overlay = document.getElementById("logo-overlay");
+    const img = document.getElementById("logo-img");
+    const particlesBox = document.getElementById("logo-particles");
+
+    img.src = `images/chapter${chapNum}/c${chapNum}s1logo.png`;
+    img.classList.remove("playing");
+    particlesBox.innerHTML = "";
+
+    // 生成金色粒子
+    for (let i = 0; i < 70; i++) {
+        const p = document.createElement("div"); p.className = "logo-particle";
+        p.style.cssText = `
+            left: ${43 + Math.random() * 14}%;
+            top: ${40 + Math.random() * 20}%;
+            --tx: ${(Math.random() - 0.5) * 550}px;
+            --ty: ${(Math.random() - 0.5) * 450}px;
+            --dur: ${1.0 + Math.random() * 2.0}s;
+            --delay: ${1.5 + Math.random() * 0.7}s;
+        `;
+        particlesBox.appendChild(p);
+    }
+
+    overlay.style.display = "flex";
+    void img.offsetWidth;
+    img.classList.add("playing");
+
+    setTimeout(() => {
+        overlay.style.display = "none";
+        if (callback) callback();
+    }, 3000);
 }
 
 // ================= 自动存档 =================
@@ -1582,7 +1653,7 @@ function showCutsceneLine(line) {
             if(line.endChapter || line.endGame) {
                 const btn = document.getElementById("cutscene-next-btn");
                 btn.style.display = "block";
-                btn.innerText = line.endGame ? "结束并返回主界面" : "📁 保存并进入下一节";
+                btn.innerText = line.endGame ? "结束并返回主界面" : "进入下一节";
                 state.waitingForAction = true;
             }
         }
@@ -2282,6 +2353,11 @@ document.addEventListener("mouseup", () => { dragModal = null; });
 <div id="cutscene-overlay" onclick="advanceCutscene(event)">
     <div class="cutscene-speech-bubble" id="cutscene-text"></div>
     <button id="cutscene-next-btn" onclick="event.stopPropagation(); finishCutscene()">保存并进入下一节</button>
+</div>
+
+<div id="logo-overlay" onclick="event.stopPropagation()">
+    <img id="logo-img" src="" alt="LOGO">
+    <div id="logo-particles"></div>
 </div>
 
 <div id="settings-modal" class="modal-box" style="width: 390px; z-index: 5600;">

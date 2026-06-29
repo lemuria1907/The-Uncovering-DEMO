@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>过大章LOGO 动画预览</title>
+<style>
+    :root { --bg: #0a0a0a; }
+    body {
+        margin: 0; padding: 0; background: var(--bg);
+        font-family: 'Microsoft YaHei', sans-serif;
+        user-select: none; overflow: hidden;
+        display: flex; justify-content: center; align-items: center;
+        height: 100vh; color: #ccc;
+    }
+    #menu {
+        position: fixed; bottom: 24px; left: 50%; transform: translateX(-50%);
+        display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; z-index: 100;
+    }
+    #menu button {
+        background: #1a1a1a; color: #ffde9c; border: 2px solid #444;
+        padding: 10px 16px; border-radius: 30px; cursor: pointer;
+        font-size: 13px; font-weight: bold; transition: 0.2s;
+    }
+    #menu button:hover { background: #f2b84e; color: #121212; border-color: #f2b84e; transform: scale(1.05); }
+    #menu button.active { background: #e62e2e; border-color: #e62e2e; color: #fff; }
+
+    #stage {
+        position: relative; width: 100vw; height: 100vh;
+        display: flex; justify-content: center; align-items: center;
+        overflow: hidden; background: #0a0a0a;
+    }
+
+    /* ===== V3 光芒脉冲（优化：LOGO加大） ===== */
+    @keyframes v3Glow {
+        0%   { opacity: 0; filter: brightness(0.2) blur(18px); transform: scale(1.12); }
+        15%  { opacity: 1; filter: brightness(2.0) blur(0); transform: scale(1.00); }
+        25%  { filter: brightness(1.0) blur(0); }
+        70%  { opacity: 1; filter: brightness(1.0) blur(0); }
+        100% { opacity: 0; filter: brightness(3.0) blur(14px); transform: scale(1.12); }
+    }
+    @keyframes v3Bg {
+        0%,15% { background: radial-gradient(ellipse at center, rgba(242,184,78,0) 0%, transparent 70%); }
+        30%     { background: radial-gradient(ellipse at center, rgba(242,184,78,0.28) 0%, transparent 70%); }
+        70%     { background: radial-gradient(ellipse at center, rgba(242,184,78,0.10) 0%, transparent 70%); }
+        100%    { background: radial-gradient(ellipse at center, rgba(242,184,78,0.40) 0%, transparent 70%); }
+    }
+    .v3 .stage-inner { animation: v3Bg 2.8s ease-in-out forwards; }
+    .v3 .logo-img { max-width: 57vw; max-height: 52vh; animation: v3Glow 2.8s ease-in-out forwards; }
+
+    /* ===== V4 裂开合拢 ===== */
+    @keyframes v4Top {
+        0%   { clip-path: inset(0 0 50% 0); transform: translateY(-70px); opacity: 0; }
+        18%  { clip-path: inset(0 0 50% 0); transform: translateY(0); opacity: 1; }
+        50%  { clip-path: inset(0 0 0 0); transform: translateY(0); opacity: 1; }
+        82%  { clip-path: inset(0 0 0 0); opacity: 1; }
+        100% { clip-path: inset(0 0 50% 0); transform: translateY(-70px); opacity: 0; }
+    }
+    @keyframes v4Bot {
+        0%   { clip-path: inset(50% 0 0 0); transform: translateY(70px); opacity: 0; }
+        18%  { clip-path: inset(50% 0 0 0); transform: translateY(0); opacity: 1; }
+        50%  { clip-path: inset(0 0 0 0); transform: translateY(0); opacity: 1; }
+        82%  { clip-path: inset(0 0 0 0); opacity: 1; }
+        100% { clip-path: inset(50% 0 0 0); transform: translateY(70px); opacity: 0; }
+    }
+    .v4 .logo-clip-top { animation: v4Top 2.6s ease-in-out forwards; }
+    .v4 .logo-clip-bot { animation: v4Bot 2.6s ease-in-out forwards; }
+
+    /* ===== V7 光耀消散（优化：LOGO缩小） ===== */
+    @keyframes v7Main {
+        0%   { opacity: 0; transform: scale(1.30); filter: brightness(3.5); }
+        18%  { opacity: 1; transform: scale(1.00); filter: brightness(1.0); }
+        75%  { opacity: 1; filter: brightness(1.0); }
+        100% { opacity: 0; filter: brightness(1.6); transform: scale(1.04); }
+    }
+    .v7 .logo-img { max-width: 47vw; max-height: 42vh; animation: v7Main 3.0s ease-out forwards; }
+    .v7 .particle {
+        position: absolute; width: 5px; height: 5px; background: #f2b84e;
+        border-radius: 50%; box-shadow: 0 0 8px #f2b84e;
+        animation: v7Fly var(--dur) ease-out forwards;
+        animation-delay: var(--delay); opacity: 0;
+    }
+    @keyframes v7Fly {
+        0%   { opacity: 1; transform: translate(0, 0) scale(1); }
+        100% { opacity: 0; transform: translate(var(--tx), var(--ty)) scale(0); }
+    }
+
+    /* ===== V8 暗幕撕裂拉开 ===== */
+    @keyframes v8CurtainL {
+        0%   { transform: translateX(0); }
+        22%  { transform: translateX(-52vw); }
+        78%  { transform: translateX(-52vw); }
+        100% { transform: translateX(0); }
+    }
+    @keyframes v8CurtainR {
+        0%   { transform: translateX(0); }
+        22%  { transform: translateX(52vw); }
+        78%  { transform: translateX(52vw); }
+        100% { transform: translateX(0); }
+    }
+    @keyframes v8Logo {
+        0%   { opacity: 0; filter: brightness(0.5); }
+        20%  { opacity: 0; filter: brightness(0.5); }
+        30%  { opacity: 1; filter: brightness(2.0); }
+        40%  { filter: brightness(1.0); }
+        78%  { opacity: 1; filter: brightness(1.0); }
+        100% { opacity: 0; filter: brightness(1.0); }
+    }
+    .v8 .curtain { position: absolute; top: 0; width: 52vw; height: 100vh; background: #0a0a0a; z-index: 10; }
+    .v8 .curtain.left  { left: 0; animation: v8CurtainL 2.8s ease-in-out forwards; border-right: 1px solid #333; }
+    .v8 .curtain.right { right: 0; animation: v8CurtainR 2.8s ease-in-out forwards; border-left: 1px solid #333; }
+    .v8 .logo-img { max-width: 52vw; max-height: 48vh; animation: v8Logo 2.8s ease-in-out forwards; z-index: 3; position: relative; }
+
+    /* ===== V9 纵线扫描拼出 ===== */
+    @keyframes v9Line {
+        0%   { background-position: 0 0; opacity: 0.3; }
+        8%   { opacity: 1; }
+        12%  { opacity: 0.4; }
+        16%  { opacity: 1; }
+        100% { background-position: 0 0; opacity: 1; }
+    }
+    @keyframes v9Reveal {
+        0%   { clip-path: inset(0 100% 0 0); }
+        40%  { clip-path: inset(0 0 0 0); }
+        72%  { clip-path: inset(0 0 0 0); opacity: 1; }
+        100% { clip-path: inset(0 0 0 0); opacity: 0; transform: scale(1.08); filter: blur(2px); }
+    }
+    .v9 .stage-inner::before {
+        content: ''; position: absolute; inset: 0; z-index: 5; pointer-events: none;
+        background: repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(0,0,0,0.1) 1px, transparent 2px);
+        animation: v9Line 2.6s steps(1) forwards;
+    }
+    .v9 .logo-img {
+        max-width: 54vw; max-height: 50vh;
+        animation: v9Reveal 2.6s ease-out forwards;
+        clip-path: inset(0 100% 0 0);
+    }
+
+    /* ===== V10 血墨渗透浮现 ===== */
+    @keyframes v10Ink {
+        0%   { filter: blur(30px) contrast(0.2) brightness(0.3); transform: scale(0.85); opacity: 0; }
+        12%  { filter: blur(18px) contrast(0.5) brightness(0.6); opacity: 0.3; }
+        25%  { filter: blur(8px) contrast(0.9) brightness(0.9); opacity: 0.7; }
+        38%  { filter: blur(2px) contrast(1.05) brightness(1.1); opacity: 1; transform: scale(1.00); }
+        55%  { filter: blur(0) contrast(1.0) brightness(1.0); opacity: 1; }
+        85%  { filter: blur(0) contrast(1.0) brightness(1.0); opacity: 1; }
+        100% { filter: blur(16px) contrast(0.4) brightness(0.5); opacity: 0; transform: scale(1.06); }
+    }
+    @keyframes v10Drips {
+        0%   { opacity: 0; transform: scaleY(0); }
+        18%  { opacity: 0; }
+        30%  { opacity: 0.6; transform: scaleY(1); }
+        42%  { opacity: 0; transform: scaleY(0.3); }
+        100% { opacity: 0; }
+    }
+    .v10 .logo-img { max-width: 55vw; max-height: 50vh; animation: v10Ink 3.0s ease-out forwards; }
+    .v10 .ink-drip {
+        position: absolute; top: 0; width: 2px; background: linear-gradient(to bottom, rgba(242,184,78,0.6), transparent);
+        animation: v10Drips 3.0s ease-out forwards; z-index: 4;
+    }
+
+    /* common */
+    .stage-inner {
+        position: absolute; inset: 0;
+        display: flex; justify-content: center; align-items: center;
+    }
+    .logo-img {
+        z-index: 3; position: relative; object-fit: contain;
+        /* default size */ max-width: 52vw; max-height: 48vh;
+    }
+    .logo-clip-top, .logo-clip-bot {
+        position: absolute; inset: 0;
+        background-image: url('file:///C:/Users/lemur/Desktop/the uncovering/images/chapter1/c1s1logo.png');
+        background-size: contain; background-position: center; background-repeat: no-repeat;
+        z-index: 3; max-width: 52vw; max-height: 48vh;
+        margin: auto;
+    }
+
+    .label {
+        position: fixed; top: 24px; left: 50%; transform: translateX(-50%);
+        font-size: 22px; color: #f2b84e; z-index: 10; letter-spacing: 3px;
+        font-weight: bold; text-shadow: 0 0 10px rgba(242,184,78,0.3);
+    }
+</style>
+</head>
+<body>
+
+<div class="label" id="ver-label">V3 · 光芒脉冲</div>
+
+<div id="stage">
+    <div class="stage-inner"></div>
+</div>
+
+<div id="menu">
+    <button onclick="play('v3')" class="active">V3 光芒脉冲</button>
+    <button onclick="play('v4')">V4 裂开合拢</button>
+    <button onclick="play('v7')">V7 光耀消散</button>
+    <button onclick="play('v8')">V8 暗幕拉开</button>
+    <button onclick="play('v9')">V9 线条扫描</button>
+    <button onclick="play('v10')">V10 血墨渗透</button>
+</div>
+
+<script>
+const stage = document.getElementById('stage');
+const verLabel = document.getElementById('ver-label');
+const names = {
+    v3:'V3 · 光芒脉冲', v4:'V4 · 裂开合拢', v7:'V7 · 光耀消散',
+    v8:'V8 · 暗幕拉开', v9:'V9 · 线条扫描', v10:'V10 · 血墨渗透'
+};
+
+function play(v) {
+    document.querySelectorAll('#menu button').forEach(b => b.classList.remove('active'));
+    document.querySelector(`[onclick="play('${v}')"]`).classList.add('active');
+    verLabel.innerText = names[v];
+    stage.className = v;
+
+    const inner = stage.querySelector('.stage-inner');
+    inner.innerHTML = '';
+
+    if (v === 'v4') {
+        inner.innerHTML = `<div class="logo-clip-top"></div><div class="logo-clip-bot"></div>`;
+    } else if (v === 'v7') {
+        inner.innerHTML = `<img class="logo-img" src="file:///C:/Users/lemur/Desktop/the uncovering/images/chapter1/c1s1logo.png">`;
+        buildParticles();
+    } else if (v === 'v8') {
+        stage.innerHTML = `
+            <div class="curtain left"></div><div class="curtain right"></div>
+            <div class="stage-inner"><img class="logo-img" src="file:///C:/Users/lemur/Desktop/the uncovering/images/chapter1/c1s1logo.png"></div>`;
+    } else if (v === 'v10') {
+        inner.innerHTML = `<img class="logo-img" src="file:///C:/Users/lemur/Desktop/the uncovering/images/chapter1/c1s1logo.png">`;
+        buildDrips();
+    } else {
+        inner.innerHTML = `<img class="logo-img" src="file:///C:/Users/lemur/Desktop/the uncovering/images/chapter1/c1s1logo.png">`;
+    }
+
+    void stage.offsetWidth; // force reflow
+}
+
+function buildParticles() {
+    const inner = stage.querySelector('.stage-inner');
+    inner.querySelectorAll('.particle').forEach(p => p.remove());
+    for (let i=0; i<70; i++) {
+        const p = document.createElement('div'); p.className = 'particle';
+        p.style.cssText = `
+            left: ${43+Math.random()*14}%; top: ${40+Math.random()*20}%;
+            --tx: ${(Math.random()-0.5)*550}px; --ty: ${(Math.random()-0.5)*450}px;
+            --dur: ${1.0+Math.random()*2.0}s; --delay: ${1.5+Math.random()*0.7}s;
+        `;
+        inner.appendChild(p);
+    }
+}
+
+function buildDrips() {
+    const inner = stage.querySelector('.stage-inner');
+    for (let i=0; i<12; i++) {
+        const drip = document.createElement('div'); drip.className = 'ink-drip';
+        const x = 30 + Math.random() * 40; // % from left
+        drip.style.cssText = `left:${x}%; height:${60+Math.random()*120}px; animation-delay:${0.5+Math.random()*1.5}s;`;
+        inner.appendChild(drip);
+    }
+}
+
+// Auto play
+play('v3');
+
+// Click to replay
+stage.addEventListener('click', () => play(stage.className));
+</script>
+</body>
+</html>

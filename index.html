@@ -1329,7 +1329,13 @@ function showChapterLogo(callback) {
     void img.offsetWidth;
     img.classList.add("playing");
 
+    const logoSfx = new Audio('audio/logo.mp3');
+    logoSfx.volume = Number(document.getElementById('sfx-volume')?.value || 60) / 100;
+    logoSfx.play().catch(() => {});
+
     setTimeout(() => {
+        logoSfx.pause();
+        logoSfx.currentTime = 0;
         overlay.style.display = "none";
         if (callback) callback();
     }, 3000);

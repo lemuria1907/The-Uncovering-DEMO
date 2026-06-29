@@ -1331,14 +1331,15 @@ function showChapterLogo(callback) {
 
     const logoSfx = new Audio('audio/logo.mp3');
     logoSfx.volume = Number(document.getElementById('sfx-volume')?.value || 60) / 100;
-    setTimeout(() => logoSfx.play().catch(() => {}), 1300);
+    setTimeout(() => logoSfx.play().catch(() => {}), 1400);
 
+    // 3s 动画结束 → 黑屏停顿 1s → 切游戏画面
+    setTimeout(() => { overlay.style.display = "none"; }, 3000);
     setTimeout(() => {
         logoSfx.pause();
         logoSfx.currentTime = 0;
-        overlay.style.display = "none";
         if (callback) callback();
-    }, 3000);
+    }, 4000);
 }
 
 // ================= 自动存档 =================

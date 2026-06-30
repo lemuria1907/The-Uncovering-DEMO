@@ -822,20 +822,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_mingqi",
-                  "t": "我根本没有骚扰过任何人，好吧？",
-                  "unlockEv": [
-                    "ev_mingqi_testimony1"
-                  ]
-                }
-              ]
-            },
-            "ev_anonymous_post": {
-              "resolved": false,
-              "dialogue": [
-                {
-                  "s": "npc",
-                  "speaker": "char_mingqi",
-                  "t": "哼……这种无稽之谈，根本没有必要去理会。"
+                  "t": "我根本没有骚扰过任何人，好吧？"
                 },
                 {
                   "s": "player",
@@ -845,7 +832,15 @@
                 {
                   "s": "npc",
                   "speaker": "char_mingqi",
-                  "t": "我为什么要澄清自己根本没有做过的事？"
+                  "t": "哼……这种无稽之谈，根本没有必要去理会。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "我为什么要澄清自己根本没有做过的事？",
+                  "unlockEv": [
+                    "ev_mingqi_testimony1"
+                  ]
                 }
               ]
             }
@@ -1110,10 +1105,7 @@
                       {
                         "s": "npc",
                         "speaker": "char_shihui",
-                        "t": "我也就是听说啊，一位在乐园工作的女性在社交媒体上匿名发帖子，说乐园某领导对女演员有骚扰行为。",
-                        "unlockEv": [
-                          "ev_anonymous_post"
-                        ]
+                        "t": "我也就是听说啊，一位在乐园工作的女性在社交媒体上匿名发帖子，说乐园某领导对女演员有骚扰行为。"
                       },
                       {
                         "s": "npc",

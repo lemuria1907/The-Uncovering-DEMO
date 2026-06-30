@@ -48,6 +48,12 @@
       "sourceChapter": "c1_s1",
       "img": "images/chapter1/map_ghost.jpg"
     },
+    "ev_actor_transfer_rules": {
+      "name": "演员转场规则",
+      "desc": "为确保演员在不打断观众沉浸体验的前提下完成点位切换，现重申以下操作规范：\n1）换装要求：每组服装均采用易穿卸结构，演出期间演员身穿黑色打底衣。每个演出点位对应服装，均预先放置于该空间内昏暗处。\n2）转场路线：当观众被当前点位的演出内容吸引时，演员可利用暗门完成空间转移，也可观众后侧绕行，通过视线死角移动至下一点位。\n3）间隔原则：同一演员不得连续经过两个以上的点位。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s1"
+    },
     "ev_zhencheng_testimony1": {
       "name": "真橙·供述1",
       "desc": "第四场演出时，真橙在5号点位正常进行了双人演出。",
@@ -104,7 +110,7 @@
     },
     "ev_prop_box": {
       "name": "道具箱",
-      "desc": "一个约为1.5x2x1.5的大箱子，里面放置着一套亲王之妻的人偶。",
+      "desc": "一个约为1.5x2x1.5米的大箱子，里面放置着一套亲王之妻的人偶。",
       "origin": "system",
       "sourceChapter": "c1_s2"
     },
@@ -154,12 +160,6 @@
       "name": "明淇·供述2",
       "desc": "明淇认为乐园对他并不公正，没有对谣言进行查证，一味地将过错归咎于他。而他习惯于不去澄清自己没有做过的事情，于是造成了误解。",
       "origin": "char_mingqi",
-      "sourceChapter": "c1_s3"
-    },
-    "ev_anonymous_post": {
-      "name": "匿名指控",
-      "desc": "三年前，一位在乐园工作的女性在社交媒体上匿名发帖子，说乐园某领导对女演员有骚扰行为。大家默认这位领导是明淇。",
-      "origin": "system",
       "sourceChapter": "c1_s3"
     },
     "ev_public_outcry_screenshot": {
@@ -280,47 +280,47 @@
   "PROFILE_DICT": {
     "char_changwei": {
       "name": "常威",
-      "desc": "死者。鬼屋演员，男，身高1.74米，体重62kg。",
+      "desc": "死者。鬼屋演员，男，看起来三十多岁。",
       "sourceChapter": "c1_s1"
     },
     "char_zhencheng": {
       "name": "真橙",
-      "desc": "鬼屋演员，女，身高1.67米，体重54kg。擅长舞蹈。",
+      "desc": "鬼屋演员，女，面庞年轻、清秀，但有点拒人千里之外的感觉，擅长舞蹈。",
       "sourceChapter": "c1_s1"
     },
     "char_ayou": {
       "name": "阿祐",
-      "desc": "鬼屋演员，男，身高1.72米，体重60kg。",
+      "desc": "鬼屋演员，男，瘦但健壮，看起来很朴实。",
       "sourceChapter": "c1_s1"
     },
     "char_shihui": {
       "name": "石辉",
-      "desc": "演出部主管，男，身高1.77米，体重76kg。",
+      "desc": "演出部主管，男，穿着款式有点过时的工装夹克，看上去比实际年龄要大。",
       "sourceChapter": "c1_s1"
     },
     "char_andy": {
       "name": "Andy",
-      "desc": "游乐园安保负责人，男，身高1.81米，体重72kg。",
+      "desc": "游乐园安保负责人，非常可靠，是你的好朋友。",
       "sourceChapter": "c1_s1"
     },
     "char_qin": {
       "name": "琴警官",
-      "desc": "你的老相识，负责本案的调查。",
+      "desc": "你的老相识，负责本案的调查。她十分认可你的能力，经常会把一些非她管辖范围内的案件介绍给你。",
       "sourceChapter": "c1_s1"
     },
     "char_mingqi": {
       "name": "明淇",
-      "desc": "阿祐提及的前朝夜乐园演出部主管。男，身高1.80米，体重74kg，最初是他设计和开发了鬼屋项目。",
+      "desc": "阿祐提及的前朝夜乐园演出部主管，男，最初是他设计和开发了鬼屋项目。",
       "sourceChapter": "c1_s2"
     },
     "char_xiaohua": {
       "name": "肖桦",
-      "desc": "前鬼屋演员，三年前在鬼屋中死亡。擅长舞蹈。",
+      "desc": "前鬼屋演员，男，三年前在鬼屋中死亡，擅长舞蹈。",
       "sourceChapter": "c1_s2"
     },
     "char_meiyu": {
       "name": "美羽",
-      "desc": "乐园演员，鬼屋临时演员，女，身高1.70米，体重56kg。擅长舞蹈。",
+      "desc": "乐园演员，鬼屋临时演员，女，擅长舞蹈。",
       "sourceChapter": "c1_s3"
     },
     "char_xiaozhi": {
@@ -330,17 +330,17 @@
     },
     "char_rulan": {
       "name": "茹兰",
-      "desc": "甜咪动物救助中心护理员，女，身高1.69米，体重55kg。",
+      "desc": "甜咪动物救助中心护理员，女，穿着简单的浅蓝色上衣，面色苍白。",
       "sourceChapter": "c1_s4"
     },
     "char_antong": {
       "name": "安童",
-      "desc": "扒手，男，据琴警官调查，他没有任何盗窃记录，并非惯犯。",
+      "desc": "扒手，男，看上去很年轻，像个不起眼的大学生，据琴警官调查，他没有任何盗窃记录，并非惯犯。",
       "sourceChapter": "c1_s4"
     },
     "char_aling": {
       "name": "阿凌",
-      "desc": "琴警官调查到的、三年前死者肖桦的未婚妻。",
+      "desc": "琴警官调查到的、三年前死者肖桦的未婚妻。据邻居说她已不在本地生活。",
       "sourceChapter": "c1_s4"
     }
   }

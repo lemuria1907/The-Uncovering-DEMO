@@ -86,8 +86,8 @@
     #title-card-text { color: #ff2a2a; font-size: 64px; font-weight: 900; font-family: "Georgia", serif; letter-spacing: 10px; animation: bloodPulse 1.5s infinite alternate; text-shadow: 0 0 20px rgba(179, 74, 54, 0.6), 2px 4px 5px rgba(0,0,0,0.8);}
     .pulse-hint { color: #888; font-size: 16px; margin-top: 60px; letter-spacing: 4px; animation: pulseFade 1.5s infinite alternate; }
 
-    @keyframes smashIn { 0% { transform: scale(3) translateY(-50px); opacity: 0; filter: blur(20px); } 50% { opacity: 1; } 100% { transform: scale(1) translateY(0); opacity: 1; filter: blur(0); } }
-    @keyframes smashOut { 0% { transform: scale(1); opacity: 1; filter: blur(0); } 100% { transform: scale(1.5) translateY(50px); opacity: 0; filter: blur(20px); } }
+    @keyframes smashIn { 0% { opacity: 0; transform: scale(0.97); } 100% { opacity: 1; transform: scale(1); } }
+    @keyframes smashOut { 0% { opacity: 1; transform: scale(1); } 100% { opacity: 0; transform: scale(1.03); } }
     @keyframes bloodPulse { 0% { text-shadow: 0 0 10px #ff2a2a, 0 0 20px #8b0000; } 100% { text-shadow: 0 0 30px #ff0000, 0 0 60px #ff0000, 0 0 90px #8b0000; } }
     @keyframes pulseFade { 0% { opacity: 0.2; } 100% { opacity: 1; } }
 
@@ -466,6 +466,7 @@
         position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
         background: #0a0a0a; z-index: 9500; display: none;
         justify-content: center; align-items: center;
+        opacity: 1; transition: opacity 0.8s ease;
     }
     #logo-img {
         max-width: 47vw; max-height: 42vh; object-fit: contain;
@@ -886,7 +887,11 @@ document.addEventListener('keydown', (e) => {
         const mainMenu = document.getElementById("main-menu"); const gameContainer = document.getElementById("game-container");
         if(mainMenu.style.display === "none") {
             gameContainer.style.display = "none"; mainMenu.style.display = "flex";
-            if(bgmAudio) bgmAudio.pause(); if(tensionAudio) tensionAudio.pause(); currentBGM = "main"; document.querySelectorAll(".modal-box").forEach(m => m.style.display="none");
+            if(bgmAudio) { bgmAudio.pause(); bgmAudio.currentTime = 0; }
+            if(tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
+            if(customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
+            clearTimeout(autoPlayTimer); clearInterval(bgmFadeTimer);
+            currentBGM = "main"; document.querySelectorAll(".modal-box").forEach(m => m.style.display="none");
             if(state.autoPlay) toggleAutoPlay();
         } else if(state.hasSeenIntro) {
             mainMenu.style.display = "none"; gameContainer.style.display = "grid";
@@ -1109,10 +1114,8 @@ function newGame() {
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
         state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null;
         document.getElementById("main-menu").style.display = "none";
-        showChapterLogo(() => {
-            document.getElementById("game-container").style.display = "grid";
-            startBGM(); initGame();
-        });
+        document.getElementById("game-container").style.display = "grid";
+        startBGM(); initGame();
     });
 }
 async function continueGame() {
@@ -1133,7 +1136,24 @@ function initBGM() {
     if (!bgmAudio) { bgmAudio = new Audio('audio/bgm_main.mp3'); bgmAudio.loop = true; bgmAudio.volume = Number(document.getElementById('bgm-volume')?.value || 40) / 100; }
     if (!tensionAudio) { tensionAudio = new Audio('audio/tension.mp3'); tensionAudio.loop = true; tensionAudio.volume = 0; }
 }
-function startBGM() { initBGM(); bgmAudio.play().catch(() => {}); }
+function startBGM() {
+    initBGM();
+    if (tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
+    if (customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
+    currentBGM = "main";
+    const targetVol = Number(document.getElementById('bgm-volume')?.value || 40) / 100;
+    bgmAudio.volume = 0;
+    bgmAudio.currentTime = 0;
+    bgmAudio.play().catch(() => {});
+    // 2秒平滑淡入
+    const steps = 20, interval = 100, delta = targetVol / steps;
+    let step = 0;
+    const fadeIn = setInterval(() => {
+        step++;
+        bgmAudio.volume = Math.min(delta * step, targetVol);
+        if (step >= steps) clearInterval(fadeIn);
+    }, interval);
+}
 function getAudioByTarget(target) {
     if (target === "main") return bgmAudio;
     if (target === "tension") return tensionAudio;
@@ -1297,17 +1317,20 @@ function confirmChapterEnd() {
     document.getElementById('chapter-end-overlay').style.display = 'none';
     state.waitingForAction = false;
     autoSave(0);
-    showChapterLogo(() => goToNextChapter());
+    showChapterLogo(() => goToNextChapter(), state.currentChapterIdx + 1);
 }
 
 // ================= 章间LOGO V7 光耀消散 =================
-function showChapterLogo(callback) {
-    const chapNum = (state.storyIndex?.chapters?.[state.currentChapterIdx]?.chapter) || 1;
+function showChapterLogo(callback, secIdx) {
+    const idx = (secIdx != null) ? secIdx : state.currentChapterIdx;
+    const chapInfo = state.storyIndex?.chapters?.[idx];
+    const chapNum = chapInfo?.chapter || 1;
+    const secNum = chapInfo?.section || 1;
     const overlay = document.getElementById("logo-overlay");
     const img = document.getElementById("logo-img");
     const particlesBox = document.getElementById("logo-particles");
 
-    img.src = `images/chapter${chapNum}/c${chapNum}s1logo.png`;
+    img.src = `images/chapter${chapNum}/${chapNum}-${secNum}.png`;
     img.classList.remove("playing");
     particlesBox.innerHTML = "";
 
@@ -1325,7 +1348,20 @@ function showChapterLogo(callback) {
         particlesBox.appendChild(p);
     }
 
+    // BGM 淡出
+    const targetVol = getBgmVolume();
+    const fadeSteps = 15, fadeInterval = 50;
+    let step = 0;
+    clearInterval(bgmFadeTimer);
+    const fadeOut = setInterval(() => {
+        step++;
+        if (bgmAudio) bgmAudio.volume = Math.max(0, targetVol * (1 - step / fadeSteps));
+        if (tensionAudio && isAudioAudible(tensionAudio)) tensionAudio.volume = Math.max(0, tensionAudio.volume * (1 - step / fadeSteps));
+        if (step >= fadeSteps) clearInterval(fadeOut);
+    }, fadeInterval);
+
     overlay.style.display = "flex";
+    overlay.style.opacity = "1";
     void img.offsetWidth;
     img.classList.add("playing");
 
@@ -1333,13 +1369,55 @@ function showChapterLogo(callback) {
     logoSfx.volume = Number(document.getElementById('sfx-volume')?.value || 60) / 100;
     setTimeout(() => logoSfx.play().catch(() => {}), 1400);
 
-    // 3s 动画结束 → 黑屏停顿 1s → 切游戏画面
-    setTimeout(() => { overlay.style.display = "none"; }, 3000);
+    // 3s 动画结束(logo透明) → 黑屏停顿 1s → 游戏画面先亮 → 遮罩渐隐 0.8s
     setTimeout(() => {
         logoSfx.pause();
         logoSfx.currentTime = 0;
         if (callback) callback();
+        // BGM 淡入
+        const vol = getBgmVolume();
+        let s = 0;
+        const fi = setInterval(() => {
+            s++;
+            if (bgmAudio && !bgmAudio.paused) bgmAudio.volume = Math.min(vol, vol * (s / 20));
+            if (s >= 20) clearInterval(fi);
+        }, 80);
+        setTimeout(() => {
+            overlay.style.opacity = "0";
+            setTimeout(() => { overlay.style.display = "none"; }, 800);
+        }, 100);
     }, 4000);
+}
+
+function showChapterLogoSimple() {
+    const chapNum = (state.storyIndex?.chapters?.[state.currentChapterIdx]?.chapter) || 1;
+    const overlay = document.getElementById("logo-overlay");
+    const img = document.getElementById("logo-img");
+    const particlesBox = document.getElementById("logo-particles");
+    particlesBox.innerHTML = "";
+    img.src = `images/chapter${chapNum}/c${chapNum}s1logo.png`;
+    img.classList.remove("playing");
+    img.style.animation = "none";
+    img.style.opacity = "0";
+    img.style.transform = "scale(1)";
+    img.style.filter = "brightness(1)";
+    overlay.style.display = "flex";
+    overlay.style.opacity = "1";
+    overlay.style.transition = "none";
+    void img.offsetWidth;
+    img.style.transition = "opacity 1.2s ease, transform 1.2s ease";
+    img.style.opacity = "1";
+    overlay.onclick = () => {
+        img.style.opacity = "0";
+        overlay.style.opacity = "0";
+        overlay.style.transition = "opacity 0.6s ease";
+        setTimeout(() => {
+            overlay.style.display = "none";
+            overlay.onclick = null;
+            state.waitingForAction = false;
+            nextDialogue();
+        }, 600);
+    };
 }
 
 // ================= 自动存档 =================
@@ -1456,7 +1534,7 @@ function updateDetailContent() {
     if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
     srcEl.style.display = "none";
     if (data && detailCtx.type === 'ev') {
-        const isTest = /供述|证言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|anonymous_post|tourist_at_back)$/.test(detailCtx.id);
+        const isTest = /供述|证言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(detailCtx.id);
         if (isTest && data.origin) {
             let srcName = "";
             if (data.origin === "system") { srcName = "现场调查"; }
@@ -1616,14 +1694,14 @@ function renderEvidence() {
         let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
         div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${EVIDENCE_DICT[id]?.name || id}</span></div>` + newBadge;
-        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|anonymous_post|tourist_at_back)$/.test(id);
+        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(id);
         const targetBox = (testimonyBox && isTestimony) ? testimonyBox : box;
         targetBox.appendChild(div);
     });
 }
 function sortTestimony() {
     playSound('click');
-    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|anonymous_post|tourist_at_back)$/.test(id);
+    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(id);
     const testIds = state.unlockedEv.filter(isTest);
     const otherIds = state.unlockedEv.filter(id => !isTest(id));
     testIds.sort((a, b) => {
@@ -1708,7 +1786,7 @@ function finishCutscene() {
         }
     }
     autoSave(0);
-    goToNextChapter();
+    showChapterLogo(() => goToNextChapter(), state.currentChapterIdx + 1);
 }
 
 function renderSceneChars() {
@@ -1926,7 +2004,11 @@ function renderDialogueLine() {
     
     if(line.titleCard) {
         textDiv.innerHTML = ""; state.waitingForAction = true;
-        setTimeout(() => showTitleCard(line.titleCard), 200); return; 
+        setTimeout(() => showTitleCard(line.titleCard), 200); return;
+    }
+    if(line.chapterLogo) {
+        textDiv.innerHTML = ""; state.waitingForAction = true;
+        setTimeout(() => showChapterLogo(() => { state.waitingForAction = false; nextDialogue(); }), 200); return;
     }
 
     if(line.s==="system") { textDiv.style.color="var(--text-system)"; textDiv.style.fontStyle="italic"; }

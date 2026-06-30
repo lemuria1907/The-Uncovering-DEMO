@@ -8,7 +8,7 @@
   "chapters": [
     { "chapter": 1, "section": 1, "file": "c1_s1.json", "name": "鬼屋前的骚动" },
     { "chapter": 1, "section": 2, "file": "c1_s2.json", "name": "搜证与问询" },
-    { "chapter": 1, "section": 3, "file": "c1_s3.json", "name": "更衣室的线索" },
+    { "chapter": 1, "section": 3, "file": "c1_s3.json", "name": "寻迹究踪" },
     { "chapter": 1, "section": 4, "file": "c1_s4.json", "name": "三年前的阴影" },
     { "chapter": 1, "section": 5, "file": "c1_s5.json", "name": "复仇终幕" }
   ]

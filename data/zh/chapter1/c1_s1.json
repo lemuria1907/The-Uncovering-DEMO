@@ -543,7 +543,8 @@
     {
       "s": "npc",
       "speaker": "char_shihui",
-      "t": "演员的移动路线中，除非剧情强制要求，否则不会连续经过多个点位。这样保证了他们的行进过程不容易被观众察觉。"
+      "t": "演员的移动路线中，除非剧情强制要求，否则不会连续经过多个点位。这样保证了他们的行进过程不容易被观众察觉。",
+      "unlockEv": "ev_actor_transfer_rules"
     },
     {
       "s": "npc",
@@ -759,6 +760,7 @@
                               "speaker": "char_shihui",
                               "t": "？？！！！！"
                             },
+                            { "chapterLogo": true },
                             {
                               "s": "system",
                               "speaker": "none",

@@ -22,11 +22,12 @@
     ],
     "mac": {
       "category": "public.app-category.games",
-      "target": ["dmg", "zip"]
+      "target": ["dmg", "zip"],
+      "icon": "icon.png"
     },
     "win": {
       "target": ["nsis", "zip"],
-      "icon": "icon.ico"
+      "icon": "icon.png"
     },
     "nsis": {
       "oneClick": false,

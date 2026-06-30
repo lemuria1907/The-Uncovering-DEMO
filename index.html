@@ -469,7 +469,7 @@
         opacity: 1; transition: opacity 0.8s ease;
     }
     #logo-img {
-        max-width: 47vw; max-height: 42vh; object-fit: contain;
+        width: 52vw; height: auto; object-fit: contain;
         position: relative; z-index: 3; opacity: 0;
     }
     #logo-img.playing {
@@ -534,7 +534,7 @@
         <div class="side-tab load-tab" onclick="openSaveLoadModal('load')">读<br>档</div>
     </div>
     
-    <div id="debug-panel">
+    <div id="debug-panel" style="display:none;">
         <div id="debug-chap-name">载入中...</div>
         <button class="debug-btn" onclick="skipToNextActionOrEnd()">⏭️ 剧情快进跳跃</button>
         <button class="debug-btn" onclick="forceNextChapter()" style="color:var(--stamp-red); border-color:var(--stamp-red);">⏭️ 强切下一章节</button>
@@ -602,7 +602,7 @@
             <div id="evidence-list" class="grid-list"></div>
         </div>
         <div class="panel third-panel">
-            <div class="panel-title" style="margin-left:-2px;" data-i18n="panel.statements">Statements 证言 <button class="sort-btn" onclick="sortTestimony()" data-i18n-title="sort.title" title="按供述人整理">⇅</button></div>
+            <div class="panel-title" style="margin-left:-2px;"><span data-i18n="panel.statements">Statements 证言</span> <button class="sort-btn" onclick="sortTestimony()" data-i18n-title="sort.title" title="按供述人整理">⇅</button></div>
             <div id="testimony-list" class="grid-list"></div>
         </div>
         <div id="action-buttons">
@@ -820,6 +820,7 @@ const I18N = {
 function t(key) { return I18N[currentLang]?.[key] || I18N.zh[key] || key; }
 function applyAllUIText() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
+        if (el.children.length > 0) return; // 有子元素的跳过，避免误删嵌套按钮
         const text = t(el.dataset.i18n);
         if (text) el.innerText = text;
     });
@@ -1348,17 +1349,17 @@ function showChapterLogo(callback, secIdx) {
         particlesBox.appendChild(p);
     }
 
-    // BGM 淡出
+    // BGM 淡出 (1.8s)
     const targetVol = getBgmVolume();
-    const fadeSteps = 15, fadeInterval = 50;
-    let step = 0;
+    const fadeOutSteps = 30, fadeOutInterval = 60;
+    let outStep = 0;
     clearInterval(bgmFadeTimer);
-    const fadeOut = setInterval(() => {
-        step++;
-        if (bgmAudio) bgmAudio.volume = Math.max(0, targetVol * (1 - step / fadeSteps));
-        if (tensionAudio && isAudioAudible(tensionAudio)) tensionAudio.volume = Math.max(0, tensionAudio.volume * (1 - step / fadeSteps));
-        if (step >= fadeSteps) clearInterval(fadeOut);
-    }, fadeInterval);
+    const fadeOutTimer = setInterval(() => {
+        outStep++;
+        if (bgmAudio) bgmAudio.volume = Math.max(0, targetVol * (1 - outStep / fadeOutSteps));
+        if (tensionAudio && isAudioAudible(tensionAudio)) tensionAudio.volume = Math.max(0, tensionAudio.volume * (1 - outStep / fadeOutSteps));
+        if (outStep >= fadeOutSteps) clearInterval(fadeOutTimer);
+    }, fadeOutInterval);
 
     overlay.style.display = "flex";
     overlay.style.opacity = "1";
@@ -1374,14 +1375,18 @@ function showChapterLogo(callback, secIdx) {
         logoSfx.pause();
         logoSfx.currentTime = 0;
         if (callback) callback();
-        // BGM 淡入
+        // BGM 淡入 (5s)
+        if (bgmAudio) {
+            bgmAudio.volume = 0;
+            bgmAudio.play().catch(() => {});
+        }
         const vol = getBgmVolume();
         let s = 0;
         const fi = setInterval(() => {
             s++;
-            if (bgmAudio && !bgmAudio.paused) bgmAudio.volume = Math.min(vol, vol * (s / 20));
-            if (s >= 20) clearInterval(fi);
-        }, 80);
+            if (bgmAudio) bgmAudio.volume = Math.min(vol, vol * (s / 50));
+            if (s >= 50) clearInterval(fi);
+        }, 100);
         setTimeout(() => {
             overlay.style.opacity = "0";
             setTimeout(() => { overlay.style.display = "none"; }, 800);

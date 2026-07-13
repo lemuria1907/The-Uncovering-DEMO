@@ -66,26 +66,20 @@
       "origin": "char_zhencheng",
       "sourceChapter": "c1_s2"
     },
-    "ev_ayou_testimony1": {
-      "name": "阿祐·供述1",
-      "desc": "演出概念、大致剧情和台词，由前任演出部主管明淇设计。明淇于两年前离开乐园。",
-      "origin": "char_ayou",
-      "sourceChapter": "c1_s2"
-    },
     "ev_ayou_testimony2": {
-      "name": "阿祐·供述2",
+      "name": "阿祐·供述1",
       "desc": "肖华和真橙一起负责了鬼屋的编舞，关系较为融洽。",
       "origin": "char_ayou",
       "sourceChapter": "c1_s2"
     },
     "ev_ayou_testimony3": {
-      "name": "阿祐·供述3",
+      "name": "阿祐·供述2",
       "desc": "肖华的真实死因是因道具安全锁失效，不幸被勒死。在蒋威的授意下，阿祐取下安全锁扣，将绳索挂在肖华脖子上伪装成自杀。",
       "origin": "char_ayou",
       "sourceChapter": "c1_s4"
     },
     "ev_ayou_testimony4": {
-      "name": "阿祐·供述4",
+      "name": "阿祐·供述3",
       "desc": "三年前，另外一位乐园的领导有骚扰女演员的行为，乐园的员工小琳、高欢对此不满，真橙似乎也提到过这件事。",
       "origin": "char_ayou",
       "sourceChapter": "c1_s4"
@@ -217,7 +211,7 @@
       "sourceChapter": "c1_s3"
     },
     "ev_rulan_testimony2": {
-      "name": "茹兰·供述2",
+      "name": "茹兰·供述",
       "desc": "茹兰在观影中途因肚子疼去上了厕所。大概演到南瓜王偷到魔法杖之后。",
       "origin": "char_rulan",
       "sourceChapter": "c1_s4"

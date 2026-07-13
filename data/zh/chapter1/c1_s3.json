@@ -203,9 +203,6 @@
             "t_mingqi_day",
             "t_shihui_about_mingqi",
             "t_shihui_float_accident"
-          ],
-          "unlockProfile": [
-            "char_meiyu"
           ]
         },
         {
@@ -1324,10 +1321,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "是的……",
-                "unlockEv": [
-                  "ev_meiyu_testimony1"
-                ]
+                "t": "是的……"
               },
               {
                 "s": "player",

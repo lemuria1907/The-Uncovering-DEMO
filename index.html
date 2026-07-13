@@ -3,8 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>案件推演 - 终极手账版</title>
-<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@400;500;600;700&family=Comic+Neue:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 <style>
     /* ================= 网点漫画核心色卡与素材 ================= */
     :root {
@@ -35,7 +33,7 @@
         background-color: #2b241c;
         background-image: radial-gradient(circle at 25% 40%, rgba(255,215,150,0.15) 2%, transparent 2.5%);
         background-size: 28px 28px;
-        font-family: 'Comic Neue', 'Chakra Petch', 'Microsoft YaHei', sans-serif;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
         display: flex; height: 100vh; overflow: hidden; user-select: none; box-sizing: border-box;
     }
 
@@ -55,13 +53,13 @@
     #main-menu h1 {
         font-size: 60px; text-shadow: 4px 4px 0 rgba(0,0,0,0.7), 0 0 40px rgba(0,0,0,0.6);
         letter-spacing: 0.15em; margin: 0;
-        font-family: 'Chakra Petch', monospace; color: #ffeaac;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; color: #ffeaac;
     }
     .menu-btn {
         width: 240px; padding: 14px 0; font-size: 22px; font-weight: bold;
         background: rgba(20,20,20,0.8); border: 3px solid #c5bcaa; color: #f0e7d8;
         cursor: pointer; transition: 0.2s; letter-spacing: 0.08em; text-align: center;
-        box-shadow: 6px 6px 0 rgba(0,0,0,0.4); font-family: 'Chakra Petch', sans-serif;
+        box-shadow: 6px 6px 0 rgba(0,0,0,0.4); font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
         border-radius: 40px;
     }
     .menu-btn:hover {
@@ -155,7 +153,7 @@
         position: absolute; top: 16px; right: 18px; z-index: 25;
         color: #f2b84e; font-weight: bold; text-shadow: 1px 0 0 #000, -1px 0 0 #000, 0 1px 0 #000, 0 -1px 0 #000;
         pointer-events: none;
-        font-family: 'Chakra Petch', monospace; font-size: 12px;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; font-size: 12px;
     }
 
     /* 命数桃心（场景上部中央） */
@@ -184,7 +182,7 @@
         border-radius: 8px 0 0 8px; padding: 12px 8px; font-size: 15px; font-weight: bold;
         text-align: center; line-height: 1.4; cursor: pointer;
         box-shadow: -4px 4px 0 rgba(0,0,0,0.3); transition: 0.2s;
-        font-family: 'Chakra Petch', monospace;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .save-tab:hover, .load-tab:hover {
         transform: translateX(-5px);
@@ -205,7 +203,7 @@
     .debug-btn {
         background: #333; color: #fff; border: 2px solid #555; padding: 4px 8px;
         border-radius: 20px; cursor: pointer; font-size: 12px; transition: 0.2s; text-align: left;
-        font-family: 'Chakra Petch', monospace;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .debug-btn:hover { background: var(--stamp-red); transform: translateX(3px); border-color: var(--stamp-red); }
 
@@ -233,7 +231,7 @@
         box-shadow: 2px 2px 0 #aa7a2c;
         transform: rotate(-1.5deg); border-radius: 30px;
         border: 2px solid #f5b642;
-        font-family: 'Chakra Petch', monospace;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
 
     #col-1 { display: flex; flex-direction: column; gap: 20px; min-height: 0; height: 100%; }
@@ -260,7 +258,7 @@
         position: absolute; bottom: 0; left: 0; right: 0;
         background: rgba(0,0,0,0.7); color: #fff;
         font-size: 13px; font-weight: bold; padding: 4px 10px;
-        font-family: 'Comic Neue', sans-serif;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .char-name { font-size: 15px; font-weight: bold; display: flex; align-items: center; gap: 6px;}
     .dot-matrix { display: inline-block; width: 11px; height: 15px; background-image: radial-gradient(currentColor 40%, transparent 40%); background-size: 4px 4px; background-position: 0 0; background-repeat: repeat; opacity: 0.9; margin-right: 4px; }
@@ -278,7 +276,7 @@
     .photo-pin { position: absolute; top: -6px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; z-index: 5; background: radial-gradient(circle, #aaa 40%, #666 60%, #333 100%); box-shadow: 0 1px 3px rgba(0,0,0,0.5); }
     .photo-img { width: 100%; aspect-ratio: 1/1; object-fit: cover; object-position: 50% 8%; display: block; background: #d0d8e0; filter: grayscale(50%) sepia(20%) hue-rotate(175deg) saturate(40%) brightness(0.85); transition: filter 0.35s ease; }
     .photo-card:hover .photo-img, .photo-card.active .photo-img { filter: none; }
-    .photo-name { position: absolute; bottom: 6px; left: 4px; right: 4px; text-align: center; font-family: "Comic Neue", "Microsoft YaHei", sans-serif; font-size: 13px; font-weight: bold; color: var(--ink-black); letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .photo-name { position: absolute; bottom: 6px; left: 4px; right: 4px; text-align: center; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; font-size: 13px; font-weight: bold; color: var(--ink-black); letter-spacing: 0.05em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
     #col-2 { display: flex; flex-direction: column; gap: 20px; min-height: 0;}
     #scene-window {
@@ -297,7 +295,7 @@
         border: 2px solid #f5b642; padding: 6px 15px;
         cursor: pointer; font-weight: bold; font-size: 14px; z-index: 20;
         box-shadow: 3px 3px 0 #82612e; transition: 0.2s; border-radius: 40px;
-        font-family: 'Chakra Petch', monospace;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     #search-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
 
@@ -323,10 +321,12 @@
 
     #dialogue-text {
         font-size: 18px; line-height: 1.5; width: 100%; max-height: 80px; overflow-y: auto; overflow-x: hidden;
-        text-shadow: 1px 1px 1px #000; font-family: 'Comic Neue', sans-serif; font-weight: normal; letter-spacing: 1px; pointer-events: auto;
+        text-shadow: 1px 1px 1px #000; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; font-weight: normal; letter-spacing: 1px; pointer-events: auto;
         color: #ffd966;
     }
     #dialogue-text::-webkit-scrollbar { width: 5px; } #dialogue-text::-webkit-scrollbar-thumb { background: #666; border-radius: 3px;}
+    #log-body::-webkit-scrollbar { width: 4px; } #log-body::-webkit-scrollbar-thumb { background: #555; border-radius: 2px; }
+    #log-tab:hover { background:#c4e8f5; color:#0d2533; }
 
     .arrow { position: absolute; top: 50%; transform: translateY(-50%); font-size: 24px; color: #ccc; cursor: pointer; padding: 10px; z-index: 5;} .arrow:hover { color: var(--paper-white); }
     #arrow-left { left: 0px; } #arrow-right { right: 0px; }
@@ -342,7 +342,7 @@
         border: 2px solid var(--border-dark); border-left: none;
         box-shadow: 3px 3px 0 rgba(0,0,0,0.2); transition: 0.2s; word-break: break-word;
         border-radius: 8px; transform: rotate(-0.3deg); position: relative; line-height: 1.4;
-        font-family: 'Comic Neue', sans-serif;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .topic-item:nth-child(odd) { transform: rotate(0.4deg) translateX(2px); } .topic-item:nth-child(even) { transform: rotate(-0.6deg) translateX(-2px); } .topic-item:nth-child(3n) { transform: rotate(0.2deg) translateY(-1px); }
     .topic-item:hover {
@@ -356,7 +356,7 @@
         background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%23b34a36' fill='none' stroke-width='2.5'/%3E%3C/svg%3E");
     }
 
-    .new-badge { display: inline-block; background: #ff3a3a; color: #fff; border: none; border-radius: 20px; font-size: 10px; padding: 2px 9px; margin-left: 6px; vertical-align: middle; transform: rotate(-5deg); font-family: 'Chakra Petch', sans-serif; font-weight: 900; line-height: 1.4; letter-spacing: 0.5px; box-shadow: 2px 2px 0 #9b2e2e; }
+    .new-badge { display: inline-block; background: #ff3a3a; color: #fff; border: none; border-radius: 20px; font-size: 10px; padding: 2px 9px; margin-left: 6px; vertical-align: middle; transform: rotate(-5deg); font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; font-weight: 900; line-height: 1.4; letter-spacing: 0.5px; box-shadow: 2px 2px 0 #9b2e2e; }
     .topic-glow { animation: topicGlowPulse 1.8s ease-in-out 4; }
     @keyframes topicGlowPulse { 0%,100%{ box-shadow:0 0 0 rgba(242,184,78,0); } 50%{ box-shadow:0 0 20px rgba(242,184,78,0.65),0 0 6px rgba(242,184,78,0.3); } }
 
@@ -384,7 +384,7 @@
         background: #ffd966; color: #121212;
         border: 3px solid var(--border-dark);
         box-shadow: 4px 4px 0 rgba(0,0,0,0.3);
-        transition: 0.2s; letter-spacing: 4px; font-family: 'Chakra Petch', monospace;
+        transition: 0.2s; letter-spacing: 4px; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
         transform: rotate(-1deg); display: flex; align-items: center; justify-content: center;
         border-radius: 60px;
     }
@@ -392,7 +392,7 @@
     .action-btn:nth-child(2) { transform: rotate(1.5deg); background: #ffffff; }
     .action-btn:nth-child(2)::after { transform: translateX(-50%) rotate(4deg); width: 45px; }
     .action-btn:hover { background: #fff; color: var(--stamp-red); border-color: var(--stamp-red); transform: scale(1.05) rotate(0deg); box-shadow: 6px 6px 0 rgba(0,0,0,0.4); }
-    .sort-btn { background: #f2b84e; border: 1.5px solid #f2b84e; color: #121212; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: 'Chakra Petch', monospace; vertical-align: middle; font-weight: bold; }
+    .sort-btn { background: #f2b84e; border: 1.5px solid #f2b84e; color: #121212; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; vertical-align: middle; font-weight: bold; }
     .sort-btn:hover { background: #ffc966; color: #000; border-color: #ffc966; transform: scale(1.15); box-shadow: 1px 1px 4px rgba(0,0,0,0.3); }
 
     /* ================= 统一弹窗体系 ================= */
@@ -404,7 +404,7 @@
         box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
         padding-top: 15px; border-radius: 32px;
     }
-    .modal-header { padding: 5px 15px; color: var(--ink-black); cursor: move; text-align: left; font-weight: bold; font-size: 18px; border-bottom: 2px dashed #f2b84e; margin: 0 10px; font-family: 'Chakra Petch', monospace; }
+    .modal-header { padding: 5px 15px; color: var(--ink-black); cursor: move; text-align: left; font-weight: bold; font-size: 18px; border-bottom: 2px dashed #f2b84e; margin: 0 10px; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
     .modal-body { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; max-height: 70vh; overflow-y: auto; }
     .settings-body { padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 18px; align-items: stretch; }
     .settings-row { display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: center; color: #2a241d; }
@@ -428,13 +428,13 @@
         width: 100%; background: #fff0cf; border: 2px solid var(--border-dark); padding: 12px 15px;
         font-weight: bold; cursor: pointer; transition: 0.2s; text-align: left; font-size: 15px;
         border-radius: 12px; box-shadow: 2px 3px 5px rgba(0,0,0,0.15); box-sizing: border-box;
-        font-family: 'Comic Neue', sans-serif;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .choice-btn:hover { background: var(--stamp-red); color: #fff; border-color: var(--stamp-red); transform: scale(1.02); }
 
     .drop-zone { width: 100%; height: 90px; border: 2px dashed #999; display: flex; justify-content: center; align-items: center; color: #666; background: #faf8f5; font-weight: bold; text-align: center; padding: 10px; box-sizing: border-box; border-radius: 12px; }
     .drop-zone.dragover { background: rgba(179, 74, 54, 0.1); border-color: var(--stamp-red); color: var(--stamp-red); }
-    .confirm-btn { padding: 8px 25px; background: var(--ink-black); color: #fff; font-weight: bold; border: 2px solid var(--ink-black); cursor: pointer; box-shadow: 3px 3px 0 #444; font-size: 15px; border-radius: 40px; font-family: 'Chakra Petch', monospace; }
+    .confirm-btn { padding: 8px 25px; background: var(--ink-black); color: #fff; font-weight: bold; border: 2px solid var(--ink-black); cursor: pointer; box-shadow: 3px 3px 0 #444; font-size: 15px; border-radius: 40px; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
     .confirm-btn:hover { background: var(--stamp-red); border-color: var(--stamp-red); }
 
     .hotspot-group { width: 100%; border-bottom: 1px dashed #ccc; padding-bottom: 15px; margin-bottom: 10px; display: flex; flex-direction: column; align-items: center;}
@@ -450,7 +450,7 @@
     .fly-item { align-self: center; background: var(--paper-note); color: var(--ink-black); padding: 10px 30px; font-size: 16px; font-weight: bold; border-left: 6px solid var(--stamp-red); box-shadow: 4px 6px 15px rgba(0,0,0,0.2); animation: flyAcross 2.5s ease-in-out forwards; opacity: 0; transform: translateX(50vw);}
     @keyframes flyAcross { 0% { transform: translateX(50vw); opacity: 0; } 15% { transform: translateX(0); opacity: 1; } 85% { transform: translateX(0); opacity: 1; } 100% { transform: translateX(-50vw); opacity: 0; } }
 
-    #sys-msg { position: fixed; top: 30px; left: 50%; transform: translateX(-50%); background: var(--ink-black); color: var(--paper-white); padding: 10px 30px; z-index: 7000; display: none; font-weight: bold; box-shadow: 4px 4px 0 var(--stamp-red); font-size: 16px; letter-spacing: 1px; border-radius: 40px; font-family: 'Chakra Petch', monospace; }
+    #sys-msg { position: fixed; top: 30px; left: 50%; transform: translateX(-50%); background: var(--ink-black); color: var(--paper-white); padding: 10px 30px; z-index: 7000; display: none; font-weight: bold; box-shadow: 4px 4px 0 var(--stamp-red); font-size: 16px; letter-spacing: 1px; border-radius: 40px; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
 
     /* 章节结束弹窗 */
     #chapter-end-overlay {
@@ -463,7 +463,7 @@
         border-radius: 32px; padding: 30px; text-align: center;
         box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
     }
-    #chapter-end-box h2 { color: #e62e2e; font-family: 'Chakra Petch', monospace; }
+    #chapter-end-box h2 { color: #e62e2e; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
     #chapter-end-box button { margin-top: 20px; }
 
     #cutscene-overlay {
@@ -486,7 +486,7 @@
         box-shadow: 6px 6px 0 rgba(0,0,0,0.3);
         position: relative;
         animation: textPopIn 0.5s ease;
-        font-family: 'Comic Neue', sans-serif;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
         min-height: 40px;
     }
     .cutscene-speech-bubble::before {
@@ -500,7 +500,7 @@
         border-radius: 40px; font-weight: bold; cursor: pointer;
         font-size: 15px; letter-spacing: 1px;
         box-shadow: 3px 3px 0 #82612e; transition: 0.15s;
-        font-family: 'Chakra Petch', monospace;
+        font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     #cutscene-next-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
 
@@ -555,7 +555,7 @@
     <div id="menu-bg-particles"></div>
     <div id="menu-content">
         <h1>案件推演</h1>
-        <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">继续游戏</button>
+        <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">读取存档</button>
         <button class="menu-btn" onclick="playSound('click');newGame()" data-i18n="menu.newGame">新游戏</button>
         <button class="menu-btn" onclick="playSound('click');showChapterSelect()" data-i18n="menu.chapterSelect">选择章节</button>
         <button class="menu-btn" onclick="showSettings()" data-i18n="menu.settings">设置</button>
@@ -581,6 +581,7 @@
     <div id="side-tabs">
         <div class="side-tab save-tab" onclick="openSaveLoadModal('save')">存<br>档</div>
         <div class="side-tab load-tab" onclick="openSaveLoadModal('load')">读<br>档</div>
+        <div id="log-tab" class="side-tab" onclick="toggleLogModal()" style="background:#a8d8ea;color:#1a3a4a;border-color:#6bb5c9;display:none;">回<br>顾</div>
     </div>
     
     <div id="debug-panel" style="display:none;">
@@ -687,7 +688,7 @@
 
 <div id="present-modal" class="modal-box" style="z-index: 5500; width: 340px;">
     <div class="modal-close" onclick="closeModal('present-modal')"></div>
-    <div class="modal-header" id="present-header" data-i18n="present.title">请出示人物/证据/线索</div>
+    <div class="modal-header" id="present-header" data-i18n="present.title">请出示人物/证物/证言</div>
     <div class="modal-body">
         <div id="drop-zone-present" class="drop-zone" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropPresent(event)" data-i18n="present.drop">拖拽卡片至此</div>
         <button class="confirm-btn" onclick="confirmPresent()">确认出示</button>
@@ -746,7 +747,7 @@ const I18N = {
         "chapter.endBtn": "进入下一节",
         "credits.title": "制作团队",
         "menu.newGame": "开始新游戏",
-        "menu.continue": "继续游戏",
+        "menu.continue": "读取存档",
         "menu.chapterSelect": "选择章节",
         "menu.settings": "设置",
         "menu.credits": "制作团队",
@@ -890,7 +891,7 @@ function setLanguage(lang) {
     applyAllUIText();
 }
 function getStoryDataPath() {
-    return currentLang === 'zh' ? 'data/zh' : `data/${currentLang}`;
+    return 'data/zh';
 }
 async function fetchJsonWithFallback(path, fallbackPath) {
     try {
@@ -914,13 +915,13 @@ let state = {
     isTyping: false, typingInterval: null, hasSeenIntro: false, pendingHotspots:[],
     autoPlay: false, fastSpeed: false, waitingForAction: false, sfxVolume: 0.6,
     storyIndex: null, currentChapterIdx: 0,
-    lives: 8,
+    lives: 8, dialogueHistory: [], _seenLines: new Set(), _seenTopics: new Set(), _lastTopicPush: "",
     visitedLocs: [],
     pendingCharSelect: null,
     completedChapters: []
 };
 
-let currentSLMode = "save"; let bgmAudio = null; let tensionAudio = null; let customBgmAudio = null; let audioCtx = null;
+let currentSLMode = "save"; let isLoading = false; let bgmAudio = null; let tensionAudio = null; let customBgmAudio = null; let audioCtx = null;
 let autoPlayTimer = null; let detailCtx = { type: 'ev', id: null };
 let currentBGM = "main"; let bgmFadeTimer = null;
 
@@ -945,6 +946,9 @@ document.addEventListener('keydown', (e) => {
             if(state.autoPlay) toggleAutoPlay();
         } else if(state.hasSeenIntro) {
             mainMenu.style.display = "none"; gameContainer.style.display = "grid";
+            if(state.activeDialogue && state.activeDialogue.length > 0) {
+                document.getElementById("dialogue-box").style.display = "flex";
+            }
             if(bgmAudio) bgmAudio.play().catch(()=>{});
         }
     }
@@ -1038,6 +1042,11 @@ async function fetchChapterData(idx) {
     GAME_DATA.topics = GAME_DATA.topics || {};
 
     updateChapterBadge(idx);
+    updateLogTabVisibility();
+    // 章节分隔线
+    if (chapInfo && state.dialogueHistory.length > 0) {
+        state.dialogueHistory.push({type:"chapter_divider", text:chapInfo.chapter+"-"+chapInfo.section+" "+chapInfo.name});
+    }
     state.unlockedLocs = Object.keys(GAME_DATA.locations).length > 0 ? [Object.keys(GAME_DATA.locations)[0]] :[];
     state.currLoc = state.unlockedLocs.length > 0 ? state.unlockedLocs[0] : null;
     state.currChar = null;
@@ -1191,26 +1200,34 @@ function exitGame() {
 }
 
 function newGame() {
+    if (isLoading) return;
+    isLoading = true;
     showConfirm(t("menu.confirmNewGame"), async () => {
         localStorage.removeItem('rdsm_autosave');
         localStorage.removeItem('mystery_game_saves');
         await fetchChapterData(0);
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
-        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null;
+        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = "";
         document.getElementById("main-menu").style.display = "none";
         document.getElementById("game-container").style.display = "grid";
         startBGM(); initGame();
+        setTimeout(() => { isLoading = false; }, 1500);
     });
+    setTimeout(() => { isLoading = false; }, 2000); // 取消确认的兜底
 }
 async function continueGame() {
-    startBGM();
+    if (isLoading) return;
+    isLoading = true;
     const idx = getLatestSaveIndex();
     if (idx >= 0) {
+        startBGM();
         document.getElementById("main-menu").style.display = "none";
         document.getElementById("game-container").style.display = "grid";
         await loadGame(idx, true);
+        setTimeout(() => { isLoading = false; }, 1500);
     } else {
+        isLoading = false;
         showSysMsg(t("menu.noSave"));
     }
 }
@@ -1368,6 +1385,9 @@ function loseLife() {
 }
 async function restartCurrentSection() {
     state.lives = 8;
+    state.dialogueHistory = [];
+    state._seenLines = new Set();
+    state._seenTopics = new Set();
     updateLivesDisplay();
     closeModal("present-modal");
     closeModal("choice-modal");
@@ -1391,7 +1411,7 @@ async function restartCurrentSection() {
 // ================= 章节结束提醒 =================
 function checkChapterEnd() {
     const line = state.activeDialogue?.[state.dialogueIdx];
-    if (line && line.endChapter) {
+    if (line && line.endChapter && !line._cutscene) {
         state.waitingForAction = true;
         document.getElementById('chapter-end-overlay').style.display = 'flex';
         return true;
@@ -1614,7 +1634,7 @@ function updateDetailContent() {
     if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
     srcEl.style.display = "none";
     if (data && detailCtx.type === 'ev') {
-        const isTest = /供述|证言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(detailCtx.id);
+        const isTest = /供述|证言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(detailCtx.id);
         if (isTest && data.origin) {
             let srcName = "";
             if (data.origin === "system") { srcName = "现场调查"; }
@@ -1677,7 +1697,7 @@ function openInvestigateModal() {
         const title = document.createElement("div"); title.className = "hotspot-title"; title.innerText = h.title;
         const desc = document.createElement("div"); desc.style.fontSize="13px"; desc.style.color="#555"; desc.style.marginBottom="10px";
         desc.innerText = h.desc_locked;
-        const dropZone = document.createElement("div"); dropZone.className = "drop-zone"; dropZone.style.height="70px"; dropZone.innerText = "拖拽证据至此";
+        const dropZone = document.createElement("div"); dropZone.className = "drop-zone"; dropZone.style.height="70px"; dropZone.innerText = "拖拽右侧卡片至此";
         dropZone.setAttribute("data-hotspot-id", h.id);
         dropZone.ondragover = allowDrop;
         dropZone.ondragleave = dragLeave;
@@ -1715,7 +1735,7 @@ function confirmInvestigate(hsId) {
         closeModal("investigate-modal");
     } else {
         showSysMsg("证据不匹配，再试试别的。");
-        dropZone.innerHTML = "拖拽证据至此";
+        dropZone.innerHTML = "拖拽右侧卡片至此";
         dropZone.dataset.itemId = "";
     }
 }
@@ -1774,14 +1794,14 @@ function renderEvidence() {
         let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
         div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${EVIDENCE_DICT[id]?.name || id}</span></div>` + newBadge;
-        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(id);
+        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
         const targetBox = (testimonyBox && isTestimony) ? testimonyBox : box;
         targetBox.appendChild(div);
     });
 }
 function sortTestimony() {
     playSound('click');
-    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back)$/.test(id);
+    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
     const testIds = state.unlockedEv.filter(isTest);
     const otherIds = state.unlockedEv.filter(id => !isTest(id));
     testIds.sort((a, b) => {
@@ -1890,6 +1910,17 @@ function renderSceneChars() {
         card.onclick = () => selectCharacter(charId); card.addEventListener('mouseenter', () => playSound('ui_hover')); box.appendChild(card);
     });
 }
+function topicHasUnfinished(topicId) {
+    if (!GAME_DATA.topics || !GAME_DATA.topics[topicId]) return false;
+    const scan = (obj) => {
+        if (!obj || typeof obj !== 'object') return false;
+        if (Array.isArray(obj)) return obj.some(item => scan(item));
+        // 仅对有dialogue的交互节点检查resolved（question/present/choices）
+        if (obj.dialogue && obj.resolved === false) return true;
+        return Object.values(obj).some(v => scan(v));
+    };
+    return scan(GAME_DATA.topics[topicId]);
+}
 function renderTopics() {
     const box = document.getElementById("topic-list"); box.innerHTML = "";
     if(!state.currChar || state.dialogueMode==="greeting" || state.dialogueMode==="temp_wrong" || !GAME_DATA.topics) return; 
@@ -1901,8 +1932,9 @@ function renderTopics() {
             const isNew = state.newTopics.includes(tid);
             if (isNew) hasNew = true;
             let newBadge = isNew ? `<span class="new-badge">NEW</span>` : "";
+            let dotBadge = topicHasUnfinished(tid) ? `<span style="display:inline-block;width:7px;height:7px;background:#8ce141;border-radius:50%;margin-left:4px;vertical-align:middle;" title="还有未完成的内容"></span>` : "";
             div.className = "topic-item " + (isNew ? "anim-slide-in topic-glow" : "") + (state.currTopic === tid ? " active-topic" : "");
-            div.innerHTML = `<span>▶ ${tData.title}</span> ${newBadge}`;
+            div.innerHTML = `<span>▶ ${tData.title}</span> ${dotBadge} ${newBadge}`;
             div.onclick = () => { playSound('click'); if(blockDuringChoice()) return; if(state.newTopics.includes(tid)) state.newTopics = state.newTopics.filter(i=>i!==tid); state.currTopic = tid; renderTopics(); startDialogue(tData.dialogue, "topic"); };
             box.appendChild(div);
         }
@@ -2029,6 +2061,10 @@ function showChoicesModal(choiceData) {
         let btn = document.createElement("div"); btn.className = "choice-btn"; btn.innerText = opt.text;
         btn.onclick = () => {
             playSound('click');
+            // 记录选择结果
+            const choiceQ = choiceData.question || "";
+            const choiceResult = opt.correct ? " ✓" : " ✗";
+            state.dialogueHistory.push({marker:"三选一", detail:choiceQ+" → "+opt.text+choiceResult, type:"marker"});
             if(opt.correct) {
                 playSound('present_seccess'); 
                 modal.style.display = "none";
@@ -2070,6 +2106,18 @@ function startDialogue(dialogueArr, mode) {
     state.activeDialogue = dialogueArr; state.dialogueMode = mode; state.dialogueIdx = 0; state.waitingForAction = false;
     document.getElementById("dialogue-box").style.display = "flex";
     if(mode==="greeting" || mode==="temp_wrong") { state.currTopic=null; renderTopics(); }
+    // 话题分隔线（切换到不同话题时插入）
+    if (mode === "topic" && state.currTopic && GAME_DATA.topics?.[state.currTopic]) {
+        const last = state.dialogueHistory[state.dialogueHistory.length-1];
+        if (state._lastTopicPush !== state.currTopic || (last && last.type !== "topic_divider")) {
+            state._lastTopicPush = state.currTopic;
+            const chapInfo = state.storyIndex?.chapters?.[state.currentChapterIdx];
+            const secLabel = chapInfo ? chapInfo.chapter+"-"+chapInfo.section : "";
+            const charName = (GAME_DATA.characters?.[GAME_DATA.topics[state.currTopic].char]?.name) || "";
+            const title = GAME_DATA.topics[state.currTopic].title || state.currTopic;
+            state.dialogueHistory.push({type:"topic_divider", text:secLabel+" · "+charName+" · "+title});
+        }
+    }
     renderDialogueLine();
 }
 
@@ -2084,6 +2132,23 @@ function renderDialogueLine() {
     if(line.unlockEv) unlockEvidence(line.unlockEv, false); if(line.unlockProfile) unlockProfile(line.unlockProfile, false);
     if(line.unlockLoc) unlockLocation(line.unlockLoc, false); if(line.unlockTopic) unlockTopic(line.unlockTopic, false);
     
+    // 记录对话历史（去重）
+    if (!line.titleCard && !line._cutscene && !line.endChapter && !line.endGame && !line.autoPresent) {
+        let spName = "系统";
+        let spType = "system";
+        if (line.s === "player") { spName = "你"; spType = "player"; }
+        else if (line.s === "npc" && line.speaker) { spName = (PROFILE_DICT[line.speaker]?.name || GAME_DATA.characters?.[line.speaker]?.name || line.speaker); spType = "npc"; }
+        const fingerPrint = spType+"|"+spName+"|"+(line.t||"");
+        if (!state._seenLines.has(fingerPrint)) {
+            state._seenLines.add(fingerPrint);
+            state.dialogueHistory.push({speaker:spName, text:line.t||"", type:spType});
+        }
+    }
+    // 选择结果改在onclick实时记录（含所选选项和正确/错误标记）
+    if (false && line.present && !line.autoPresent) {
+        for (const k in line.present) { if (line.present[k]?.resolved) { const nm = (EVIDENCE_DICT[k]||PROFILE_DICT[k])?.name || k; state.dialogueHistory.push({marker:"举证", detail:"出示「"+nm+"」", type:"marker"}); break; } }
+    }
+
     let badgeHtml = (line.isNew && !line.autoPresent && !line.choices) ? `<span class="new-badge">NEW</span> ` : ""; line.isNew = false;
     
     if(line.titleCard) {
@@ -2145,9 +2210,10 @@ function checkLineActions(line) {
 }
 
 async function advanceDialogue(e) {
-    if(e && e.stopPropagation) e.stopPropagation(); 
-    if(state.waitingForAction) return; 
-    clearTimeout(autoPlayTimer); 
+    if(e && e.stopPropagation) e.stopPropagation();
+    if (cutsceneTimer) { advanceCutscene(e); return; }
+    if(state.waitingForAction) return;
+    clearTimeout(autoPlayTimer);
     if(state.isTyping) {
         clearInterval(state.typingInterval); state.isTyping = false; const line = state.activeDialogue[state.dialogueIdx];
         document.getElementById("dialogue-text").innerHTML = (line.isNew && !line.autoPresent && !line.choices ? `<span class="new-badge">NEW</span> ` : "") + line.t; 
@@ -2192,6 +2258,57 @@ async function nextDialogue() {
     }
 }
 function prevDialogue() { if(!state.isTyping && state.dialogueIdx > 0) { state.dialogueIdx--; renderDialogueLine(); } }
+function toggleLogModal() {
+    const modal = document.getElementById("log-modal");
+    if (modal.style.display === "flex") { modal.style.display = "none"; return; }
+    renderLogBody();
+    modal.style.display = "flex";
+}
+function renderLogBody() {
+    const body = document.getElementById("log-body"); body.innerHTML = "";
+    state.dialogueHistory.forEach(item => {
+        if (item.type === "chapter_divider") {
+            const d = document.createElement("div");
+            d.style.cssText = "text-align:center;padding:10px 0;margin:6px 0;color:#f2b84e;font-size:13px;font-weight:bold;letter-spacing:2px;border-bottom:2px solid rgba(242,184,78,0.3);";
+            d.innerText = "── " + item.text + " ──";
+            body.appendChild(d);
+            return;
+        }
+        if (item.type === "topic_divider") {
+            const d = document.createElement("div");
+            d.style.cssText = "text-align:center;padding:8px 0;margin:4px 0;color:#f2b84e;font-size:12px;letter-spacing:1px;border-bottom:1px dashed #333;";
+            d.innerText = "── " + item.text + " ──";
+            body.appendChild(d);
+            return;
+        }
+        if (item.type === "marker") {
+            const d = document.createElement("div");
+            d.style.cssText = "display:flex;gap:8px;align-items:center;padding:6px 12px;margin:2px 0;background:rgba(242,184,78,0.08);border-radius:8px;font-size:13px;";
+            d.innerHTML = `<span style="font-size:15px;">${item.marker==="三选一"?"🎯":"🔍"}</span><span style="color:#f2b84e;font-weight:bold;">${item.marker}</span><span style="color:#aaa;">${item.detail}</span>`;
+            body.appendChild(d);
+            return;
+        }
+        const wrap = document.createElement("div");
+        wrap.style.cssText = "display:flex;gap:10px;align-items:flex-start;";
+        const sp = document.createElement("span");
+        sp.style.cssText = "min-width:48px;font-size:12px;font-weight:bold;text-align:right;padding-top:2px;opacity:0.7;";
+        sp.innerText = item.speaker;
+        sp.style.color = item.type==="player"?"#fff":item.type==="npc"?"#8ce141":"#ffd966";
+        wrap.appendChild(sp);
+        const txt = document.createElement("span");
+        txt.style.cssText = `font-size:14px;line-height:1.6;color:#ddd;background:rgba(255,255,255,0.03);padding:5px 10px;border-radius:8px;border-left:3px solid ${item.type==="player"?"#f2b84e":item.type==="npc"?"#8ce141":"#ffd966"};flex:1;`;
+        if (item.type==="system") txt.style.fontStyle = "italic";
+        txt.innerText = item.text;
+        wrap.appendChild(txt); body.appendChild(wrap);
+    });
+    setTimeout(() => { body.scrollTop = body.scrollHeight; }, 50);
+}
+function updateLogTabVisibility() {
+    const tab = document.getElementById("log-tab");
+    if (!tab) return;
+    tab.style.display = "flex";
+}
+
 function closeDialogue() {
     clearInterval(state.typingInterval);
     clearTimeout(autoPlayTimer);
@@ -2226,6 +2343,7 @@ function unlockTopic(ids, silent=false) {
 
 function doQuestion() {
     if(blockDuringChoice()) return;
+    if(state.isTyping || state.waitingForAction) return;
     if(state.dialogueMode!=="topic" || state.activeDialogue.length===0) return;
     const line = state.activeDialogue[state.dialogueIdx];
     if(line.s==="player") { showSysMsg("无法对自己进行追问。"); return; }
@@ -2275,7 +2393,7 @@ function confirmPresent() {
         if(line.present && line.present[itemId]) {
             let pData = line.present[itemId];
             if(!pData.resolved) {
-                closeModal('present-modal'); showSysMsg("举证正确！"); 
+                closeModal('present-modal'); showSysMsg("举证正确！"); if(state.lives<8){state.lives++;updateLivesDisplay();}
                 let newLines = pData.dialogue.map(l=>({...l, isNew:false})); 
                 state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); 
                 pData.resolved=true; state.waitingForAction = false;
@@ -2292,7 +2410,7 @@ function confirmPresent() {
     if(isGlobal) {
         if(GAME_DATA.globalPresent && GAME_DATA.globalPresent[state.currChar] && GAME_DATA.globalPresent[state.currChar][itemId]) {
             let gpData = GAME_DATA.globalPresent[state.currChar][itemId];
-            if(!gpData.resolved) { showSysMsg("对方有了反应！"); gpData.resolved=true; if(gpData.unlockTopic) unlockTopic(gpData.unlockTopic); startDialogue(gpData.dialogue, "topic"); playSound('present_seccess'); } 
+            if(!gpData.resolved) { showSysMsg("对方有了反应！"); if(state.lives<8){state.lives++;updateLivesDisplay();} gpData.resolved=true; if(gpData.unlockTopic) unlockTopic(gpData.unlockTopic); startDialogue(gpData.dialogue, "topic"); playSound('present_seccess'); }
             else { showSysMsg("已经出示过这个了。"); }
         } else {
             state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
@@ -2305,7 +2423,7 @@ function confirmPresent() {
     if(line.present && line.present[itemId]) {
         let pData = line.present[itemId];
         if(!pData.resolved) {
-            showSysMsg("举证成功！"); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
+            showSysMsg("举证成功！"); if(state.lives<8){state.lives++;updateLivesDisplay();} const pName=(EVIDENCE_DICT[itemId]||PROFILE_DICT[itemId])?.name||itemId; state.dialogueHistory.push({marker:"举证", detail:"出示「"+pName+"」 ✓", type:"marker"}); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
             state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); pData.resolved=true;
             if(pData.unlockEv) unlockEvidence(pData.unlockEv); if(pData.unlockProfile) unlockProfile(pData.unlockProfile);
             if(pData.unlockLoc) unlockLocation(pData.unlockLoc); if(pData.unlockTopic) unlockTopic(pData.unlockTopic);
@@ -2574,6 +2692,14 @@ document.addEventListener("mouseup", () => { dragModal = null; });
         音效：https://mowangblog.github.io/game-sfx-generator-web/免费音效生成器 ；
         视觉特效：https://yachih2000.github.io/Mirage-stylizer/免费图像风格化应用
     </div>
+</div>
+
+<div id="log-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; max-height:70vh; background:rgba(0,0,0,0.90); border:2px solid #555; border-radius:16px; z-index:5200; flex-direction:column; box-shadow:0 0 40px rgba(0,0,0,0.6);">
+    <div style="padding:14px 20px;border-bottom:1px solid #333;color:#f2b84e;font-size:16px;font-weight:bold;letter-spacing:3px;display:flex;justify-content:space-between;align-items:center;">
+        <span>对话回顾</span>
+        <span onclick="toggleLogModal()" style="cursor:pointer;color:#888;font-size:20px;padding:2px 8px;">✕</span>
+    </div>
+    <div id="log-body" style="flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:8px;"></div>
 </div>
 
 <div id="confirm-modal" class="modal-box" style="width: 370px; z-index: 5800;">

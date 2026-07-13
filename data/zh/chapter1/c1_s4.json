@@ -477,7 +477,7 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "好的，你现在心里有调查的人选吗？",
+          "t": "好的，除了现在问询的对象之外，你还有其他调查人选吗？",
           "present": {
             "ev_ayou_testimony4": {
               "resolved": false,
@@ -485,7 +485,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "小琳、高欢。真橙的话，我可以自行去问询。"
+                  "t": "小琳、高欢。我想了解一下这两个人的情况。"
                 },
                 {
                   "s": "system",

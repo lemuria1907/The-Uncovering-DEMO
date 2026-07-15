@@ -300,6 +300,7 @@
     #search-btn:hover { background: #ffb347; color: #1f1f1f; border-color: #fff0b5; transform: scale(1.05); }
 
     #scene-bg { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: cover; background-position: center; transition: background-image 0.5s; opacity: 0.8;}
+    #scene-bg-overlay { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-size: cover; background-position: center; opacity: 0; transition: opacity 1s ease; pointer-events: none; z-index: 1; }
     #character-sprite { position: absolute; bottom: 0; left: 50%; transform: translateX(-50%); width: 100%; height: 95%; background-size: contain; background-repeat: no-repeat; background-position: bottom center; pointer-events: none; transition: opacity 0.5s ease-in, background-image 0.3s; z-index: 5; opacity: 0;}
 
     #dialogue-box {
@@ -332,7 +333,7 @@
     #arrow-left { left: 0px; } #arrow-right { right: 0px; }
 
     .topic-container { flex: 1; background: transparent; box-shadow: none; display: flex; flex-direction: column; overflow: hidden; max-height: 38vh; }
-    #topic-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; row-gap: 12px; padding: 10px; overflow-y: auto; overflow-x: hidden; flex: 1; align-content: start; }
+    #topic-list { display: grid; grid-template-columns: 1fr 1fr; column-gap: 18px; row-gap: 12px; padding: 14px 14px; overflow-y: auto; overflow-x: clip; flex: 1; align-content: start; }
     .topic-item {
         padding: 12px 12px 12px 20px;
         background-color: #fff0cf;
@@ -344,14 +345,14 @@
         border-radius: 8px; transform: rotate(-0.3deg); position: relative; line-height: 1.4;
         font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
-    .topic-item:nth-child(odd) { transform: rotate(0.4deg) translateX(2px); } .topic-item:nth-child(even) { transform: rotate(-0.6deg) translateX(-2px); } .topic-item:nth-child(3n) { transform: rotate(0.2deg) translateY(-1px); }
+    .topic-item:nth-child(odd) { transform: rotate(0.3deg); } .topic-item:nth-child(even) { transform: rotate(-0.4deg); } .topic-item:nth-child(3n) { transform: rotate(0.2deg) translateY(-1px); }
     .topic-item:hover {
-        background-color: #fff; transform: scale(1.02) rotate(0deg); z-index: 5;
+        background-color: #fff; transform: rotate(0deg); z-index: 5;
         box-shadow: 5px 5px 0 rgba(0,0,0,0.25); border-color: #f09d2c;
         background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%23b34a36' fill='none' stroke-width='2'/%3E%3C/svg%3E");
     }
     .topic-item.active-topic {
-        background-color: #0a0a0a; color: #ffde9c; transform: scale(1.04) rotate(0deg); z-index: 5;
+        background-color: #0a0a0a; color: #ffde9c; transform: rotate(0deg); z-index: 5;
         border-left-color: #ffb347 !important; box-shadow: 4px 4px 0 #ffb347;
         background-image: url("data:image/svg+xml,%3Csvg width='8' height='12' viewBox='0 0 8 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0c4 3 4 3 4 6s0 3-4 6' stroke='%23b34a36' fill='none' stroke-width='2.5'/%3E%3C/svg%3E");
     }
@@ -610,6 +611,7 @@
                 <button id="search-btn" onclick="observeScene()" data-i18n="btn.search">👁 观察现场</button>
                 <div id="chapter-badge">1-1 载入中…</div>
                 <div id="scene-bg"></div>
+                <div id="scene-bg-overlay"></div>
                 <div id="character-sprite"></div>
                 <!-- 桃心容器 -->
                 <div id="lives-container">
@@ -656,8 +658,8 @@
             <div id="testimony-list" class="grid-list"></div>
         </div>
         <div id="action-buttons">
-            <button class="action-btn" onclick="doQuestion()" data-i18n="btn.question">追问</button>
-            <button class="action-btn" onclick="openPresentModal(false, null)" data-i18n="btn.present">举证</button>
+            <button id="btn-question" class="action-btn" onclick="doQuestion()" data-i18n="btn.question">追问</button>
+            <button id="btn-present" class="action-btn" onclick="openPresentModal(false, null)" data-i18n="btn.present">举证</button>
         </div>
     </div>
 
@@ -916,6 +918,7 @@ let state = {
     autoPlay: false, fastSpeed: false, waitingForAction: false, sfxVolume: 0.6,
     storyIndex: null, currentChapterIdx: 0,
     lives: 8, dialogueHistory: [], _seenLines: new Set(), _seenTopics: new Set(), _lastTopicPush: "",
+    topicRuntime: {}, topicProgress: {},
     visitedLocs: [],
     pendingCharSelect: null,
     completedChapters: []
@@ -923,7 +926,7 @@ let state = {
 
 let currentSLMode = "save"; let isLoading = false; let bgmAudio = null; let tensionAudio = null; let customBgmAudio = null; let audioCtx = null;
 let autoPlayTimer = null; let detailCtx = { type: 'ev', id: null };
-let currentBGM = "main"; let bgmFadeTimer = null;
+let currentBGM = "main"; let bgmFadeTimer = null; let bgmFadeInTimer = null;
 
 document.addEventListener('keydown', (e) => {
     if (e.ctrlKey && e.code === 'KeyH') {
@@ -933,6 +936,15 @@ document.addEventListener('keydown', (e) => {
         return;
     }
     if(e.code === 'Space') { e.preventDefault(); advanceDialogue(null); }
+    if(e.code === 'KeyA' || e.code === 'KeyD') {
+        const dm = document.getElementById("detail-modal");
+        if (dm && dm.style.display !== "none") { e.preventDefault(); navDetail(e.code === 'KeyA' ? -1 : 1); return; }
+        if (!state.isTyping && state.dialogueMode !== "greeting" && state.dialogueMode !== "temp_wrong") {
+            e.preventDefault();
+            if (e.code === 'KeyA' && state.dialogueIdx > 0) { prevDialogue(); }
+            else if (e.code === 'KeyD' && state.dialogueIdx < state.activeDialogue.length - 1) { nextDialogue(); }
+        }
+    }
     if(e.code === 'Escape') {
         if(blockDuringChoice()) return;
         const mainMenu = document.getElementById("main-menu"); const gameContainer = document.getElementById("game-container");
@@ -1208,7 +1220,7 @@ function newGame() {
         await fetchChapterData(0);
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
-        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = "";
+        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = ""; state.topicRuntime = {}; state.topicProgress = {};
         document.getElementById("main-menu").style.display = "none";
         document.getElementById("game-container").style.display = "grid";
         startBGM(); initGame();
@@ -1240,6 +1252,8 @@ function initBGM() {
 }
 function startBGM() {
     initBGM();
+    if (bgmFadeTimer) { cancelAnimationFrame(bgmFadeTimer); bgmFadeTimer = null; }
+    if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
     if (tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
     if (customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
     currentBGM = "main";
@@ -1247,16 +1261,16 @@ function startBGM() {
     bgmAudio.volume = 0;
     bgmAudio.currentTime = 0;
     bgmAudio.play().catch(() => {});
-    // 2秒平滑淡入
     const steps = 20, interval = 100, delta = targetVol / steps;
     let step = 0;
-    const fadeIn = setInterval(() => {
+    bgmFadeInTimer = setInterval(() => {
         step++;
         bgmAudio.volume = Math.min(delta * step, targetVol);
-        if (step >= steps) clearInterval(fadeIn);
+        if (step >= steps) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
     }, interval);
 }
 function getAudioByTarget(target) {
+    if (target === "silence") return null;
     if (target === "main") return bgmAudio;
     if (target === "tension") return tensionAudio;
     if (!customBgmAudio || customBgmAudio._name !== target) {
@@ -1273,41 +1287,74 @@ function getBgmVolume() {
 function isAudioAudible(audio) {
     return !!(audio && !audio.paused && audio.volume > 0.005);
 }
+function clampUnitInterval(value, fallback = 0) {
+    if (!Number.isFinite(value)) return Math.min(1, Math.max(0, fallback));
+    return Math.min(1, Math.max(0, value));
+}
 function crossfadeBGM(target, duration = 2000, force = false) {
     initBGM();
+    if (target === "silence") {
+        if (bgmFadeTimer) cancelAnimationFrame(bgmFadeTimer);
+        if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
+        const audios = [bgmAudio, tensionAudio, customBgmAudio].filter(Boolean);
+        const startVolumes = audios.map(audio => audio.paused ? 0 : clampUnitInterval(audio.volume, 0));
+        const safeDuration = Number.isFinite(Number(duration)) && Number(duration) > 0 ? Number(duration) : 2000;
+        const startTime = performance.now();
+        const easeOut = p => 1 - Math.pow(p, 2.2);
+        const tick = (now) => {
+            const progress = clampUnitInterval((now - startTime) / safeDuration, 1);
+            audios.forEach((audio, idx) => {
+                audio.volume = clampUnitInterval(startVolumes[idx] * easeOut(progress), 0);
+            });
+            if (progress < 1) {
+                bgmFadeTimer = requestAnimationFrame(tick);
+            } else {
+                bgmFadeTimer = null;
+                audios.forEach(audio => { audio.pause(); audio.volume = 0; });
+            }
+        };
+        bgmFadeTimer = requestAnimationFrame(tick);
+        currentBGM = target;
+        return;
+    }
     if (currentBGM === target && !force) return;
+    if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
     const toAudio = getAudioByTarget(target);
-    let fromAudio = getAudioByTarget(currentBGM);
+    let fromAudio = currentBGM === "silence" ? null : getAudioByTarget(currentBGM);
     if (target === "main" && isAudioAudible(tensionAudio)) fromAudio = tensionAudio;
-    if (!toAudio || !fromAudio || fromAudio === toAudio) return;
     currentBGM = target;
+    if (!toAudio) return;
+    if (!fromAudio || fromAudio === toAudio) { toAudio.volume = clampUnitInterval(getBgmVolume()); toAudio.play().catch(() => {}); return; }
     if (bgmFadeTimer) cancelAnimationFrame(bgmFadeTimer);
     const vol = getBgmVolume();
     const enteringTension = target === "tension";
-    const fadeDuration = enteringTension ? Math.max(duration, 5600) : duration;
+    const requestedDuration = Number(duration);
+    const safeDuration = Number.isFinite(requestedDuration) && requestedDuration > 0 ? requestedDuration : 2000;
+    const fadeDuration = enteringTension ? Math.max(safeDuration, 10000) : safeDuration;
+    const targetVol = enteringTension ? vol * 0.65 : vol;
     const startTime = performance.now();
-    const fromStartVolume = fromAudio.paused ? vol : Math.min(fromAudio.volume, vol);
-    const toStartVolume = Math.min(toAudio.volume || 0, vol);
+    const fromStartVolume = clampUnitInterval(fromAudio.paused ? vol : Math.min(fromAudio.volume, vol), vol);
+    const toStartVolume = clampUnitInterval(Math.min(toAudio.volume || 0, vol), 0);
     if (fromAudio.paused) { fromAudio.volume = fromStartVolume; fromAudio.play().catch(() => {}); }
     if (enteringTension) toAudio.currentTime = 0;
     toAudio.volume = toStartVolume;
     toAudio.play().catch(() => {});
     const easeInOut = p => p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2;
-    const slowTensionIn = p => p < 0.18 ? 0 : Math.pow((p - 0.18) / 0.82, 2.6);
+    const slowTensionIn = enteringTension ? (p => p < 0.22 ? 0 : Math.pow((p - 0.22) / 0.78, 2.0)) : null;
     const slowMainOut = p => 1 - Math.pow(p, 2.2);
     const tick = (now) => {
-        const progress = Math.min((now - startTime) / fadeDuration, 1);
+        const progress = clampUnitInterval((now - startTime) / fadeDuration, 1);
         const outGain = enteringTension ? slowMainOut(progress) : 1 - easeInOut(progress);
         const inGain = enteringTension ? slowTensionIn(progress) : easeInOut(progress);
-        fromAudio.volume = Math.max(0, fromStartVolume * outGain);
-        toAudio.volume = Math.min(vol, toStartVolume + (vol - toStartVolume) * inGain);
+        fromAudio.volume = clampUnitInterval(fromStartVolume * outGain, 0);
+        toAudio.volume = clampUnitInterval(Math.min(targetVol, toStartVolume + (targetVol - toStartVolume) * inGain), toStartVolume);
         if (progress < 1) {
             bgmFadeTimer = requestAnimationFrame(tick);
         } else {
             bgmFadeTimer = null;
             fromAudio.pause();
             fromAudio.volume = 0;
-            toAudio.volume = vol;
+            toAudio.volume = targetVol;
         }
     };
     bgmFadeTimer = requestAnimationFrame(tick);
@@ -1316,7 +1363,7 @@ function resetBGMForDialogue(dialogueArr) {
     if (dialogueArr?.[0]?.bgm === "tension") return;
     if (currentBGM === "tension" || isAudioAudible(tensionAudio)) crossfadeBGM("main", 2000, true);
 }
-function playSound(name) { try { const audio = new Audio(`audio/${name}.mp3`); audio.volume = state.sfxVolume || 0.6; audio.play().catch(()=>{}); } catch (e) {} }
+function playSound(name, volMult=1) { try { const audio = new Audio(`audio/${name}.mp3`); audio.volume = (state.sfxVolume || 0.6) * volMult; audio.play().catch(()=>{}); } catch (e) {} }
 function testSfxVolume() { playSound('click'); }
 function getLatestSaveIndex() {
     const saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
@@ -1388,6 +1435,7 @@ async function restartCurrentSection() {
     state.dialogueHistory = [];
     state._seenLines = new Set();
     state._seenTopics = new Set();
+    state.topicRuntime = {}; state.topicProgress = {};
     updateLivesDisplay();
     closeModal("present-modal");
     closeModal("choice-modal");
@@ -1474,12 +1522,13 @@ function showChapterLogo(callback, secIdx) {
             bgmAudio.volume = 0;
             bgmAudio.play().catch(() => {});
         }
+        if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
         const vol = getBgmVolume();
         let s = 0;
-        const fi = setInterval(() => {
+        bgmFadeInTimer = setInterval(() => {
             s++;
             if (bgmAudio) bgmAudio.volume = Math.min(vol, vol * (s / 60));
-            if (s >= 60) clearInterval(fi);
+            if (s >= 60) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
         }, 100);
         setTimeout(() => {
             overlay.style.opacity = "0";
@@ -1574,34 +1623,91 @@ function getChapterLabel() {
     const cname = chapInfo.name || "";
     return { id: cid, name: cname, text: cname ? `${cid} ${cname}` : cid };
 }
+function syncDialogueBgmMarkers(targetDialogue, sourceRoot = GAME_DATA) {
+    if (!targetDialogue || !sourceRoot) return;
+    const markerMap = new Map();
+    const scan = value => {
+        if (Array.isArray(value)) { value.forEach(scan); return; }
+        if (!value || typeof value !== "object") return;
+        if (typeof value.t === "string" && value.bgm) markerMap.set(value.t, value.bgm);
+        Object.values(value).forEach(scan);
+    };
+    const apply = value => {
+        if (Array.isArray(value)) { value.forEach(apply); return; }
+        if (!value || typeof value !== "object") return;
+        if (typeof value.t === "string" && markerMap.has(value.t)) value.bgm = markerMap.get(value.t);
+        Object.values(value).forEach(apply);
+    };
+    scan(sourceRoot.introDialogue);
+    scan(sourceRoot.topics);
+    scan(sourceRoot.greetings);
+    apply(targetDialogue);
+}
+
+function serializeState() {
+    const snapshot = {
+        ...state,
+        _seenLines: [...(state._seenLines instanceof Set ? state._seenLines : [])],
+        _seenTopics: [...(state._seenTopics instanceof Set ? state._seenTopics : [])],
+        typingInterval: null,
+        isTyping: false
+    };
+    return JSON.parse(JSON.stringify(snapshot));
+}
+function hydrateSet(value) {
+    if (value instanceof Set) return new Set(value);
+    if (Array.isArray(value)) return new Set(value);
+    return new Set();
+}
+function hydrateState(loadedState) {
+    const freshStoryIndex = state.storyIndex;
+    const hydrated = { ...state, ...(loadedState || {}) };
+    hydrated.storyIndex = freshStoryIndex;
+    hydrated._seenLines = hydrateSet(loadedState?._seenLines);
+    hydrated._seenTopics = hydrateSet(loadedState?._seenTopics);
+    hydrated.dialogueHistory = Array.isArray(hydrated.dialogueHistory) ? hydrated.dialogueHistory : [];
+    hydrated.activeDialogue = Array.isArray(hydrated.activeDialogue) ? hydrated.activeDialogue : [];
+    hydrated.topicRuntime = hydrated.topicRuntime && typeof hydrated.topicRuntime === "object" ? hydrated.topicRuntime : {};
+    hydrated.topicProgress = hydrated.topicProgress && typeof hydrated.topicProgress === "object" ? hydrated.topicProgress : {};
+    hydrated.typingInterval = null;
+    hydrated.isTyping = false;
+    hydrated.waitingForAction = false;
+    return hydrated;
+}
 function saveGame(index) {
     playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[null,null,null,null,null]');
     const cl = getChapterLabel();
     saves[index] = {
         time: new Date().toLocaleString(), locName: GAME_DATA.locations[state.currLoc]?.name || "未知",
         chapterId: cl.id, chapterName: cl.name, chapterText: cl.text,
-        stateData: JSON.parse(JSON.stringify(state)), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
+        saveVersion: 2,
+        stateData: serializeState(), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
     };
     localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("已成功归档！"); renderSaveSlots();
 }
 async function loadGame(index, silent=false) {
     if(!silent) playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
     if(saves[index] && saves[index].stateData) {
-        let loadedState = saves[index].stateData;
-        state.currentChapterIdx = loadedState.currentChapterIdx || 0;
-        await fetchChapterData(state.currentChapterIdx);
-        state = loadedState; 
+        const loadedState = saves[index].stateData;
+        const chapterIdx = loadedState.currentChapterIdx ?? 0;
+        clearInterval(state.typingInterval);
+        clearTimeout(autoPlayTimer);
+        await fetchChapterData(chapterIdx);
+        state = hydrateState(loadedState);
         if(saves[index].topicsData) GAME_DATA.topics = saves[index].topicsData;
         if(saves[index].greetingsData) GAME_DATA.greetings = saves[index].greetingsData;
-        
-        if (state.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; } 
-        else if (state.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.activeDialogue = GAME_DATA.greetings[state.currChar]; }
-        if (state.tempDialogueState) {
-            if (state.tempDialogueState.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.tempDialogueState.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; } 
+
+        if (state.activeDialogue.length === 0 && state.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; }
+        else if (state.activeDialogue.length === 0 && state.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.activeDialogue = GAME_DATA.greetings[state.currChar]; }
+        if (state.tempDialogueState && state.tempDialogueState.activeDialogue && state.tempDialogueState.activeDialogue.length === 0) {
+            if (state.tempDialogueState.dialogueMode === "topic" && state.currTopic && GAME_DATA.topics[state.currTopic]) { state.tempDialogueState.activeDialogue = GAME_DATA.topics[state.currTopic].dialogue; }
             else if (state.tempDialogueState.dialogueMode === "greeting" && state.currChar && GAME_DATA.greetings[state.currChar]) { state.tempDialogueState.activeDialogue = GAME_DATA.greetings[state.currChar]; }
         }
+        state.dialogueIdx = Math.max(0, Math.min(state.dialogueIdx || 0, Math.max(0, state.activeDialogue.length - 1)));
+        syncDialogueBgmMarkers(state.activeDialogue);
+        if (state.tempDialogueState) syncDialogueBgmMarkers(state.tempDialogueState.activeDialogue);
         closeModal("saveload-modal"); showSysMsg("档案提取成功！"); renderAll();
-        if(state.activeDialogue && state.activeDialogue.length > 0) { document.getElementById("dialogue-box").style.display="flex"; renderDialogueLine(); } 
+        if(state.activeDialogue && state.activeDialogue.length > 0) { document.getElementById("dialogue-box").style.display="flex"; renderDialogueLine(); }
         else { document.getElementById("dialogue-box").style.display="none"; }
     }
 }
@@ -1613,6 +1719,7 @@ function showFlyingNotif(text) { const container = document.getElementById("flyi
 function showSysMsg(msg) { const el = document.getElementById("sys-msg"); el.innerHTML=msg; el.style.display="block"; setTimeout(()=> el.style.display="none", 2500); }
 
 function showDetail(type, id) {
+    if (detailCtx.type === type && detailCtx.id === id && document.getElementById("detail-modal").style.display !== "none") { closeModal("detail-modal"); return; }
     detailCtx.type = type; detailCtx.id = id; updateDetailContent();
     const choiceOpen = document.getElementById("choice-modal").style.display !== "none";
     const presentOpen = document.getElementById("present-modal").style.display !== "none";
@@ -1703,6 +1810,7 @@ function openInvestigateModal() {
         dropZone.ondragleave = dragLeave;
         dropZone.ondrop = (ev) => dropInvestigate(ev, h.id);
         const btn = document.createElement("button"); btn.className = "confirm-btn"; btn.innerText = "调查";
+        btn.style.marginTop = "14px";
         btn.onclick = () => confirmInvestigate(h.id);
 
         group.appendChild(title); group.appendChild(desc); group.appendChild(dropZone); group.appendChild(btn);
@@ -1756,7 +1864,7 @@ function renderLocations() {
             if(state.dialogueMode === "greeting") { showSysMsg("请先完成当前剧情！"); return; }
             if(state.newLocs.includes(locId)) state.newLocs = state.newLocs.filter(i=>i!==locId); goToLocation(locId);
         };
-        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        div.addEventListener('mouseenter', () => playSound('ui_hover', 0.2));
         box.appendChild(div);
     });
     if (state.newLocs.length > 0) {
@@ -1774,7 +1882,7 @@ function renderProfiles() {
         const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
         div.ondragstart = handleDragStart;
         div.onclick = () => { playSound('ui_click'); showDetail('profile', id); };
-        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        div.addEventListener('mouseenter', () => playSound('ui_hover', 0.08));
         let newBadge = state.newProfiles.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let color = CHAR_COLORS[id] || "#000";
         div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${PROFILE_DICT[id]?.name || id}</span></div>` + newBadge;
@@ -1790,7 +1898,7 @@ function renderEvidence() {
         const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
         div.ondragstart = handleDragStart;
         div.onclick = () => { playSound('ui_click'); showDetail('ev', id); };
-        div.addEventListener('mouseenter', () => playSound('ui_hover'));
+        div.addEventListener('mouseenter', () => playSound('ui_hover', 0.08));
         let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
         div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${EVIDENCE_DICT[id]?.name || id}</span></div>` + newBadge;
@@ -1907,19 +2015,33 @@ function renderSceneChars() {
         const pin = document.createElement("div"); pin.className = "photo-pin"; card.appendChild(pin);
         const img = document.createElement("img"); img.src = photoUrl; img.className = "photo-img"; img.onerror = () => { img.style.background = "#d0d8e0"; }; card.appendChild(img);
         const name = document.createElement("div"); name.className = "photo-name"; name.innerText = charData ? charData.name : charId; card.appendChild(name);
-        card.onclick = () => selectCharacter(charId); card.addEventListener('mouseenter', () => playSound('ui_hover')); box.appendChild(card);
+        card.onclick = () => selectCharacter(charId); card.addEventListener('mouseenter', () => playSound('ui_hover', 0.08)); box.appendChild(card);
     });
+}
+function cloneDialogue(dialogue) {
+    return JSON.parse(JSON.stringify(Array.isArray(dialogue) ? dialogue : []));
+}
+function getTopicDialogue(topicId, fallbackDialogue) {
+    if (!topicId) return fallbackDialogue || [];
+    if (!Array.isArray(state.topicRuntime[topicId])) {
+        state.topicRuntime[topicId] = cloneDialogue(fallbackDialogue);
+    }
+    return state.topicRuntime[topicId];
+}
+function rememberTopicProgress() {
+    if (state.dialogueMode !== "topic" || !state.currTopic || !Array.isArray(state.activeDialogue)) return;
+    state.topicRuntime[state.currTopic] = state.activeDialogue;
+    state.topicProgress[state.currTopic] = Math.max(0, state.dialogueIdx || 0);
 }
 function topicHasUnfinished(topicId) {
     if (!GAME_DATA.topics || !GAME_DATA.topics[topicId]) return false;
     const scan = (obj) => {
         if (!obj || typeof obj !== 'object') return false;
         if (Array.isArray(obj)) return obj.some(item => scan(item));
-        // 仅对有dialogue的交互节点检查resolved（question/present/choices）
         if (obj.dialogue && obj.resolved === false) return true;
         return Object.values(obj).some(v => scan(v));
     };
-    return scan(GAME_DATA.topics[topicId]);
+    return scan(state.topicRuntime[topicId] || GAME_DATA.topics[topicId]);
 }
 function renderTopics() {
     const box = document.getElementById("topic-list"); box.innerHTML = "";
@@ -2026,6 +2148,9 @@ function positionActionModal(modal) {
     modal.style.transform = "translateX(-50%)";
 }
 
+function hasPendingQuestion(line) {
+    return !!(line?.question && !line.question.resolved);
+}
 function hasPendingPresent(line) {
     if(!line || !line.present) return false;
     return Object.values(line.present).some(pData => pData && !pData.resolved);
@@ -2103,7 +2228,16 @@ function showChoicesModal(choiceData) {
 
 function startDialogue(dialogueArr, mode) {
     resetBGMForDialogue(dialogueArr);
-    state.activeDialogue = dialogueArr; state.dialogueMode = mode; state.dialogueIdx = 0; state.waitingForAction = false;
+    state.dialogueMode = mode;
+    if (mode === "topic" && state.currTopic) {
+        state.activeDialogue = getTopicDialogue(state.currTopic, dialogueArr);
+        const savedIdx = Number(state.topicProgress[state.currTopic] ?? 0);
+        state.dialogueIdx = Math.max(0, Math.min(savedIdx, Math.max(0, state.activeDialogue.length - 1)));
+    } else {
+        state.activeDialogue = dialogueArr;
+        state.dialogueIdx = 0;
+    }
+    state.waitingForAction = false;
     document.getElementById("dialogue-box").style.display = "flex";
     if(mode==="greeting" || mode==="temp_wrong") { state.currTopic=null; renderTopics(); }
     // 话题分隔线（切换到不同话题时插入）
@@ -2124,7 +2258,9 @@ function startDialogue(dialogueArr, mode) {
 function renderDialogueLine() {
     if(!state.activeDialogue || state.activeDialogue.length === 0) return;
     const line = state.activeDialogue[state.dialogueIdx];
+    rememberTopicProgress();
     if(line.bgm) crossfadeBGM(line.bgm);
+    { const ov = document.getElementById("scene-bg-overlay"); if (line.bg) { ov.style.backgroundImage = `url("${line.bg}")`; ov.style.opacity = "1"; } else if (ov.style.opacity === "1") { ov.style.opacity = "0"; } }
     if(line._cutscene || line.endChapter || line.endGame) { showCutsceneLine(line); return; }
     const textDiv = document.getElementById("dialogue-text");
     
@@ -2204,6 +2340,8 @@ function checkLineActions(line) {
     else if (line.autoPresent && hasPendingPresent(line)) {
         state.waitingForAction = true;
         setTimeout(() => openPresentModal(false, line.autoPresent), 800);
+    } else if (hasPendingQuestion(line) || hasPendingPresent(line)) {
+        state.waitingForAction = true;
     } else {
         state.waitingForAction = false;
     }
@@ -2258,12 +2396,33 @@ async function nextDialogue() {
     }
 }
 function prevDialogue() { if(!state.isTyping && state.dialogueIdx > 0) { state.dialogueIdx--; renderDialogueLine(); } }
+let logModalDrag = null;
 function toggleLogModal() {
     const modal = document.getElementById("log-modal");
     if (modal.style.display === "flex") { modal.style.display = "none"; return; }
     renderLogBody();
     modal.style.display = "flex";
+    const hdr = modal.querySelector("div");
+    hdr.style.cursor = "grab";
+    hdr.onmousedown = (e) => {
+        if (e.target.tagName === "SPAN" && e.target.onclick) return;
+        const rect = modal.getBoundingClientRect();
+        logModalDrag = { mx: e.clientX, my: e.clientY, x: rect.left, y: rect.top };
+        modal.style.transform = "none"; modal.style.top = rect.top + "px"; modal.style.left = rect.left + "px";
+        hdr.style.cursor = "grabbing";
+    };
 }
+document.addEventListener("mousemove", (e) => {
+    if (!logModalDrag) return;
+    const modal = document.getElementById("log-modal");
+    modal.style.left = (logModalDrag.x + e.clientX - logModalDrag.mx) + "px";
+    modal.style.top = (logModalDrag.y + e.clientY - logModalDrag.my) + "px";
+});
+document.addEventListener("mouseup", () => {
+    if (!logModalDrag) return;
+    document.getElementById("log-modal").querySelector("div").style.cursor = "grab";
+    logModalDrag = null;
+});
 function renderLogBody() {
     const body = document.getElementById("log-body"); body.innerHTML = "";
     state.dialogueHistory.forEach(item => {
@@ -2310,6 +2469,7 @@ function updateLogTabVisibility() {
 }
 
 function closeDialogue() {
+    rememberTopicProgress();
     clearInterval(state.typingInterval);
     clearTimeout(autoPlayTimer);
     if (currentBGM === "tension" || isAudioAudible(tensionAudio)) crossfadeBGM("main", 2000, true);
@@ -2343,9 +2503,10 @@ function unlockTopic(ids, silent=false) {
 
 function doQuestion() {
     if(blockDuringChoice()) return;
-    if(state.isTyping || state.waitingForAction) return;
+    if(state.isTyping) return;
     if(state.dialogueMode!=="topic" || state.activeDialogue.length===0) return;
     const line = state.activeDialogue[state.dialogueIdx];
+    if(state.waitingForAction && !hasPendingQuestion(line)) { playSound('click'); return; }
     if(line.s==="player") { showSysMsg("无法对自己进行追问。"); return; }
     playSound('click');
     if(line.question && !line.question.resolved) {
@@ -2353,8 +2514,9 @@ function doQuestion() {
         state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); line.question.resolved=true;
         if(line.question.unlockEv) unlockEvidence(line.question.unlockEv); if(line.question.unlockProfile) unlockProfile(line.question.unlockProfile);
         if(line.question.unlockLoc) unlockLocation(line.question.unlockLoc); if(line.question.unlockTopic) unlockTopic(line.question.unlockTopic);
+        state.waitingForAction = false;
         nextDialogue();
-    } else if(line.question && line.question.resolved) { showSysMsg("关于这点似乎没有什么好追问的了。"); } 
+    } else if(line.question && line.question.resolved) { showSysMsg("关于这点似乎没有什么好追问的了。"); }
     else { showSysMsg("对方似乎没有什么好说的。"); }
 }
 
@@ -2425,6 +2587,7 @@ function confirmPresent() {
         if(!pData.resolved) {
             showSysMsg("举证成功！"); if(state.lives<8){state.lives++;updateLivesDisplay();} const pName=(EVIDENCE_DICT[itemId]||PROFILE_DICT[itemId])?.name||itemId; state.dialogueHistory.push({marker:"举证", detail:"出示「"+pName+"」 ✓", type:"marker"}); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
             state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); pData.resolved=true;
+            state.waitingForAction = false;
             if(pData.unlockEv) unlockEvidence(pData.unlockEv); if(pData.unlockProfile) unlockProfile(pData.unlockProfile);
             if(pData.unlockLoc) unlockLocation(pData.unlockLoc); if(pData.unlockTopic) unlockTopic(pData.unlockTopic);
             nextDialogue(); playSound('present_seccess');
@@ -2453,8 +2616,8 @@ function showSettings() {
 function setBgmVolume(v) {
     initBGM();
     const vol = v / 100;
-    getAudioByTarget(currentBGM).volume = vol;
-    if (currentBGM !== "tension" && isAudioAudible(tensionAudio)) tensionAudio.volume = vol;
+    getAudioByTarget(currentBGM).volume = currentBGM === "tension" ? vol * 0.65 : vol;
+    if (currentBGM !== "tension" && isAudioAudible(tensionAudio)) tensionAudio.volume = vol * 0.65;
 }
 function setSfxVolume(v) {
     state.sfxVolume = v/100;

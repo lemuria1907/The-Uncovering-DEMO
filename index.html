@@ -67,6 +67,7 @@
         transform: scale(1.03); box-shadow: 8px 8px 0 rgba(0,0,0,0.5);
     }
     .menu-btn:active { transform: scale(0.96); }
+    .menu-btn sub { display: block; font-size: 10px; opacity: 0.45; font-weight: normal; letter-spacing: 2px; margin-top: 2px; }
     #version-info { position: absolute; bottom: 15px; right: 20px; color: #aaa; font-size: 13px; letter-spacing: 0.06em; z-index:5; }
 
     /* 视差背景层 */
@@ -405,6 +406,14 @@
         box-shadow: 12px 12px 0 rgba(0,0,0,0.3);
         padding-top: 15px; border-radius: 32px;
     }
+    #detail-img {
+        background-color: #ede7db;
+        background-image:
+            repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.015) 3px, rgba(0,0,0,0.015) 4px),
+            repeating-linear-gradient(90deg, transparent, transparent 3px, rgba(0,0,0,0.01) 3px, rgba(0,0,0,0.01) 4px),
+            radial-gradient(circle, rgba(0,0,0,0.04) 1px, transparent 1px);
+        background-size: 100% 4px, 4px 100%, 6px 6px;
+    }
     .modal-header { padding: 5px 15px; color: var(--ink-black); cursor: move; text-align: left; font-weight: bold; font-size: 18px; border-bottom: 2px dashed #f2b84e; margin: 0 10px; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; }
     .modal-body { padding: 20px; display: flex; flex-direction: column; align-items: center; gap: 15px; max-height: 70vh; overflow-y: auto; }
     .settings-body { padding: 22px 26px 26px; display: flex; flex-direction: column; gap: 18px; align-items: stretch; }
@@ -432,6 +441,7 @@
         font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
     }
     .choice-btn:hover { background: var(--stamp-red); color: #fff; border-color: var(--stamp-red); transform: scale(1.02); }
+    .choice-btn.selected { background: var(--stamp-red); color: #fff; border-color: var(--stamp-red); }
 
     .drop-zone { width: 100%; height: 90px; border: 2px dashed #999; display: flex; justify-content: center; align-items: center; color: #666; background: #faf8f5; font-weight: bold; text-align: center; padding: 10px; box-sizing: border-box; border-radius: 12px; }
     .drop-zone.dragover { background: rgba(179, 74, 54, 0.1); border-color: var(--stamp-red); color: var(--stamp-red); }
@@ -555,12 +565,12 @@
     <div id="menu-bg-light"></div>
     <div id="menu-bg-particles"></div>
     <div id="menu-content">
-        <h1>案件推演</h1>
+        <h1 data-i18n="game.title"></h1>
         <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">读取存档</button>
         <button class="menu-btn" onclick="playSound('click');newGame()" data-i18n="menu.newGame">新游戏</button>
         <button class="menu-btn" onclick="playSound('click');showChapterSelect()" data-i18n="menu.chapterSelect">选择章节</button>
         <button class="menu-btn" onclick="showSettings()" data-i18n="menu.settings">设置</button>
-        <button class="menu-btn" onclick="showCredits()" data-i18n="menu.credits">制作团队</button>
+        <button class="menu-btn" onclick="showCredits()" data-i18n="menu.credits">制作</button>
         <button class="menu-btn" onclick="playSound('click');exitGame()" data-i18n="menu.exit" style="color: #b34a36; border-color: #b34a36;">退出</button>
     </div>
 </div>
@@ -580,9 +590,9 @@
 <div id="game-container">
 
     <div id="side-tabs">
-        <div class="side-tab save-tab" onclick="openSaveLoadModal('save')">存<br>档</div>
-        <div class="side-tab load-tab" onclick="openSaveLoadModal('load')">读<br>档</div>
-        <div id="log-tab" class="side-tab" onclick="toggleLogModal()" style="background:#a8d8ea;color:#1a3a4a;border-color:#6bb5c9;display:none;">回<br>顾</div>
+        <div class="side-tab save-tab" onclick="openSaveLoadModal('save')" data-i18n="tab.save"></div>
+        <div class="side-tab load-tab" onclick="openSaveLoadModal('load')" data-i18n="tab.load"></div>
+        <div id="log-tab" class="side-tab" onclick="toggleLogModal()" style="background:#a8d8ea;color:#1a3a4a;border-color:#6bb5c9;display:none;" data-i18n="tab.log"></div>
     </div>
     
     <div id="debug-panel" style="display:none;">
@@ -688,12 +698,12 @@
     </div>
 </div>
 
-<div id="present-modal" class="modal-box" style="z-index: 5500; width: 340px;">
+<div id="present-modal" class="modal-box" style="z-index: 5500; width: 340px; display: none;">
     <div class="modal-close" onclick="closeModal('present-modal')"></div>
     <div class="modal-header" id="present-header" data-i18n="present.title">请出示人物/证物/证言</div>
     <div class="modal-body">
         <div id="drop-zone-present" class="drop-zone" ondragover="allowDrop(event)" ondragleave="dragLeave(event)" ondrop="dropPresent(event)" data-i18n="present.drop">拖拽卡片至此</div>
-        <button class="confirm-btn" onclick="confirmPresent()">确认出示</button>
+        <button class="confirm-btn" onclick="confirmPresent()" data-i18n="present.confirmBtn">确认出示</button>
     </div>
 </div>
 
@@ -707,7 +717,7 @@
 
 <div id="investigate-modal" class="modal-box" style="z-index: 5500; width: 340px;">
     <div class="modal-close" onclick="closeModal('investigate-modal')"></div>
-    <div class="modal-header">异常点调查</div>
+    <div class="modal-header" data-i18n="investigate.title">异常点调查</div>
     <div class="modal-body" id="investigate-body"></div>
 </div>
 
@@ -747,13 +757,16 @@ const I18N = {
         "chapter.endTitle": "本部分内容结束",
         "chapter.endDesc": "你已经完成了当前阶段的调查。",
         "chapter.endBtn": "进入下一节",
-        "credits.title": "制作团队",
-        "menu.newGame": "开始新游戏",
-        "menu.continue": "读取存档",
-        "menu.chapterSelect": "选择章节",
-        "menu.settings": "设置",
-        "menu.credits": "制作团队",
-        "menu.exit": "退出",
+        "chapter.endGameBtn": "结束并返回主界面",
+        "chapter.saveNextBtn": "📁 保存并进入下一节",
+        "credits.title": "制作",
+        "game.title": "案件推演",
+        "menu.newGame": "开始新游戏<br><sub>NEW GAME</sub>",
+        "menu.continue": "读取存档<br><sub>CONTINUE</sub>",
+        "menu.chapterSelect": "选择章节<br><sub>CHAPTERS</sub>",
+        "menu.settings": "设置<br><sub>SETTINGS</sub>",
+        "menu.credits": "制作<br><sub>CREDITS</sub>",
+        "menu.exit": "退出<br><sub>EXIT</sub>",
         "menu.confirmNewGame": "确定要开始新游戏吗？<br>当前未保存的进度将丢失。",
         "menu.confirmExit": "确定已保存进度并退出吗？",
         "menu.noSave": "暂无存档，请先开始新游戏。",
@@ -768,7 +781,44 @@ const I18N = {
         "sys.newLocation": "你得到了新的可探索地点",
         "sys.newTopic": "你开启了一个新的话题",
         "sys.autoSaved": "进度已自动保存",
-        "source.from": "线索来自："
+        "source.from": "线索来自：",
+        "tab.save": "存<br>档",
+        "tab.load": "读<br>档",
+        "tab.log": "回<br>顾",
+        "log.title": "对话回顾",
+        "present.loaded": "已装载",
+        "present.confirmBtn": "确认出示",
+        "sl.save": "归档记录",
+        "sl.load": "提取档案",
+        "detail.dropZone": "拖拽右侧卡片至此",
+        "investigate.title": "异常点调查",
+        "sys.questionSuccess": "追问成功！",
+        "sys.presentCorrect": "举证正确！",
+        "sys.presentSuccess": "举证成功！",
+        "sys.reaction": "对方有了反应！",
+        "sys.presentMismatch": "不对，线索似乎不匹配...再仔细想想！",
+        "sys.alreadyPresented": "已经出示过这个了。",
+        "sys.evidenceMismatch": "证据不匹配，再试试别的。",
+        "sys.noQuestion": "对方似乎没有什么好说的。",
+        "sys.noMoreQuestion": "关于这点似乎没有什么好追问的了。",
+        "sys.cantQuestionSelf": "无法对自己进行追问。",
+        "sys.needEvidence": "请先拖入证据！",
+        "sys.presentInGreeting": "请先完成当前剧情！",
+        "sys.presentInDialogue": "请在深入调查阶段出示证据！",
+        "sys.presentOnNpc": "请在对方发言(绿字)时出示证据！",
+        "sys.saveSuccess": "已成功归档！",
+        "sys.loadSuccess": "档案提取成功！",
+        "sys.saveDeleted": "🗑️ 档案已销毁。",
+        "sys.autoSlotLocked": "自动存档档位不可手动覆盖，请使用其他档位。",
+        "sys.lastChapter": "这已经是最后一章了！",
+        "sys.investigationNeedEvidence": "请先拖入调查证据！",
+        "sys.investigationSuccess": "调查成功！获得了新的线索。",
+        "sys.noCutsceneMarker": "本节没有过场标记",
+        "sys.jumpedToCutscene": "已跳到过场前3句，点几下即可看到过场",
+        "sys.noDialogue": "当前没有进行中的剧情对话。",
+        "sys.evidencePresented": "这个证据已经出示过了。",
+        "sys.completeChoice": "请先完成当前选择。",
+        "sys.langStoryDeferred": "界面语言已切换，剧情语言将在返回标题或重新开始后生效。"
     },
     en: {
         "panel.location": "Location",
@@ -796,7 +846,10 @@ const I18N = {
         "chapter.endTitle": "Section Complete",
         "chapter.endDesc": "You have finished this part of the investigation.",
         "chapter.endBtn": "Next Section",
+        "chapter.endGameBtn": "Return to Main Menu",
+        "chapter.saveNextBtn": "💾 Save & Next Section",
         "credits.title": "Credits",
+        "game.title": "The Uncovering",
         "menu.newGame": "New Game",
         "menu.continue": "Continue",
         "menu.chapterSelect": "Chapter Select",
@@ -817,7 +870,44 @@ const I18N = {
         "sys.newLocation": "New location discovered",
         "sys.newTopic": "New topic unlocked",
         "sys.autoSaved": "Progress auto-saved",
-        "source.from": "Source: "
+        "source.from": "Source: ",
+        "tab.save": "SA<br>VE",
+        "tab.load": "LO<br>AD",
+        "tab.log": "LO<br>G",
+        "log.title": "Dialogue Review",
+        "present.loaded": "Loaded",
+        "present.confirmBtn": "Confirm",
+        "sl.save": "Save",
+        "sl.load": "Load",
+        "detail.dropZone": "Drag card here",
+        "investigate.title": "Investigate",
+        "sys.questionSuccess": "Question success!",
+        "sys.presentCorrect": "Correct!",
+        "sys.presentSuccess": "Evidence presented!",
+        "sys.reaction": "They reacted!",
+        "sys.presentMismatch": "That doesn't match... Think again!",
+        "sys.alreadyPresented": "Already presented.",
+        "sys.evidenceMismatch": "Evidence doesn't match. Try another.",
+        "sys.noQuestion": "They have nothing more to say.",
+        "sys.noMoreQuestion": "Nothing more to ask about this.",
+        "sys.cantQuestionSelf": "Can't question yourself.",
+        "sys.needEvidence": "Please drag in evidence first!",
+        "sys.presentInGreeting": "Finish current dialogue first!",
+        "sys.presentInDialogue": "Present evidence during investigation!",
+        "sys.presentOnNpc": "Present evidence during NPC dialogue!",
+        "sys.saveSuccess": "Save successful!",
+        "sys.loadSuccess": "Load successful!",
+        "sys.saveDeleted": "🗑️ Save deleted.",
+        "sys.autoSlotLocked": "Auto-save slot cannot be overwritten. Use another slot.",
+        "sys.lastChapter": "This is the last chapter!",
+        "sys.investigationNeedEvidence": "Please drag in investigation evidence!",
+        "sys.investigationSuccess": "Investigation success! New clue obtained.",
+        "sys.noCutsceneMarker": "No cutscene marker in this section.",
+        "sys.jumpedToCutscene": "Jumped to cutscene. Click a few times.",
+        "sys.noDialogue": "No active dialogue.",
+        "sys.evidencePresented": "This evidence was already presented.",
+        "sys.completeChoice": "Complete the current choice first.",
+        "sys.langStoryDeferred": "Interface language switched. Story language will take effect after returning to title or starting a new game."
     },
     ja: {
         "panel.location": "ロケーション",
@@ -845,13 +935,16 @@ const I18N = {
         "chapter.endTitle": "本章終了",
         "chapter.endDesc": "この段階の調査が完了しました。",
         "chapter.endBtn": "次へ",
+        "chapter.endGameBtn": "メインメニューに戻る",
+        "chapter.saveNextBtn": "💾 保存して次へ",
         "credits.title": "クレジット",
-        "menu.newGame": "はじめから",
-        "menu.continue": "つづきから",
-        "menu.chapterSelect": "章を選択",
-        "menu.settings": "設定",
-        "menu.credits": "クレジット",
-        "menu.exit": "終了",
+        "game.title": "見えざる線",
+        "menu.newGame": "はじめから<br><sub>NEW GAME</sub>",
+        "menu.continue": "つづきから<br><sub>CONTINUE</sub>",
+        "menu.chapterSelect": "章を選択<br><sub>CHAPTERS</sub>",
+        "menu.settings": "設定<br><sub>SETTINGS</sub>",
+        "menu.credits": "クレジット<br><sub>CREDITS</sub>",
+        "menu.exit": "終了<br><sub>EXIT</sub>",
         "menu.confirmNewGame": "新しく始めますか？<br>保存していない進行状況は失われます。",
         "menu.confirmExit": "進行状況を保存して終了しますか？",
         "menu.noSave": "セーブデータがありません。先に新しく始めてください。",
@@ -866,15 +959,52 @@ const I18N = {
         "sys.newLocation": "新しい場所を発見",
         "sys.newTopic": "新しいトピックを開放",
         "sys.autoSaved": "自動保存しました",
-        "source.from": "出典："
+        "source.from": "出典：",
+        "tab.save": "セ<br>ー<br>ブ",
+        "tab.load": "ロ<br>ー<br>ド",
+        "tab.log": "ロ<br>グ",
+        "log.title": "会話振り返り",
+        "present.loaded": "ロード済み",
+        "present.confirmBtn": "確認",
+        "sl.save": "セーブ",
+        "sl.load": "ロード",
+        "detail.dropZone": "カードをドラッグ",
+        "investigate.title": "異常点調査",
+        "sys.questionSuccess": "追及成功！",
+        "sys.presentCorrect": "正解！",
+        "sys.presentSuccess": "証拠提示成功！",
+        "sys.reaction": "反応がありました！",
+        "sys.presentMismatch": "手がかりが一致しません…もう一度考えてください！",
+        "sys.alreadyPresented": "すでに提示済みです。",
+        "sys.evidenceMismatch": "証拠が一致しません。別のものを試してください。",
+        "sys.noQuestion": "これ以上話すことはないようです。",
+        "sys.noMoreQuestion": "これ以上追及することはなさそうです。",
+        "sys.cantQuestionSelf": "自分自身を追及することはできません。",
+        "sys.needEvidence": "証拠をドラッグしてください！",
+        "sys.presentInGreeting": "先に現在の会話を終了させてください！",
+        "sys.presentInDialogue": "調査段階で証拠を提示してください！",
+        "sys.presentOnNpc": "相手の発言中に証拠を提示してください！",
+        "sys.saveSuccess": "セーブ成功！",
+        "sys.loadSuccess": "ロード成功！",
+        "sys.saveDeleted": "🗑️ セーブを削除しました。",
+        "sys.autoSlotLocked": "自動セーブスロットは上書きできません。別のスロットを使用してください。",
+        "sys.lastChapter": "これが最終章です！",
+        "sys.investigationNeedEvidence": "調査証拠をドラッグしてください！",
+        "sys.investigationSuccess": "調査成功！新しい手がかりを入手しました。",
+        "sys.noCutsceneMarker": "カットシーンマーカーがありません。",
+        "sys.jumpedToCutscene": "カットシーン前にジャンプしました。数回クリックしてください。",
+        "sys.noDialogue": "現在進行中の会話はありません。",
+        "sys.evidencePresented": "この証拠はすでに提示済みです。",
+        "sys.completeChoice": "先に現在の選択を完了してください。",
+        "sys.langStoryDeferred": "表示言語を切り替えました。物語の言語はタイトルに戻るか新しく始めた後に反映されます。"
     }
 };
 function t(key) { return I18N[currentLang]?.[key] || I18N.zh[key] || key; }
 function applyAllUIText() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
-        if (el.children.length > 0) return; // 有子元素的跳过，避免误删嵌套按钮
+        if (el.children.length > 0 && !el.classList.contains('menu-btn')) return;
         const text = t(el.dataset.i18n);
-        if (text) el.innerText = text;
+        if (text) el.innerHTML = text;
     });
     document.querySelectorAll('[data-i18n-title]').forEach(el => {
         const text = t(el.dataset.i18nTitle);
@@ -887,13 +1017,14 @@ function applyAllUIText() {
         if (html) el.innerHTML = html;
     });
 }
-function setLanguage(lang) {
+async function setLanguage(lang) {
     currentLang = lang;
     localStorage.setItem('game_lang', lang);
     applyAllUIText();
+    if (state.hasSeenIntro) showSysMsg(t('sys.langStoryDeferred'));
 }
 function getStoryDataPath() {
-    return 'data/zh';
+    return 'data/' + currentLang;
 }
 async function fetchJsonWithFallback(path, fallbackPath) {
     try {
@@ -935,7 +1066,10 @@ document.addEventListener('keydown', (e) => {
         dp.style.display = dp.style.display === "none" ? "flex" : "none";
         return;
     }
-    if(e.code === 'Space') { e.preventDefault(); advanceDialogue(null); }
+    if(e.code === 'Space') {
+        if (document.getElementById("present-modal").style.display !== "none") return;
+        e.preventDefault(); advanceDialogue(null);
+    }
     if(e.code === 'KeyA' || e.code === 'KeyD') {
         const dm = document.getElementById("detail-modal");
         if (dm && dm.style.display !== "none") { e.preventDefault(); navDetail(e.code === 'KeyA' ? -1 : 1); return; }
@@ -943,6 +1077,40 @@ document.addEventListener('keydown', (e) => {
             e.preventDefault();
             if (e.code === 'KeyA' && state.dialogueIdx > 0) { prevDialogue(); }
             else if (e.code === 'KeyD' && state.dialogueIdx < state.activeDialogue.length - 1) { nextDialogue(); }
+        }
+    }
+    // 三选一 / 举证框 键盘操作
+    if (e.code === 'Enter' || e.code === 'KeyW' || e.code === 'KeyS' || e.code === 'ArrowUp' || e.code === 'ArrowDown') {
+        // 三选一
+        if (isChoiceModalActive()) {
+            e.preventDefault();
+            const ctn = document.getElementById("choice-options");
+            const btns = ctn.querySelectorAll('.choice-btn');
+            if (btns.length === 0) return;
+            const hasSel = ctn.dataset.selectedIndex !== undefined && ctn.dataset.selectedIndex !== '';
+            if (e.code === 'Enter') {
+                if (hasSel) btns[parseInt(ctn.dataset.selectedIndex, 10)]?.click();
+                return;
+            }
+            // 方向键
+            if (hasSel) btns[parseInt(ctn.dataset.selectedIndex, 10)].classList.remove('selected');
+            let idx;
+            if (!hasSel) {
+                idx = (e.code === 'KeyW' || e.code === 'ArrowUp') ? btns.length - 1 : 0;
+            } else {
+                idx = parseInt(ctn.dataset.selectedIndex, 10);
+                if (e.code === 'KeyW' || e.code === 'ArrowUp') idx = (idx - 1 + btns.length) % btns.length;
+                else idx = (idx + 1) % btns.length;
+            }
+            btns[idx].classList.add('selected');
+            ctn.dataset.selectedIndex = idx;
+            return;
+        }
+        // 举证框：Enter 确认
+        if (e.code === 'Enter' && document.getElementById("present-modal").style.display !== "none") {
+            e.preventDefault();
+            confirmPresent();
+            return;
         }
     }
     if(e.code === 'Escape') {
@@ -953,7 +1121,7 @@ document.addEventListener('keydown', (e) => {
             if(bgmAudio) { bgmAudio.pause(); bgmAudio.currentTime = 0; }
             if(tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
             if(customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
-            clearTimeout(autoPlayTimer); clearInterval(bgmFadeTimer);
+            clearTimeout(autoPlayTimer); stopBgmFadeTimers();
             currentBGM = "main"; document.querySelectorAll(".modal-box").forEach(m => m.style.display="none");
             if(state.autoPlay) toggleAutoPlay();
         } else if(state.hasSeenIntro) {
@@ -1082,7 +1250,7 @@ function updateChapterBadge(idx = state.currentChapterIdx) {
 
 async function forceNextChapter() {
     playSound('click');
-    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg("这已经是最后一章了！"); return; }
+    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg(t('sys.lastChapter')); return; }
     const unlockedEvCount = unlockEvidenceFromChapter(state.currentChapterIdx, true);
     const unlockedProfileCount = unlockProfilesFromChapter(state.currentChapterIdx, true);
     const advanced = await goToNextChapter();
@@ -1095,8 +1263,13 @@ async function forceNextChapter() {
 }
 
 async function goToNextChapter() {
-    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg("这已经是最后一章了！"); return false; }
+    if (!state.storyIndex || state.currentChapterIdx >= state.storyIndex.chapters.length - 1) { showSysMsg(t('sys.lastChapter')); return false; }
     state.currentChapterIdx++;
+    // ensure shared data matches current language
+    const langData = getStoryDataPath();
+    const sharedData = await fetchJsonWithFallback(langData + '/shared.json', 'data/zh/shared.json');
+    EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {};
+    PROFILE_DICT = sharedData.PROFILE_DICT || {};
     await fetchChapterData(state.currentChapterIdx);
     closeDialogue();
     renderAll();
@@ -1159,14 +1332,14 @@ function jumpToCutscene() {
             }
         }
     }
-    if(!result){showSysMsg("本节没有过场标记");return;}
+    if(!result){showSysMsg(t('sys.noCutsceneMarker'));return;}
 
     closeDialogue();
     state.activeDialogue=result.arr;state.dialogueIdx=result.idx;
     state.dialogueMode="topic";state.waitingForAction=false;state.isTyping=false;
     document.getElementById("dialogue-box").style.display="flex";
     renderDialogueLine();
-    showSysMsg("已跳到过场前3句，点几下即可看到过场");
+    showSysMsg(t('sys.jumpedToCutscene'));
 }
 
 async function jumpToTensionTest() {
@@ -1186,7 +1359,7 @@ async function jumpToTensionTest() {
 
 function skipToNextActionOrEnd() {
     playSound('click');
-    if (!state.activeDialogue || state.activeDialogue.length === 0) { showSysMsg("当前没有进行中的剧情对话。"); return; }
+    if (!state.activeDialogue || state.activeDialogue.length === 0) { showSysMsg(t('sys.noDialogue')); return; }
     let targetIdx = state.dialogueIdx;
     while(targetIdx < state.activeDialogue.length - 1) {
         let line = state.activeDialogue[targetIdx];
@@ -1250,10 +1423,13 @@ function initBGM() {
     if (!bgmAudio) { bgmAudio = new Audio('audio/bgm_main.mp3'); bgmAudio.loop = true; bgmAudio.volume = Number(document.getElementById('bgm-volume')?.value || 40) / 100; }
     if (!tensionAudio) { tensionAudio = new Audio('audio/tension.mp3'); tensionAudio.loop = true; tensionAudio.volume = 0; }
 }
-function startBGM() {
-    initBGM();
+function stopBgmFadeTimers() {
     if (bgmFadeTimer) { cancelAnimationFrame(bgmFadeTimer); bgmFadeTimer = null; }
     if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
+}
+function startBGM() {
+    initBGM();
+    stopBgmFadeTimers();
     if (tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
     if (customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
     currentBGM = "main";
@@ -1294,8 +1470,7 @@ function clampUnitInterval(value, fallback = 0) {
 function crossfadeBGM(target, duration = 2000, force = false) {
     initBGM();
     if (target === "silence") {
-        if (bgmFadeTimer) cancelAnimationFrame(bgmFadeTimer);
-        if (bgmFadeInTimer) { clearInterval(bgmFadeInTimer); bgmFadeInTimer = null; }
+        stopBgmFadeTimers();
         const audios = [bgmAudio, tensionAudio, customBgmAudio].filter(Boolean);
         const startVolumes = audios.map(audio => audio.paused ? 0 : clampUnitInterval(audio.volume, 0));
         const safeDuration = Number.isFinite(Number(duration)) && Number(duration) > 0 ? Number(duration) : 2000;
@@ -1470,7 +1645,12 @@ function confirmChapterEnd() {
     document.getElementById('chapter-end-overlay').style.display = 'none';
     state.waitingForAction = false;
     autoSave(0);
-    showChapterLogo(() => goToNextChapter(), state.currentChapterIdx + 1);
+    const nextIdx = state.currentChapterIdx + 1;
+    if (nextIdx < (state.storyIndex?.chapters?.length || 0)) {
+        showChapterLogo(() => goToNextChapter(), nextIdx);
+    } else {
+        goToNextChapter();
+    }
 }
 
 // ================= 章间LOGO V7 光耀消散 =================
@@ -1483,7 +1663,13 @@ function showChapterLogo(callback, secIdx) {
     const img = document.getElementById("logo-img");
     const particlesBox = document.getElementById("logo-particles");
 
-    img.src = `images/chapter${chapNum}/${chapNum}-${secNum}.png`;
+    if (currentLang === 'en') {
+        img.src = `images/chapter${chapNum}/LOGO EN/en${chapNum}-${secNum}.png`;
+    } else if (currentLang === 'ja') {
+        img.src = `images/chapter${chapNum}/LOGO JA/ja${chapNum}-${secNum}.png`;
+    } else {
+        img.src = `images/chapter${chapNum}/${chapNum}-${secNum}.png`;
+    }
     img.classList.remove("playing");
     particlesBox.innerHTML = "";
 
@@ -1576,7 +1762,7 @@ function autoSave(slot = 0) {
 
 // ================= SL 存档 =================
 function openSaveLoadModal(mode) {
-    playSound('click'); currentSLMode = mode; document.getElementById("sl-modal-title").innerText = mode === 'save' ? '归档记录' : '提取档案';
+    playSound('click'); currentSLMode = mode; document.getElementById("sl-modal-title").innerText = mode === 'save' ? t('sl.save') : t('sl.load');
     renderSaveSlots(); showModalAtCenter(document.getElementById("saveload-modal"), 0.5, 0.4);
 }
 function renderSaveSlots() {
@@ -1591,7 +1777,7 @@ function renderSaveSlots() {
             const autoTag = isAutoSlot ? ` <span style="font-size:10px;color:#e67e22;font-weight:normal;">[自动存档]</span>` : "";
             infoDiv.innerHTML = `<strong style="color:${isAutoSlot?'#e67e22':'var(--stamp-red)'}">档案 0${i+1}${autoTag}</strong>${chapterInfo}<br><span style="font-size:12px;color:#555;">${saves[i].locName} - ${saves[i].time}</span>`;
             if (currentSLMode === 'save' && isAutoSlot) {
-                infoDiv.onclick = () => { playSound('click'); showSysMsg("自动存档档位不可手动覆盖，请使用其他档位。"); };
+                infoDiv.onclick = () => { playSound('click'); showSysMsg(t('sys.autoSlotLocked')); };
             } else {
                 infoDiv.onclick = ()=> { playSound('click'); currentSLMode==='save' ? saveGame(i) : loadGame(i); };
             }
@@ -1683,7 +1869,7 @@ function saveGame(index) {
         saveVersion: 2,
         stateData: serializeState(), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
     };
-    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("已成功归档！"); renderSaveSlots();
+    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg(t('sys.saveSuccess')); renderSaveSlots();
 }
 async function loadGame(index, silent=false) {
     if(!silent) playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
@@ -1706,12 +1892,12 @@ async function loadGame(index, silent=false) {
         state.dialogueIdx = Math.max(0, Math.min(state.dialogueIdx || 0, Math.max(0, state.activeDialogue.length - 1)));
         syncDialogueBgmMarkers(state.activeDialogue);
         if (state.tempDialogueState) syncDialogueBgmMarkers(state.tempDialogueState.activeDialogue);
-        closeModal("saveload-modal"); showSysMsg("档案提取成功！"); renderAll();
+        closeModal("saveload-modal"); showSysMsg(t('sys.loadSuccess')); renderAll();
         if(state.activeDialogue && state.activeDialogue.length > 0) { document.getElementById("dialogue-box").style.display="flex"; renderDialogueLine(); }
         else { document.getElementById("dialogue-box").style.display="none"; }
     }
 }
-function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg("🗑️ 档案已销毁。"); renderSaveSlots(); }
+function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg(t('sys.saveDeleted')); renderSaveSlots(); }
 function closeModal(modalId) { document.getElementById(modalId).style.display="none"; }
 
 // ================= UI 提示 =================
@@ -1741,7 +1927,7 @@ function updateDetailContent() {
     if(data && data.img) { imgEl.src = data.img; imgEl.style.display = "block"; } else { imgEl.style.display = "none"; }
     srcEl.style.display = "none";
     if (data && detailCtx.type === 'ev') {
-        const isTest = /供述|证言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(detailCtx.id);
+        const isTest = /供述|证言|証言/.test(data.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(detailCtx.id);
         if (isTest && data.origin) {
             let srcName = "";
             if (data.origin === "system") { srcName = "现场调查"; }
@@ -1804,7 +1990,7 @@ function openInvestigateModal() {
         const title = document.createElement("div"); title.className = "hotspot-title"; title.innerText = h.title;
         const desc = document.createElement("div"); desc.style.fontSize="13px"; desc.style.color="#555"; desc.style.marginBottom="10px";
         desc.innerText = h.desc_locked;
-        const dropZone = document.createElement("div"); dropZone.className = "drop-zone"; dropZone.style.height="70px"; dropZone.innerText = "拖拽右侧卡片至此";
+        const dropZone = document.createElement("div"); dropZone.className = "drop-zone"; dropZone.style.height="70px"; dropZone.innerText = t('detail.dropZone');
         dropZone.setAttribute("data-hotspot-id", h.id);
         dropZone.ondragover = allowDrop;
         dropZone.ondragleave = dragLeave;
@@ -1825,7 +2011,7 @@ function dropInvestigate(ev, hsId) {
     const data = ev.dataTransfer.getData("text");
     if (data) {
         let name = (EVIDENCE_DICT[data] || PROFILE_DICT[data])?.name || data;
-        ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">已装载: ${name}</strong>`;
+        ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">${t('present.loaded')}: ${name}</strong>`;
         ev.currentTarget.dataset.itemId = data;
     }
 }
@@ -1835,15 +2021,16 @@ function confirmInvestigate(hsId) {
     if (!hot) return;
     const dropZone = document.querySelector(`.drop-zone[data-hotspot-id="${hsId}"]`);
     const itemId = dropZone?.dataset.itemId;
-    if (!itemId) { showSysMsg("请先拖入调查证据！"); return; }
+    if (!itemId) { showSysMsg(t('sys.investigationNeedEvidence')); return; }
     if (itemId === hot.unlockItem) {
         if (!state.unlockedEv.includes(hot.giveEv)) unlockEvidence(hot.giveEv);
-        showSysMsg("调查成功！获得了新的线索。");
+        showSysMsg(t('sys.investigationSuccess'));
         state.pendingHotspots = state.pendingHotspots.filter(h => h.id !== hsId);
-        closeModal("investigate-modal");
+        if (state.pendingHotspots.length > 0) openInvestigateModal();
+        else closeModal("investigate-modal");
     } else {
-        showSysMsg("证据不匹配，再试试别的。");
-        dropZone.innerHTML = "拖拽右侧卡片至此";
+        showSysMsg(t('sys.evidenceMismatch'));
+        dropZone.innerHTML = t('detail.dropZone');
         dropZone.dataset.itemId = "";
     }
 }
@@ -1861,7 +2048,7 @@ function renderLocations() {
         div.onclick = () => {
             playSound('ui_click');
             if(blockDuringChoice()) return;
-            if(state.dialogueMode === "greeting") { showSysMsg("请先完成当前剧情！"); return; }
+            if(state.dialogueMode === "greeting") { showSysMsg(t('sys.presentInGreeting')); return; }
             if(state.newLocs.includes(locId)) state.newLocs = state.newLocs.filter(i=>i!==locId); goToLocation(locId);
         };
         div.addEventListener('mouseenter', () => playSound('ui_hover', 0.2));
@@ -1902,14 +2089,14 @@ function renderEvidence() {
         let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
         div.innerHTML = `<div style="display:flex;align-items:center;gap:3px;"><i class="dot-matrix" style="color:${color}"></i><span>${EVIDENCE_DICT[id]?.name || id}</span></div>` + newBadge;
-        const isTestimony = /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
+        const isTestimony = /供述|证言|証言|Testimony/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
         const targetBox = (testimonyBox && isTestimony) ? testimonyBox : box;
         targetBox.appendChild(div);
     });
 }
 function sortTestimony() {
     playSound('click');
-    const isTest = id => /供述|证言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
+    const isTest = id => /供述|证言|証言/.test(EVIDENCE_DICT[id]?.name || "") || /^ev_(missing_actor|float_accident|relative|tourist_at_back|ayou_prop_design)$/.test(id);
     const testIds = state.unlockedEv.filter(isTest);
     const otherIds = state.unlockedEv.filter(id => !isTest(id));
     testIds.sort((a, b) => {
@@ -1926,7 +2113,7 @@ function sortTestimony() {
 let cutsceneTimer = null;
 function showCutsceneLine(line) {
     document.getElementById("dialogue-box").style.display = "none";
-    // 过场/章节结束 → BGM立即停止
+    stopBgmFadeTimers();
     if(bgmAudio){bgmAudio.pause();bgmAudio.volume=0;}
     if(tensionAudio){tensionAudio.pause();tensionAudio.volume=0;}
     if(customBgmAudio){customBgmAudio.pause();customBgmAudio=null;}
@@ -1950,7 +2137,7 @@ function showCutsceneLine(line) {
             if(line.endChapter || line.endGame) {
                 const btn = document.getElementById("cutscene-next-btn");
                 btn.style.display = "block";
-                btn.innerText = line.endGame ? "结束并返回主界面" : "进入下一节";
+                btn.innerText = line.endGame ? t('chapter.endGameBtn') : t('chapter.endBtn');
                 state.waitingForAction = true;
             }
         }
@@ -1965,7 +2152,7 @@ function advanceCutscene(e) {
     if(line.endChapter || line.endGame) {
         const btn = document.getElementById("cutscene-next-btn");
         btn.style.display = "block";
-        btn.innerText = line.endGame ? "结束并返回主界面" : "📁 保存并进入下一节";
+        btn.innerText = line.endGame ? t('chapter.endGameBtn') : t('chapter.saveNextBtn');
         state.waitingForAction = true;
     } else {
         nextDialogue();
@@ -1984,6 +2171,7 @@ function finishCutscene() {
         document.getElementById("game-container").style.display = "none";
         document.getElementById("main-menu").style.display = "flex";
         if(bgmAudio) bgmAudio.pause(); if(tensionAudio) tensionAudio.pause(); currentBGM = "main";
+        state.activeDialogue = []; state.dialogueIdx = 0; state.dialogueMode = "none";
         autoSave(0);
         return;
     }
@@ -1998,7 +2186,12 @@ function finishCutscene() {
         }
     }
     autoSave(0);
-    showChapterLogo(() => goToNextChapter(), state.currentChapterIdx + 1);
+    const nextIdx = state.currentChapterIdx + 1;
+    if (nextIdx < (state.storyIndex?.chapters?.length || 0)) {
+        showChapterLogo(() => goToNextChapter(), nextIdx);
+    } else {
+        goToNextChapter();
+    }
 }
 
 function renderSceneChars() {
@@ -2120,7 +2313,7 @@ function selectPendingCharacterAfterDialogue() {
 function selectCharacter(charId) {
     playSound('ui_click');
     if(blockDuringChoice()) return;
-    if(state.dialogueMode==="greeting") { showSysMsg("请先完成当前剧情！"); return; }
+    if(state.dialogueMode==="greeting") { showSysMsg(t('sys.presentInGreeting')); return; }
     if(state.currChar===charId && state.dialogueMode!=="temp_wrong") { state.currChar=null; closeDialogue(); } 
     else {
         state.currChar = charId; closeDialogue();
@@ -2163,7 +2356,7 @@ function isChoiceModalActive() {
 }
 function blockDuringChoice() {
     if (!isChoiceModalActive()) return false;
-    showSysMsg("请先完成当前选择。");
+    showSysMsg(t('sys.completeChoice'));
     return true;
 }
 function releaseChoiceModalLock(modal=document.getElementById("choice-modal")) {
@@ -2182,6 +2375,7 @@ function showChoicesModal(choiceData) {
     const title = document.getElementById("choice-question");
     const container = document.getElementById("choice-options");
     title.innerText = choiceData.question; container.innerHTML = "";
+    container.dataset.selectedIndex = "";
     choiceData.options.forEach(opt => {
         let btn = document.createElement("div"); btn.className = "choice-btn"; btn.innerText = opt.text;
         btn.onclick = () => {
@@ -2507,23 +2701,23 @@ function doQuestion() {
     if(state.dialogueMode!=="topic" || state.activeDialogue.length===0) return;
     const line = state.activeDialogue[state.dialogueIdx];
     if(state.waitingForAction && !hasPendingQuestion(line)) { playSound('click'); return; }
-    if(line.s==="player") { showSysMsg("无法对自己进行追问。"); return; }
+    if(line.s==="player") { showSysMsg(t('sys.cantQuestionSelf')); return; }
     playSound('click');
     if(line.question && !line.question.resolved) {
-        playSound('present_seccess'); showSysMsg("追问成功！"); let newLines = line.question.dialogue.map(l=>({...l, isNew:true}));
+        playSound('present_seccess'); showSysMsg(t('sys.questionSuccess')); let newLines = line.question.dialogue.map(l=>({...l, isNew:true}));
         state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); line.question.resolved=true;
         if(line.question.unlockEv) unlockEvidence(line.question.unlockEv); if(line.question.unlockProfile) unlockProfile(line.question.unlockProfile);
         if(line.question.unlockLoc) unlockLocation(line.question.unlockLoc); if(line.question.unlockTopic) unlockTopic(line.question.unlockTopic);
         state.waitingForAction = false;
         nextDialogue();
-    } else if(line.question && line.question.resolved) { showSysMsg("关于这点似乎没有什么好追问的了。"); }
-    else { showSysMsg("对方似乎没有什么好说的。"); }
+    } else if(line.question && line.question.resolved) { showSysMsg(t('sys.noMoreQuestion')); }
+    else { showSysMsg(t('sys.noQuestion')); }
 }
 
 function openPresentModal(isGlobal=false, promptText=null) {
     if(blockDuringChoice()) return;
-    if(!isGlobal && !state.waitingForAction && (state.dialogueMode!=="topic" || state.activeDialogue.length===0)) { showSysMsg("请在深入调查阶段出示证据！"); return; }
-    if(!isGlobal && !state.waitingForAction && state.activeDialogue[state.dialogueIdx].s==="player") { showSysMsg("请在对方发言(绿字)时出示证据！"); return; }
+    if(!isGlobal && !state.waitingForAction && (state.dialogueMode!=="topic" || state.activeDialogue.length===0)) { showSysMsg(t('sys.presentInDialogue')); return; }
+    if(!isGlobal && !state.waitingForAction && state.activeDialogue[state.dialogueIdx].s==="player") { showSysMsg(t('sys.presentOnNpc')); return; }
     playSound('click');
     document.getElementById("arrow-left").style.display = "none";
     document.getElementById("arrow-right").style.display = "none";
@@ -2543,26 +2737,28 @@ function dragLeave(ev) { ev.currentTarget.classList.remove("dragover"); }
 
 function dropPresent(ev) {
     ev.preventDefault(); ev.currentTarget.classList.remove("dragover"); const data = ev.dataTransfer.getData("text");
-    if(data) { let name = (EVIDENCE_DICT[data]||PROFILE_DICT[data]).name; ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">已装载: ${name}</strong>`; ev.currentTarget.dataset.itemId = data; }
+    if(data) { let name = (EVIDENCE_DICT[data]||PROFILE_DICT[data]).name; ev.currentTarget.innerHTML = `<strong style="color:var(--stamp-red)">${t('present.loaded')}: ${name}</strong>`; ev.currentTarget.dataset.itemId = data; }
 }
 
 function confirmPresent() {
     const dz = document.getElementById("drop-zone-present"); const itemId = dz.dataset.itemId; const isGlobal = dz.dataset.isGlobal==="true";
-    if(!itemId) { showSysMsg("请先拖入证据！"); return; } 
+    if(!itemId) { showSysMsg(t('sys.needEvidence')); return; } 
     
     const line = state.activeDialogue[state.dialogueIdx];
     if(line && line.autoPresent) {
         if(line.present && line.present[itemId]) {
             let pData = line.present[itemId];
             if(!pData.resolved) {
-                closeModal('present-modal'); showSysMsg("举证正确！"); if(state.lives<8){state.lives++;updateLivesDisplay();}
-                let newLines = pData.dialogue.map(l=>({...l, isNew:false})); 
-                state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); 
+                closeModal('present-modal'); showSysMsg(t('sys.presentCorrect')); if(state.lives<8){state.lives++;updateLivesDisplay();}
+                let newLines = pData.dialogue.map(l=>({...l, isNew:false}));
+                state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines);
                 pData.resolved=true; state.waitingForAction = false;
+                if(pData.unlockEv) unlockEvidence(pData.unlockEv); if(pData.unlockProfile) unlockProfile(pData.unlockProfile);
+                if(pData.unlockLoc) unlockLocation(pData.unlockLoc); if(pData.unlockTopic) unlockTopic(pData.unlockTopic);
                 nextDialogue(); playSound('present_seccess');
             }
         } else {
-            showSysMsg("不对，线索似乎不匹配...再仔细想想！"); playSound('present_fail');
+            showSysMsg(t('sys.presentMismatch')); playSound('present_fail');
             loseLife();
         }
         return; 
@@ -2572,8 +2768,8 @@ function confirmPresent() {
     if(isGlobal) {
         if(GAME_DATA.globalPresent && GAME_DATA.globalPresent[state.currChar] && GAME_DATA.globalPresent[state.currChar][itemId]) {
             let gpData = GAME_DATA.globalPresent[state.currChar][itemId];
-            if(!gpData.resolved) { showSysMsg("对方有了反应！"); if(state.lives<8){state.lives++;updateLivesDisplay();} gpData.resolved=true; if(gpData.unlockTopic) unlockTopic(gpData.unlockTopic); startDialogue(gpData.dialogue, "topic"); playSound('present_seccess'); }
-            else { showSysMsg("已经出示过这个了。"); }
+            if(!gpData.resolved) { showSysMsg(t('sys.reaction')); if(state.lives<8){state.lives++;updateLivesDisplay();} gpData.resolved=true; if(gpData.unlockTopic) unlockTopic(gpData.unlockTopic); startDialogue(gpData.dialogue, "topic"); playSound('present_seccess'); }
+            else { showSysMsg(t('sys.alreadyPresented')); }
         } else {
             state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
             state.activeDialogue =[{ s:"npc", speaker: state.currChar, t:"……你给我看这个是什么意思？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
@@ -2585,13 +2781,13 @@ function confirmPresent() {
     if(line.present && line.present[itemId]) {
         let pData = line.present[itemId];
         if(!pData.resolved) {
-            showSysMsg("举证成功！"); if(state.lives<8){state.lives++;updateLivesDisplay();} const pName=(EVIDENCE_DICT[itemId]||PROFILE_DICT[itemId])?.name||itemId; state.dialogueHistory.push({marker:"举证", detail:"出示「"+pName+"」 ✓", type:"marker"}); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
+            showSysMsg(t('sys.presentSuccess')); if(state.lives<8){state.lives++;updateLivesDisplay();} const pName=(EVIDENCE_DICT[itemId]||PROFILE_DICT[itemId])?.name||itemId; state.dialogueHistory.push({marker:"举证", detail:"出示「"+pName+"」 ✓", type:"marker"}); let newLines = pData.dialogue.map(l=>({...l, isNew:true}));
             state.activeDialogue.splice(state.dialogueIdx+1, 0, ...newLines); pData.resolved=true;
             state.waitingForAction = false;
             if(pData.unlockEv) unlockEvidence(pData.unlockEv); if(pData.unlockProfile) unlockProfile(pData.unlockProfile);
             if(pData.unlockLoc) unlockLocation(pData.unlockLoc); if(pData.unlockTopic) unlockTopic(pData.unlockTopic);
             nextDialogue(); playSound('present_seccess');
-        } else { showSysMsg("这个证据已经出示过了。"); }
+        } else { showSysMsg(t('sys.evidencePresented')); }
     } else {
         state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
         state.activeDialogue =[{ s:"npc", speaker: line.speaker, t:"我不知道你在说什么。这跟我刚才说的话有关系吗？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
@@ -2610,13 +2806,13 @@ function showModalAtCenter(modal, xRatio=0.5, yRatio=0.42) {
 }
 function showSettings() {
     playSound('click');
-    startBGM();
     showModalAtCenter(document.getElementById("settings-modal"), 0.5, 0.42);
 }
 function setBgmVolume(v) {
     initBGM();
     const vol = v / 100;
-    getAudioByTarget(currentBGM).volume = currentBGM === "tension" ? vol * 0.65 : vol;
+    const activeAudio = getAudioByTarget(currentBGM);
+    if (activeAudio) activeAudio.volume = currentBGM === "tension" ? vol * 0.65 : vol;
     if (currentBGM !== "tension" && isAudioAudible(tensionAudio)) tensionAudio.volume = vol * 0.65;
 }
 function setSfxVolume(v) {
@@ -2806,7 +3002,7 @@ document.addEventListener("mouseup", () => { dragModal = null; });
 
 <div id="cutscene-overlay" onclick="advanceCutscene(event)">
     <div class="cutscene-speech-bubble" id="cutscene-text"></div>
-    <button id="cutscene-next-btn" onclick="event.stopPropagation(); finishCutscene()">保存并进入下一节</button>
+    <button id="cutscene-next-btn" onclick="event.stopPropagation(); finishCutscene()" data-i18n="chapter.saveNextBtn">保存并进入下一节</button>
 </div>
 
 <div id="logo-overlay" onclick="event.stopPropagation()">
@@ -2849,17 +3045,17 @@ document.addEventListener("mouseup", () => { dragModal = null; });
 </div>
 <div id="credits-modal" class="modal-box" style="width: 400px; z-index: 5600;">
     <div class="modal-close" onclick="closeModal('credits-modal')"></div>
-    <div class="modal-header" data-i18n="credits.title">制作团队</div>
+    <div class="modal-header" data-i18n="credits.title">制作</div>
     <div class="modal-body" style="padding:22px 28px; line-height:2; font-size:14px; color:#444; text-align:center; align-items:center;">
-        文案 / 程序 / 美术：YIFANG（@灰烬马戏团）；音乐：Mubert免费音乐 ；
-        音效：https://mowangblog.github.io/game-sfx-generator-web/免费音效生成器 ；
-        视觉特效：https://yachih2000.github.io/Mirage-stylizer/免费图像风格化应用
+        文案 / 程序 / 美术：YIFANG（@灰烬马戏团）；音乐：Mubert；
+        音效：game-sfx-generator音效生成器 ；
+        视觉特效：Mirage-stylizer图像风格化应用
     </div>
 </div>
 
 <div id="log-modal" style="display:none; position:fixed; top:50%; left:50%; transform:translate(-50%,-50%); width:500px; max-height:70vh; background:rgba(0,0,0,0.90); border:2px solid #555; border-radius:16px; z-index:5200; flex-direction:column; box-shadow:0 0 40px rgba(0,0,0,0.6);">
     <div style="padding:14px 20px;border-bottom:1px solid #333;color:#f2b84e;font-size:16px;font-weight:bold;letter-spacing:3px;display:flex;justify-content:space-between;align-items:center;">
-        <span>对话回顾</span>
+        <span data-i18n="log.title">对话回顾</span>
         <span onclick="toggleLogModal()" style="cursor:pointer;color:#888;font-size:20px;padding:2px 8px;">✕</span>
     </div>
     <div id="log-body" style="flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:8px;"></div>

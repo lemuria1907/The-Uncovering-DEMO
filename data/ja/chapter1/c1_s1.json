@@ -1,0 +1,1141 @@
+{
+  "locations": {
+    "gh_entrance": {
+      "name": "お化け屋敷広場",
+      "desc": "朝夜遊園地のお化け屋敷のそば",
+      "chars": [],
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_xiaozhi": {
+      "name": "希枝",
+      "info": "あなたの妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_andy": {
+      "name": "Andy",
+      "info": "警備責任者",
+      "sprite": "images/chapter1/char_andy.png"
+    },
+    "char_shihui": {
+      "name": "石輝",
+      "info": "演出部主管",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_zhencheng": {
+      "name": "真橙",
+      "info": "お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "阿祐",
+      "info": "お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_qin": {
+      "name": "琴",
+      "info": "旧知の刑事",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_changwei": {
+      "name": "蒋威",
+      "info": "被害者、お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_changwei.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "（*クリックまたはスペースキーでストーリーを進めてください*）"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "2025年10月28日、18時00分、朝夜遊園地、お化け屋敷のそば"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "きゃあああ超スリリング！！！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "もう、腕がアザになるほど掴まれたよ！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "お姉ちゃん、これすごく面白い！もう一回並びたい！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "びびって漏らしそうだったくせに？怖がりのくせにハマりすぎでしょ？"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "ハロウィンシーズン、市内で最も有名な朝夜遊園地が、年に一度のお化け屋敷カーニバルを開催し、大勢の来場者を集めている。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "今年のお化け屋敷のテーマは、今年もアメリカの作家エドガー・アラン・ポーの小説『赤死病の仮面』で、奇妙で華麗なゴシックスタイルだ。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "希枝——あなたの可愛い妹は、もちろんこの賑わいを見逃すはずがない。怖がりだけど、お化け屋敷は彼女の毎年外せない定番イベントなのだ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "ねえ、あとでもう一回やろうよ！ジュースおごるから！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "わかったわかった、行こう。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "希枝はあなたの手首を掴んで、巨大なカートゥーン看板が貼られたドリンクスタンドへと早足で向かう。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "日は沈んでも、広場はまだ賑わっている。お化けや怪物に扮したNPCたちが人混みの中を駆け回り、笑い声と悲鳴が入り混じる。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "希枝はあなたに桂花芋圓ミルクティー（トッピング二倍）を注文し、自分は楊梅ライチアイスティーを頼んだ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "お姉ちゃんの大好物だよ！ゆっくり飲みながら、海賊船に一回乗ってから、また並ぼうよ。ね？"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "何回見たのよ？このショー、去年もあったんじゃない？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "そうだけど、今年はセットがもっと豪華！振付も変わったみたい！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "確かにすごいね。わかった、もう一回付き合うよ。でも今度は腕を抓らないでね！"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "戻って来ると、お化け屋敷の前は人だかりで騒然としている。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "あれ？どうしたの？"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "スタッフ：「皆様、大変申し訳ございません！本日の公演は事情により中止となりました。パークから夜間入場券を補償いたしますので、別の日程でお楽しみください！」"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "えっ？！中止？！"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "スタッフ：「こちらでのご整列はお控えください。他のアトラクションは通常通り営業しております！」"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "人混みから失望のため息と不満の声が漏れる。もちろん、希枝もその一人だ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "もー！せっかくもう一回見たかったのに！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "すみません、なぜ公演が中止になったのですか？"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "スタッフ：「設備の……メンテナンスで……。とにかく、別の場所でお並びください。」"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "ちょうど立ち去ろうとしたその時、少し見覚えのある人影が現れた。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "あれ？希泉？",
+      "unlockProfile": "char_andy"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "Andy？どうしてここに？"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "五年前、Andyはあなたのマンションの警備員だった。当時、誰かが彼を住人の遺失物横領で冤罪にかけたが、あなたが嫌疑を晴らしたことで知り合った。Andyはあなたが有能な探偵だと知っており、深く信頼している。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "はあ、大変だよ。俳優が一人、公演開始時に突然姿を消して、今みんなで探してるんだ。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "お化け屋敷の俳優ですか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "そう。ショー見た？チェリスト役の俳優で、蒋威って言うんだ。トイレ、更衣室、化粧室、小道具部屋、聞いて回ったけど、誰も見てないんだ。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "どのくらい行方不明なんですか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "今夜の五回目の公演でいないのがわかって、もう30分以上になる。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "今19:58です。それからずっと探して見つからないんですか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "いや。俳優たちがその回の公演を終えて、出口のポジションで観客を見送った後、お化け屋敷の中を自分たちで探して、電話もかけたけど繋がらなくて、主管の輝さんに言ったんだ。輝さんも見つけられなくて、俺に相談してきたんだよ。",
+      "unlockEv": "ev_missing_actor"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "その俳優が、お化け屋敷の中にいないって確かですか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "え？出てきてないってこと？"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "お化け屋敷の中は小道具がたくさん置かれています。急病で隅に倒れている可能性もあります。ちゃんと調べましたか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "輝さんと俳優の阿祐、真橙が二回探したはず。彼らは中の様子に詳しいから。俺は自分で調べてない。一緒に見に行ってみる？"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Andyがスタッフに指示を出した後、あなたと希枝を連れてお化け屋敷の中に入った。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "その時、お化け屋敷は公演中のように陰気ではなく、各ポジションに照明がついていた。暗闇では恐ろしげだった小道具も、明かりの下では子供のおもちゃのように粗末に見える。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "あなたたちは順に、チェリストのシーン、ペスト医師のシーンを通り過ぎる。右手の大きな演出スペースで、二人の俳優が何か話しているのが見える。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "威さん、どうしたんだろう……どこに行ったのかもわからないし、電話にも出ないし……これで公演できなくなって、給料減らされるのかな？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_ayou",
+      "t": "たぶん避けられないな……美羽もいないし、困ったな……"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "そうだね、こんな時に限って……",
+      "unlockProfile": [
+        "char_zhencheng",
+        "char_ayou"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "真橙、阿祐、この中を全部調べた？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "調べたわよ。こんな狭い場所で、人が隠れられるわけないでしょ？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "知り合いの探偵を連れてきた。一緒に探そうと思う。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "じゃあ好きにして。疲れたから休むわ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_ayou",
+      "t": "この先ちょっと散らかってるから、片付けてくる。"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "あなたと希枝、Andyは公演の動線に沿って奥へ進み、壁に隠し扉を見つける。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "この扉、どこに通じてるの？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "入口の方に通じてる。俳優がここを通ると便利なんだ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "チェリストのポジションってこと？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "そうだよ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "チェリストと言えば、さっきの二人は何の役だったの？他の俳優は？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "はは、俳優は三人だけだよ。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "えっ？だって私が覚えてるのは……"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "希枝が指を折りながら数え始める。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "一つ目、チェリスト。二つ目、怖いペスト医師。三つ目、仮面の踊り子。四つ目、殺人鬼。五つ目と六つ目、赤いローブの悪魔と白い服の女性のダンス。七つ目、せむしの鐘つき人。全部で……七人の俳優！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "違うよ。三人だけ。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "この隠し扉を使えば、三人の俳優で七役をこなせますね。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "何ですって？！"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "「そうです！その通りです！この女性はすごい！」三十代の男性が笑顔であなたと妹に話しかけてきた。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "輝さん、彼女は俺の探偵の友人で希泉。こちらの可愛いお嬢さんは希泉の妹の希枝です。こちらは石輝さん、パークの演出主管です。",
+      "unlockProfile": "char_shihui"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "ああ……今夜の公演……本当に申し訳ない。蒋威のやつ、急用で抜け出したに違いない。戻ってきたらきつく叱ってやる。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "石輝さん、この演出はあなたがデザインされたんですか？すごく気に入りました！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "わあ、ありがとう！皆さんの応援が我々の努力の源です！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "俳優は本当に三人だけですか？どうやって三人で七役ができるんですか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "ははは！それは全部、演出部の巧妙なデザインのおかげです！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "まず、今回の公演のテーマを知っていますか？（*正しいと思う選択肢を選んでください*）",
+      "choices": {
+        "question": "今回の公演のテーマは？",
+        "options": [
+          {
+            "text": "A アッシャー家の崩壊",
+            "correct": false,
+            "reply": "うーん、違いますね。"
+          },
+          {
+            "text": "B 落とし穴と振り子",
+            "correct": false,
+            "reply": "うーん、違いますね。"
+          },
+          {
+            "text": "C 赤死病の仮面",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "そうです！この物語の原作は、著名なアメリカの小説家エドガー・アラン・ポーです。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "ペストが猛威を振るう中、あるプリンスと貴族たちが城内で豪華な仮面舞踏会を開き、災いから逃れようとするが、ペストの化身である「赤死病」が侵入し、全員が感染して死ぬ物語です。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "我々はこのような構成にしました——仮面舞踏会の入り口で、チェリストが音楽とともに公演の幕を開け、鳥のくちばしの仮面をつけたペスト医師が通路でペストの恐怖を撒き散らす。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "その後、ダンサーが舞ううちに次第に乱れ、ついには倒れる。宴会の長テーブルの周りにはペストに感染した賓客の死体が散乱し、狂気のプリンスがロープで賓客の首を絞める。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "さらに奥へ進むと、赤死病とプリンスの妻のデュエット。赤死病は幅広のローブをまとい、プリンスの妻の腕を支える。彼女は一見共に踊っているようで、実は体が硬直し、死体のように赤死病に揺られている。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "最後に、プリンスの忠実な鐘つき人が、幽霊たち——つまり観客——が近づいてくるのを見て、ペストがすでに城内に侵入したことを悟り、最後の喪鐘を打ち鳴らす。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "その後、観客は出口から順に退場します。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "なるほど！すごい！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "我々はこの物語のある重要な要素を使って、「俳優の少人数化」デザインを実現しました。何だと思いますか？",
+      "choices": {
+        "question": "俳優の集約デザインを可能にした要素は？",
+        "options": [
+          {
+            "text": "A 仮面舞踏会",
+            "correct": true
+          },
+          {
+            "text": "B ペスト",
+            "correct": false,
+            "reply": "うーん、もう一度考えてみて……"
+          },
+          {
+            "text": "C 古城",
+            "correct": false,
+            "reply": "うーん、もう一度考えてみて……"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "その通り！仮面舞踏会という設定を利用して、俳優たちが素早く衣装を変え、観客に気づかれないように役柄を切り替えています。これで三人の俳優が七役を演じられるのです！"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "すごすぎる！いったいどうやってるの？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "こちらが、お化け屋敷の見取り図です。（*右側の「証拠」パネルを開いてご覧ください。見終わったら、右上のピンアイコンをクリックして閉じてください*）",
+      "unlockEv": "ev_ghost_house_map"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "六つの数字が六つのポジションを表し、数字の順番は観客が見て回る順番でもあります。各エリアは比較的独立していて、観客がこのエリアに集まった時に俳優が演技を始めます。各演技の長さは3〜5分です。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "衣装はすべて着脱しやすい構造で、俳優は黒いインナーを着用します。各スペースの衣装は、あらかじめ部屋の隅の暗がりに置いてあります。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "観客が他のポジションの演出に引きつけられている間に、俳優は隠し扉から、または観客の背後を回って次のポジションに移動し、素早く衣装を着て待機します。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "俳優の移動ルートは、ストーリー上で強制されない限り、連続して複数のポジションを通過することはありません。これで観客に気づかれにくくなっています。",
+      "unlockEv": "ev_actor_transfer_rules"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "俳優たちが、どのようにして公演全体をこなしているか分かりますか？"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "まずはポジション1の俳優、チェリストから考えてみましょう。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "ポジション1の俳優は、チェリストを演じた後、どのポジションに行くのが都合がいいですか？",
+      "choices": {
+        "question": "ポジション1の俳優は、次にどこへ行くのが便利？",
+        "options": [
+          {
+            "text": "A ポジション2",
+            "correct": false,
+            "reply": "ちょっと違う……"
+          },
+          {
+            "text": "B ポジション4",
+            "correct": false,
+            "reply": "ちょっと違う……"
+          },
+          {
+            "text": "C ポジション5",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "正解！では、ポジション2の俳優は、ペスト医師を演じた後、どのポジションに行けますか？",
+      "choices": {
+        "question": "ポジション2の俳優は、次にどのポジションに？",
+        "options": [
+          {
+            "text": "A ポジション3",
+            "correct": false,
+            "reply": "それはちょっと変……"
+          },
+          {
+            "text": "B ポジション4",
+            "correct": true
+          },
+          {
+            "text": "C ポジション5",
+            "correct": false,
+            "reply": "それはちょっと変……"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "はい。では、ポジション3の俳優は、ソロダンスを終えた後、デュエットのためにどのポジションに行きますか？",
+      "choices": {
+        "question": "ポジション3の俳優は、次にどこへ？",
+        "options": [
+          {
+            "text": "A ポジション4",
+            "correct": false,
+            "reply": "うーん……"
+          },
+          {
+            "text": "B ポジション5",
+            "correct": true
+          },
+          {
+            "text": "C ポジション6",
+            "correct": false,
+            "reply": "うーん……"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "そう！最後に、鐘つき人——ポジション6の役——は、公演開始時にポジション1、2、3のうちどの俳優が演じていますか？",
+      "choices": {
+        "question": "鐘つき人を演じるのは誰？",
+        "options": [
+          {
+            "text": "A ポジション1",
+            "correct": false,
+            "reply": "ちょっと違うようだ……"
+          },
+          {
+            "text": "B ポジション2",
+            "correct": true
+          },
+          {
+            "text": "C ポジション3",
+            "correct": false,
+            "reply": "ちょっと違うようだ……"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "ということは、三人の俳優のうち、それぞれが少なくとも二役を演じ、その中の一人は三役も演じている！この「ペスト医師」「狂気のプリンス」「鐘つき人」の三役を演じた俳優は誰ですか？（*右側の「人物」カードを点線の枠にドラッグし、確認ボタンをクリックしてください*）",
+      "autoPresent": "今回の公演で三役を演じた俳優は誰？",
+      "present": {
+        "char_ayou": {
+          "resolved": false,
+          "wrongReply": {
+            "speaker": "char_andy",
+            "t": "それは違うと思う……"
+          },
+          "dialogue": [
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "なぜ蒋威さんがペスト医師などの役を演じられないのですか？（*右側の「人物」「証拠」「証言」カードはすべて提示・立証できます*）",
+              "autoPresent": "蒋威の役柄を証明する手がかりを提示してください",
+              "present": {
+                "ev_missing_actor": {
+                  "resolved": false,
+                  "wrongReply": {
+                    "speaker": "char_shihui",
+                    "t": "うーん、もう一度見て……"
+                  },
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "証言によると、俳優が鐘つき人のポジションで観客を見送ったとあります。つまり、失踪した蒋威は鐘つき人ではありません。そして、もう一つの文も、蒋威さんの役柄を証明できます。"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "蒋威の失踪は、共演者が気づいたものです。公演全体で、二人の俳優が協力しなければならないのはデュエットの場面だけです。つまり、蒋威はこのデュエットの俳優の一人だったのでしょう。",
+                      "choices": {
+                        "question": "蒋威の役柄を証明できる文は？",
+                        "options": [
+                          {
+                            "text": "A 「19:00回の公演で。」",
+                            "correct": false,
+                            "reply": "これは特に問題なさそう。"
+                          },
+                          {
+                            "text": "B 「共演者が彼の不在に気づいたが、公演は続行した。」",
+                            "correct": true
+                          },
+                          {
+                            "text": "C 「俳優たちは自力で蒋威を探したが発見できなかった。」",
+                            "correct": false,
+                            "reply": "これでは何も証明できない。"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "では、なぜ真橙さんが三役を演じたことにならないのですか？",
+                      "autoPresent": "関連する人物アーカイブを提示してください",
+                      "present": {
+                        "char_zhencheng": {
+                          "resolved": false,
+                          "wrongReply": {
+                            "speaker": "char_shihui",
+                            "t": "その理由じゃない……"
+                          },
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "真橙さんは唯一の女性であり、唯一の「ダンサー」ですから、ポジション3のソロダンスとポジション5のデュエットの両方に貢献しなければならなかったはずです。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "おお、さすが探偵の希泉さん。すごい！"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "お姉ちゃんすごい！"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "あなたたちが楽しく演出の分析で盛り上がっていると、突然、悲鳴が明るい雰囲気を破った。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "うわあああああ！！！"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "何？！"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "威……威さんが、死、死んでる！！！"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "？？！！！！"
+                            },
+                            {
+                              "chapterLogo": true
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "2025年10月28日、20時18分、朝夜遊園地、お化け屋敷内",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "プリンスの豪華な宴会の長テーブルの周りには、来客の死体が歪んだ姿勢でテーブルの上や床に横たわっている。恐怖に震える阿祐が、テーブルの下を指さしている。",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "それは失踪した俳優・蒋威だった。",
+                              "bg": "images/chapter1/bg_room4.jpg",
+                              "unlockProfile": [
+                                "char_changwei"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "ああっ！早く、警察を呼べ！",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "わ、わかった……すぐ通報する！全員、ここを動かないで！",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "2025年10月28日、20時32分、朝夜遊園地、お化け屋敷のそば"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "希泉？どうしてここに？",
+                              "unlockProfile": "char_qin"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "琴さん！お久しぶりです！"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "あなたに会いたくないわ。会うたびにろくなことがない。"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "あ……はは……すみません。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "琴さん、こんにちは～"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "希枝ちゃんはいい子ね！また事件に巻き込まれたの？"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "ハロウィンだったので、希枝がお化け屋敷でスリルを味わいたいって言って……そしたら……"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "Andyと石輝が、蒋威の失踪から一連の状況を琴に説明する。琴は真剣にメモを取り、その間に検死官が遺体の初歩的な検査を行った。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "ええ、遺体の初歩的検査結果が出ました。被害者は絞殺され、死亡推定時刻は18:15〜19:15の間です。",
+                              "unlockEv": [
+                                "ev_autopsy"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "時間と言えば、お化け屋敷の公演は17:00からで、30分ごとに一回。俳優の演技時間は合計約20分です。"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "残りの10分は？"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "残りの10分は、各自がポジションに戻り、演出用小道具の簡単なリセットをして、ついでに少し休憩もできます。",
+                              "unlockEv": [
+                                "ev_time_table"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "検死報告から見ると、被害者は第三回と第五回の間に殺害されたことになります。"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "他の俳優の証言に基づけば、時間範囲をもっと狭められます。",
+                              "autoPresent": "どの証拠・証言で死亡時刻をさらに絞り込めますか？",
+                              "present": {
+                                "ev_missing_actor": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "共演者は、19:00の回で蒋威がいなくなったことに気づきました。それ以前の公演には問題がなかったので、蒋威の死亡時刻は……"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "蒋威は19:00の回で不在に気づかれました。したがって、彼の死亡は……",
+                                      "choices": {
+                                        "question": "死亡時刻は……",
+                                        "options": [
+                                          {
+                                            "text": "A 第三回と第四回の間",
+                                            "correct": false,
+                                            "reply": "うーん……どこかおかしい。"
+                                          },
+                                          {
+                                            "text": "B 第四回の前",
+                                            "correct": false,
+                                            "reply": "うーん……どこかおかしい。"
+                                          },
+                                          {
+                                            "text": "C 第四回と第五回の間",
+                                            "correct": true
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "では、犯行が最もあり得る時間帯は、第四回と第五回の公演中、つまり18:30から19:30の間ですね。それに検死報告を合わせると、さらに範囲を狭められます……"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "さらに範囲を狭めると……",
+                                      "choices": {
+                                        "question": "範囲をさらに狭めると……",
+                                        "options": [
+                                          {
+                                            "text": "A 18:45〜19:00",
+                                            "correct": false,
+                                            "reply": "どこかおかしい……"
+                                          },
+                                          {
+                                            "text": "B 18:30〜19:15",
+                                            "correct": true
+                                          },
+                                          {
+                                            "text": "C 19:00〜19:15",
+                                            "correct": false,
+                                            "reply": "どこかおかしい……"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "そうなると、殺人現場はこの演出スペースの中か……"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "恐ろしい！犯人は我々の公演内容によく詳しいのかもしれない……",
+                                      "unlockEv": [
+                                        "ev_rehearsal_details"
+                                      ]
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_xiaozhi",
+                                      "t": "公演の合間を利用して殺人を行ったってこと？"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "公演の詳細を知っている人は、ここにいる俳優以外にもいますか？"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "ええ、スタッフも多かれ少なかれ知っています。臨時俳優や小道具チームの人たちも。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_xiaozhi",
+                                      "t": "かなり長いリストですね。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_andy",
+                                      "t": "そうだ、第五回の観客の中に、入口に入った時はセットが素晴らしく音楽も流れていたけど、何かが足りない感じがした……と言った人がいた。"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "つまりその時、チェリストは自分のポジションにいなかった。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_zhencheng",
+                                      "t": "あの……第四回の公演の時は、蒋威はいました。私たちも普通に公演しました。でも第五回の公演ではもういませんでした。",
+                                      "unlockEv": [
+                                        "ev_zhencheng_testimony1"
+                                      ]
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "真橙さんはダンサー役で、蒋威演じる赤死病と、ポジション5で出会い、デュエットを踊ります。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "では真橙さんの証言に基づいて、時間範囲をさらに絞り込める証拠は……",
+                                      "autoPresent": "時間範囲を絞り込める証拠を提示してください",
+                                      "present": {
+                                        "ev_rehearsal_details": {
+                                          "resolved": false,
+                                          "dialogue": [
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "各ポジションのおおよその公演時間は、2分、3分、5分、3分、3分、4分です。では、ポジション5の公演終了時間は、だいたい……"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "各ポジションのおおよその公演時間はそれぞれ2分、3分、5分、3分、3分、4分。ではポジション5の公演が終わるのは……",
+                                              "choices": {
+                                                "question": "ポジション5の公演が終わるのは？",
+                                                "options": [
+                                                  {
+                                                    "text": "A 開演後約16分",
+                                                    "correct": true
+                                                  },
+                                                  {
+                                                    "text": "B 開演後約18分",
+                                                    "correct": false,
+                                                    "reply": "ちょっと違う……"
+                                                  },
+                                                  {
+                                                    "text": "C 開演後約20分",
+                                                    "correct": false,
+                                                    "reply": "ちょっと違う……"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "もし真橙の証言が真実なら、死亡時刻はさらに……"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "真橙の証言が本当なら、死亡時刻はさらに狭まって……",
+                                              "choices": {
+                                                "question": "死亡時刻を狭めると？",
+                                                "options": [
+                                                  {
+                                                    "text": "A 18:46〜19:25",
+                                                    "correct": false,
+                                                    "reply": "お姉ちゃん、算数が苦手みたい……"
+                                                  },
+                                                  {
+                                                    "text": "B 18:46〜19:15",
+                                                    "correct": true
+                                                  },
+                                                  {
+                                                    "text": "C 18:56〜19:10",
+                                                    "correct": false,
+                                                    "reply": "お姉ちゃん、算数が苦手みたい……"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_qin",
+                                              "t": "ええ、しかし真橙と阿祐は最大の容疑者として、二人の証言だけではまだ全面的に信用できません。"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "そうですね。だから、もし二人の俳優を別々に尋問して、彼らの話の矛盾点を見つけられれば、突破口になるかもしれません。"
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_qin",
+                                              "t": "先ほど、私の同僚が通路の捜索調査を行いましたが、特に不審な点はありませんでした。ではこれから、まずお化け屋敷の各部屋を捜索し、その後で皆さんを個別に尋問しましょう。"
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "夜になった朝夜遊園地は、冷たい風が首元に吹き込んでくる。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "周りは少しざわついていて、スタッフが来場者の避難誘導に協力している。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "俳優たちは集まって、厳しい表情で先程の状況をひそひそと話し合っている。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "もうすぐ尋問が始まる。気を引き締めなければ。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "冷たい風の中であなたは自分の頬を叩いた。琴刑事があなたに向かって歩いてくる。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "今夜は長くなりそうだ。",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "（*本節終了〜クリックで続行*）",
+                                              "endChapter": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

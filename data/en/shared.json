@@ -1,0 +1,347 @@
+{
+  "CHAR_COLORS": {
+    "char_changwei": "#555555",
+    "char_zhencheng": "#e06c3a",
+    "char_ayou": "#3a8ee0",
+    "char_shihui": "#964b00",
+    "char_andy": "#005f5f",
+    "char_qin": "#002fa7",
+    "char_mingqi": "#2e8b57",
+    "char_xiaohua": "#8b008b",
+    "char_meiyu": "#ff8c00",
+    "char_xiaozhi": "#ff69b4",
+    "char_rulan": "#9b59b6",
+    "char_antong": "#f1c40f",
+    "char_aling": "#e84393",
+    "system": "#666666",
+    "none": "#cccccc"
+  },
+  "EVIDENCE_DICT": {
+    "ev_missing_actor": {
+      "name": "The Missing Actor",
+      "desc": "The missing actor is Victor, who played the Cellist. During the 19:00 show, fellow cast members noticed he was gone but completed the performance anyway. After seeing the audience off at the Bell Ringer spot near the exit, the cast searched for Victor on their own, found nothing, and reported to Performance Director Ray.",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_autopsy": {
+      "name": "Autopsy Report",
+      "desc": "The victim Victor was strangled to death. Estimated time of death is between 18:15 and 19:15. A potent anesthetic compound was detected in the mouth and nose.",
+      "origin": "system",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_rehearsal_details": {
+      "name": "Rehearsal Guidebook",
+      "desc": "The haunted house performance begins at 17:00, with shows every half hour.\nSpot 1 (nearest the entrance), ~2 min. The Weeping Cellist — opens the performance with music. (Not live; music and monologue loop, same for all spots below.)\nSpot 2, ~3 min. The Plague Doctor — monologue \"The plague has spread across this land...\"\nSpot 3, ~5 min. The Masked Dancer — uses multiple mirrors to create the illusion of many dancers. The dancer scatters petals, then moves with increasing panic, collapsing with a final wail.\nSpot 4, ~3 min. The Mad Prince — a banquet table piled with rotting food and mannequin corpses, faces bleeding from every orifice. Across the table, the deranged Prince strangles a mannequin with a rope.\nSpot 5, ~3 min. The Red Death & the Prince's Wife — the Prince's wife in a pure white wedding gown dances with the Red Death. Mid-dance her body goes limp; she is completely under his control.\nSpot 6, ~4 min. The Hunchback Bell Ringer — the final stop. Lines: \"Go forth, lost souls, let the bells carry you from this crumbling tomb!\" The audience exits.",
+      "origin": "system",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_time_table": {
+      "name": "Show Schedule",
+      "desc": "During the Halloween special event, the first show starts at 17:00 daily. Each performance lasts 20 minutes, followed by a 10-minute break for cast transition and rest. Each full cycle is 30 minutes.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_ghost_house_map": {
+      "name": "Haunted House Map",
+      "desc": "The haunted house floor plan provided by Performance Director Ray. Audience gathering areas are usually on one side of the performance space.",
+      "origin": "system",
+      "sourceChapter": "c1_s1",
+      "img": "images/chapter1/map_ghost_en.jpg"
+    },
+    "ev_actor_transfer_rules": {
+      "name": "Actor Transition Rules",
+      "desc": "To ensure actors can switch spots without breaking audience immersion, the following procedures are reiterated:\n1) Costume changes: Every costume set uses easy-on-off construction. During performances, actors wear a black base layer. Each spot's costume is pre-placed in a dim corner of that space.\n2) Transition routes: While the audience's attention is on the current performance, actors may use hidden doors or circle behind the audience through blind spots to reach the next spot.\n3) Spacing rule: No actor may pass through more than two spots consecutively.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_zhencheng_testimony1": {
+      "name": "Sunny·Testimony 1",
+      "desc": "During the fourth show, Sunny performed the duet at Spot 5 as normal.",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_zhencheng_testimony2": {
+      "name": "Sunny·Testimony 2",
+      "desc": "During the fifth show, since Victor was not at his spot, Sunny dressed as the Red Death herself and used the Prince's Wife mannequin prop to complete the duet performance.",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_testimony1": {
+      "name": "Aiden·Testimony 1",
+      "desc": "Shawn and Sunny choreographed the haunted house together and got along fairly well.",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_testimony2": {
+      "name": "Aiden·Testimony 2",
+      "desc": "Shawn's true cause of death was accidental strangulation due to a safety latch failure. Under Victor's instructions, Aiden removed the safety latch, looped the rope around Shawn's neck, and staged it as a suicide.",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_ayou_testimony3": {
+      "name": "Aiden·Testimony 3",
+      "desc": "Three years ago, another park executive had a history of harassing female performers. Park employees Lena and Gwen were unhappy about it, and Sunny seems to have mentioned it as well.",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_shihui_testimony1": {
+      "name": "Ray·Testimony 1",
+      "desc": "This haunted house has been running for three years. Because props are frequently damaged by visitors, the Performance Department raised the backup prop budget this year. Part of the increase is covered by the department itself, and the rest comes from cutting actor bonuses.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_prop_design": {
+      "name": "Performance Prop Design",
+      "desc": "Three years ago, when the haunted house project first launched, Aiden worked on some performance mechanism designs. Nowadays he only does occasional repairs when props break.",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_shihui_testimony2": {
+      "name": "Ray·Testimony 2",
+      "desc": "Ray felt that Victor seemed to have had a falling-out with Aiden, but Aiden never admitted it.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_shihui_testimony3": {
+      "name": "Ray·Testimony 3",
+      "desc": "Ray brought up the former Performance Director Celeste, saying his reputation was poor and that there were rumors of him harassing female performers. Many people kept their distance from him.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_prop_box": {
+      "name": "Prop Crate",
+      "desc": "A large crate roughly 1.5 x 2 x 1.5 meters.",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_cello_case_items": {
+      "name": "Items Inside the Cello Case",
+      "desc": "Inside the Cellist's cello case, hidden beneath a piece of dark patterned silk, were two items: a lipstick and a woman's hair clip.",
+      "origin": "system",
+      "sourceChapter": "c1_s2",
+      "img": "images/chapter1/itembox.png"
+    },
+    "ev_beam_marks": {
+      "name": "Rope Marks on the Beam",
+      "desc": "On the ceiling beam at Spot 5, there is a small metal roller. The wooden edge beside the roller bears several rope-rub marks. Two of the marks are deeper but covered in dust.",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_hanged_reddeath": {
+      "name": "The Hanged Red Death",
+      "desc": "To make the Red Death appear more imposing, the original design included a setup to hang the Red Death mannequin from the beam, but this approach was never put into regular use.",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_changwei_locker": {
+      "name": "Victor's Locker Contents",
+      "desc": "Victor's locker contained two shirts, a cartoon keychain, a park logo souvenir stamp, and a park document sheet covered with park logo stamps. Handwritten dates next to the stamps appear to overlap with the haunted house performance dates.",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemjiangwei.png"
+    },
+    "ev_zhencheng_locker": {
+      "name": "Sunny's Locker Contents",
+      "desc": "Sunny's locker contained a warm yellow dress, a pair of high heels, a children's toy, a park logo souvenir stamp, and a postcard stamped many times with the park logo. The postcard was a freebie from a milk tea brand.",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemzhencheng.png"
+    },
+    "ev_ayou_locker": {
+      "name": "Aiden's Locker Contents",
+      "desc": "Aiden's locker contained two T-shirts printed with the park logo, and a pair of black trousers.",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemayou.png"
+    },
+    "ev_mingqi_testimony1": {
+      "name": "Celeste·Testimony 1",
+      "desc": "Celeste denied Ray's claim that he harassed female performers. Moreover, he believed that since he had never done such things, he had no need to clear his name.",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_mingqi_testimony2": {
+      "name": "Celeste·Testimony 2",
+      "desc": "Celeste feels the park neither investigated the rumors nor took responsibility, unjustly pinning everything on him in both the harassment allegations and Shawn's death. Though angry, he never pursued action against the park, believing these matters were beneath his time.",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_public_outcry_screenshot": {
+      "name": "Public Outcry Screenshot",
+      "desc": "Uka (OP): I can't take this anymore... Some executive at XX Park acts all righteous in public but never stops harassing me in private. Either commenting on how short my skirt is and asking if I wore it just for him, or deliberately touching my shoulder while talking business... it never ends... it's disgusting.\nComments-\nSunrise: Is it that new director they poached?\nUka: Don't even get me started!",
+      "origin": "system",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_antong_testimony1": {
+      "name": "Anton·Testimony 1",
+      "desc": "Aiden knew that Victor and Sunny were playing a game of stealing visitors' belongings, so he asked Anton to steal something valuable, hoping the park would investigate and expose them.",
+      "origin": "char_antong",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_shihui_testimony4": {
+      "name": "Ray·Testimony 4",
+      "desc": "After the parade float accident, Victor pleaded with Ray on Faye's behalf, right in front of her. Ray stated that he never had any intention of punishing Faye.",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s3"
+    },
+"ev_meiyu_testimony1": {
+      "name": "Faye·Testimony 1",
+      "desc": "On May 2, 2024, a parade float accident occurred. Faye happened to be on the affected float car. After that incident, Faye began taking sertraline.",
+      "origin": "char_meiyu",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_meiyu_testimony2": {
+      "name": "Faye·Testimony 2",
+      "desc": "Victor occasionally joked at the drinking table, hinting that Aiden was connected to Shawn's death.",
+      "origin": "char_meiyu",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_meiyu_locker": {
+      "name": "Faye's Locker Contents",
+      "desc": "Faye's locker contained a white T-shirt, a pair of jeans, a cat-head volunteer badge reading \"Sweet\", a photocopy of a one-year-old accident investigation report detailing the May 2, 2024 parade float accident as caused by aged battery short-circuit, and a half-empty bottle of sertraline (anti-anxiety/OCD medication) prescribed three months ago.",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemmeiyu.png"
+    },
+    "ev_float_accident": {
+      "name": "Parade Float Accident",
+      "desc": "On May 2, 2024, a battery exploded inside one of the parade float cars. Faye was in the affected car and was badly shaken. To prevent similar accidents, the park strengthened safety training.",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_mingqi_changwei_mail": {
+      "name": "Celeste & Victor's Correspondence",
+      "desc": "From mingqi@chaoye.com\nVictor, I want you to find time next week to submit a report to park management stating that I had nothing to do with that matter.\nVictor's reply: Not my problem. You're the director, but actors' affairs should be discussed with me directly. Shawn had old injuries and was already struggling with those moves. You're never around and don't know the situation. All you do is point fingers when things go wrong, and now you want to walk away clean?",
+      "origin": "system",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_rulan_testimony2": {
+      "name": "Orchid·Testimony",
+      "desc": "Orchid left mid-film to use the restroom due to a stomachache. It was around the part where the Pumpkin King steals the magic wand.",
+      "origin": "char_rulan",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_rulan_ticket": {
+      "name": "Orchid's Ticket Stub",
+      "desc": "A ticket stub for the hit movie \"Halloween Wonder Night\" at Yaohua Cinema. Date: October 27, 2025, 18:30 showing. Seat: Row 5, Seat 6.",
+      "origin": "system",
+      "sourceChapter": "c1_s4",
+      "img": "images/chapter1/itemrulan.png"
+    },
+    "ev_ticket_checker_testimony": {
+      "name": "Ticket Checker's Testimony",
+      "desc": "The ticket checker at Yaohua Cinema stated that there were many moviegoers that evening and she couldn't identify everyone she checked in. However, Orchid left mid-film due to diarrhea and, since the lobby happened to be nearly empty at that moment, it left an impression on her.",
+      "origin": "char_xiaozhi",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_cinema_schedule": {
+      "name": "Cinema Schedule",
+      "desc": "Yaohua Cinema evening schedule for October 27 (doors open 5 min before showtime):\n\"Halloween Wonder Night\" 17:45, 18:30, 19:40, 20:45, 21:55, 23:30\n\"Spy Game 1999\" 17:30, 18:45, 20:00, 21:15\n\"The Last Dinosaur\" 18:20, 20:15, 21:50\n\"Autumn Letter\" 18:00, 19:15, 20:45, 22:20",
+      "origin": "system",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_andy_investigation": {
+      "name": "Andy's Investigation",
+      "desc": "Andy found some personnel records relating to the post‑incident staffing changes following that year's sexual harassment case at the park. It was confirmed that, in addition to Celeste Ming, the departing executives at that time also included Jasper Wang from the administrative group. Furthermore, the employees implicated in the incident included Lena Qiu from the catering department and Gwen Gao, a ticket inspector.",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_tourist_at_back": {
+      "name": "Visitor at the Back",
+      "desc": "Pickpocket Anton, who should have been at the very back of the group near the exit, caught a glimpse of another visitor behind him out of the corner of his eye.",
+      "origin": "char_antong",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_relative": {
+      "name": "The Nepotism Hire",
+      "desc": "According to Celeste, the current Performance Director Ray is the nephew of Board Director Li.",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_zhencheng_testimony3": {
+      "name": "Sunny·Testimony 3",
+      "desc": "Shawn died wearing the Red Death costume. Sunny witnessed the security team lowering his body from the beam.",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_zhencheng_testimony4": {
+      "name": "Sunny·Testimony 4",
+      "desc": "According to Sunny, Shawn's fiancée frequently needed to go to the hospital for injections, which pained Shawn deeply.",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_zhencheng_testimony5": {
+      "name": "Sunny·Testimony 5",
+      "desc": "The post that sparked the public outcry was written by Sunny. Because Victor helped her resolve the harassment incident, Sunny deliberately wrote ambiguously to repay him, making readers believe the post was about Celeste.",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s4"
+    }
+  },
+  "PROFILE_DICT": {
+    "char_changwei": {
+      "name": "Victor Jiang",
+      "desc": "The victim. Haunted house performer, male, appears to be in his thirties.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_zhencheng": {
+      "name": "Sunny Chen",
+      "desc": "Haunted house performer, female. Young and delicate features, but carries a guarded, distant air. Skilled dancer.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_ayou": {
+      "name": "Aiden Li",
+      "desc": "Haunted house performer, male. Lean but well-built, with an honest, straightforward look.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_shihui": {
+      "name": "Ray Shi",
+      "desc": "Performance Department Director, male. Wears a slightly outdated work jacket. Looks older than his actual age.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_andy": {
+      "name": "Andy Liu",
+      "desc": "Head of Park Security. Extremely reliable and a good friend of yours.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_qin": {
+      "name": "Lyra Qin",
+      "desc": "An old acquaintance of yours, the detective inspector in charge of this case. She greatly respects your abilities and often refers cases outside her jurisdiction to you.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_mingqi": {
+      "name": "Celeste Ming",
+      "desc": "The former Performance Director mentioned by Aiden, male. He originally launched the haunted house project. His main work involved creative direction, theme packaging, and story scripting.",
+      "sourceChapter": "c1_s2"
+    },
+    "char_xiaohua": {
+      "name": "Daniel Xiao",
+      "desc": "Former haunted house performer, male. Died in the haunted house three years ago. Skilled dancer.",
+      "sourceChapter": "c1_s2"
+    },
+    "char_meiyu": {
+      "name": "Faye Liu",
+      "desc": "Park performer, haunted house substitute performer, female. Skilled dancer.",
+      "sourceChapter": "c1_s3"
+    },
+    "char_xiaozhi": {
+      "name": "Sidney Xi",
+      "desc": "Your younger sister Sidney, a student at Songshan University. She has been close to you since childhood.",
+      "sourceChapter": "c1_s1"
+    },
+    "char_rulan": {
+      "name": "Orchid Ru",
+      "desc": "Care worker at Sweet Meow Animal Rescue Center, female. ",
+      "sourceChapter": "c1_s4"
+    },
+    "char_antong": {
+      "name": "Anton Han",
+      "desc": "Pickpocket, male. According to Lyra's investigation, he has no prior theft record — he is not a habitual offender.",
+      "sourceChapter": "c1_s4"
+    },
+    "char_aling": {
+      "name": "Lynn Zhao",
+      "desc": "The fiancée of Shawn, the performer who died three years ago, as uncovered by Lyra's investigation. According to neighbors, she no longer lives in the area.",
+      "sourceChapter": "c1_s4"
+    }
+  }
+}

@@ -1,0 +1,1146 @@
+{
+  "locations": {
+    "gh_entrance": {
+      "name": "Haunted House Plaza",
+      "desc": "Beside the haunted house at Chaoye Park",
+      "chars": [],
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_xiaozhi": {
+      "name": "Sidney",
+      "info": "Your younger sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_andy": {
+      "name": "Andy",
+      "info": "Head of Security",
+      "sprite": "images/chapter1/char_andy.png"
+    },
+    "char_shihui": {
+      "name": "Ray",
+      "info": "Performance Director",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_zhencheng": {
+      "name": "Sunny",
+      "info": "Haunted house performer",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "Aiden",
+      "info": "Haunted house performer",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_qin": {
+      "name": "Lyra",
+      "info": "Old acquaintance",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_changwei": {
+      "name": "Victor",
+      "info": "The victim, haunted house performer",
+      "sprite": "images/chapter1/char_changwei.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "(*Click the dialogue box or press Space to advance the story*)"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "October 28, 2025, 6:00 PM, Chaoye Park, in front of the haunted house"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Aaaah that was SO intense!!!"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "You're squeezing my arm a bit too tight."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Sis, that was amazing, I wanna go again!"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "You were about to cry, and now you're asking for round two? Sure you can handle it?"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "During the Halloween season, the city's most famous Chaoye Park launched its annual haunted house carnival, drawing crowds of visitors eager to experience it."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "This year's haunted house theme is once again based on American author Edgar Allan Poe's short story \"The Masque of the Red Death\" — bizarre, opulent, and Gothic in style."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Sidney — your darling little sister — was naturally not one to miss the excitement. Though easily frightened, the haunted house is her annual must-do attraction."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Come on, let's go again later! I'll treat you to a drink!"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "Fine, fine. Let's go."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Sidney grabs your wrist and pulls you briskly toward a drink stand with a giant cartoon sign nearby."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Though evening has fallen, the plaza is still bustling. Several NPCs dressed as ghosts and monsters weave through the crowd, making people shriek with laughter one moment and scream in terror the next."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Sidney orders you an osmanthus taro bubble tea with double toppings, and a bayberry lychee iced tea for herself."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Sis, your favorite! Let's sip slowly, then go on the pirate ship once, then come back and line up again — pretty please?"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "How many times have you seen this show? Wasn't it here last year too?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Yeah, but the sets are even more elaborate this year! And the choreography seems different!"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "It is pretty cool. Alright, I'll watch it again with you. Just don't pinch my arm this time!"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "When you circle back, the area in front of the haunted house is in an uproar."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Huh? What's going on?"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Staff: \"Ladies and gentlemen, we sincerely apologize! Tonight's performance has been suspended due to unforeseen circumstances. The park will compensate you with an evening admission ticket so you may enjoy the show on another date!\""
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "What?! It's canceled?!"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Staff: \"Please do not gather or queue here. All other park attractions remain open as usual!\""
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Disappointed sighs and grumbles ripple through the crowd. Sidney, of course, is among them."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Aaaah! Seriously! I wanted to see it again!"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "Excuse me, why has the performance been suspended?"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Staff: \"Due to... equipment maintenance. Anyway... please queue up elsewhere.\""
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Just as you're about to turn and leave, a somewhat familiar figure appears not far away."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Hey? Sylva?",
+      "unlockProfile": "char_andy"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "Andy? What are you doing here?"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Five years ago, Andy was a security guard in your neighborhood. Someone falsely accused him of embezzling a resident's lost property, and you helped clear his name — that's how you met. Andy knows you're a capable detective and trusts you completely."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Ugh, what a mess. One of the performers vanished without a trace right at showtime, and now everyone's searching."
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "A haunted house performer?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Yeah, did you see the show? It's the guy playing the Cellist. Name's Victor. We've checked the restrooms, the changing rooms, the makeup room, the prop room — nobody's seen him."
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "How long has he been missing?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "He went missing during tonight's fifth show. It's been over half an hour now."
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "It's 19:58 now. You've been searching since then and haven't found him?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "No — the cast finished that show, saw the audience off at the exit spot, then searched the haunted house themselves and tried calling him. When they couldn't reach him, they told their director Ray, who also couldn't find him, so he came to me.",
+      "unlockEv": "ev_missing_actor"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "Are you sure the performer isn't still inside the haunted house?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Huh? You mean he might never have come out?"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "The haunted house is packed with props. He could have suddenly fallen ill and collapsed in a corner. Has anyone checked thoroughly?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Ray and the performers Aiden and Sunny should have searched twice already — they know the layout well. I haven't checked personally. How about we go take a look?"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "After Andy briefs the staff, he leads you and Sidney inside the haunted house."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "At this moment, the haunted house looks nothing like its sinister performance self. Every spot is lit up, and the props that were terrifying in the dark now look as crude as children's toys under the lights."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "You pass the Cellist's stage and the Plague Doctor's scene in turn. In a large performance space to your right, you see two performers talking."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "What the heck is up with Vic... nowhere to be found, not even answering his phone... You think they'll dock our pay for not being able to perform?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_ayou",
+      "t": "Probably can't dodge it... And Faye's not here either. This is bad..."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "Yeah, of all times...",
+      "unlockProfile": [
+        "char_zhencheng",
+        "char_ayou"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Sunny, Aiden — have you searched everywhere in here?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "Yeah, we looked. It's not that big — where could someone hide?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "I brought a detective I know. We're going to search again."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_zhencheng",
+      "t": "Suit yourselves. I'm tired. I'll rest a bit."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_ayou",
+      "t": "It's a bit messy up ahead. I'll go tidy up."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "You, Sidney, and Andy follow the audience route further in and spot a hidden door in the wall."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Where does this door lead?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Back toward the entrance. It's more convenient for the performers to move through here."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "So that's the Cellist's spot?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "That's right."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Speaking of the Cellist — who were those two playing again? And where are the other performers?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Haha, there are only three performers here."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "What? But I remember..."
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Sidney starts counting on her fingers."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "First, the Cellist. Second, the creepy Plague Doctor. Third, the Masked Dancer. Fourth, the mad killer. Fifth and sixth, a dance between a red-robed demon and a woman in white. Seventh, the Hunchback Bell Ringer. That's... seven performers!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Nope. Just three."
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "If they use this hidden door, three performers could easily play all seven roles."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "What?!"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "\"Yes! Exactly! This lady is remarkable!\" A man in his thirties walks over smiling, addressing you and your sister."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "Ray, this is my detective friend Sylva, and the lovely young lady beside her is Sylva's sister Sidney. This is Ray, the park's Performance Director.",
+      "unlockProfile": "char_shihui"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Ah... tonight's show... I'm so sorry. Victor must have run off for some emergency. I'll give him a piece of my mind when he gets back."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Mr. Ray, did you design this show? I absolutely loved it!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Wow, thank you! Your love is what drives us to keep improving!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "Are there really only three performers? How can three people pull off seven roles?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Hahaha! It all comes down to the ingenious design of our Performance Department!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "First — do you know what the theme of tonight's performance is? (*Please select the correct answer*)",
+      "choices": {
+        "question": "What is the theme of this performance?",
+        "options": [
+          {
+            "text": "A The Fall of the House of Usher",
+            "correct": false,
+            "reply": "Hmm, not quite."
+          },
+          {
+            "text": "B The Pit and the Pendulum",
+            "correct": false,
+            "reply": "Hmm, not quite."
+          },
+          {
+            "text": "C The Masque of the Red Death",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Yes! The story is based on the famous work by American author Edgar Allan Poe."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "The tale tells of a prince and nobles who hold a lavish masquerade ball inside a castle to escape a devastating plague, only to be invaded by the plague incarnate — the \"Red Death\" — and all perish from infection."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "We designed the whole story like this: at the entrance to the masquerade, a Cellist opens the show with music; then, a Plague Doctor in a bird-beak mask spreads terror about the plague through the corridor."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Next, a dancer's movements grow increasingly erratic until she collapses; around the banquet table lie the corpses of plague-stricken guests, while the Mad Prince strangles one with a rope."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Further in, the Red Death dances a duet with the Prince's Wife. The Red Death, in a billowing robe, props up the Prince's Wife by her arms. Though she appears to dance with him, her body has gone rigid — swaying like a corpse."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Finally, the Prince's loyal Bell Ringer watches a procession of ghosts — the audience — approaching. He realizes the plague has breached the castle and tolls the final death knell."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Then the audience exits in order."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "So that's how it works! How brilliant!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "We used a key element from the story to achieve our \"actor consolidation\" design. What do you think it is?",
+      "choices": {
+        "question": "Which element enables the actor consolidation?",
+        "options": [
+          {
+            "text": "A The Masquerade Ball",
+            "correct": true
+          },
+          {
+            "text": "B The Plague",
+            "correct": false,
+            "reply": "Hmm, think again..."
+          },
+          {
+            "text": "C The Castle",
+            "correct": false,
+            "reply": "Hmm, think again..."
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Exactly! By using the masquerade ball concept, we let performers change costumes rapidly and switch identities without the audience noticing. That's how three actors can pull off seven roles!"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "That's incredible! How do they actually do it?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Look — this is the floor plan of our haunted house. (*Open the 'Evidence' panel on the right to view, then click the pin icon in the upper-right corner to close*)",
+      "unlockEv": "ev_ghost_house_map"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "The six numbers represent six spots — the numbering is also the order in which the audience visits them. Each area is relatively self-contained. When the audience gathers in one area, the performer there begins their act. Each performance segment lasts 3-5 minutes."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "We make every costume set easy to put on and take off, and performers wear a black base layer underneath. The costume for each space is pre-placed in a dim corner of that room."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "While the audience is absorbed in another spot's performance, the performer slips through a hidden door or circles behind the audience to reach the next spot, quickly puts on the costume, and waits."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Unless the story demands it, performers never pass through multiple spots in a row. This keeps their movements from being easily noticed by the audience.",
+      "unlockEv": "ev_actor_transfer_rules"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Can you figure out how the performers cover the entire show?"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_andy",
+      "t": "You could start with the performer at Spot 1 — the Cellist."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "After playing the Cellist, which spot would be most convenient for the performer at Spot 1 to go to next?",
+      "choices": {
+        "question": "Where does the performer at Spot 1 go next?",
+        "options": [
+          {
+            "text": "A Spot 2",
+            "correct": false,
+            "reply": "That doesn't seem right..."
+          },
+          {
+            "text": "B Spot 4",
+            "correct": false,
+            "reply": "That doesn't seem right..."
+          },
+          {
+            "text": "C Spot 5",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Correct! Now, after playing the Plague Doctor, which spot can the performer at Spot 2 go to next?",
+      "choices": {
+        "question": "Where does the performer at Spot 2 go next?",
+        "options": [
+          {
+            "text": "A Spot 3",
+            "correct": false,
+            "reply": "That would be a bit odd..."
+          },
+          {
+            "text": "B Spot 4",
+            "correct": true
+          },
+          {
+            "text": "C Spot 5",
+            "correct": false,
+            "reply": "That would be a bit odd..."
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Yes. And next, after finishing the solo dance, which spot does the performer at Spot 3 go to for the duet?",
+      "choices": {
+        "question": "Where does the performer at Spot 3 go next?",
+        "options": [
+          {
+            "text": "A Spot 4",
+            "correct": false,
+            "reply": "Hmm..."
+          },
+          {
+            "text": "B Spot 5",
+            "correct": true
+          },
+          {
+            "text": "C Spot 6",
+            "correct": false,
+            "reply": "Hmm..."
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_shihui",
+      "t": "Right! Finally — the Bell Ringer at Spot 6. Which of the three original performers — 1, 2, or 3 — plays this role?",
+      "choices": {
+        "question": "Who plays the Bell Ringer?",
+        "options": [
+          {
+            "text": "A Spot 1",
+            "correct": false,
+            "reply": "Doesn't seem likely..."
+          },
+          {
+            "text": "B Spot 2",
+            "correct": true
+          },
+          {
+            "text": "C Spot 3",
+            "correct": false,
+            "reply": "Doesn't seem likely..."
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "So among the three performers, each plays at least two roles, and one of them even plays three roles! Which performer plays the three roles of \"Plague Doctor,\" \"Mad Prince,\" and \"Bell Ringer\"? (*Drag a 'Character' card from the right panel to the dashed box, then click the confirm button*)",
+      "autoPresent": "Which performer played three roles in this show?",
+      "present": {
+        "char_ayou": {
+          "resolved": false,
+          "wrongReply": {
+            "speaker": "char_andy",
+            "t": "That doesn't seem right..."
+          },
+          "dialogue": [
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "Why couldn't Victor have played the Plague Doctor and the other roles? (*You can present any card from the right — 'Characters,' 'Evidence,' and 'Testimony'*)",
+              "autoPresent": "Present the clue that proves which role Victor played",
+              "present": {
+                "ev_missing_actor": {
+                  "resolved": false,
+                  "wrongReply": {
+                    "speaker": "char_shihui",
+                    "t": "Hmm, take another look..."
+                  },
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Because the testimony states that the cast saw the audience off from the Bell Ringer's spot, meaning the missing Victor could not have been the Bell Ringer. And there's another sentence that can also prove what role Victor played."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Victor's disappearance was noticed by his fellow cast member. The entire show has only one duet segment that requires two performers working together. So Victor was likely one of the performers in that duet.",
+                      "choices": {
+                        "question": "Which statement proves Victor's role?",
+                        "options": [
+                          {
+                            "text": "A \"During the 19:00 show.\"",
+                            "correct": false,
+                            "reply": "That seems harmless enough."
+                          },
+                          {
+                            "text": "B \"Fellow cast members noticed he was gone but completed the performance anyway.\"",
+                            "correct": true
+                          },
+                          {
+                            "text": "C \"The cast searched for Victor on their own to no avail.\"",
+                            "correct": false,
+                            "reply": "That doesn't prove anything."
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "Then why couldn't Sunny be the one playing three roles?",
+                      "autoPresent": "Present the relevant character profile",
+                      "present": {
+                        "char_zhencheng": {
+                          "resolved": false,
+                          "wrongReply": {
+                            "speaker": "char_shihui",
+                            "t": "That's not the reason..."
+                          },
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Because Sunny is the only female — and the only \"dancer.\" She most likely had to contribute to both the solo at Spot 3 and the duet at Spot 5."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "Wow, as expected of Detective Sylva. That's brilliant!"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "You're amazing, sis!"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "You're all enjoying the lively analysis of the performance when a sudden scream shatters the cheerful mood."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "AAAAAAAH!!!"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "What?!"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "V-V-Vic is... he's DEAD!!!"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "??!!!!"
+                            },
+                            {
+                              "chapterLogo": true
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "October 28, 2025, 8:18 PM, Chaoye Park, inside the haunted house",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "Around the Prince's lavish banquet table lie the bodies of guests, twisted in grotesque poses on the tabletop and floor. A terrified Aiden points beneath the long table.",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "It is the missing performer — Victor.",
+                              "bg": "images/chapter1/bg_room4.jpg",
+                              "unlockProfile": [
+                                "char_changwei"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "Aah! Quick, call the police!",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "Right... I'll call them right now! Everyone, stay where you are!",
+                              "bg": "images/chapter1/bg_room4.jpg"
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "October 28, 2025, 8:32 PM, Chaoye Park, beside the haunted house"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "Sylva? What are you doing here?",
+                              "unlockProfile": "char_qin"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Lyra! Long time no see!"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "Every time you show up, something crazy happens. And I mean crazy."
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Ah... haha... sorry about that."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "Hi, Lyra~"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "Sidney! Good to see you. How did the two of you get dragged into another case?"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Well, it's Halloween, and Sidney wanted to get a thrill at the haunted house, and then..."
+                            },
+                            {
+                              "s": "system",
+                              "speaker": "none",
+                              "t": "Andy and Ray recount to Lyra everything that happened after Victor went missing. Lyra takes careful notes as the medical examiner performs a preliminary examination of the body."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_qin",
+                              "t": "The prelim report just came back. The victim was strangled to death. Estimated time of death is between 18:15 and 19:15.",
+                              "unlockEv": [
+                                "ev_autopsy"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "Speaking of time — the haunted house shows start at 17:00, one every half hour. Each performance runs about 20 minutes."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "What about the other 10 minutes?"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "Those 10 minutes are for everyone to return to their spots, do a quick reset of the props, and catch a short break.",
+                              "unlockEv": [
+                                "ev_time_table"
+                              ]
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_andy",
+                              "t": "Based on the autopsy, the victim was killed between the third and fifth shows."
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Based on what the other performers said, we can actually narrow the time range further.",
+                              "autoPresent": "Which piece of evidence/testimony can further narrow the time of death?",
+                              "present": {
+                                "ev_missing_actor": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Fellow cast members said Victor was noticed missing during the 19:00 show, and the previous performances went off without issue. This means Victor's time of death is..."
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Victor was noticed missing during the 19:00 show. His death must therefore have occurred during...",
+                                      "choices": {
+                                        "question": "The time of death was during...",
+                                        "options": [
+                                          {
+                                            "text": "A The third and fourth shows",
+                                            "correct": false,
+                                            "reply": "Hmm... something's off."
+                                          },
+                                          {
+                                            "text": "B Before the fourth show",
+                                            "correct": false,
+                                            "reply": "Hmm... something's off."
+                                          },
+                                          {
+                                            "text": "C The fourth and fifth shows",
+                                            "correct": true
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "Alright. So the most likely time window for the crime is during the fourth and fifth shows — that is, between 18:30 and 19:30. Now, combining that with the autopsy report, we can narrow it further to..."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "We can narrow it further to...",
+                                      "choices": {
+                                        "question": "Narrow the range to...",
+                                        "options": [
+                                          {
+                                            "text": "A 18:45~19:00",
+                                            "correct": false,
+                                            "reply": "Something doesn't add up..."
+                                          },
+                                          {
+                                            "text": "B 18:30~19:15",
+                                            "correct": true
+                                          },
+                                          {
+                                            "text": "C 19:00~19:15",
+                                            "correct": false,
+                                            "reply": "Something doesn't add up..."
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "So the crime scene was right here in this performance space..."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "How terrifying! The killer must know our show inside and out...",
+                                      "unlockEv": [
+                                        "ev_rehearsal_details"
+                                      ]
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_xiaozhi",
+                                      "t": "Using the gaps between performances to commit murder?"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Besides the performers here, does anyone else know the details of the show?"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "Yes — the staff all know to some degree, and so do understudy performers, the prop team, and others."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_xiaozhi",
+                                      "t": "That's quite a long list."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_andy",
+                                      "t": "Oh right — some audience members from the fifth show mentioned that when they first entered, the set looked great and the music was playing, but it felt like something was missing..."
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Which means the Cellist wasn't at his post by then."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_zhencheng",
+                                      "t": "Um... during the fourth show, Victor was there and we performed as normal. But by the fifth show he was gone.",
+                                      "unlockEv": [
+                                        "ev_zhencheng_testimony1"
+                                      ]
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "Sunny here plays the Dancer. She and Victor — who plays the Red Death — meet at Spot 5 for a duet."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "So based on Sunny's testimony, the evidence that can further narrow the time range is..."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_qin",
+                                      "t": "The evidence that can narrow the time frame is...",
+                                      "autoPresent": "Which evidence narrows the time frame?",
+                                      "present": {
+                                        "ev_rehearsal_details": {
+                                          "resolved": false,
+                                          "dialogue": [
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "The approximate durations for each spot are: 2 min, 3 min, 5 min, 3 min, 3 min, 4 min. So the performance at Spot 5 ends roughly..."
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "The approximate show times for each spot are: 2 minutes, 3 minutes, 5 minutes, 3 minutes, 3 minutes, 4 minutes. So Spot 5's performance ends at roughly...",
+                                              "choices": {
+                                                "question": "When does Spot 5's performance end?",
+                                                "options": [
+                                                  {
+                                                    "text": "A About 16 minutes after the show starts",
+                                                    "correct": true
+                                                  },
+                                                  {
+                                                    "text": "B About 18 minutes after the show starts",
+                                                    "correct": false,
+                                                    "reply": "That doesn't seem right..."
+                                                  },
+                                                  {
+                                                    "text": "C About 20 minutes after the show starts",
+                                                    "correct": false,
+                                                    "reply": "That doesn't seem right..."
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "If Sunny's testimony is truthful, the time of death can be narrowed further to..."
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "If Sunny is telling the truth, the time of death narrows to...",
+                                              "choices": {
+                                                "question": "Narrow the time of death to?",
+                                                "options": [
+                                                  {
+                                                    "text": "A 18:46~19:25",
+                                                    "correct": false,
+                                                    "reply": "Seems like math isn't sis's strong suit..."
+                                                  },
+                                                  {
+                                                    "text": "B 18:46~19:15",
+                                                    "correct": true
+                                                  },
+                                                  {
+                                                    "text": "C 18:56~19:10",
+                                                    "correct": false,
+                                                    "reply": "Seems like math isn't sis's strong suit..."
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_qin",
+                                              "t": "Right. But as our primary suspects, Aiden and Sunny's testimony can't be taken at face value yet."
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "Exactly. So if we question the two performers separately and find contradictions in their stories, we might find a breakthrough."
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_qin",
+                                              "t": "My colleagues just finished searching the corridors — nothing suspicious. Let's search each room of the haunted house first, then question everyone individually."
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "The night air at Chaoye Park is chilly, the wind cutting straight down your collar.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "There's a low hum of noise around you — staff are helping the police evacuate visitors.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "The performers huddle together, their faces grim as they murmur about what just happened.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "The questioning is about to begin. Gotta steel yourself.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "The wind cuts through you. You press your palms to your cheeks. Lyra steps out of the haze.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "It's going to be a long night.",
+                                              "_cutscene": true
+                                            },
+                                            {
+                                              "s": "system",
+                                              "speaker": "none",
+                                              "t": "(*End of this section — click to continue*)",
+                                              "endChapter": true
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

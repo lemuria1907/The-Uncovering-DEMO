@@ -1,0 +1,2675 @@
+{
+  "locations": {
+    "loc_entrance": {
+      "name": "Haunted House Plaza",
+      "desc": "Location: Haunted House Plaza",
+      "chars": [
+        "char_xiaozhi_p0"
+      ],
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "The haunted house that was crowded with people and brightly lit just now is now lying there quietly like a loosely wound music box."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "You and Sidney stood at the entrance, ready to go in and check."
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point1": {
+      "name": "Cellist Performance Spot",
+      "desc": "Location: Cellist Performance Spot",
+      "chars": [
+        "char_xiaozhi_p1"
+      ],
+      "bg": "images/chapter1/bg_room1.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "(*Click \"Observe the scene\" in the upper left corner to view the details of the current scene and collect clues*)"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "Standing in the corner was a cello that had been painted with acrylic to create a damaged and moth-eaten effect. The body of the violin was covered with dark red scratches—probably also painted. Scattered next to it were several pages of sheet music, heavily trampled and wrinkled."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "This point is the starting point of the entire haunted house. The music should have spread out from here, but now all that is left is silence."
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "cello_case",
+          "title": "Cello Case",
+          "desc": "There was a piece of dark patterned silk covering something in the piano case. You opened the silk and found two items inside: lipstick and a women's hairpin.",
+          "giveEv": "ev_cello_case_items"
+        }
+      ]
+    },
+    "loc_point5": {
+      "name": "Red Death & Prince's Wife Performance Spot",
+      "desc": "Location: Red Death & Prince's Wife Performance Spot",
+      "chars": [
+        "char_xiaozhi_p2"
+      ],
+      "bg": "images/chapter1/bg_room5.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "The cloak of the Red Death was thrown carelessly to the ground, and the broad scarlet robe resembled a ball of coagulated blood."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "The dummy model of the Prince's Wife fell to the ground, wearing a white mask on its face, and its empty eye sockets looked a bit scary."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "In a corner on the left, there is a blower. It turns out that the wind caused the dancers' clothes to fly during the performance."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "In the darkness of the room, there were several beams above the head. It seemed that there was a metal protrusion on it, but it was too high from the ground."
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "propbox",
+          "title": "Huge Prop Crate",
+          "desc": "A large box of about 1. 5x2x1. 5 meters.",
+          "giveEv": "ev_prop_box"
+        },
+        {
+          "id": "beam",
+          "title": "Overhead Beam",
+          "isLocked": true,
+          "unlockItem": "ev_prop_box",
+          "desc_locked": "There seemed to be some marks on the beam above my head. But it's too high from the ground.",
+          "desc_unlocked": "You step on the prop box and look at the top beam, and you find a small metal roller. There are several traces of ropes on the edge of the wooden beam next to it, two of which are deep but covered with dust.",
+          "giveEv": "ev_beam_marks"
+        }
+      ]
+    },
+    "loc_point2": {
+      "name": "Plague Doctor Performance Spot",
+      "desc": "Location: Plague Doctor Performance Spot",
+      "chars": [
+        "char_xiaozhi_p3"
+      ],
+      "bg": "images/chapter1/bg_room2.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "Compared to other areas, this place is narrower and more like a small storage room next to the corridor. There is a wooden table against the wall with medical surgical props, lancets, tweezers, etc. placed on it."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "Under the table, there is the robe and mask of the plague doctor. The beak on the black leather mask is long and pointed."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "The cart next to it was filled with bottles and cans, with some incomprehensible words written on the labels. Some bottles had been knocked over, leaving dark stains after the liquid dried."
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point3": {
+      "name": "Masked Dancer Performance Spot",
+      "desc": "Location: Masked Dancer Performance Spot",
+      "chars": [
+        "char_xiaozhi_p4"
+      ],
+      "bg": "images/chapter1/bg_room3.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "There are dark red curtains hanging around the room, and a row of curved mirrors is placed behind the actors' performance area."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "This is probably to create the illusion that a lot of people are dancing."
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point4": {
+      "name": "Mad Prince Performance Spot",
+      "desc": "Location: Mad Prince Performance Spot",
+      "chars": [
+        "char_xiaozhi_p5"
+      ],
+      "bg": "images/chapter1/bg_room4.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "In the center of this room is a gorgeous long banquet table. The \"guests\" around the table are staggering around, wearing the costumes of medieval nobles - of course, they are all corpses dressed as puppets and props."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "Some of the \"corpses\" still held wine glasses in their hands, and their bodies were stained with blood. The tablecloth was pulled and wrinkled, as if there had been a real chaos."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "And a real corpse was just discovered under the tablecloth of the long table."
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point6": {
+      "name": "Bell Ringer Performance Spot",
+      "desc": "Location: Bell Ringer Performance Spot",
+      "chars": [
+        "char_xiaozhi_p6"
+      ],
+      "bg": "images/chapter1/bg_room6.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "In the open space near the exit, there is a huge copper bell with the hammer hanging on the side."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "The bellringer's hunchbacked cloak hangs on the wall, with his back clearly bulging out and a large piece of sponge cushioning there."
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "In the story, the final death knell rings from here, reminding the audience that the plague has arrived and there is no escape."
+        }
+      ],
+      "hotspots": []
+    },
+    "interrogation": {
+      "name": "Interview Area",
+      "desc": "Location: Interview Area",
+      "chars": [
+        "char_zhencheng",
+        "char_ayou",
+        "char_shihui"
+      ],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "onEnter": [],
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_xiaozhi_p1": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p2": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p3": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p4": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p5": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p6": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_zhencheng": {
+      "name": "Sunny Chen",
+      "info": "Haunted house performer",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "Aiden Li",
+      "info": "Haunted house performer",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_shihui": {
+      "name": "Ray Shi",
+      "info": "Performance Director",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_qin": {
+      "name": "Lyra Qin",
+      "info": "Old acquaintance",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_xiaozhi": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p0": {
+      "name": "Sidney Xi",
+      "info": "Your sister",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "October 27, 2025, 9:04 PM, Chaoye Park, entrance of the haunted house",
+      "unlockLoc": [
+        "loc_entrance"
+      ],
+      "unlockTopic": [
+        "t_entrance_tutorial"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_xiaozhi_p1": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p1",
+        "t": "This is the first scene players will encounter at the entrance to the haunted house."
+      }
+    ],
+    "char_xiaozhi_p2": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "These props don't look scary when you look closely!"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "yes. The reason why the haunted house is so dark is probably because it needs to be difficult for everyone to see clearly."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "What is this strange machine for?"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "It's a blower. Do you still remember the way the pieces of cloth flew up from the edges of their clothes during the performance?"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "oh oh! It's used for this purpose. I really like the effect. It's very fairy-like!"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Do you think the ghosts in the haunted house look fairy-like?"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "Scary and beautiful! I like!"
+      }
+    ],
+    "char_xiaozhi_p3": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p3",
+        "t": "What a scene full of atmosphere!"
+      }
+    ],
+    "char_xiaozhi_p4": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p4",
+        "t": "Is this where Sunny Chen dances? one person?"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Yes, although it looks like there are many people, this is the effect achieved by using mirrors."
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Moreover, the mirror can also reflect us, the audience, in, so it looks like a group of people are surrounding the dancer and watching her dance."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p4",
+        "t": "What an interesting design."
+      }
+    ],
+    "char_xiaozhi_p5": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "Sis, I'm too scared to go in."
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "The body has been removed."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "Still feel terrible. A real corpse was mixed in with the fake corpse."
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Yeah. . . I get chills down my spine just thinking about it."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "Do you think that in the scene we watched. . . the corpse had already been placed there?"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Probably not. What we are watching is the third scene. The deceased should not be killed in that scene."
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "If what everyone is telling the truth. . ."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "Gah! Sis, you're freaking me out!"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "I didn't mean to."
+      }
+    ],
+    "char_xiaozhi_p6": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "The image of this hunchbacked bell-ringer reminds me of a famous episode of \"Mysterious Detective Coran\". It's called \"The Bandage Man Murder Case.\""
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Um?"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "There is a #. . . %&# in which #. . . $#% is placed in #$#. . . haven't you seen it? Then I won't spoil it for you. A super scary episode, highly recommended!"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "You've pretty much spoiled it all."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "Whoops! My bad, Sis!"
+      }
+    ],
+    "char_ayou": [
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "……"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "You look pretty shaken up... So, how'd you find the body?"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "I. . . I occasionally tidy up and inventory the props after the performance. Today I feel that the dummies are a bit messy. . . Originally there were some half-parts of the dummies under the table, but now it seems that a lot of them are exposed."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "I tried to push a dummy back in, but it felt stuck. And then. . ."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "It's so terrible. . ."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "Yes. . . yes, it scared me. . ."
+      }
+    ],
+    "char_shihui": [
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "How could this be? What a terrible situation! ! !"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "Is this place cursed?"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "I know you're anxious, but try not to be... yet."
+      }
+    ],
+    "char_zhencheng": [
+      {
+        "s": "npc",
+        "speaker": "char_zhencheng",
+        "t": "No. . . it wasn't me! I didn't kill anyone!"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "I didn't say you killed someone. . . I was just asking a routine question. . ."
+      },
+      {
+        "s": "npc",
+        "speaker": "char_zhencheng",
+        "t": "Victor... I had barbecue with him after work yesterday. And now he's just... gone?"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "Things are unpredictable. . ."
+      }
+    ],
+    "char_qin": [
+      {
+        "s": "npc",
+        "speaker": "char_qin",
+        "t": "……"
+      }
+    ],
+    "char_xiaozhi": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "……"
+      }
+    ],
+    "char_xiaozhi_p0": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p0",
+        "t": "Sis... I'm kind of bummed. I never knew the guy, but his performances always made my day."
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "We will find out the truth."
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_s2_1": {
+      "char": "char_xiaozhi_p1",
+      "title": "Sidney's Theory",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "I've always liked this cello, it matches the actor's wooden mask style very well."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yeah, the hand-painted textures on it look real. But. . . there's something quite strange here."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "What?",
+          "autoPresent": "Point out what is strange at the scene",
+          "present": {
+            "ev_cello_case_items": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "Well, it wouldn't be a problem for the actors to put some miscellaneous items here."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "That's a bit odd, don't you think?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "What's off about it?",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A Color",
+                "correct": false,
+                "reply": "is that so?"
+              },
+              {
+                "text": "B Item",
+                "correct": true
+              },
+              {
+                "text": "C Position",
+                "correct": false,
+                "reply": "Hmm. . ."
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The actor at point 1, the deceased, is a male. Why is there lipstick and hairpins?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "Since it is a performance, it is normal for male actors to wear makeup, right?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "This is usually the case, but in this performance, because masks are used, makeup is not actually required."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "Maybe it's from another actor?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The other actors also had places to put their things in their respective rooms, so there was no need to go around and put them in the cello case."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "It's really strange to say that.",
+          "unlockLoc": [
+            "loc_point5"
+          ],
+          "unlockTopic": [
+            "t_s2_2"
+          ]
+        }
+      ]
+    },
+    "t_s2_2": {
+      "char": "char_xiaozhi_p2",
+      "title": "Sidney's Theory",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "What is this big box for? Is it possible to hide people?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It looks like it's for props. This doll model, which is about the same size as a real person, should just fit inside."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "Why? Is this a doll dressed up the same as the dancer lady?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It should be! Let me see, the content of this performance is. . .",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A Red Death and the Prince's Wife's duet",
+                "correct": true
+              },
+              {
+                "text": "B The Prince and his wife's duet",
+                "correct": false,
+                "reply": "Sister, take a look again. . ."
+              },
+              {
+                "text": "C Red Death and the Prince's duet",
+                "correct": false,
+                "reply": "It doesn't feel right, but it seems good?"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The prince's wife is wearing a pure white bridal dress and is dancing with the Red Death in red robes. During the dance, her body is limp and backwards, and she is completely controlled by the Red Death. . . In other words, the prince's wife can be replaced by a doll."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "This means that one person can complete the pas de deux as long as someone else plays the Red Death."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "The murderer can also throw the doll into a corner outside, hide it in a box, kill the deceased and leave secretly when the actors are resting after the performance."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It looks like this is possible, but the risk is that it will be seen by other actors because the lights will be on for a while during the break and it will be brighter here."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "What if you do it during the performance?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Then it needs to be divided into whether it is before or after the performance at point 5 starts. Assuming that the murderer takes action before the fourth performance at point 5, what the murderer needs to solve is. . .",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A Who will play Red Death",
+                "correct": true
+              },
+              {
+                "text": "B How to hide the body",
+                "correct": false,
+                "reply": "The room was relatively dark, and there was some velvet cloth available, so it shouldn't be difficult to hide the body."
+              },
+              {
+                "text": "C How to move the body",
+                "correct": false,
+                "reply": "The ground inside the house is not rough. If you want to commit murder at point 5, you should be able to do it by dragging it to point 4."
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The murderer needs to dress up as the Red Death and dance with Miss Sunny Chen."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "Is that so? But with the help of props, Miss Sunny Chen can also complete the pas de deux by herself."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Indeed, but this conflicts with a previous clue.",
+          "autoPresent": "Point out which clue this contradicts.",
+          "present": {
+            "ev_zhencheng_testimony1": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "According to Sunny Chen, during the fourth performance, she performed a double performance normally at point 5. Therefore, if the murderer had not colluded with Sunny, then Sunny would have needed to use a prop puppet in this scene."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "I see.",
+          "unlockLoc": [
+            "loc_point2"
+          ],
+          "unlockTopic": [
+            "t_s2_3"
+          ]
+        }
+      ]
+    },
+    "t_s2_3": {
+      "char": "char_xiaozhi_p3",
+      "title": "Sidney's Theory",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "There is a knife here! Do you think someone took the knife here and killed the deceased?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Impossible.",
+          "autoPresent": "Point out the evidence proving this knife is not the murder weapon",
+          "present": {
+            "ev_autopsy": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The deceased was strangled."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "oh! Yes!"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "This mask is so scary. . . During the performance, Plague Doctor will suddenly light up the green light stick in his hand in the dark, which scares me every time."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Well, the green light matches this scene very well. But fortunately, it's just a light on. The performances here are basically in the inner part of the scene, keeping a good distance from the audience."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "Indeed, there is a little light in the corridor. The actors will stay farther away and turn on the lights, which is more \"coward-friendly\"."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It would be really exciting to open it up against your face in a completely dark place."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "Don't!",
+          "unlockLoc": [
+            "loc_point3"
+          ],
+          "unlockTopic": [
+            "t_s2_4"
+          ]
+        }
+      ]
+    },
+    "t_s2_4": {
+      "char": "char_xiaozhi_p4",
+      "title": "Sidney's Theory",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "Are all these mirrors movable?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It seems possible."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "With so many mirrors, it would be troublesome to move them in and out. After all, the corridors here are so winding."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Well, actually it shouldn't be a problem.",
+          "autoPresent": "Point out a way to move the mirrors in and out quickly",
+          "present": {
+            "ev_ghost_house_map": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "You see, this room also has a secret door. It leads to point 6, which is the exit location."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "So, this mirror looks like it can be picked up and tilted to pass through the secret door."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Hmm, if you look at the performance alone, this secret door is actually not useful. It was probably opened specifically to facilitate the transportation of props and the access of actors."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "Why doesn't the show itself use this secret door?",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A The hidden door would be a longer route",
+                "correct": true
+              },
+              {
+                "text": "B The hidden door is too narrow for an actor in costume",
+                "correct": false,
+                "reply": "But I think Miss Sunny Chen's clothes are not very heavy. . ."
+              },
+              {
+                "text": "C The hidden door cannot reach the next position",
+                "correct": false,
+                "reply": "It doesn't look like there's anything wrong with it, it's definitely possible from that corridor."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "It is true that the next point for the dancer is scene No. 5, so just go from the front. If you go through the secret door, you have to walk a long corridor."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yes. There is absolutely no need for this.",
+          "unlockLoc": [
+            "loc_point4"
+          ],
+          "unlockTopic": [
+            "t_s2_5",
+            "t_s2_6"
+          ]
+        }
+      ]
+    },
+    "t_s2_5": {
+      "char": "char_xiaozhi_p5",
+      "title": "Sidney's Theory 1",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Sis, I suddenly had an idea. According to the autopsy report, there was anesthesia in the mouth and nose of the deceased, indicating that he may have been in a coma before death. The Crazy Prince would strangle the neck of the dummy during the performance. At this time, is it possible that he used the prop rope to directly strangle the deceased?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Killing someone in front of an audience?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "It sounds terrible. But is this possible?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Then we need to first assume that the actor at point 4 is the murderer himself, or an innocent person who did not notice that the dummy was replaced and strangled his colleague? The latter seems unlikely. The dummy's weight is very light, and the strangling feel must be completely different from that of a real person."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "What if the actor playing the Mad Prince is the murderer himself?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "So from this perspective, it seems that it is not easy to implement.",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A Time",
+                "correct": true
+              },
+              {
+                "text": "B Murder weapon",
+                "correct": false,
+                "reply": "There are ropes everywhere, so they don't look hard to find."
+              },
+              {
+                "text": "C Concealment",
+                "correct": false,
+                "reply": "The venue is so dark, maybe. . ."
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It is known that the actor in Mad Prince, Aiden Li, is also the actor in position 2. He needs to start the performance immediately after the actor in position 1 performs. The actor in position 3 only performs for 5 minutes. After the performance, he is needed again."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "He needs to do it within 5 minutes: take off the costume of the Plague Doctor, rush to point 5, use medicine to stun the actor of the Red Death, drag the actor to point 4, place it on the table, and put on the costume of the Mad Prince."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Well... time is a bit tight, I'll admit."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yes."
+        }
+      ]
+    },
+    "t_s2_6": {
+      "char": "char_xiaozhi_p5",
+      "title": "Sidney's Theory 2",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Hey, there's a secret door here too."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Well. . . sis, the distance between the table, the Mad Prince and the audience is quite far, and during the performance, it was extremely dark in here. Only the candlelight on the table illuminated a small area, and even the audience was completely in darkness."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Is it possible that the murderer used the mirror to deceive us? In fact, there is never anyone at position 4. What we see is the light reflected by the mirror!"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Your idea is very interesting! How did you come up with the idea?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "If you look at the structure diagram of the haunted house, there are secret doors to the right of position 4 and above position 3. Then the mirror at position 3 can be taken out through the secret door. If I put a mirror through the two secret doors in sequence, put it behind the banquet table."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Place it at an angle of 45 degrees, so that the mirror faces the secret door. So, can an actor dressed as a prince be able to strangle someone in position 6?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Very creative! However, in actual operation, the secret may be revealed quickly."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Why?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Let's not talk about whether the mirror will be discovered or whether the figure reflected in it is really unreal. There is one place that will be clearly noticed by the audience.",
+          "choices": {
+            "question": "Choose:",
+            "options": [
+              {
+                "text": "A The audience's reflection",
+                "correct": false,
+                "reply": "But the audience is completely in darkness. If it's so dark, there won't be a mirror image, right?"
+              },
+              {
+                "text": "B The distance between actor and mirror",
+                "correct": true
+              },
+              {
+                "text": "C The candlelight would be doubled",
+                "correct": false,
+                "reply": "The audience won't know how many candles are placed here. Doesn't it seem like there's no big deal if there are more candles?"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The distance of the portrait reflected in the mirror should be the same as the distance between the person and the mirror. If the actor performs actions far away in position 6, the \"prince\" and \"corpse\" in the mirror will also be far away from the dining table. Even if the audience can see it, they will find that the image seems to be floating in another space and does not match the real dining table."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "Ah. . . yes! distance! How could I forget this. . .",
+          "unlockLoc": [
+            "loc_point6"
+          ],
+          "unlockTopic": [
+            "t_s2_7"
+          ]
+        }
+      ]
+    },
+    "t_s2_7": {
+      "char": "char_xiaozhi_p6",
+      "title": "Sidney's Theory",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "I think this hunchback is very problematic. Such a big bulge could hide a murder weapon inside!"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "For example, you can hold the murder weapon and kill at point 5, then quickly walk through the secret door to point 6 and stuff the weapon into the drum bag."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "It doesn't seem impossible, it's just. . . why is he bothering with it?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "Isn't this what all mystery novels have to do? Originally, I could solve the problem simply by stabbing me with a knife, but then I had to go around in a big circle like that one doing crossword, and then. . ."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "If it were that simple, there'd be no need for detective novels."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "Sis must have read a lot of detective novels."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "In this business, you have to draw nutrients from all aspects."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "So next, will my sister conduct separate interviews with the suspect and relevant staff?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yes, when questioning, I will \"question\" what they said or take the initiative to \"provide evidence\"."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "Which sentences can be \"questioned\" or \"presented\"?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Everything said by the \"questioning subject\", that is, the green text, may be \"questioned\" or \"presented\", and sometimes, we can also \"question\" or \"presented\" again based on the sentences that are questioned."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "A green dot marks topics with unresolved questions or evidence. It disappears once you've reviewed all content and moved to another topic."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "In other words, if a topic always displays a green dot, it means that there is still information in the topic that has not been investigated clearly, right? Got it! Next, sister will chat with actors Sunny Chen, Aiden Li and performance department director Ray Shi, right?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yes! Inquiries will begin soon!",
+          "unlockLoc": [
+            "interrogation"
+          ],
+          "unlockTopic": [
+            "t_s2_8",
+            "t_s2_9",
+            "t_s2_10",
+            "t_s2_11",
+            "t_s2_14",
+            "t_s2_15",
+            "t_s2_16",
+            "t_s2_17",
+            "t_s2_19",
+            "t_s2_20",
+            "t_s2_21",
+            "t_s2_22"
+          ]
+        }
+      ]
+    },
+    "t_s2_8": {
+      "char": "char_zhencheng",
+      "title": "About You",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "My name is Sunny Chen. I'm an actor and a dancer."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I have been working at the park for nearly five years. At first, I played the role of a tree elf in the daily performance of the day shift. Later, when the haunted house project was approved, I was arranged to perform here."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "My fellow actors at that time, Victor Jiang and Aiden Li, all settled down and acted like this for three years and gained a good reputation.",
+          "present": {
+            "char_xiaohua": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Didn't you have a colleague named Daniel Xiao before?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Ah. . . yes, yes.",
+                  "unlockTopic": [
+                    "t_s2_12"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Although this job is hard, it gives you the opportunity to dance solo, and the salary is quite high. I am willing to continue acting like this."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_9": {
+      "char": "char_zhencheng",
+      "title": "About the Victim",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Victor Jiang and I. . . have a pretty good relationship."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "He actually recruited me to audition for a dancer role early on. I did a few dance tests, threw in some original moves, and that's how I got in."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "He's quite strict, but he's okay with me. We usually have supper together after the show. (*It seems from this sentence that the two of them have a good relationship. Would you like to click \"Question\" to learn more? *)",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Did you go for that late-night bite together near the park?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "Well, there is a food street around the park, and everyone loves to go there. There are barbecue, sushi, crayfish, Chaoshan beef hotpot. . . (*For the content that appears after this \"Question\", we can click \"Question\" again to get further information*)",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Just the two of you?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "No, we usually eat with the other colleagues from the late shift."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Does Aiden join you for that?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "No, Aiden usually goes home after the performance."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "There is nothing else to say."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_10": {
+      "char": "char_zhencheng",
+      "title": "Was anything unusual about the victim today?",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "It seems like there wasn't."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "As usual, Victor started to perform after a little preparation."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_11": {
+      "char": "char_zhencheng",
+      "title": "What were you doing before and after the incident?",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Of course I was performing."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I just performed according to the planned route, nothing else.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Could you please elaborate on the planned route?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "After my solo at Spot 3, I went to Spot 5 for the duet with Victor. He was there for the fourth show, but when the fifth one came around, I realized he was gone.",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "You found him missing, and what did you do?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "I saw the Red Death's cloak on the ground, so I put on the cloak, opened the prop box, took out the Prince's Wife puppet prop that I had used as a backup, put it on my waist, and continued the performance.",
+                      "unlockEv": [
+                        "ev_zhencheng_testimony2"
+                      ]
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Is this okay? Just using a puppet as a substitute?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "Well, in the past, some test sites were built using props, and puppets would increase the sense of terror, but in terms of performance effects, it is definitely better to use real people."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "So, can real people and puppets achieve similar performance effects? Will the audience mistake the puppets for real people?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "The action of the doll is a little stiffer, but because they all have the same costume and mask, and the lighting is dim, you can't tell from the appearance."
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "After I discovered that Victor was not preparing for the performance at position 5, I quickly reported it to Director Shi.",
+                      "question": {
+                        "resolved": false,
+                        "dialogue": [
+                          {
+                            "s": "player",
+                            "speaker": "none",
+                            "t": "Didn't the performance department consider the situation where an actor was temporarily unavailable? Are there any extras?"
+                          },
+                          {
+                            "s": "npc",
+                            "speaker": "char_zhencheng",
+                            "t": "There's another dancer, Faye. I tried calling her—let me see... at 19:24. But it didn't go through. I already knew she had taken the day off and wasn't in the park, so I didn't bother looking for her.",
+                            "unlockProfile": [
+                              "char_meiyu"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I didn't kill him. I have no conflicts with him, why should I kill him?"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_12": {
+      "char": "char_zhencheng",
+      "title": "About the Former Colleague",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Daniel Xiao. . . He was indeed an actor who joined the haunted house during the preparation process. . . Unfortunately, before the decoration was completed, he suddenly hanged himself.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Do you know why he committed suicide?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "I don't know. . . I'm not very familiar with this person. . .",
+                "present": {
+                  "ev_ayou_testimony1": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "You were both actors in the dance group before, and you were also choreographers in the haunted house. Why do you still say you are not familiar with it?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "Well. . . there's a reason for that. . .",
+                        "unlockTopic": [
+                          "t_s2_13"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "We are all very sad about this. . ."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_13": {
+      "char": "char_zhencheng",
+      "title": "Relationship with Daniel Xiao",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "We didn't work together for a long time, and the day shift performances were also divided into groups. At that time, Daniel Xiao and I were not in the same group."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Later, I was transferred to the Haunted House Group. Daniel Xiao was transferred after me, and I started cooperating with him on choreography and so on. But they didn't cooperate for a long time."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Then, that happened. . . Daniel Xiao committed suicide at point 5. Then, I realized that he might have experienced something very painful during that time. . .",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Are you completely unaware of it when you get along?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "At that time, his old injury relapsed, and he was very reluctant to perform some actions. He would occasionally look very frustrated, but I didn't think much about it."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "It was really scary. . . That day, I heard a lot of people gathering at the haunted house, so I went over to check. At that time, Victor and Aiden were already there. . . There were security lowering that. . . from a high place. I didn't dare to look at it. . .",
+                "present": {
+                  "ev_hanged_reddeath": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "What you see is that the security are lowering the body from the position where the puppet was originally hung?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "Yeah. . . he committed suicide wearing the Red Death's clothes, as if to scare us on purpose. It's so terrible. . ."
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "Are you saying that the \"hanging puppet\" device originally designed for performance effects ended up hanging the actors of the Red Death?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "That's what it looks like.",
+                        "unlockEv": [
+                          "ev_zhencheng_testimony3"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_14": {
+      "char": "char_ayou",
+      "title": "About You",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "My name is Aiden Li, and I have been working here for three years."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I used to do equipment maintenance at another park. It shut down, so I came here. The haunted house project had just started then and they were short on staff."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Later, Victor Jiang noticed I seemed really into performing, so he started giving me small roles—nothing with too many lines."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "And then I started joining in more performances with the other actors."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Do you still handle props now?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "There are colleagues who specialize in the props team for pipes and tools, but I still do some repair-related work, because sometimes the props are damaged and we don't have time to wait for the props team, so I just repair them myself.",
+          "present": {
+            "ev_shihui_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Were the props damaged because of some tourists? It is said that the park will deduct your bonus."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "It is true that many of them were broken by tourists, but during the performance, we ourselves also accidentally broke the props. It is difficult to explain this kind of thing clearly. . . The props team and the actor team will bear some burden. It was the same place where I used to work, and I was used to it. . . but Victor and Sunny had a lot of complaints about it."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Did they do anything? Did they have any conflicts with anyone?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Uh, you mean. . . did you find something?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Um?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "N-Nothing."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Oh, by the way, if you are familiar with props, can you tell who these things belong to?",
+                  "autoPresent": "Point out the suspicious item",
+                  "present": {
+                    "ev_cello_case_items": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "This. . . maybe a prop somewhere can be used?"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "But these things don't look like props."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "Well, sometimes, in the combination design of props, some inconspicuous little things are used. . ."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "You seem pretty familiar with all this. Which designs here were your work?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "Hmm. . . No more. . . When I first became an actor three years ago, I was more involved in props and did some mechanics, but now. . . except for repairs. . . I generally don't touch other people's props.",
+                          "unlockEv": [
+                            "ev_ayou_prop_design"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_15": {
+      "char": "char_ayou",
+      "title": "About the Victim",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Victor Jiang is the leader of the haunted house actor group and the director of the entire haunted house show.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "director?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "Yes, Victor was involved in this project from the beginning."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What tasks is Victor responsible for?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "Victor originally planned it together with the former director of the performance department. At that time, that person had made many innovative project plans for the park. He decided on the theme of the haunted house—'The Masque of the Red Death'—and then wrote the general plot and lines. Victor was responsible for the choreography and the specific details of the performance.",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "What's that supervisor's name?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_ayou",
+                      "t": "His name is Celeste Ming, and he is very good at writing stories.",
+                      "unlockProfile": [
+                        "char_mingqi"
+                      ]
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "What is Celeste Ming doing now? Still working at the park?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_ayou",
+                      "t": "Well. . . he, he left after the haunted house opened in the first year. I don't know much about him."
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "Victor taught me the key points and lines of this play from the beginning."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "I am very grateful for that. We've always gotten along well. (*There seems to be a \"testimony\" from others that can refute Aiden Li's words. Please click \"Present\" in the lower right corner and drag in the corresponding testimony to see his reaction*)",
+                "present": {
+                  "ev_shihui_testimony2": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "But your supervisor Ray Shi feels that Victor Jiang is a bit cruel to you. (*The evidence was successfully provided, well done! Continue to pay attention to what everyone said, and use the \"Profiles\", \"evidences\" and \"Statements\" on the right to discover and prove the contradictions! *)"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_ayou",
+                        "t": "Probably because. . . I really can't learn to dance, so I was scolded by him many times, and the supervisor saw it. . .",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Why did Victor insist on you dancing?",
+                              "bgm": "tension"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "Because there used to be a. . . uh. . . former colleague who could dance. Maybe Victor also wanted me to be more versatile like him. . ."
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Which former colleague?"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "It's been a long time, and I can't quite remember that colleague's name. . .",
+                              "present": {
+                                "char_xiaohua": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Are you talking about Daniel Xiao?",
+                                      "bgm": "tension"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_ayou",
+                                      "t": "Ah. . . yes, it's Daniel Xiao. . .",
+                                      "unlockTopic": [
+                                        "t_s2_18"
+                                      ],
+                                      "bgm": "main"
+                                    }
+                                  ]
+                                }
+                              },
+                              "bgm": "tension"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_16": {
+      "char": "char_ayou",
+      "title": "Was anything unusual about the victim today?",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I feel nothing unusual. . ."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "He hasn't spoken to me all day today. But that's usually the case, nothing special.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "You said you have a good relationship with him, why doesn't he usually talk to you?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "Ah, yes, um. . . it's because. . . we all took our places to prepare for the performance as soon as the show started."
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_17": {
+      "char": "char_ayou",
+      "title": "What were you doing before and after the incident?",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I am responsible for three performances in the haunted house. Compared with the other two actors, my time is the most tight."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I need to change clothes quickly and move to the next point quickly. There is no time or energy to take care of other things."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "My performances are not like those of Victor and Sunny who require coordination. I rarely meet them in the venue, so I don't know what happened."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_18": {
+      "char": "char_ayou",
+      "title": "About the Former Colleague",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Daniel Xiao, like Sunny Chen, was previously in the day shift dance group.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What's the relationship between the two of them, if you know?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "This. . . should be good."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "Daniel was a graduate of Jiangpu Dance Academy and was very talented. He was mainly responsible for the choreography—and Sunny, of course, was also a choreographer. I'm quite envious of the performance they put together; it was wonderful.",
+                "unlockEv": [
+                  "ev_ayou_testimony1"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Daniel Xiao had an accident at Spot 5. . . over up there. . .",
+          "present": {
+            "ev_beam_marks": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "On the roof beam? I saw a roller there on the top beam. Is that some kind of mechanism? Does it have anything to do with you?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Um? Me, me? You. . . why do you ask?",
+                  "present": {
+                    "ev_ayou_prop_design": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "You said you used to design stage mechanisms three years ago. You must know something about this—like why it has marks of different depths on it."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "Oh, you said this trace. . . indeed, the deeper trace was left by Daniel Xiao.",
+                          "question": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "What about other traces?"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "Uh. . . those are probably. . . left over from the test."
+                              },
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "Test?"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "Right... because... at the very beginning, we thought that if the Red Death's image was taller and more imposing, it would create a stronger sense of oppression for the audience."
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "So during the initial design, there was an attempt to use beams to hoist a puppet pretending to be the Red Death. . . and then let the actors of The Prince's Wife pull the puppet to complete the pas de deux.",
+                                "unlockEv": [
+                                  "ev_hanged_reddeath"
+                                ]
+                              },
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "This means that in the original design, Sunny could complete the show herself, right?"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "Yes. . . . . ."
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "I found the body... I was about to do a full run-through of the haunted house, and when I passed Spot 5, I glanced over."
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "Daniel. . . hung there motionless, dead.",
+                                "present": {
+                                  "ev_zhencheng_testimony3": {
+                                    "resolved": false,
+                                    "dialogue": [
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "He died wearing a Red Death costume, didn't he?",
+                                        "bgm": "tension"
+                                      },
+                                      {
+                                        "s": "npc",
+                                        "speaker": "char_ayou",
+                                        "t": "Yes. . . . . ."
+                                      },
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "That would be strange."
+                                      },
+                                      {
+                                        "s": "npc",
+                                        "speaker": "char_ayou",
+                                        "t": "What? !"
+                                      },
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "Your statement is obviously inconsistent with certain evidence.",
+                                        "autoPresent": "Point out which evidence reveals the contradiction in Aiden Li's statement.",
+                                        "present": {
+                                          "ev_hanged_reddeath": {
+                                            "resolved": false,
+                                            "dialogue": [
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "The original design was to hoist the Red Death figure, wasn't it? If you were passing by in a hurry and saw the scene of the Red Death being hung, would your first reaction be \"Someone has been hanged here\"?",
+                                                "bgm": "tension"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "Ah! !"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "Moreover, there is something fishy. Even if someone was indeed hanged there, how could you identify it as Daniel Xiao? After all, both actors and puppets are wearing masks."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "Ahh. . . I'm not. . . I. . . I didn't. . . ! ! !"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "This can only point to one truth, and that is. . .",
+                                                "choices": {
+                                                  "question": "Choose:",
+                                                  "options": [
+                                                    {
+                                                      "text": "A Daniel Xiao was not wearing the Red Death costume when he hanged himself",
+                                                      "correct": false,
+                                                      "reply": "Well. . . . . ."
+                                                    },
+                                                    {
+                                                      "text": "B Daniel Xiao was killed by Aiden Li",
+                                                      "correct": false,
+                                                      "reply": "No. . . I didn't kill anyone!"
+                                                    },
+                                                    {
+                                                      "text": "C Daniel Xiao's death wasn't that simple",
+                                                      "correct": true
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "Daniel Xiao's death is not that simple. At least, as the first person to discover the body, you lied."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "But. . . I, I really didn't kill anyone! I swear to God!"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "I didn't identify you as the murderer, I just think that this matter needs to be re-examined. Please cooperate with our investigation until the dust settles."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "F-fine. . ."
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "You signal to Lyra Qin that you've discovered a new clue. She glanced at Aiden Li and quickly walked towards you."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "Sylva, how is your interview with the suspects going?"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_xiaozhi",
+                                                "t": "Very, very suspicious! It feels like no one is telling the truth."
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "You informed Lyra Qin of the doubts in Aiden Li and Sunny Chen's words, as well as Daniel Xiao's death three years ago and the rumors of Celeste Ming."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "It seems that we need to include things from three years ago into the investigation. At present, it seems that the two must be related."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "Just now, the park received a report from a tourist saying that important items were lost, and the tourist said they strongly suspected that the items were lost in the haunted house."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "Also, I asked Andy to open Victor Jiang's personal belongings cabinet, Sunny and Aiden also opened theirs, but nothing unusual has turned up so far. I've asked my colleagues to secure it—you can take a look tomorrow."
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "char_qin",
+                                                "t": "In addition, if I want to find out the ins and outs of this murder, I also need to talk to people related to Daniel Xiao's suicide three years ago."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "I've asked my colleagues to contact Celeste Ming, the former director of the performance department. Also, Faye Liu should be back tomorrow. Maybe we can get some new leads from them."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "It's getting late—you and Sidney should probably head back and get some rest."
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_xiaozhi",
+                                                "t": "See you tomorrow, Ms Qin!"
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "The first round of questioning has come to an end.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "This feels weird. You were just trying to piece together the relationships and motives.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "But the case has gotten complicated—and it's pulling in people and events from even further back.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "Those things that are no longer present and that not many people seem to remember - Daniel Xiao's death, the sudden resignation of the performance department director after Daniel Xiao's death, the anonymous harassment report, all these make you feel that they are somehow related.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "Ray Shi has been taking the lead in safety and optimization. . . It seems that he is deliberately avoiding the matter of Celeste Ming and Daniel Xiao.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "Sunny Chen said that she was not familiar with Daniel Xiao and kept trying to clear up the relationship. If it's really irrelevant, there's no need to explain that much at all. What is she afraid of?",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "Aiden Li. . . His reaction was the most suspicious among all the people. He repeatedly said that he had a good relationship with the deceased, but there were various indications that this was not the case.",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "Each of these three people is trying to hide something. Something must be found to pry their mouths open. I hope tomorrow's inquiry will yield more clues.",
+                                                "endChapter": true,
+                                                "bgm": "main"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "bgm": "tension"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_19": {
+      "char": "char_shihui",
+      "title": "About You",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "I am the director of the performance department. Like Andy, I have been working in the park for two years."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "I am responsible for the overall performance scheduling of the park, as well as the general planning of performance content and theme packaging. The haunted houses, float parades, night light shows, fireworks shows, etc. that's all my work.",
+          "present": {
+            "char_mingqi": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "It is said that the original designer of the haunted house was named Celeste Ming, who was your previous performance manager?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "Ah, haha, yes, he was the show manager before I came here.",
+                  "unlockTopic": [
+                    "t_s2_23"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "This job is very interesting, and I especially like the \"Mask of the Red Death\" theme of the haunted house every year, so I am particularly focused on it this year and have increased the budget for spare decorative props.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Every year? You mean, the \"Masque of the Red Death\" theme was played for more than a year, right?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Yes, this theme has been performed for three years. Due to budget reasons. . . it is impossible to replace a batch of props every year."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "So why do we need to have spare decorative props?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Props will also be lost during normal use. In addition, there have been cases where props were taken away by customers and mirrors were broken by children running around. . . So we can only spend our own money to buy some spare ones, and the actors will also have part of their bonus deducted. . .",
+                "unlockEv": [
+                  "ev_shihui_testimony1"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "All in all, I enjoy this job."
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_20": {
+      "char": "char_shihui",
+      "title": "About the Victim",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Victor Jiang was one of the main creators of this haunted house. He's very talented—some of the performance sequences in 'The Masque of the Red Death' were actually his original designs."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Similar to a veteran figure, right?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Right. He designed several versions of the performance's movement and performed it for several rounds before confirming it."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "He wasn't very easy to get along with—probably because he was so talented and a bit of a handful.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "In what way?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Well, he's the type who—how should I put it—would just call people 'trash' sometimes."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Did he ever say that to you?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "No, there is no conflict between the two of us. Because he came earlier than me, I directly let him take responsibility for many things without having to go through me. Although I am his leader in name, we actually don't have a hierarchy of superiors and subordinates."
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_21": {
+      "char": "char_shihui",
+      "title": "Victor's Relationships",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "He and Sunny were always joking around together. It was pretty obvious they were close."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Aiden Li, though... He seems quiet and reserved. Probably not one to loosen up with the others."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "I'm actually a little worried about Aiden. Victor and Sunny Chen always make fun of him together. . . sometimes he doesn't say anything when it goes too far.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Did they do anything excessive to Aiden Li?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "One time when I was passing by the rehearsal room, I saw Victor slamming the door and swearing. After opening the door, I saw Aiden wiping the water on the table alone, his face flushed. There is a broken cup on the ground. He said he accidentally knocked it off.",
+                "unlockEv": [
+                  "ev_shihui_testimony2"
+                ]
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Do you think Victor Jiang threw it?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "I have had such speculation."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "It's wrong to lose your temper with colleagues. I've told him about it too, but it doesn't seem to have any effect."
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_22": {
+      "char": "char_shihui",
+      "title": "What were you doing before and after the incident?",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "It was around six o'clock. Seeing that the order and atmosphere were relatively good, I went to the canteen to eat. When I was about to finish eating, I received a call from Sunny. She said that Victor was missing.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What time did she call?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "It was at 19: 25."
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_23": {
+      "char": "char_shihui",
+      "title": "About Celeste Ming",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Celeste Ming is indeed the designer of the first version of the haunted house. There are also float parades and other projects, which he also communicated, planned and approved with the park authorities."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "These innovative projects he did have brought a lot of benefits to the park. So even after he left, the park continued to use these design plans. After I took over, I added a lot of popular gameplay and details. It can be said to be a completely new version!",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Why did he leave?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "This. . . is a bit embarrassing to say. . . It is said that he has harassed actresses before. . ."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "I joined Paradise after those events. Everyone seems to avoid this person and rarely talks about him.",
+                "unlockEv": [
+                  "ev_shihui_testimony3"
+                ]
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "My job is to optimize the performance based on his work, so that everyone can better cope with the pressure of the performance and ensure everyone's physical and mental health.",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Wait. . . you specifically mentioned physical and mental health. Could it be because something happened before?",
+                      "bgm": "tension"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "Ah. . . well, this is a haunted house, so it's inevitable that some viewers will be scared and attack the actors."
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "Therefore, I have to adjust the movement lines, actions, and props according to certain standards, that is, so that the actors will feel safer even in the haunted house."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Well, although what you mentioned has indeed happened at some haunted house shows, the situation may be a little different for this haunted house. The reason is. . .",
+                      "choices": {
+                        "question": "Choose:",
+                        "options": [
+                          {
+                            "text": "A The venue is cramped, with no extra room",
+                            "correct": false,
+                            "reply": "In fact, this place is not small, it is 120 square meters larger than the haunted house in Nanzhou."
+                          },
+                          {
+                            "text": "B The audience is far from the actors",
+                            "correct": true
+                          },
+                          {
+                            "text": "C The performance has no frightening scenes",
+                            "correct": false,
+                            "reply": "Haunted houses still need to be scary. . ."
+                          }
+                        ]
+                      },
+                      "bgm": "tension"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Every performance is either a dance or a monologue, and they are all far away from the audience. The audience can't reach the actors even if they want to punch them. So what are you worried about?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "Haha, you are right. Slip of the tongue, slip of the tongue.",
+                      "question": {
+                        "resolved": false,
+                        "dialogue": [
+                          {
+                            "s": "player",
+                            "speaker": "none",
+                            "t": "Sometimes, slips of the tongue are caused by accidentally saying what is in your heart.",
+                            "bgm": "tension"
+                          },
+                          {
+                            "s": "npc",
+                            "speaker": "char_shihui",
+                            "t": "……",
+                            "question": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "So, what happened?"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "Okay……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "You got me. . ."
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "This happened before I came. It has had a very bad impact on the park and the performance department."
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "The park has also actively responded and dealt with it. We hope this matter will settle down soon.",
+                                  "bgm": "main",
+                                  "unlockTopic": [
+                                    "t_s2_24"
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_24": {
+      "char": "char_shihui",
+      "title": "Chaoye Park's Scandal",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "It is said that while the haunted house was being renovated, an actor who was rehearsing committed suicide here."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "suicide?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Yes. . . that actor's name is Daniel Xiao. . . he was from the previous day shift dance team.",
+          "unlockProfile": [
+            "char_xiaohua"
+          ],
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Where did he commit suicide and how?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "At Spot 5, it's. . . hanging."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What are the reasons for suicide?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "It is said that it is because Celeste Ming has been putting pressure on him. Unable to endure it, he chose an extreme method."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Because the haunted house was about to open, the park was worried that this incident would affect its operations, so it chose to privately compensate Daniel Xiao's family for a sum of money to settle the matter."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Moreover, in order to appease the anger of the family members, the paradise fired Celeste Ming and recruited me."
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_entrance_tutorial": {
+      "char": "char_xiaozhi_p0",
+      "title": "Investigate with Sidney",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p0",
+          "t": "Sis, what should we do?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "On the upper left side is the \"Locations\" list, which indicates the locations currently available for investigation. As the story progresses, more locations will be unlocked."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "We can first enter each performance location together and click \"Observe the scene\". If there are clues, they will be automatically collected in the right column. If there are parts of the scene that require some props to be investigated, we need to get the props first."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Props will also be placed in the evidence slot, which means that this slot serves both the functions of evidence and props."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Then, we can make preliminary speculations based on the performance details mentioned previously and the evidence observed on site."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Under the \"Places\" list on the left, the \"live characters\" who can talk to each other in the corresponding places will be listed in the form of photos."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "We can click on the person's photo, and after chatting with the other party, we can click on the \"Topic\" under the main window to make basic inquiries with the other party."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "All important clues in the conversation are automatically collected into the three columns on the right."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "During the inquiry, we can take the initiative to \"question\" and \"produce evidence\" on the suspect. Please note that the \"Question\" and \"Evidence\" buttons can only be effectively clicked when the corresponding sentences are fully displayed."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "By exposing each other's contradictions or lies, we may get new clues or open up new topics. In the \"Topic\" and \"Clue\" pop-up windows, you can use the keyboard's A/D keys to quickly switch between sentences and clues."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Therefore, our basic investigation process is to conduct on-site investigation and reasoning, then find different subjects to understand the facts from their respective perspectives, find contradictions, overcome them one by one, and finally arrive at the truth."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p0",
+          "t": "Yay! Let's get started!",
+          "unlockLoc": [
+            "loc_point1"
+          ],
+          "unlockTopic": [
+            "t_s2_1"
+          ]
+        }
+      ]
+    }
+  }
+}

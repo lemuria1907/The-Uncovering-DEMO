@@ -1,0 +1,1954 @@
+{
+  "locations": {
+    "ghost_house_gate_c1s4": {
+      "name": "Haunted House Entrance",
+      "desc": "Location: Haunted House Entrance",
+      "chars": [
+        "char_xiaozhi",
+        "char_andy",
+        "char_qin"
+      ],
+      "bg": "images/chapter1/bg_ghost_entranceday.jpg",
+      "onEnter": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "If you need any errands done, just come to me, Sis."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Leave any park-related investigation to me!"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "If you need us to look into something, just show us the evidence and tell us what to check. We'll dig deeper for you, Sis!"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "After you've finished questioning and organizing the clues, come see me. We'll review the clues together."
+        }
+      ],
+      "hotspots": []
+    },
+    "interrogation_c1s4": {
+      "name": "Interrogation Area",
+      "desc": "Location: Interrogation Area",
+      "chars": [
+        "char_antong",
+        "char_rulan",
+        "char_zhencheng",
+        "char_ayou"
+      ],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_qin": {
+      "name": "Lyra Qin",
+      "info": "Old acquaintance",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_andy": {
+      "name": "Andy Liu",
+      "info": "Park employee",
+      "sprite": "images/chapter1/char_andy.png"
+    },
+    "char_xiaozhi": {
+      "name": "Sidney Xi",
+      "info": "Detective assistant",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_antong": {
+      "name": "Anton Han",
+      "info": "Pickpocket",
+      "sprite": "images/chapter1/char_antong.png"
+    },
+    "char_rulan": {
+      "name": "Orchid Ru",
+      "info": "Victor's girlfriend",
+      "sprite": "images/chapter1/char_rulan.png"
+    },
+    "char_zhencheng": {
+      "name": "Sunny Chen",
+      "info": "Haunted house actor",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "Aiden Li",
+      "info": "Haunted house actor",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_aling": {
+      "name": "Lynn Zhao",
+      "info": "Daniel Xiao's fiancée",
+      "sprite": "images/chapter1/char_aling.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "October 29, 2025, 12:30 PM, Chaoye Park, Haunted House Entrance"
+    },
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "Lyra Qin looks at you. It seems she has something to say."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "Sylva, we have made some new progress in the investigation."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "One of our officers wanted to use surveillance footage to check whether any of the haunted house visitors at the time looked suspicious. Unfortunately, the queue area is blocked by an awning, and the exit footage only shows people from behind, so faces cannot be identified."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "But there was an unexpected lead. We found that the phone reported missing by a visitor on the day of the incident was indeed stolen."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "A man who came out of the exit appeared two hours later at a rest pavilion near the haunted house, bent down, and put something into the grass. That is suspicious."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "After comparing the footage with the gate guards and investigating, we found this pickpocket. His name is Anton Han. The strange thing is, he has no theft record at all. In other words, he is not a habitual offender.",
+      "unlockProfile": [
+        "char_antong"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "Also, regarding the public outcry caused by an actor being harassed, our investigation found that the person involved has already deleted the post. The officers found netizens who saw it back then and took screenshots, allowing us to reconstruct the key information.",
+      "unlockEv": [
+        "ev_public_outcry_screenshot"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "In addition, one very careful officer called the hospital where Faye's mother was supposedly hospitalized. The hospital said there was no admission record for that patient during those two days. In other words, Faye lied."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "Under those circumstances, Faye was suspected of fabricating an alibi together with her mother. So we checked Faye's itinerary again and found that she did not lie about her trip."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "She did buy only two tickets, one outbound and one return, and both have ride records. In other words, her suspicion can basically be cleared. But for now, we still do not know why she lied."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "We also investigated Daniel Xiao's relationships before his death. His parents and family are not in this city, and there are no travel records showing them coming to or leaving this city, so they can be ruled out as suspects."
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "Daniel Xiao once had a fiancée named Lynn Zhao. Their former neighbors said that after Daniel died, Lynn was heartbroken and soon moved away from this city, seemingly returning to her hometown to live.",
+      "unlockProfile": [
+        "char_aling"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "At the same time, we also looked into the Victor's girlfriend. Her name is Orchid Ru, and she works at an animal rescue center in this city.",
+      "unlockProfile": [
+        "char_rulan"
+      ]
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "The pickpocket Anton Han and Ru should both be in the Interrogation Area. You can talk to them later.",
+      "unlockLoc": [
+        "ghost_house_gate_c1s4",
+        "interrogation_c1s4"
+      ],
+      "unlockTopic": [
+        "t_qin_truth_so_far",
+        "t_andy_public_outcry",
+        "t_xiaozhi_investigate1",
+        "t_antong_theft",
+        "t_rulan_relation",
+        "t_rulan_relationships",
+        "t_rulan_day",
+        "t_zhencheng_theft",
+        "t_zhencheng_xiaohua_relation",
+        "t_zhencheng_public_outcry",
+        "t_ayou_theft",
+        "t_ayou_public_outcry"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_qin": [
+      {
+        "s": "npc",
+        "speaker": "char_qin",
+        "t": "If you find anything new, tell me about it."
+      }
+    ],
+    "char_andy": [
+      {
+        "s": "npc",
+        "speaker": "char_andy",
+        "t": "Leave any park-related investigation to me!"
+      }
+    ],
+    "char_xiaozhi": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "The best detective assistant, Sidney, is sincerely at your service!"
+      }
+    ],
+    "char_antong": [
+      {
+        "s": "npc",
+        "speaker": "char_antong",
+        "t": "I know I was wrong, okay! I returned the stuff too, so please do not arrest me!"
+      }
+    ],
+    "char_rulan": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "Orchid Ru's eyes are red and swollen, and she looks extremely worn out. She probably has not slept much these past two days."
+      }
+    ],
+    "char_zhencheng": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "Sunny anxiously twists her fingers."
+      }
+    ],
+    "char_ayou": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "Aiden looks extremely nervous."
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_qin_truth_so_far": {
+      "char": "char_qin",
+      "title": "The Truth Obtained So Far",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "How did the questioning go?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_qin",
+          "t": "Let us start with Daniel Xiao's death three years ago. Based on your investigation, what exactly happened that day?",
+          "present": {
+            "ev_ayou_testimony2": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_qin",
+                  "t": "I see.",
+                  "bgm": "tension"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_qin",
+                  "t": "Then, in the incident from three years ago, what is the truth behind the anonymous post and Celeste Ming's harassment incident?",
+                  "present": {
+                    "ev_zhencheng_testimony5": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "That makes everything fit.",
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "Why did the pickpocket we caught put the stolen items in the grass?",
+                          "present": {
+                            "ev_antong_testimony1": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_qin",
+                                  "t": "I did not expect this matter to be connected to Victor's death too."
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_qin",
+                                  "t": "So, what evidence or testimony can we use to rule out some of the suspects?",
+                                  "present": {
+                                    "ev_tourist_at_back": {
+                                      "resolved": false,
+                                      "dialogue": [
+                                        {
+                                          "s": "npc",
+                                          "speaker": "char_qin",
+                                          "t": "I see. That means the culprit may have entered the haunted house as a visitor on the night of the incident."
+                                        },
+                                        {
+                                          "s": "npc",
+                                          "speaker": "char_qin",
+                                          "t": "Regarding Daniel Xiao's girlfriend, Lynn Zhao, did you discover anything noteworthy?",
+                                          "present": {
+                                            "ev_zhencheng_testimony4": {
+                                              "resolved": false,
+                                              "dialogue": [
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "Although we cannot confirm this information right now, it may be useful later. Also, do you think there is a problem with Victor's girlfriend's alibi?"
+                                                },
+                                                {
+                                                  "s": "player",
+                                                  "speaker": "none",
+                                                  "t": "She gave me the ticket stub for the movie that night."
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "She previously gave our officer a statement about what happened that night. By the way, did you find the schedule for that cinema that day?",
+                                                  "autoPresent": "Please present the cinema schedule",
+                                                  "present": {
+                                                    "ev_cinema_schedule": {
+                                                      "resolved": false,
+                                                      "dialogue": [
+                                                        {
+                                                          "s": "player",
+                                                          "speaker": "none",
+                                                          "t": "Yes, it is right here."
+                                                        }
+                                                      ]
+                                                    }
+                                                  }
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "Good. Then we can compare the testimonies."
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "Also, why did Faye lie about her itinerary? Who killed Victor Jiang? How did the killer do it? I believe you already have the answers."
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "Then next, tomorrow will be the moment when the final truth is revealed."
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_qin",
+                                                  "t": "Let us stop here for today! Tomorrow, stay fully focused and clear up every last doubt in one go!"
+                                                },
+                                                {
+                                                  "s": "npc",
+                                                  "speaker": "char_xiaozhi",
+                                                  "t": "Twenty times fully focused!"
+                                                },
+                                                {
+                                                  "s": "player",
+                                                  "speaker": "none",
+                                                  "t": "Haha, I am ready!"
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "After leaving the Interrogation Area, you sorted through the important clues you had just heard in your mind.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "Daniel Xiao's death three years ago was an accident disguised as a suicide. To protect himself, Victor Jiang had Aiden Li, who obeyed him completely at the time, fake the scene.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "Sunny was the person involved in that public-opinion scandal. The person she originally accused in her post was someone else, and after Victor Jiang's radical actions, she felt she had to do something to repay him.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "Faye had a conflict with Victor. She lied about her mother being hospitalized, but her motive for lying is still unclear.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "Then there are Aiden Li and Anton Han. They planned a clumsy theft, yet on that very day, Victor Jiang died.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "You already have an answer about who the real killer is, but many questions still linger in your mind.",
+                                                  "_cutscene": true
+                                                },
+                                                {
+                                                  "s": "system",
+                                                  "speaker": "none",
+                                                  "t": "Tomorrow will be the moment when the whole truth is revealed. And you're ready for it.",
+                                                  "endChapter": true,
+                                                  "bgm": "main"
+                                                }
+                                              ]
+                                            }
+                                          }
+                                        }
+                                      ]
+                                    }
+                                  }
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  },
+                  "bgm": "tension"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_andy_public_outcry": {
+      "char": "char_andy",
+      "title": "The Public Outcry Three Years Ago",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Hey, are you still looking into the incident where Celeste Ming was exposed online?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Yes. Celeste Ming clearly said he never did anything like that, and people generally have not reported experiencing his behave inappropriately."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "In the screenshot Lyra Qin provided, the poster Uka accused a certain park executive without naming anyone. Is it possible she was not referring to Celeste Ming at all?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The poster's current answer is so ambiguous that it is actually somewhat suspicious. We need to pin down exactly who the poster is, and who she was accusing."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Okay. Besides the people currently being questioned, do you have anyone else in mind to investigate?",
+          "present": {
+            "ev_ayou_testimony3": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Lena Qiu and Gwen Gao. I want to learn more about these two people."
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "Andy lowered his head and tapped on his phone."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "Got it! This is the information I could find. Lena Qiu, 27, worked in the park's food service department and was responsible for the drink stand. She left about a year and a half ago because of a new job opportunity; Gwen Gao, 24, was responsible for admission ticket checks and left half a year ago because she planned to prepare for the civil service exam."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Right, food service staff and ticket inspectors both need work uniforms, don't they?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "Yes. Generally, they have to wear them while in the park. There are two sets, one with skirts and one with pants."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "What about the actors in the performance department?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "They also have their own costumes, but the dress code is not quite as strict."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "After the period when the post was made, two executives left. One was Jasper Wang from the administrative team, and the other was Celeste Ming. Since then, there do not seem to have been any similar rumors.",
+                  "unlockEv": [
+                    "ev_andy_investigation"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_xiaozhi_investigate1": {
+      "char": "char_xiaozhi",
+      "title": "Things to Investigate 1",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "Is there anything I can help with, sis?",
+          "present": {
+            "ev_rulan_ticket": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "I need to confirm Orchid Ru's alibi. For example, we can ask the cinema staff whether Orchid Ru really had her ticket checked and appeared at the theater. You can take her photo with you."
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "About 30 minutes later, Sidney returned. It seems a one-way trip between the cinema and the haunted house takes a little over ten minutes."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "Sis, I checked with the ticket inspector from that night. Because it was during the holiday and also a weekend, those screenings were especially crowded. She doesn't remember the faces of the people whose tickets she checked at all."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "But the ticket inspector recognized Orchid Ru because midway through the film, she came out of the screening room to use the restroom. There weren't many people in the lobby then, so she stood out. She looked like she had diarrhea and had a very bad complexion, and only came back after more than ten minutes.",
+                  "unlockEv": [
+                    "ev_ticket_checker_testimony"
+                  ]
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Nice work!"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "If you need anything, please come find me again!",
+                  "unlockTopic": [
+                    "t_xiaozhi_investigate2"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_xiaozhi_investigate2": {
+      "char": "char_xiaozhi",
+      "title": "Things to Investigate 2",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi",
+          "t": "Sidney, the best detective assistant, sincerely at your service!",
+          "present": {
+            "ev_rulan_testimony2": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Orchid Ru said that midway through the movie, she went to the restroom because her stomach hurt. At that point, the movie was probably around the scene after the Pumpkin King stole the magic wand. Could you help me confirm roughly how many minutes after the start that scene happens?"
+                },
+                {
+                  "s": "system",
+                  "speaker": "none",
+                  "t": "After a short while."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "I got it! That scene happens about 40 minutes after the film starts."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "In other words, around 19:10, Orchid Ru came out of the screening room to use the restroom."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "So that means she can be ruled out as a suspect."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "It looks that way... but I still have one doubt. Could you help me check Yaohua Cinema's screening schedule that night?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_xiaozhi",
+                  "t": "That's easy! A quick check will tell us!",
+                  "unlockEv": [
+                    "ev_cinema_schedule"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_theft": {
+      "char": "char_antong",
+      "title": "About the Theft",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "Come on, let me go already. I left the park empty-handed! Strictly speaking, it should not count as stealing!"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Stop making excuses. Taking something out of a visitor's pocket is theft! By the way, why did you put it back after stealing it?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "I heard something happened here! The performances were all stopped! I thought you were investigating me! Of course I put the phone back!"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Did you know someone died?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "I did not know then, but I know now! It has nothing to do with me!"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What did you steal? Tell me."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "Just one phone!"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Only one phone? You did not secretly put these things there, did you?",
+          "autoPresent": "Point out the other items suspected of being stolen",
+          "present": {
+            "ev_cello_case_items": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "Of course not! We thieves have dignity! Stuff this cheap is not worth our time at all!",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "Speaking of that, I am curious too. Have you been a thief for a long time?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_antong",
+                        "t": "Of course! Don't question my professional experience!"
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "Then that is strange...",
+                        "autoPresent": "Point out the evidence that can refute Anton",
+                        "present": {
+                          "char_antong": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "Why do the police not have a criminal record for you?"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_antong",
+                                "t": "Uh, that is because... I am a top-tier master thief! A super invincible technical expert! No one can catch me!",
+                                "question": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Then how did you get caught on surveillance camera? Did you not scout the place in advance?"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_antong",
+                                      "t": "Aaaah... I got careless! Even a good horse stumbles!"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Fine, stop pretending. All of this means...",
+                                      "choices": {
+                                        "question": "This means...",
+                                        "options": [
+                                          {
+                                            "text": "A You are not a professional at all",
+                                            "correct": true
+                                          },
+                                          {
+                                            "text": "B You were caught on camera on purpose",
+                                            "correct": false,
+                                            "reply": "Whatever you say!"
+                                          },
+                                          {
+                                            "text": "C You are the killer",
+                                            "correct": false,
+                                            "reply": "I am not! That is slander!"
+                                          }
+                                        ]
+                                      }
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "You are not really in this line of work, are you? Tell me, what is the real reason you stole the phone? If you keep hemming and hawing, I will have Ms Qin detain you for seven days first."
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_antong",
+                                      "t": "Ugh... you are so annoying!",
+                                      "unlockTopic": [
+                                        "t_antong_true_reason"
+                                      ]
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_true_reason": {
+      "char": "char_antong",
+      "title": "The Real Reason for Stealing",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "It is true that someone asked me to do it."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "But the reason is complicated. And I was not really trying to steal the phone and sell it for money. The main reason I did it was to attract attention, so everyone would investigate... a certain person."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "A certain person? Who?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "It does not matter anymore...",
+          "present": {
+            "char_changwei": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "You mean him, right? He is already dead, so it does not matter anymore.",
+                  "bgm": "tension"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "Y-yes."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Then I suspect the lipstick, hair clips, and other items in the cello case were actually things Victor stole from visitors, right?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "Mm... yeah."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "But he never stole valuables, so visitors never reported anything. Or rather, by the time they noticed, they had usually already left the haunted house, and they couldn't be sure where they had lost the items."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "A phone is different. People use it so often that once it was stolen, it would likely be discovered very quickly."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "So you deliberately stole something easy to notice, hoping to frame the habitual offender Victor and lead the park to investigate him. Am I right?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "Y-yes..."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "You're not a park employee, so how do you know so much about Victor? This person must have told you, right?",
+                  "choices": {
+                    "question": "This person must have told you, right?",
+                    "options": [
+                      {
+                        "text": "A Sunny Chen",
+                        "correct": false,
+                        "reply": "Ahaha..."
+                      },
+                      {
+                        "text": "B Ray Shi",
+                        "correct": false,
+                        "reply": "Who is that?"
+                      },
+                      {
+                        "text": "C Aiden Li",
+                        "correct": true
+                      }
+                    ]
+                  },
+                  "bgm": "tension"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_antong",
+                  "t": "Not necessarily. It could also have been that dancing girl, right?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "It couldn't have been her. First, Aiden said that both Sunny and Victor were very unhappy about the bonus deductions. Also, one of Sunny's personal belongings had traces of a special habit on it, and coincidentally, Victor had the same habit.",
+                  "autoPresent": "Point out what led you to this guess.",
+                  "present": {
+                    "ev_zhencheng_locker": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Judging from Sunny's locker, she and Victor shared the habit of stamping the park LOGO on paper. I'm afraid those were...",
+                          "choices": {
+                            "question": "I'm afraid those were...",
+                            "options": [
+                              {
+                                "text": "A Something used for counting",
+                                "correct": true
+                              },
+                              {
+                                "text": "B A mysterious code",
+                                "correct": false,
+                                "reply": "Wow, a code. How impressive."
+                              },
+                              {
+                                "text": "C The number of milk teas they drank",
+                                "correct": false,
+                                "reply": "That milk tea really is good!"
+                              }
+                            ]
+                          },
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Those were things they used to count the items they stole for themselves, right? I thought it was strange from the start. Why did both of their cases contain things like that, and why had Victor written dates beside them?"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Only later did I connect the dots: perhaps the two of them were accomplices in this matter."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "Yes... You figured all of that out..."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "Aiden is my buddy. He thought what those two were doing was very wrong, but he didn't have the courage to report it himself."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "So he asked me to help him steal something easy to discover, so the matter would be thoroughly investigated and exposed."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_antong",
+                          "t": "I never expected Victor to die that night.",
+                          "unlockEv": [
+                            "ev_antong_testimony1"
+                          ],
+                          "unlockTopic": [
+                            "t_antong_night"
+                          ],
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_antong_night": {
+      "char": "char_antong",
+      "title": "What Happened that Night",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "Actually, I was pretty nervous. When I was in college, a mentor taught me a few pickpocket tricks. But I hadn't really done this much, so after Aiden asked me, I practiced for several days."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "That day, I went in during the third and fourth shows. During the third one, I couldn't find a chance to make a move, so I just pretended to be a visitor and came out empty-handed."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "During the fourth show, while lining up, I observed more carefully where everyone kept their belongings. After going in, I finally stole a phone in the dark and came out with it. I was so nervous my whole palm was sweating, and I kept close to the crowd the entire time."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Did you sense any sounds or anything unusual?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "No. When I walked from Spot 1 to Spot 2, I made sure to stay at the very back of the group. I also kept an eye on the people at the edges, in case Victor or Sunny were around. Luckily, neither of them was there the whole time, so I got through that part without any issues."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "Although, now that you mention it, there does seem to have been something a little strange..."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What was it?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "I felt that at the exit, someone was walking behind me."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "Because I was worried about being seen, I kept checking whether I was at the very end of the group. But when we were walking toward Spot 6, I realized there was still someone behind me."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What? Are you sure it wasn't an actor following you?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_antong",
+          "t": "I'm sure. I can recognize actors' costumes. Out of the corner of my eye, I saw... the person seemed to be just an ordinary visitor.",
+          "unlockEv": [
+            "ev_tourist_at_back"
+          ]
+        }
+      ]
+    },
+    "t_rulan_relation": {
+      "char": "char_rulan",
+      "title": "Relationship with Victor",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I... I was his girlfriend. We had been dating for over a year..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I thought he was a decent person... Although we weren't living together yet, we had plans for that..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I never expected something like this to happen..."
+        }
+      ]
+    },
+    "t_rulan_relationships": {
+      "char": "char_rulan",
+      "title": "About Victor's Relationships",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "He... most of his friends seemed to be park colleagues.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Who did he mention more often?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "He didn't really mention his coworkers by name..."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "If we're talking about people he had conflicts with... he had a bad temper, and he got into some disputes with the neighbors from time to time..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I often heard him say he couldn't stand so-and-so, or that he'd argued with someone again... There were quite a lot of things like that. That temper really did cause him plenty of trouble..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "As for me... after drinking, he'd lose his temper for no reason. Other than that, there wasn't much.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Then what happened to the wounds on your arms and hands?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "Oh, those are from my cat. She gets a little feisty sometimes."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_rulan_day": {
+      "char": "char_rulan",
+      "title": "The Night of the Incident",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "Even though it was Sunday, I was working a shift from 9 in the morning until 5 in the evening."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I knew Victor had performances around then and would be busy until pretty late, so I didn't bother him.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Have you ever watched their haunted house performance?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "Ah... no... I'm rather scared of that sort of thing."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Then have you been there during the day?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_rulan",
+                "t": "During the day... yes, I went during the day. He showed me around his workplace a little."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "Since it's Halloween season, I wanted to get into the holiday spirit, so after work I went to see a movie, Halloween Wonder Night."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Which screening did you see? Do you have a ticket as proof?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "It was the 18:30 screening. The ticket stub... I haven't thrown it away yet. Do you need it...?",
+          "unlockEv": [
+            "ev_rulan_ticket"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "The movie was good. It ended a little before eight, so I went home.",
+          "present": {
+            "ev_ticket_checker_testimony": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "I hear you went to the restroom for quite a long time midway through."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_rulan",
+                  "t": "Yes. During the movie my stomach started hurting a bit, and later I really couldn't hold it anymore, so I went out to use the restroom."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "About what part of the plot was playing when you went to the restroom?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_rulan",
+                  "t": "It was around... after the Pumpkin King stole the magic wand from the museum...",
+                  "unlockEv": [
+                    "ev_rulan_testimony2"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_rulan",
+          "t": "I didn't find out until yesterday that he had already..."
+        }
+      ]
+    },
+    "t_zhencheng_theft": {
+      "char": "char_zhencheng",
+      "title": "About the Theft",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I don't know anything about that."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Stealing phones and so on has nothing to do with me. Didn't you already catch the thief?",
+          "present": {
+            "ev_antong_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Why did you and Victor steal tourists' belongings?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "……"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "H-how did you find out?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Anton Han, the pickpocket caught today, said so. He said Aiden had known about what you and Victor were doing for a long time."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Wh-what? Aiden? He really makes me mad..."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "If he didn't want us to continue, he could have come straight to me and Victor to say so, couldn't he? What was the point of stabbing us in the back? Seriously, enough already."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "So you really were stealing tourists' belongings with Victor? Why?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Heh. Do you know, the haunted house props are often stolen or damaged? It's happened so many times."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Do you have any idea how annoying those rowdy adults and children crashing around everywhere are?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Masks have gone missing three times, light stands have been knocked over four times, and there have been countless little trinkets and decorations... Every time something goes wrong, we have to fill out a Prop Damage/Loss Report Form in duplicate: one copy to the Performance Department, one to Operations. It's absolutely maddening."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "The Performance Department tells us to watch the props more carefully ourselves, while Operations says performance props are the Performance Department's responsibility. They pass the buck back and forth, and no one will help us add a barrier, post a conspicuous notice, or remind visitors over the PA to watch the show respectfully."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Victor went to Ray about it. Ray had a good attitude and said he'd coordinate with Operations later. And then? Nothing happened."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Later I heard from a coworker that he did coordinate with them, but Operations felt adding barriers would affect the visitor experience, and every other measure was rejected too. So Ray just spinelessly squeezed the Performance Department's budget to buy backup props."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Victor and I were really angry. One time while drinking, Victor suggested that we mess with the tourists too."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "In reality, we only took a few small things! And we were never caught! Compared to the backup props that cost so much money, these things hardly count for anything, right?"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_zhencheng_xiaohua_relation": {
+      "char": "char_zhencheng",
+      "title": "About Daniel's Relationships",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "As far as coworkers go, I think Daniel Xiao maintained ordinary coworker relationships with everyone. It didn't seem like he was especially close to anyone."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I heard he had a girlfriend, but I've never met her and don't know her.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Who did you hear he had a girlfriend from? Did Daniel mention it himself?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "He mentioned it himself. He said he and his girlfriend had a very good relationship and brought up wanting to get married. What was her name again? Hmm...",
+                "present": {
+                  "char_aling": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "Was it Lynn Zhao?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "Now that you say that, it does sound like a similar name."
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "Although you've never met her, did you ever hear Daniel mention her job, age, or how they met?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "Hmm... I don't really remember...",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Any small details from daily life would help too."
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_zhencheng",
+                              "t": "Hmm... oh, I just remembered one thing. Maybe his girlfriend wasn't in very good health? I heard she often went to the hospital for injections. Whenever Daniel brought it up, he looked really concerned. Their relationship must have been pretty good.",
+                              "unlockEv": [
+                                "ev_zhencheng_testimony4"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_zhencheng_public_outcry": {
+      "char": "char_zhencheng",
+      "title": "Celeste Ming's Scandal",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I saw the posts online too, but what does that have to do with me?",
+          "present": {
+            "ev_ayou_testimony3": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "But you were dealing with something similar back then, weren't you?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "……"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "Dealing with what? Because of whom? Say it clearly.",
+                  "present": {
+                    "ev_andy_investigation": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Do you know this Jasper Wang?",
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "...No, I don't."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Judging by your expression, it doesn't look like you don't know him..."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "You're the one who made that post, aren't you?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "So many people complained about him. Why would you think it was me?",
+                          "choices": {
+                            "question": "Please choose:",
+                            "options": [
+                              {
+                                "text": "A Because the timing doesn't add up",
+                                "correct": false,
+                                "reply": "……"
+                              },
+                              {
+                                "text": "B Because of the uniform",
+                                "correct": true
+                              },
+                              {
+                                "text": "C Because of the job duties",
+                                "correct": false,
+                                "reply": "……"
+                              }
+                            ]
+                          },
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Because of the uniform. I specifically asked Andy about the park's rules regarding uniforms. Food-service staff and ticket inspectors represent the park's public image, so they have to wear their work uniforms in the park at all times."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "And in that post, one line from the harasser was mentioned: \"Your skirt is so short. Did you wear it on purpose for me?\""
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "So what? Other employees wear skirts too, don't they?"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "True, everyone has skirt uniforms, but the key issue is...",
+                          "choices": {
+                            "question": "Please choose:",
+                            "options": [
+                              {
+                                "text": "A The length of the skirt",
+                                "correct": false,
+                                "reply": "Heh, you're right. Applause for you..."
+                              },
+                              {
+                                "text": "B The way it was phrased",
+                                "correct": true
+                              },
+                              {
+                                "text": "C The season",
+                                "correct": false,
+                                "reply": "Fine, whatever you say..."
+                              }
+                            ]
+                          }
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Because of the way the harasser phrased it. He said, \"on purpose\" for him. Even if a food-service employee or ticket inspector walked up to him in a short skirt, he couldn't possibly say she was wearing it \"on purpose,\" could he?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "Ah!"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "During work hours, food-service staff and ticket inspectors must wear the park's standard uniforms. That wording only works if a woman in her own skirt walks up to him. Outside performance hours, only performers aren't required to wear uniforms, right?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "I made the post. Happy now?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "Celeste Ming and Jasper Wang have both been gone for so long. Even if you're sure I made the post, what can you do about it? Tell Ray? Have them issue a formal criticism saying I caused negative impact?"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Being harassed and making that post weren't your fault. Telling the truth will only prove that you're a brave, outstanding employee who isn't afraid of authority."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "I'm investigating this because too many doubts still haven't been cleared up. I want the complete truth."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "All right. You're right. It's just that I've heard too many stories like that... After a problem appears, nobody solves the problem; instead, they go after the person who raised it... So I was really worried..."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_zhencheng",
+                          "t": "I'll talk... about that incident, and about Victor's connection to it.",
+                          "unlockTopic": [
+                            "t_zhencheng_public_outcry_truth"
+                          ],
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_zhencheng_public_outcry_truth": {
+      "char": "char_zhencheng",
+      "title": "The Truth Behind the Scandal",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "That's right. That post wasn't about Celeste Ming. It was about that person in the admin team. I don't even want to say his name. Disgusting."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Back then... I really was often late, and he always used that as an excuse to call me into his office. Of course, it wasn't just me. Other girls suffered because of him too."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "During that period, I felt that person was getting more and more out of line, but I didn't dare confront him directly, so I posted online."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "After one rehearsal, Victor asked me whether I had made the post. So I told him about that person."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "He thought for a moment, then told me not to worry too much and said he would find a way to handle it."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Only later did I learn that after work, he called a few buddies, put a sack over that person on his usual way home, and beat him up."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "He also warned him not to harass anyone again. That guy was a coward. After that, not only did he not dare touch us, he was scared even when we got near him, like a filthy rat, always avoiding our eyes and scurrying away."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Soon after, he resigned."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "But what happened with your post? When people hinted that it might have been about Celeste Ming, why didn't you refute them?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "At first, I didn't respond to any of the wild speculation online. But..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "I knew Victor was very resentful of Celeste back then. And several times, Victor told me he thought that person was annoying and wished he would resign soon too."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "So I replied to the post with some ambiguous comments..."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "So this ended up being blamed on Celeste Ming, is that it?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "Yes... I... I'm very sorry...",
+          "unlockEv": [
+            "ev_zhencheng_testimony5"
+          ]
+        }
+      ]
+    },
+    "t_ayou_theft": {
+      "char": "char_ayou",
+      "title": "About the Theft",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Uh, I don't know?",
+          "present": {
+            "ev_antong_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Enough. Stop making excuses. You know perfectly well."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "……"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "If an actor were caught stealing from guests, not only would they be fined and fired, the show might even be shut down. Why would you still do it?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "I'm guessing it had to do with that incident. Before Victor died, he often hinted to other people that you were connected to Daniel Xiao's death."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "What he said probably wasn't just a joke, was it?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "There's no point hiding it now. Daniel was wearing the Red Death costume when he was hanged from the crossbeam at Position 5. Please tell me the full story in detail.",
+                  "unlockTopic": [
+                    "t_ayou_xiaohua_death_truth"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_ayou_public_outcry": {
+      "char": "char_ayou",
+      "title": "Celeste Ming's Scandal",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I did hear about that. It was some kind of post, I think? I can't remember exactly what it said.",
+          "present": {
+            "ev_public_outcry_screenshot": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "This is it, right? Take a look and see if it jogs your memory."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Ah, right... that's the one."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Do you think what's written here is true? Have you ever seen Celeste Ming talk to female actors like this, or make inappropriate physical contact?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Uh... no... or maybe I just didn't notice."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "But I vaguely remember someone saying that another manager had behaved like that before."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Hm? Are you saying someone else harassed female actors three years ago?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Yeah... but that guy left soon after. I remember a few of the girls at work saying how relieved they were—finally gone, finally peaceful."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Which girls? We need to check that out."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "Let me think. Mainly Lena Qiu and Gwen Gao. But they weren't in the performance department. I think I also heard Sunny mention it, though.",
+                  "unlockEv": [
+                    "ev_ayou_testimony3"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_ayou_xiaohua_death_truth": {
+      "char": "char_ayou",
+      "title": "The Truth Behind Daniel's Death",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "O-okay..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Daniel Xiao really didn't die by suicide..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "His death was an unfortunate safety accident."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "It happened on October 8, 2022. Everyone was preparing for the upcoming Halloween haunted house special event, and I had also started rehearsing for the performance."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Of course, I was responsible for some of the props, so I was one of the people going in and out of the haunted house most often. Back then, I often saw Victor directing Daniel and Sunny in rehearsal."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "After Victor tried using a suspended mannequin as the Red Death, he wasn't satisfied. So he wanted Daniel to try performing movements on the hanging rope."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "The day of the accident should have been his first time testing that. To get enough height, he placed a plastic stool on top of the box."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "A little after four that afternoon, I was carrying things over when I saw the Red Death hanging from the overhead beam. At first I thought it was a prop and went to tidy it up."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Very quickly, I realized it wasn't a prop... one of his safety clasps had come loose, and the rope had wrapped around his neck. He must have accidentally kicked the plastic stool while struggling, and it fell to the side of the box."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "His feet were honestly just a tiny distance away from the prop box, but that tiny distance cost him his life..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I quickly called Victor over. When he saw it, he was completely shocked. He asked me whether I had told anyone else about it."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I said no, that I had only called him. He then said that if this was classified as a safety accident, the haunted house project might not be able to open smoothly that year. And he would be the person primarily responsible for the accident, possibly facing the risk of being fired."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I said... I would help him with it. Because... at the time, he had encouraged me a lot, and I naturally saw him as an older brother. Faced with a scene like that, I said I would listen to him.",
+          "unlockTopic": [
+            "t_ayou_changwei_past"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Victor came up with a plan. He had me remove the safety clasp and put the safety rope around Daniel's neck, making it look like a rope used for suicide. To outsiders, we would say Daniel had been overwhelmed and killed himself."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "It just so happened that shortly before that, Celeste Ming had been dissatisfied with Daniel's performance and scolded him in front of many people after rehearsal. Victor used that as material, exaggerating the seriousness of the incident and telling people everywhere that Daniel Xiao had been depressed for days because of it."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "In my heart, I had still been making excuses for what he did. But this incident showed me how Victor could twist the truth..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Later, the moment when he found the body kept replaying in my mind... At the time, I was overwhelmed by panic and fear... Whatever he said, I just did it..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Later, I realized more and more that he had calmly weighed the pros and cons and manipulated a person like a prop... Is that really how a normal person would react? I felt a chill run through me."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "After that... I grew more and more distant from him, and his attitude toward me became worse and worse. I felt that things couldn't go on like this..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I hoped the park would discover what Victor and the others were doing. Whether that meant punishment, firing them, or even firing me along with them... I didn't want to keep acting like this anymore."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "But... I hesitated a lot... If I spoke up, would Victor keep smearing me? If I said Victor had ordered me to do it, would anyone really believe me? Would he turn around and bite back at me? I was too afraid... so I kept silent the whole time... I-I'm truly sorry...",
+          "unlockEv": [
+            "ev_ayou_testimony2"
+          ]
+        }
+      ]
+    },
+    "t_ayou_changwei_past": {
+      "char": "char_ayou",
+      "title": "Victor and Aiden's Past",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Why did you help Victor to that extent?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "This might sound a little ridiculous, but ever since I was young, I've been interested in performing on stage."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "But my family thought becoming an actor was a pipe dream. And I look very ordinary, so I had no confidence in myself."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "After I came here, during breaks from making props, I would often watch Daniel and Sunny rehearse, completely fascinated. Then Victor asked me whether I wanted to join the actor team, saying the three actors allocated by the park made the schedule rather tight."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "I was beyond excited! I agreed right away. I was willing to put in extra hours to practice, and I would also continue doing my work for the props team well."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Victor was very pleased with that. He said that even ordinary people with average talent had the right to pursue their dreams, and that he was willing to give me a chance."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "He was like me: no degree, no background, no professional training. He had made it this far purely on passion and a refusal to give up."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Back then, he probably saw his former self in me."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "In that sense, Victor really was someone who changed your life."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "Yes. I also had no real way to repay him, so in that incident... I chose to cover up the truth together with him. It was only later that I realized how terribly wrong I had been."
+        }
+      ]
+    }
+  }
+}

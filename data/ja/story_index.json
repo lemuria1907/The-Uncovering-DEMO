@@ -1,0 +1,15 @@
+{
+  "chapterInfo": {
+    "1": { "name": "赤死病の仮面殺人事件" },
+    "2": { "name": "消えたデザイナー" },
+    "3": { "name": "未定" },
+    "4": { "name": "未定" }
+  },
+  "chapters": [
+    { "chapter": 1, "section": 1, "file": "c1_s1.json", "name": "お化け屋敷の騒動" },
+    { "chapter": 1, "section": 2, "file": "c1_s2.json", "name": "探索と尋問" },
+    { "chapter": 1, "section": 3, "file": "c1_s3.json", "name": "更衣室の秘密" },
+    { "chapter": 1, "section": 4, "file": "c1_s4.json", "name": "三年前の影" },
+    { "chapter": 1, "section": 5, "file": "c1_s5.json", "name": "復讐の終幕" }
+  ]
+}

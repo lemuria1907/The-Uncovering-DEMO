@@ -1,0 +1,2675 @@
+{
+  "locations": {
+    "loc_entrance": {
+      "name": "お化け屋敷広場",
+      "desc": "場所：お化け屋敷広場",
+      "chars": [
+        "char_xiaozhi_p0"
+      ],
+      "bg": "images/chapter1/bg_ghost_entrance.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "さっきまで人で賑わい、周囲が明るく照らされていたお化け屋敷が、今はまるでゼンマイの緩んだオルゴールのように、静かにそこに佇んでいた。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "あなたと希枝は入り口に立ち、中へ入って調べようとしている。"
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point1": {
+      "name": "チェリスト演技スポット",
+      "desc": "場所：チェリスト演技スポット",
+      "chars": [
+        "char_xiaozhi_p1"
+      ],
+      "bg": "images/chapter1/bg_room1.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "（*左上の「現場を観察」をクリックして、現在のシーンの詳細を確認し、手がかりを集めよう*）"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "隅には、アクリル絵の具で傷や虫食いの跡が描かれたチェロが立てかけてあり、そのボディには暗赤色の擦り傷が無数についている——これも描かれたものだろう。そばには数ページの楽譜が散らばっており、踏みつけられてひどく皺くちゃになっている。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "このスポットはお化け屋敷全体の起点であり、音楽はここから広がっていくはずだった。今は静けさだけが残されている。"
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "cello_case",
+          "title": "チェロケース",
+          "desc": "ケースの中は暗い色の花柄シルクで何かが覆い隠されている。シルクをめくると、口紅と女性用ヘアクリップの2点が見つかった。",
+          "giveEv": "ev_cello_case_items"
+        }
+      ]
+    },
+    "loc_point5": {
+      "name": "赤死病&親王の妻 演技スポット",
+      "desc": "場所：赤死病&親王の妻 演技スポット",
+      "chars": [
+        "char_xiaozhi_p2"
+      ],
+      "bg": "images/chapter1/bg_room5.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "赤死病のマントが無造作に地面に投げ出されており、広大な深紅の袍はまるで固まった血の塊のようだ。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "親王の妻のマネキンは倒れており、顔には白い仮面をつけている。その虚ろな眼窩はどこか不気味だ。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "左側の隅には送風機が置かれている。どうやら演出の際、舞踏手の衣装の裾が翻るのは、風で吹かれていたかららしい。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "部屋の暗がり、頭上に数本の梁が見え、その上に金属製の突起のようなものがあるように見えるが、地面からの高さがありすぎる。"
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "propbox",
+          "title": "巨大な道具箱",
+          "desc": "約1.5x2x1.5メートルの大きな箱で、中には親王の妻の人形が一式入っている。",
+          "giveEv": "ev_prop_box"
+        },
+        {
+          "id": "beam",
+          "title": "頭上のはり",
+          "isLocked": true,
+          "unlockItem": "ev_prop_box",
+          "desc_locked": "頭上のはりに何か痕跡があるように見える。しかし、地面からの高さがありすぎる。",
+          "desc_unlocked": "あなたは道具箱に乗って梁を見上げると、小型の金属製ローラーを発見した。隣の木製の梁の縁には、何本かのロープが擦れた跡があり、そのうちの2本は深いが、ほこりに覆われている。",
+          "giveEv": "ev_beam_marks"
+        }
+      ]
+    },
+    "loc_point2": {
+      "name": "ペスト医者演技スポット",
+      "desc": "場所：ペスト医者演技スポット",
+      "chars": [
+        "char_xiaozhi_p3"
+      ],
+      "bg": "images/chapter1/bg_room2.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "他のエリアに比べてここはやや狭く、廊下の脇にある小さな物置という感じだ。壁際には木製のテーブルがあり、その上にはメスやピンセットなどの医療手術道具が置かれている。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "テーブルの下には、ペスト医者の長袍と仮面が置かれている。黒い革製の仮面の鳥のくちばしは長くて鋭い。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "隣のワゴンには瓶や壺がぎっしりと並べられており、ラベルには読めない文字が書かれている。いくつかの瓶は倒れており、液体が乾いた後に濃い色の染みが残っている。"
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point3": {
+      "name": "仮面舞踏手演技スポット",
+      "desc": "場所：仮面舞踏手演技スポット",
+      "chars": [
+        "char_xiaozhi_p4"
+      ],
+      "bg": "images/chapter1/bg_room3.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "部屋の四方には暗紅色のカーテンが垂れ下がっており、演者のパフォーマンスエリアの背後には弧を描くように鏡が並べられている。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "これは大勢の人が踊っているような錯覚を生み出すためのものだろう。"
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point4": {
+      "name": "狂気の親王演技スポット",
+      "desc": "場所：狂気の親王演技スポット",
+      "chars": [
+        "char_xiaozhi_p5"
+      ],
+      "bg": "images/chapter1/bg_room4.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "この部屋の中央には豪華な宴会用の長テーブルがあり、その周りには「客人」たちが倒れている。中世の貴族の衣装をまとっている——もちろん、すべて人形の道具が演じる死体だ。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "「死体」の中には手に酒杯を握ったままのものもあり、服には血痕が付いている。テーブルクロスは引っ張られて皺くちゃになっており、本当に混乱があったかのようだ。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "そして、本物の死体が、ついさっき長テーブルのテーブルクロスの下で発見された。"
+        }
+      ],
+      "hotspots": []
+    },
+    "loc_point6": {
+      "name": "鐘突き男演技スポット",
+      "desc": "場所：鐘突き男演技スポット",
+      "chars": [
+        "char_xiaozhi_p6"
+      ],
+      "bg": "images/chapter1/bg_room6.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "出口近くの空き地には、巨大な銅鐘が置かれており、鐘槌が脇に吊るされている。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "鐘突き男の猫背のマントは壁に掛けられており、背中の部分が明らかに膨らんでいる。そこには大きなスポンジのクッションが入っている。"
+        },
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "物語の中で、最後の弔鐘はここから鳴らされた。それは観客に、疫病が到来し、逃げ場はないことを知らせる。"
+        }
+      ],
+      "hotspots": []
+    },
+    "interrogation": {
+      "name": "尋問エリア",
+      "desc": "場所：尋問エリア",
+      "chars": [
+        "char_zhencheng",
+        "char_ayou",
+        "char_shihui"
+      ],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "onEnter": [],
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_xiaozhi_p1": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p2": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p3": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p4": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p5": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p6": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_zhencheng": {
+      "name": "真橙",
+      "info": "お化け屋敷俳優",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "阿祐",
+      "info": "お化け屋敷俳優",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_shihui": {
+      "name": "石輝",
+      "info": "演出部主管",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_qin": {
+      "name": "琴刑事",
+      "info": "旧知",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_xiaozhi": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_xiaozhi_p0": {
+      "name": "希枝",
+      "info": "妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "2025年10月27日、21時04分、朝夜遊園地、お化け屋敷入り口",
+      "unlockLoc": [
+        "loc_entrance"
+      ],
+      "unlockTopic": [
+        "t_entrance_tutorial"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_xiaozhi_p1": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p1",
+        "t": "ここがお化け屋敷の入り口で、プレイヤーが最初に遭遇するシーンだよ。"
+      }
+    ],
+    "char_xiaozhi_p2": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "これらの道具、よく見ると全然怖くないね！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "そうだね。お化け屋敷がこんなに暗いのは、みんなに見えにくくするためなんだろうね。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "この変な機械は何に使うの？"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "送風機だよ。演出の時、衣装の端の布切れがひらひらと舞い上がってたのを覚えてる？"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "ああ！そういうことか。あの効果がすごく好きで、すごく幻想的だと思ってた！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "お化け屋敷の幽霊が幻想的だって？"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p2",
+        "t": "怖いけど綺麗！好き！"
+      }
+    ],
+    "char_xiaozhi_p3": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p3",
+        "t": "本当に雰囲気のあるシーンだね！"
+      }
+    ],
+    "char_xiaozhi_p4": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p4",
+        "t": "真橙はここで踊ってるの？一人で？"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "そうだよ。たくさんいるように見えるけど、これは鏡を使った効果なんだ。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "それに、鏡は観客も映し出すから、大勢の人がダンサーを囲んで見ているように見えるんだ。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p4",
+        "t": "面白い仕掛けだね。"
+      }
+    ],
+    "char_xiaozhi_p5": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "お姉ちゃん、中に入りたくないよ。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "死体はもう運び出されたよ。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "やっぱり怖いよ。偽物の死体の中に本物の死体が混ざってるなんて。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "そうだね……想像するだけで背筋が凍るよ。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "ねえ、私たちが見た公演の時には……もう死体が置かれてたのかな？"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "それはないと思うよ。私たちが見たのは3回目の公演で、被害者はその回で殺されたわけじゃないはずだ。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "みんなの話が本当なら、だけど……"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p5",
+        "t": "うわあああ！お姉ちゃんが怖がらせる！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "そんなつもりはなかったよ。"
+      }
+    ],
+    "char_xiaozhi_p6": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "この猫背の鐘突き男のイメージ、『名探偵コラン』の有名なエピソードを思い出させるよ。『包帯怪人殺人事件』ってやつ。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "うん？"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "あの中に#…%&#が#…￥#%を#￥#…に置いて……え、見たことないの？じゃあネタバレしないでおくよ。めっちゃ怖い回だから、すごくおすすめ！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "もうほとんどネタバレしてるよ。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p6",
+        "t": "ああ！ごめん、お姉ちゃん！"
+      }
+    ],
+    "char_ayou": [
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "……"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "顔色がすごく悪いね……ところで……君はどうやって死体を発見したんだ？"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "俺……たまに公演の後に道具を少し片付けたり数えたりしてるんだ。今日は人形の配置がちょっと乱れてるように感じて……普段は人形の上半身がテーブルの下に隠れてるはずなんだけど、今はテーブルの外に出てる部分が多いんだ。"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "人形を奥に押し込もうとしたんだけど、動かなくて。それで……"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "怖すぎる……この光景……"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_ayou",
+        "t": "そ、そうだよ……俺もびっくりした……"
+      }
+    ],
+    "char_shihui": [
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "ああもうどうしてこんなことに！どうしてこんなことに！本当に頭が痛いよ！！！"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "この場所、呪われてるんじゃないか？絶対に幽霊の仕業だ！それか誰かが仕組んでるんだ！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "焦ってるのはわかるけど、ちょっと落ち着いて……"
+      }
+    ],
+    "char_zhencheng": [
+      {
+        "s": "npc",
+        "speaker": "char_zhencheng",
+        "t": "違う……私じゃない！人を殺してなんかいない！"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "君が殺したとは言ってないよ……普通の事情聴取だ……"
+      },
+      {
+        "s": "npc",
+        "speaker": "char_zhencheng",
+        "t": "うう……威哥が、こんな風に死んじゃうなんて……昨日の仕事終わりに一緒に焼き鳥を食べてたのに、今日突然いなくなっちゃうなんて……"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "世の中何が起こるかわからないね……"
+      }
+    ],
+    "char_qin": [
+      {
+        "s": "npc",
+        "speaker": "char_qin",
+        "t": "……"
+      }
+    ],
+    "char_xiaozhi": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi",
+        "t": "……"
+      }
+    ],
+    "char_xiaozhi_p0": [
+      {
+        "s": "npc",
+        "speaker": "char_xiaozhi_p0",
+        "t": "お姉ちゃん、ちょっと悲しいよ……この俳優さんは知らないけど、彼の扮装とパフォーマンスはたくさんの楽しさをくれたんだ。"
+      },
+      {
+        "s": "player",
+        "speaker": "none",
+        "t": "きっと真実を突き止めよう。"
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_s2_1": {
+      "char": "char_xiaozhi_p1",
+      "title": "希枝の推測",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "このチェロ、ずっと好きだったんだ。俳優の木製の仮面とすごく合ってるよね。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そうだね。手描きの木目がすごくリアルだ。でも……ここにはちょっと変なものもあるね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "何が？",
+          "autoPresent": "現場で変なものを指摘してください",
+          "present": {
+            "ev_cello_case_items": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "うーん、俳優がここにちょっとしたものを置いてても問題ないんじゃない？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それは不自然だよ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "どこが不自然なの？",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 色",
+                "correct": false,
+                "reply": "そうなのかな？"
+              },
+              {
+                "text": "B 品物",
+                "correct": true
+              },
+              {
+                "text": "C 場所",
+                "correct": false,
+                "reply": "うーん……"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "1番スポットの俳優、つまり被害者は男性だよね。なのにどうして口紅とヘアクリップがあるんだ？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "公演のことだから、男優がメイクをするのも普通のことじゃない？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "普通はそうかもしれないけど、この公演は仮面を使うから、実際はメイクをする必要がないんだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "じゃあ、他の俳優のものかもしれないね？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "他の俳優もそれぞれ自分の部屋に物を置く場所があるはずだし、わざわざチェロケースに置きに来る必要はないよね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p1",
+          "t": "そう言われると、確かに変だね。",
+          "unlockLoc": [
+            "loc_point5"
+          ],
+          "unlockTopic": [
+            "t_s2_2"
+          ]
+        }
+      ]
+    },
+    "t_s2_2": {
+      "char": "char_xiaozhi_p2",
+      "title": "希枝の推測",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "この大きな箱は何に使うの？人を隠せるのかな？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "道具を入れるためのものに見えるね。この実物大の人形がちょうど入るようになってるはずだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "え？これはダンサーお姉さんと同じ衣装の人形だよね？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そうだと思う！ちょっと見てみよう、この場面の演目は……",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 赤死病と親王の妻のデュエットダンス",
+                "correct": true
+              },
+              {
+                "text": "B 親王と妻のデュエットダンス",
+                "correct": false,
+                "reply": "お姉ちゃん、もう一度よく見てみてよ……"
+              },
+              {
+                "text": "C 赤死病と親王のデュエットダンス",
+                "correct": false,
+                "reply": "ちょっと違う気もするけど、それもありかも？"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "親王の妻は純白のウェディングドレスを身にまとい、深紅の袍をまとった赤死病と共に踊る。彼女の体はだらりと後ろに反り、完全に赤死病に支配されている……つまり、親王の妻は人形で代用できるということだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "ということは、誰かが赤死病を演じれば、一人でもデュエットダンスを成立させられる。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "犯人は人形をどこかの隅に放り出して、自分は箱の中に隠れることもできるよね。公演後に俳優たちが休憩している時に被害者を殺して、こっそり逃げ出すこともできる。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そういう可能性はあるけど、他の俳優に見られるリスクがある。休憩時間には少しの間照明がついて、ここは明るくなるからね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "じゃあ、公演中にやったとしたら？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それなら、5番スポットの公演が始まる前か後のどちらかで分ける必要があるね。犯人が4回目の公演、5番スポットの公演が始まる前にやったと仮定すると、犯人が解決しなきゃいけないのは……",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 誰が赤死病を演じるか",
+                "correct": true
+              },
+              {
+                "text": "B 死体の隠し方",
+                "correct": false,
+                "reply": "部屋の中は暗いし、ベルベットの布もあるから、死体を隠すのは難しくないはずだよ。"
+              },
+              {
+                "text": "C 死体の移動方法",
+                "correct": false,
+                "reply": "床はそれほど粗くないから、5番スポットで殺害したとしても、4番スポットまで引きずることはできるはずだ。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "犯人は自分が赤死病に扮装して、真橙さんと踊らなければならない。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "そうなの？でも、道具を使えば真橙さん一人でもデュエットダンスはできるよ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "確かに。でもそうすると、前に出てきた手がかりと矛盾することになる。",
+          "autoPresent": "どの手がかりと矛盾するか指摘してください？",
+          "present": {
+            "ev_zhencheng_testimony1": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "真橙の話によると、4回目の公演では5番スポットで普通にデュエット公演を行ったそうだ。だから、もし犯人が真橙と共謀していないのであれば、真橙はこの公演で道具人形を使う必要があるはずだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p2",
+          "t": "なるほどね。",
+          "unlockLoc": [
+            "loc_point2"
+          ],
+          "unlockTopic": [
+            "t_s2_3"
+          ]
+        }
+      ]
+    },
+    "t_s2_3": {
+      "char": "char_xiaozhi_p3",
+      "title": "希枝の推測",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "ここにナイフがあるね！誰かがここからナイフを取って被害者を殺したんじゃないかな？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それはありえないよ。",
+          "autoPresent": "このナイフが凶器ではない証拠を指摘してください",
+          "present": {
+            "ev_autopsy": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "被害者は絞殺されている。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "ああ！そうだね！"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "この仮面すごく怖い……公演中に鳥のくちばし医者が暗闇の中で突然緑色の灯りの杖を灯すんだ。毎回叫んじゃうよ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "うん、緑色の光がこのシーンにすごく合ってるよね。でも、単に灯りがつくだけだからね。ここの公演は基本的に舞台の奥の方で行われて、観客からはかなり距離があるんだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "確かに、廊下側は少し明るいし、俳優は遠くで灯りをつけるから、「初心者にも優しい」よね。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "本当に真っ暗な場所で至近距離から仕掛けてきたら、それはそれで刺激的だろうけどね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p3",
+          "t": "それはやめて！",
+          "unlockLoc": [
+            "loc_point3"
+          ],
+          "unlockTopic": [
+            "t_s2_4"
+          ]
+        }
+      ]
+    },
+    "t_s2_4": {
+      "char": "char_xiaozhi_p4",
+      "title": "希枝の推測",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "これらの鏡は全部動かせるの？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "動かせるみたいだね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "こんなにたくさんの鏡を運び出すのは大変だろうね。ここは廊下が曲がりくねってるし。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "うーん、実はそんなに大変じゃないと思うよ。",
+          "autoPresent": "鏡を素早く運び出す方法を指摘してください",
+          "present": {
+            "ev_ghost_house_map": {
+              "resolved": false,
+              "dialogue": []
+            }
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "見てごらん、この部屋にも隠し扉があるよ。6番スポット、つまり出口の方に通じてる。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "なるほどね。この鏡、少し斜めにして隠し扉を通れば運べそうだね。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "うんうん、公演だけのことを考えれば、この隠し扉は必要ないはずだ。多分、道具の搬入や俳優の出入りを便利にするために開けられたんだろうね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "なぜ公演自体にはこの隠し扉が必要ないの？",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 隠し扉を使うと遠回りになるから",
+                "correct": true
+              },
+              {
+                "text": "B 隠し扉が狭すぎて、俳優が衣装を着たまま通れないから",
+                "correct": false,
+                "reply": "でも真橙さんの衣装はそんなに厚手じゃないと思うけど……"
+              },
+              {
+                "text": "C 隠し扉を使って次のスポットに行けないから",
+                "correct": false,
+                "reply": "大丈夫そうだよ。あの廊下からきっと行けるよ。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p4",
+          "t": "そう言われると確かに、ダンサーの次のスポットは5番のシーンで、前から直接行けばいいんだよね。隠し扉を通ると、かなり長い廊下を回らなきゃいけない。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そういうことだよ。全く必要ないんだ。",
+          "unlockLoc": [
+            "loc_point4"
+          ],
+          "unlockTopic": [
+            "t_s2_5",
+            "t_s2_6"
+          ]
+        }
+      ]
+    },
+    "t_s2_5": {
+      "char": "char_xiaozhi_p5",
+      "title": "希枝の推測1",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "お姉ちゃん、ふと思ったんだけど。検死報告書によると、被害者の口鼻から麻酔薬が検出されたってことは、死ぬ前に意識を失ってた可能性があるんだよね。それで、狂気の親王が公演中に人形の首を絞める動作をする時に、その道具のロープを使って直接被害者を絞殺することはできないのかな？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "観客の前で人を殺すってこと？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "怖い話だけど。でも、そういう可能性はあるんじゃない？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "まず、4番スポットの俳優が犯人そのものか、それとも人形がすり替えられていることに気づかずに同僚を絞殺してしまった無実の人物かを仮定する必要があるね。後者はあまりありえないと思うけど。人形の体重はとても軽くて、首を絞める感触は本物とは全く違うはずだから。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "じゃあ、狂気の親王の俳優が犯人そのものだったら？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それなら、その観点から考えると、実現するのは難しそうだね。",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 時間",
+                "correct": true
+              },
+              {
+                "text": "B 凶器",
+                "correct": false,
+                "reply": "ロープはあちこちにあるし、見つけるのは難しくないはずだよ。"
+              },
+              {
+                "text": "C 隠蔽性",
+                "correct": false,
+                "reply": "会場はとても暗いから、もしかしたら……"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "狂気の親王の俳優である阿祐は、同時に2番スポットの俳優でもある。彼は1番スポットの俳優の公演が終わったらすぐに公演を始めなければならないし、3番スポットの俳優の公演時間も5分しかない。公演が終わったら、すぐにまた彼が登場しなきゃいけない。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "彼は5分以内に以下のことをやらなきゃいけない：ペスト医者の衣装を脱ぎ、5番スポットに移動し、薬で赤死病の俳優を眠らせ、俳優を4番スポットまで引きずって行き、テーブルの上に置き、自分で狂気の親王の衣装を着る。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "うーん……その効率は確かに人を選ぶね。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そういうことだよね。"
+        }
+      ]
+    },
+    "t_s2_6": {
+      "char": "char_xiaozhi_p5",
+      "title": "希枝の推測2",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "あ、ここにも隠し扉があるよ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "うーん……お姉ちゃん、見てよ。テーブル、殺人親王、そして観客の距離は結構離れてるし、公演中は特にここは真っ暗で、テーブルの上のろうそくの明かりがごく一部を照らすだけで、観客も完全に暗闇の中にいるんだよ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "もしかしたら、犯人は鏡を使って私たちに目の錯覚を見せてるのかもしれない。実は4番スポットには誰もいなくて、私たちが見ているのは鏡に反射した光なんだ！"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "面白い考え方だね！どうしてそう思ったの？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "お化け屋敷の構造図を見てみると、4番スポットの右側と3番スポットの上側に隠し扉があるんだ。そして3番スポットの鏡は隠し扉を通して外に持ち出せる。もし一枚の鏡を二つの隠し扉を通して宴会テーブルの後ろに置いたらどうなるかな。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "それを45度の角度で斜めに置いて、鏡の側面を隠し扉に向けるんだ。そうすれば、親王に扮装した俳優が6番スポットで人を絞める動作をしているように見せかけられるんじゃない？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "とても創造的だね！でも、実際にやってみると、すぐにバレそうだよ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "え？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "鏡が見つかるかどうか、映った姿がリアルかどうかはとりあえず置いておくとしても、観客がはっきりと気づくポイントが一つあるんだ。",
+          "choices": {
+            "question": "選択してください：",
+            "options": [
+              {
+                "text": "A 観客の鏡像",
+                "correct": false,
+                "reply": "でも観客は完全に暗闇の中にいるし、そんなに暗ければ鏡像も映らないんじゃない？"
+              },
+              {
+                "text": "B 俳優と鏡の距離",
+                "correct": true
+              },
+              {
+                "text": "C ろうそくの明かりが二重になる",
+                "correct": false,
+                "reply": "観客はここに何本のろうそくがあるか知らないし、数本増えても大した問題じゃないんじゃない？"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "鏡に映る人像の距離は、人と鏡の距離と同じになるんだ。もし俳優が6番スポットで遠くから動作をしても、鏡の中の「親王」と「死体」は宴会テーブルから遠く離れて浮かんでいるように見えて、現実のテーブルとは合わなくなるんだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p5",
+          "t": "ああ……そうか！距離か！どうして忘れてたんだろう……",
+          "unlockLoc": [
+            "loc_point6"
+          ],
+          "unlockTopic": [
+            "t_s2_7"
+          ]
+        }
+      ]
+    },
+    "t_s2_7": {
+      "char": "char_xiaozhi_p6",
+      "title": "希枝の推測",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "私はね、この猫背、すごく怪しいと思うんだ。あんなに大きなふくらみの中に、凶器が隠せるよ！"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "例えば、5番スポットで凶器を持って人を殺して、すぐに隠し扉を通って6番スポットに行って凶器を背中のふくらみに隠すことができるんだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "できなくはないかもしれないけど……そんなことして何の意味があるんだろうね？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "推理小説ってそういうもんじゃない？本来は簡単に一突きで解決できるのに、わざわざ数独みたいにすごく複雑なことをして……"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そうだね。全部がそんなに簡単だったら、推理小説は探偵小説なんて呼ばれないだろうね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "お姉ちゃんはきっとたくさん推理小説を読んでるんだね。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "この仕事をしてるからね。いろんなところから栄養を吸収しなきゃ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "じゃあ次は、お姉ちゃんは容疑者と関係者に個別に事情聴取をするの？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そうだよ。事情聴取の時に、彼らの言葉に対して「追及」したり、積極的に「証拠提示」をしたりするんだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "どんな文章が「追及」や「証拠提示」できるの？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "「尋問対象」の言葉、つまり緑色の文字は全て「追及」や「証拠提示」が可能で、時には追及した文章に対してさらに「追及」や「証拠提示」をすることもできるんだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "もしある話題の中に未解決の「追及」や「証拠提示」が残っていると、話題の横に緑色の点が表示され続ける。話題内の全ての内容が表示され終わり、他の話題に切り替わると、その点は消える。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p6",
+          "t": "つまり、話題にずっと緑色の点が表示されているってことは、その話題にはまだ調べ切れていない情報があるってことだね！わかった！次はお姉ちゃんは俳優の真橙と阿祐、それに演出部主管の石輝と話すんだよね？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そうだよ！尋問はもうすぐ始まる！",
+          "unlockLoc": [
+            "interrogation"
+          ],
+          "unlockTopic": [
+            "t_s2_8",
+            "t_s2_9",
+            "t_s2_10",
+            "t_s2_11",
+            "t_s2_14",
+            "t_s2_15",
+            "t_s2_16",
+            "t_s2_17",
+            "t_s2_19",
+            "t_s2_20",
+            "t_s2_21",
+            "t_s2_22"
+          ]
+        }
+      ]
+    },
+    "t_s2_8": {
+      "char": "char_zhencheng",
+      "title": "自己紹介をしてください",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "わ、私は真橙といいます。ダンスを得意とする俳優です。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "楽園で働いてもうすぐ5年になります。最初は昼間の通常公演で木の精霊を演じていましたが、お化け屋敷のプロジェクトが立ち上がって、ここでの公演に配属されました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "当時の俳優仲間たち、威哥、阿祐、その後も固定されて、このまま3年間演じ続けて、良い評判を得ることができました。",
+          "present": {
+            "char_xiaohua": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "前に肖華という同僚がいたんじゃないですか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_zhencheng",
+                  "t": "あ……は、はい。",
+                  "unlockTopic": [
+                    "t_s2_12"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "この仕事は大変ですが、ソロダンスの機会もありますし、給料もかなり高いんです。私はこのまま続けたいと思っています。"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_9": {
+      "char": "char_zhencheng",
+      "title": "被害者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "威哥とは……まあまあの関係だと思います。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "最初に彼が私をダンサーの役割のオーディションに誘ってくれて、何度か踊ってみて、オリジナルの振り付けも試して、参加することになりました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "彼は結構厳しい人ですが、私にはまあまあで、公演が終わった後に一緒に夜食を食べることもありました。（*この文からは、二人の関係が良さそうに見えます。「追及」をクリックして詳しく聞いてみますか？*）",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "夜食は楽園の近くで食べるんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "ええ、楽園の周辺には屋台街があって、みんなよく行くんです。焼き鳥、寿司、小龍蝦、潮汕牛肉鍋とか……（*この「追及」で出てきた内容に対して、さらに「追及」をクリックして詳しい情報を得ることができます*）",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "お二人だけで食べてるんですか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "いいえ、他の夜勤のグループの同僚たちと一緒に食べてますよ。"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "他のグループ？同じグループの阿祐は一緒じゃないんですか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "阿祐は公演が終わるとだいたいすぐに帰っちゃいます。"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "他には、特に言うことはありません。"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_10": {
+      "char": "char_zhencheng",
+      "title": "被害者の今日の異常",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "失踪前に何か異常があったかと言われれば……特に何もなかったと思います。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "威哥はいつも通り、少し準備をして公演を始めました。"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_11": {
+      "char": "char_zhencheng",
+      "title": "事件前後の行動",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "もちろん公演をしていました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "決められたルート通りに公演をしていて、他には何もしていません。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "決められたルートについて、詳しく説明していただけますか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "3番スポットでソロダンスをした後、5番スポットに行って威哥とデュエットダンスをします。4回目の公演は普通に踊りましたが、5回目の公演で彼がいないことに気づきました。",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "彼がいないことに気づいて、その後どうしましたか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "赤死病のマントが地面に落ちているのを見て、それを着て、道具箱を開けて、以前予備として作ってあった親王の妻の人形道具を取り出して腰に装着し、公演を続けました。",
+                      "unlockEv": [
+                        "ev_zhencheng_testimony2"
+                      ]
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "それで問題なかったんですか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "ええ、以前テスト公演で道具を使ったことがあって、人形を使うと恐怖感が増すのですが、公演効果としてはやはり実写出演の方が良いです。"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "では、実写と人形は同じような公演効果が得られるのですか？観客は人形を実写と間違えたりしませんか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "人形は動きが少し硬いですが、同じ衣装と仮面で、しかも照明が暗いので、外見からは見分けがつきません。"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_zhencheng",
+                      "t": "威哥が5番スポットで待機していないことに気づいた後、すぐに石主管に報告しました。",
+                      "question": {
+                        "resolved": false,
+                        "dialogue": [
+                          {
+                            "s": "player",
+                            "speaker": "none",
+                            "t": "こういう俳優の突発的なトラブルについて、演出部では対策を考えていなかったのですか？代役はいないのですか？"
+                          },
+                          {
+                            "s": "npc",
+                            "speaker": "char_zhencheng",
+                            "t": "代役はいます。美羽といって、私と同じダンサーです。美羽に電話をかけました。ええと……19時24分に電話をかけました。でも繋がらなくて……以前から彼女が用事で楽園にいないことは知っていたので、それ以上は探しませんでした。",
+                            "unlockProfile": [
+                              "char_meiyu"
+                            ]
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "私は彼を殺していません。彼と何の確執もありませんし、なぜ殺さなければならないんですか？"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_12": {
+      "char": "char_zhencheng",
+      "title": "亡くなった同僚",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "肖華……彼は確かにお化け屋敷の準備段階から参加していた俳優です……残念ながら、内装がまだ終わっていない時に、突然首を吊って自殺してしまいました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼の自殺の原因をご存知ですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "いいえ……その人とはあまり親しくなくて……",
+                "present": {
+                  "ev_ayou_testimony1": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "あなたたちは以前、同じダンスグループの俳優で、お化け屋敷でも一緒に振り付けをしていた仲間ですよね。なぜ親しくないと言うんですか？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "えっと……それには理由がありまして……",
+                        "unlockTopic": [
+                          "t_s2_13"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "この件については、私たち皆とても悲しく思っています……"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_13": {
+      "char": "char_zhencheng",
+      "title": "肖華との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "一緒に仕事をした期間はそれほど長くありません。昼間の公演もグループ分けがあって、その時は私と肖華は別のグループでした。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "その後、お化け屋敷グループに異動になり、肖華はその後で異動してきて、初めて彼と振り付けなどの共同作業を始めました。でも、それほど長くは続きませんでした。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_zhencheng",
+          "t": "そして、あの事件が起きました……肖華が5番スポットで自殺しました。それで初めて、彼があの時かなり苦しい思いをしていたんだと気づきました……",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "苦しい思い……一緒にいる時は全く気づかなかったんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "その時彼は古傷が再発していて、いくつかの動作がとてもぎこちなかったんです。時々落ち込んだ様子も見せていましたが、深く考えませんでした。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_zhencheng",
+                "t": "本当に怖かったです……その日、お化け屋敷に人が集まっているのを聞いて見に行くと、蒋威と阿祐たちはもうそこにいて……警備員がその……高いところから降ろしていて、私は見ていられませんでした……",
+                "present": {
+                  "ev_hanged_reddeath": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "あなたが見たのは、警備員がもともと人形を吊るしていた場所から死体を降ろしているところですか？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "はい……彼は赤死病の服を着て自殺していて、わざと私たちを驚かせようとしているようでした。本当に怖かったです……"
+                      },
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "つまり、公演効果のために設計された「人形を吊り上げる」装置が、最終的に赤死病の俳優を吊るしてしまったんですね？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_zhencheng",
+                        "t": "そういうことです……",
+                        "unlockEv": [
+                          "ev_zhencheng_testimony3"
+                        ]
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_14": {
+      "char": "char_ayou",
+      "title": "自己紹介をしてください",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "俺は阿祐です。ここで働いてちょうど3年になります。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "前に別の遊園地で設備保全をしていましたが、そちらが倒産してからここに来ました。その時ちょうどお化け屋敷のプロジェクトが始まったばかりで、人手が足りなくて、道具の運搬やシーン設営などの雑務をしていました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "その後、蒋威が俺が結構働き者だってことで、あまり台詞のいらない役を試してみないかって言ってくれたんです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "それから、他の俳優たちと一緒に多くの公演に参加するようになりました。だいたいこんな感じです。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "今でも道具の管理をしているんですか？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "専門の道具チームの同僚が道具を管理していますが、俺は今でも修理関連の仕事をしています。なぜなら、道具が壊れた時に道具チームを待っていられない時があるので、自分で直すこともあるからです。",
+          "present": {
+            "ev_shihui_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "道具が壊れるのは、一部の観客の仕業ですか？園側はあなたたちのボーナスを減らすと聞きました。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "確かに観客が壊すことも多いですが、公演中に私たち自身がうっかり道具を壊してしまうこともあります。こういうことはなかなか誰のせいかわからなくて……道具チームと俳優チームの両方が負担することがあります。前の職場でも同じでした。もう慣れています……でも、威哥と真橙はそれに対してかなり不満を持っていました。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "それで彼らは何かしましたか？誰かと衝突したりしましたか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "えっと、あなたは……何か気づいたんですか？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "うん？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "な、なんでもありません。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "ああ、そうだ。もし君が道具に詳しいなら、これらのものは誰のものかわかる？",
+                  "autoPresent": "怪しい品物を指摘してください",
+                  "present": {
+                    "ev_cello_case_items": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "これは……どこかの道具に使われているものかもしれませんね？"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "でも、これらは道具には見えませんよ。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "えっと……時々、道具の組み合わせデザインでは、こういう目立たない小さなものが使われることもあるんです……"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "君はこれらにかなり詳しいようだね。今、君がデザインしたものはあるの？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "ええと……ありません……3年前に俳優になりたての頃は、道具のことにかなり関わっていて、いくつかの仕掛けも作ったことがありますが、今は……修理以外は、あまり他の人の道具には触れないようにしています。",
+                          "unlockEv": [
+                            "ev_ayou_prop_design"
+                          ]
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_15": {
+      "char": "char_ayou",
+      "title": "被害者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "蒋威はお化け屋敷の俳優グループのリーダーであり、お化け屋敷公演全体の監督でもあります。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "監督？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "はい、蒋威は最初からこのプロジェクトに参加していました。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "蒋威はどんな仕事を担当していたんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "最初は蒋威が前任の演出部主管と一緒に企画を立てていました。その人は当時、楽園のために多くの革新的なプロジェクトの企画案を作っていて、お化け屋敷のテーマ「赤死病の仮面」を決定し、大まかなストーリーと台詞を書きました。蒋威は動線の編成と公演の詳細を担当していました。",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "その主管の名前は何と言いますか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_ayou",
+                      "t": "彼は明淇といって、物語を書くのがとても得意でした。",
+                      "unlockProfile": [
+                        "char_mingqi"
+                      ]
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "明淇は今何をしていますか？まだ楽園で働いていますか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_ayou",
+                      "t": "それはですね……彼、彼はお化け屋敷が公開されて最初の年が終わった後に、去っていきました。彼のことについては、あまり詳しくありません。"
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "この公演の定点と台詞は、最初は蒋威が一から手取り足取り教えてくれました。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "私はこの師匠にとても感謝しています。私たちの関係もとても良かったです。（*何か他の人の「証言」で阿祐の言葉を反論できるものがあるようです。右下の「証拠提示」をクリックして、該当する証言をドラッグして、彼の反応を見てみましょう*）",
+                "present": {
+                  "ev_shihui_testimony2": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "でも、あなたたちの主管である石輝は、蒋威があなたに少し厳しいと思っているようですね。（*証拠提示成功、よくやりました！皆の言うことを引き続き注意深く聞いて、右側の「人物」「証拠品」「証言」の手がかりを使って、矛盾点を見つけて証拠提示してみましょう！*）"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_ayou",
+                        "t": "多分……俺がどうしても踊りを覚えられなくて、何度も叱られたのを主管が見てたからでしょうね……",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "なぜ蒋威はあなたが踊ることを主張したんですか？",
+                            "bgm": "tension"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "なぜなら、元々……えっと……前の同僚で、踊りができる人がいて、蒋威も俺に彼と同じように何でもできるようになってほしかったんだと思います……"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "どの前の同僚ですか？"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_ayou",
+                              "t": "もうずいぶん前のことなので、その同僚の名前はもうあまり覚えていません……",
+                              "present": {
+                                "char_xiaohua": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "あなたは肖華のことを言っているんですか？",
+                                      "bgm": "tension"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_ayou",
+                                      "t": "あ……はい、そ、そうです、肖華です……",
+                                      "unlockTopic": [
+                                        "t_s2_18"
+                                      ],
+                                      "bgm": "main"
+                                    }
+                                  ]
+                                }
+                              },
+                              "bgm": "tension"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_16": {
+      "char": "char_ayou",
+      "title": "被害者の今日の異常",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "特に異常はなかったと思います……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "今日は一日中彼と話をしませんでした。でも、いつもだいたいこんな感じで、特に変わったことはありません。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "あなたは彼と結構仲が良いと言いましたよね。なのに、なぜ普段彼はあなたと話さないんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "ああ、そうですね、えっと……それは、公演が始まるとすぐにそれぞれの持ち場について準備をするからです。"
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_17": {
+      "char": "char_ayou",
+      "title": "事件前後の行動",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "俺はお化け屋敷で3つのスポットの公演を担当しています。他の2人の俳優と比べて、俺の時間が一番タイトなんです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "素早く衣装を着替えて、次のスポットに移動しなければなりません。他のことに気を回す余裕はありません。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "俺の公演は蒋威や真橙たちのように連携する必要はなく、場内で彼らと会うことは基本的にないので、何が起こったかは知りません。"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_18": {
+      "char": "char_ayou",
+      "title": "亡くなった同僚",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "肖華は真橙と同じで、以前は昼間のダンスグループに所属していました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼らの関係はどうだったか、知っていますか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "それはですね……おそらく良かったんじゃないでしょうか。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_ayou",
+                "t": "肖華は江浦舞蹈学院の卒業生で、とても才能がありました。彼は主に振り付けを担当していましたが、もちろん真橙も振り付けを担当していました。彼ら二人のコンビの公演はとても素晴らしく、羨ましかったです。",
+                "unlockEv": [
+                  "ev_ayou_testimony1"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_ayou",
+          "t": "肖華は5番スポットで事件に遭いました……あそこに吊るされて……",
+          "present": {
+            "ev_beam_marks": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "梁の上に？梁の上にローラーがあるのを見ました。あれは仕掛けですか？あなたと関係がありますか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_ayou",
+                  "t": "え？わ、私ですか？な、なぜそう思うんですか？",
+                  "present": {
+                    "ev_ayou_prop_design": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "あなたは3年前に公演の仕掛けの設計をしていたと言いましたよね。これについて、あなたはきっと何か知っているはずです。例えば、なぜ上に深い跡や浅い跡があるんですか？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_ayou",
+                          "t": "ああ、この跡のことですか……確、確かに、深い方の跡は、肖華が残したものです。",
+                          "question": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "じゃあ、他の跡は？"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "えっと……それらは多分……テストの時に……残ったものだと思います……"
+                              },
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "テスト？"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "はい……なぜなら……赤死病のイメージは、もしもっとたくましく威厳があれば、観客への圧迫感がより強まるからです……"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "だから最初の設計では、梁を使って赤死病に扮した人形を吊り上げて、親王の妻の俳優がその人形を操ってこのデュエットダンスを完成させるという試みがありました。",
+                                "unlockEv": [
+                                  "ev_hanged_reddeath"
+                                ]
+                              },
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "つまり、最初の設計では、実際には真橙一人だけでこの公演を完成させることができたんですね？"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "はい……"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "死体を発見したのは俺です……その時俺はお化け屋敷を最初から通してリハーサルしようとしていて、5番スポットを通りかかった時にちらっと見ました。"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_ayou",
+                                "t": "肖華は……微動だにせずそこに吊るされていて、もう死んでいました。",
+                                "present": {
+                                  "ev_zhencheng_testimony3": {
+                                    "resolved": false,
+                                    "dialogue": [
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "彼は死ぬ時に赤死病の衣装を着ていたんじゃないんですか？",
+                                      "bgm": "tension"
+                                      },
+                                      {
+                                        "s": "npc",
+                                        "speaker": "char_ayou",
+                                        "t": "はい……"
+                                      },
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "それはおかしいですね。"
+                                      },
+                                      {
+                                        "s": "npc",
+                                        "speaker": "char_ayou",
+                                        "t": "何が？！"
+                                      },
+                                      {
+                                        "s": "player",
+                                        "speaker": "none",
+                                        "t": "あなたの話は、ある証拠と明らかに矛盾しています。",
+                                        "autoPresent": "阿祐の言葉の矛盾を明らかにできる証拠はどれですか？",
+                                        "present": {
+                                          "ev_hanged_reddeath": {
+                                            "resolved": false,
+                                            "dialogue": [
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "本来この設計は赤死病の人形を吊り上げるためのものだったんですよね？もしあなたが通りすがりに赤死病が吊るされているのを見たら、まず「ここで人が首を吊っている」と思うんですか？",
+                                                "bgm": "tension"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "ああ！！"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "それに、もう一つ疑わしい点があります。たとえ本当に人が首を吊って死んでいたとしても、なぜそれが肖華だと断言できるんですか？俳優も人形も、仮面をつけているんですよ。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "あああ……私は……違う……私は違う……！！！"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "これはただ一つの真実を指し示しています。それは……",
+                                                "choices": {
+                                                  "question": "選択してください：",
+                                                  "options": [
+                                                    {
+                                                      "text": "A 肖華は赤死病の衣装を着て首を吊っていなかった",
+                                                      "correct": false,
+                                                      "reply": "えっと……"
+                                                    },
+                                                    {
+                                                      "text": "B 肖華は阿祐に殺された",
+                                                      "correct": false,
+                                                      "reply": "違う……俺は人を殺していない！"
+                                                    },
+                                                    {
+                                                      "text": "C 肖華の死には別の事情がある",
+                                                      "correct": true
+                                                    }
+                                                  ]
+                                                }
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "肖華の死は、そんなに単純なものではありません。少なくとも、死体の第一発見者として、あなたは嘘をついています。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "でも……わ、私は本当に人を殺していません！神に誓って！"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "none",
+                                                "t": "あなたを殺人犯だと言っているわけではありません。ただ、この件も再調査する必要があると思っているだけです。全てがはっきりするまで、捜査に協力してください。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_ayou",
+                                                "t": "うう……"
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "あなたは琴刑事に新たな手がかりを見つけたことを伝える。彼女は阿祐を一瞥し、すぐにあなたのところへ歩いてきた。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "泉、容疑者たちとの尋問はどうだった？"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_xiaozhi",
+                                                "t": "とても、とても怪しい！みんなまるで本当のことを言っていないみたい。"
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "あなたは阿祐と真橙の言葉の疑わしい点、そして3年前の肖華の死亡事件と明淇の噂を琴刑事に伝えた。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "どうやら、3年前の件も一緒に調査する必要がありそうだ。現時点では、両者は間違いなく関連しているように見える。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "さっき、楽園が観客から重要な物を紛失したという通報を受け、その観客はお化け屋敷でなくしたと強く主張している。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "それから、Andyに蒋威の私物ロッカーを開けさせた。真橙と阿祐も自分のロッカーを開けたが、今のところ特に何も見つかっていない。同僚にそこを封鎖させたので、明日君も確認できるだろう。"
+                                              },
+                                              {
+                                                "s": "player",
+                                                "speaker": "char_qin",
+                                                "t": "それから、この殺人事件の経緯を明らかにするためには、3年前の肖華の自殺事件に関係した人たちとも話をする必要がある。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "同僚に前任の演出部主管である明淇に連絡を取ってもらっている。それから美羽も明日戻って来られるはずだ。彼らから新しい手がかりが得られるかもしれない。"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_qin",
+                                                "t": "今日はもう遅いし、君と希枝は早く休んだほうがいい。尋問はご苦労さま。今度夜食をご馳走するよ！"
+                                              },
+                                              {
+                                                "s": "npc",
+                                                "speaker": "char_xiaozhi",
+                                                "t": "私も行く！"
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "容疑者たちへの最初の尋問は、ひとまず終了した。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "今回の尋問は、あなたに非常に奇妙な感覚を与えた。元々は今日の現場にいたすべての容疑者と被害者の関係を調べ、誰がより強い殺人動機を持っているのかを見つけ出そうとしていただけだった。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "しかし、事態はますます複雑になり、さらに昔の人や出来事にも関連しているように思えた。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "もう現場にいない、もう誰もあまり覚えていないかもしれないこと——肖華の死、肖華の死後に突然辞めた演出部主管、無名のハラスメント通報——これらすべてが、どこかで関連しているようにあなたには感じられた。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "石輝はずっと安全と最適化の話に持っていこうとしていた……まるで明淇と肖華のことを意図的に避けているかのようだった。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "真橙は口では肖華と親しくないと言い、関係を否定しようとしていた。本当に関係がないのなら、そんなに多くを説明する必要はないはずだ。彼女は一体何を恐れているのだろうか？",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "阿祐……全員の中で彼の反応が最も疑わしい。彼は繰り返し被害者と仲が良いと言っていたが、様々な兆候からそれは事実ではないことが示唆されている。",
+                                                "_cutscene": true
+                                              },
+                                              {
+                                                "s": "system",
+                                                "speaker": "none",
+                                                "t": "この3人は、それぞれが何かを隠そうとしている。彼らの口を割らせるものを見つけなければならない。明日の尋問でさらに多くの手がかりが得られることを願う。",
+                                                "endChapter": true,
+                                                "bgm": "main"
+                                              }
+                                            ]
+                                          }
+                                        },
+                                        "bgm": "tension"
+                                      }
+                                    ]
+                                  }
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_19": {
+      "char": "char_shihui",
+      "title": "自己紹介をしてください",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "私は演出部の主管です。Andyと同じで、楽園で働いて2年になります。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "私は園全体の公演の調整と、公演内容の総合的な企画、テーマのパッケージングを担当しています。みなさんが見ているお化け屋敷やパレード、夜のライトアップショー、花火大会などは、すべて私が企画したものです。",
+          "present": {
+            "char_mingqi": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "お化け屋敷の最初のデザイナーは明淇という人で、あなたの前の演出主管だと聞きましたが？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "ああ、はは、そうですね。彼は私が来る前の演出主管です。",
+                  "unlockTopic": [
+                    "t_s2_23"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "この仕事はとても面白くて、特に毎年のお化け屋敷の「赤死病の仮面」というテーマが好きなので、今年は特に気合を入れて、予備の装飾道具の予算も増やしました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "毎年の？ということは、「赤死病の仮面」というテーマは何年も続けて演じているんですね？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "はい、このテーマは3年間演じています。予算の都合上……毎年道具を全部入れ替えるわけにはいきませんからね。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "では、なぜ装飾道具に予備が必要なんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "道具は通常の使用でも消耗しますし、それにここではお客様が持ち帰ってしまうこともありますし、走り回っている子供たちが鏡を割ってしまうこともあるんです……だから私たちは自費で予備を購入しなければならず、俳優たちのボーナスも一部カットされてしまいます……",
+                "unlockEv": [
+                  "ev_shihui_testimony1"
+                ]
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "とにかく、私はこの仕事が大好きです。"
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_20": {
+      "char": "char_shihui",
+      "title": "被害者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "蒋威はこのお化け屋敷の主なクリエイターの一人です。彼の業務能力は非常に高く、「赤死病の仮面」の中のいくつかのパフォーマンスの振り付けは、最初に彼が中心となってデザインしました。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "いわゆる重鎮的な人物、というわけですね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "そうです。彼は何バージョンもの公演の動線をデザインし、何度か公演を重ねた後にようやく確定しました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "彼の性格はあまり好かれるタイプではありませんでしたが、それは才能があるからこそ、少し傲慢だったのかもしれませんね。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "どのように傲慢だったんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "ええと、彼はですね、たまに「あいつはクズだ」とか言うことがありました。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "それで、彼はあなたにそう言ったことはありますか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "いいえ、私たちは特に確執はありませんよ。彼の方が私より先に来ていたので、私は多くのことを直接彼に任せていて、私を通す必要はありませんでした。名目上は私が彼の上司ですが、実際には上下関係のようなものはあまりありませんでしたね。"
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_21": {
+      "char": "char_shihui",
+      "title": "他の容疑者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "彼はよく真橙とふざけ合ったり冗談を言ったりしていて、みんなも二人が仲が良いのは明らかでした。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "阿祐とは……阿祐はどちらかと言うと、物静かで内向的な性格だと思います。おそらく彼らとはあまり遊ばなかったのでしょう。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "私は実は阿祐のことが少し心配でした。蒋威と真橙はいつも一緒に阿祐のことをからかっていて……時にはやりすぎても彼は何も言わないんです。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼らは阿祐にひどいことをしたんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "ある時、リハーサル室を通りかかったら、蒋威が罵りながらドアをバタンと閉めて出てきたんです。ドアが開いた後、阿祐が一人でテーブルの上の水を拭いていて、顔は真っ赤でした。床には割れたコップがありました。彼は自分がうっかり落としたと言いました。",
+                "unlockEv": [
+                  "ev_shihui_testimony2"
+                ]
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "あなたは蒋威が投げたと疑っているんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "そう推測したことはあります。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "同僚に怒りをぶつけてコップを投げるなんて、良くないことですよね。私も彼に言ったことがありますが、あまり効果はなかったようです。"
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_22": {
+      "char": "char_shihui",
+      "title": "事件前後の行動",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "私はだいたい6時過ぎに、現場の秩序や雰囲気が良かったので、食堂に食事に行きました。食べ終わりかけの時に、真橙から電話がかかってきて、蒋威がいなくなったと言われました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼女は何時に電話をかけてきましたか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "携帯の記録を見てみますね……ええと、19時25分でした。"
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_23": {
+      "char": "char_shihui",
+      "title": "前任の演出主管 明淇",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "明淇は確かに初版のお化け屋敷のデザイナーです。それにパレードなどのプロジェクトも、彼が楽園側と協議し、企画し、立ち上げたものです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "彼が手掛けたこれらの革新的なプロジェクトは、楽園に多くの収益をもたらしました。だから彼が去った後でも、楽園はこれらのデザイン案を引き続き使用しています。私が引き継いだ後、現在流行っている遊び方や細かい部分をたくさん追加したので、完全にリニューアルしたバージョンと言えますよ！",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼はなぜ辞めたんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "それはですね……言いにくいことですが……彼は以前、女性俳優にハラスメントをしていたと噂されています……"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "私はそれらの出来事の後に楽園に入社しました。みんなこの人については少し避けるような感じで、あまり話しませんでした。",
+                "unlockEv": [
+                  "ev_shihui_testimony3"
+                ]
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "私の仕事は彼の基礎の上に、公演を最適化して、みんなが公演のプレッシャーに対処しやすくし、心身の健康を保てるようにすることです。",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "ちょっと待ってください……あなたは特に心身の健康に言及しましたが、何か以前に何かあったのですか？",
+                    "bgm": "tension"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "ああ……ええと、それはですね、お化け屋敷ですから、どうしても怖がった観客が俳優に暴力を振るうということが起こり得ますよね。"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "だから私は、動線や動作、道具などを一定の基準に合わせて調整して、俳優がお化け屋敷の中でもある程度安心できるようにしているんです。"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "うーん、あなたの言うことは確かにお化け屋敷の公演で実際に起こり得ることですが、このお化け屋敷に関しては、状況が少し異なるかもしれません。理由は……",
+                      "choices": {
+                        "question": "選択してください：",
+                        "options": [
+                          {
+                            "text": "A 会場が狭く、余分なスペースがないから",
+                            "correct": false,
+                            "reply": "実はここは狭くなくて、南州のお化け屋敷よりも120平米も広いんですよ。"
+                          },
+                          {
+                            "text": "B 観客と俳優の距離が離れているから",
+                            "correct": true
+                          },
+                          {
+                            "text": "C 公演に怖い場面がデザインされていないから",
+                            "correct": false,
+                            "reply": "それはダメですよ。お化け屋敷はやっぱり怖くないとね……"
+                          }
+                        ]
+                      },
+                      "bgm": "tension"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "どの場面もダンスかモノローグで、しかも観客からかなり離れています。観客が俳優を殴ろうとしても届かないですよね。では、あなたが心配していることとは一体何ですか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_shihui",
+                      "t": "はは、おっしゃる通りです。口誤、口誤ですね。",
+                      "question": {
+                        "resolved": false,
+                        "dialogue": [
+                          {
+                            "s": "player",
+                            "speaker": "none",
+                            "t": "時には、口誤の原因は本音がうっかり出てしまうことにあるんですよ。",
+                            "bgm": "tension"
+                          },
+                          {
+                            "s": "npc",
+                            "speaker": "char_shihui",
+                            "t": "……",
+                            "question": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "だから、何かあったんですか？"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "はあ……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "あなたの言う通りです……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "これは、私が来る前に起きたことです。楽園と演出部に非常に悪い影響を与えました。"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_shihui",
+                                  "t": "楽園も積極的に対応し、処理して、この件が早く収まるように願っていました。",
+                                  "bgm": "main",
+                                  "unlockTopic": [
+                                    "t_s2_24"
+                                  ]
+                                }
+                              ]
+                            }
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_s2_24": {
+      "char": "char_shihui",
+      "title": "朝夜楽園のスキャンダル",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "噂によると、お化け屋敷が改装中の時に、リハーサルをしていた俳優がここで自殺したそうです。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "自殺？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "はい……その俳優は肖華といって……以前は昼間のダンスチームに所属していました。",
+          "unlockProfile": [
+            "char_xiaohua"
+          ],
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼はどこで、どのように自殺したんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "5番スポットで……首を吊って自殺しました。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "自殺の原因は何ですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "ああ……噂では、明淇が彼にずっとプレッシャーをかけていたそうです。彼はそれに耐えられず、極端な手段を選んだと。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "お化け屋敷の営業が迫っていたため、楽園はこの件が経営に影響することを心配し、肖華の遺族に金銭を支払って示談にすることで決着をつけることを選びました。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "そして、遺族の怒りを鎮めるために、楽園は明淇を解雇し、私を採用しました。"
+              }
+            ]
+          }
+        }
+      ],
+      "hidden": true
+    },
+    "t_entrance_tutorial": {
+      "char": "char_xiaozhi_p0",
+      "title": "希枝と一緒に調査",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p0",
+          "t": "お姉ちゃん、私たちはどうすればいいの？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "左上にある「場所」リストが、現在調査可能な場所を示しているよ。ストーリーが進むにつれて、さらに多くの場所が順次解放される。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "まずは一緒にそれぞれの演技スポットに入って、「現場を観察」をクリックしよう。手がかりがあれば、自動的に右側の欄に収集される。もし何か道具を使って調査する必要がある箇所があれば、先に道具を手に入れる必要がある。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "道具は証拠品の欄にも置かれる。つまり、この欄は証拠品と道具の両方の機能を同時に持っているんだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それから、さっき話した公演の詳細と、現場で観察した証拠を組み合わせて、最初の推測をしてみよう。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "そして、左側の「場所」リストの下には、対応する場所で会話できる「現場人物」の写真が表示される。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "人物の写真をクリックすると、その人物と雑談をした後、メインウィンドウの下にある「話題」をクリックして、基本的な尋問をすることができる。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "会話の中の重要な手がかりはすべて、自動的に右側の3つの欄に収集される。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "尋問の際には、積極的に容疑者に「追及」や「証拠提示」をすることができる。ただし、「追及」と「証拠提示」のボタンは、対応する文章が完全に表示された時のみ有効にクリックできることに注意しよう。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "相手の矛盾や嘘を暴くことで、新しい手がかりを得たり、新しい話題が解放されたりするかもしれない。「話題」内や「手がかり」のポップアップ内では、キーボードのA/Dキーを使って文章や手がかりを素早く切り替えることができる。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "つまり、私たちの調査の基本的な流れは、現場検証、推理、そして異なる対象にそれぞれの視点からの事実を聞き、矛盾を見つけて一つずつ攻略し、最後に真実にたどり着くということだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_xiaozhi_p0",
+          "t": "よし！早速始めよう！",
+          "unlockLoc": [
+            "loc_point1"
+          ],
+          "unlockTopic": [
+            "t_s2_1"
+          ]
+        }
+      ]
+    }
+  }
+}

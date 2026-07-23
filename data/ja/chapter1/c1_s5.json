@@ -1,0 +1,1716 @@
+{
+  "locations": {
+    "visitor_center_c1s5": {
+      "name": "尋問エリア",
+      "desc": "朝夜遊園地、ビジターセンター",
+      "chars": [],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_qin": {
+      "name": "琴",
+      "info": "旧知の刑事",
+      "sprite": "images/chapter1/char_qin.png"
+    },
+    "char_xiaozhi": {
+      "name": "希枝",
+      "info": "あなたの妹",
+      "sprite": "images/chapter1/char_xiaozhi.png"
+    },
+    "char_meiyu": {
+      "name": "美羽",
+      "info": "パーク臨時俳優",
+      "sprite": "images/chapter1/char_meiyu.png"
+    },
+    "char_rulan": {
+      "name": "茹蘭",
+      "info": "動物救助センター職員",
+      "sprite": "images/chapter1/char_rulan.png"
+    },
+    "char_aling": {
+      "name": "阿凌",
+      "info": "肖華の婚約者",
+      "sprite": "images/chapter1/char_rulan.png"
+    },
+    "char_xiaohua": {
+      "name": "肖華",
+      "info": "三年前死亡したお化け屋敷俳優",
+      "sprite": "images/chapter1/char_xiaohua.png"
+    },
+    "char_shihui": {
+      "name": "石輝",
+      "info": "演出部主管",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_zhencheng": {
+      "name": "真橙",
+      "info": "お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_zhencheng.png"
+    },
+    "char_ayou": {
+      "name": "阿祐",
+      "info": "お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_ayou.png"
+    },
+    "char_antong": {
+      "name": "安童",
+      "info": "怪盗",
+      "sprite": "images/chapter1/char_antong.png"
+    },
+    "char_changwei": {
+      "name": "蒋威",
+      "info": "被害者、お化け屋敷の俳優",
+      "sprite": "images/chapter1/char_changwei.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "2025年10月30日、10時30分、朝夜遊園地、ビジターセンター",
+      "bgm": "bgm_c1s5"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "さて、事件全体の経緯を整理していこう。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "3年前、朝夜楽園は既存のアトラクションを刷新するため、イベント企画や脚本に長けた明淇を演出部のディレクターとして招へいした。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "俳優グループのリーダーであった蒋威は、自分こそがディレクターの座にふさわしいと考えており、突然やってきた外部の管理職である明淇に対して強い反発心を抱いていた。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "一方、明淇は自身を過大評価しており、俳優たちや楽園経営の実情を深く理解せず、性急にいくつかのプロジェクトを推進したため、様々な方面から抵抗に遭った。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "経営陣は支持せず、社員は言うことを聞かない。しかし、そんな状況下でも、後に多くの観客に愛されることになるハロウィンお化け屋敷プロジェクトは誕生した。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "この3人が、このプロジェクトの最初の俳優となった。",
+      "choices": {
+        "question": "選択してください：",
+        "options": [
+          {
+            "text": "A 蒋威、肖華、真橙",
+            "correct": true
+          },
+          {
+            "text": "B 蒋威、阿祐、真橙",
+            "correct": false,
+            "reply": "どこか違うような気がする。"
+          },
+          {
+            "text": "C 阿祐、肖華、真橙",
+            "correct": false,
+            "reply": "どこか違うような気がする。"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "その後、当時楽園の道具グループに入社し、お化け屋敷で手伝っていた阿祐は、蒋威の励ましを受けて、公演の準備やリハーサルにも参加するようになった。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "すべてが順調に進んでいた矢先、悲劇が起きた。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "2022年10月8日、ハロウィンを目前に控え、新しい公演プロジェクト「赤死病の仮面」のリハーサルが行われていた。午後4時ごろ、俳優と道具係を兼ねるこの人物が、5番公演スポットを通りかかったところ、「赤死病」が梁に傾いて吊るされているのを発見した。",
+      "choices": {
+        "question": "選択してください：",
+        "options": [
+          {
+            "text": "A 真橙",
+            "correct": false,
+            "reply": "何？"
+          },
+          {
+            "text": "B 蒋威",
+            "correct": false,
+            "reply": "違うんじゃない？"
+          },
+          {
+            "text": "C 阿祐",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "阿祐がお化け屋敷に入り、5番公演スポットを通りかかると、「赤死病」が梁に傾いて吊るされているのを発見した。"
+    },
+    {
+      "s": "npc",
+      "speaker": "char_qin",
+      "t": "しかし、こうした前提があるため、阿祐は最初は慌てなかった。",
+      "autoPresent": "阿祐が慌てなかった理由を指摘してください",
+      "present": {
+        "ev_hanged_reddeath": {
+          "resolved": false,
+          "dialogue": []
+        }
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "なぜなら、以前に赤死病の人形を吊り上げるテストを行っていたため、阿祐はそこに吊るされているのは道具だと思い、片付けようとしたが、「赤死病」は人形ではなく、安全ロックが外れ、ロープが首に絡まって窒息死した同僚の肖華であることを発見した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "当時、阿祐は蒋威によって特別にお化け屋敷プロジェクトの俳優グループに加えられたばかりで、蒋威を兄貴分と見なしていたため、まず最初に蒋威にこの件を報告した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "蒋威は現場に来て肖華の状態を確認し、もし安全事故として処理されれば、自分が責任を問われることは間違いなく、公演も延期になる可能性が高いと判断した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "彼はすぐに一つの方法を思いついた。",
+      "choices": {
+        "question": "選択してください：",
+        "options": [
+          {
+            "text": "A 死亡時刻を偽造する",
+            "correct": false,
+            "reply": "お姉ちゃん、しっかりして？"
+          },
+          {
+            "text": "B 死体を迅速に移動する",
+            "correct": false,
+            "reply": "お姉ちゃん、しっかりして？"
+          },
+          {
+            "text": "C 死体を自殺に見せかける",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "それは、阿祐に安全ロックを外させ、ロープを再び死者の首に巻き付け、自殺の偽装をするというものだった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "その後、彼は周囲に肖華が演出部主管の明淇の叱責によって落ち込んでいたと大げさに吹聴した。これによって、すべては明淇のせいだと思わせた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "明淇は当時、ハラスメント疑惑と関連づけられており、さらに長期間外部の仕事を請け負っていたため、園側は以前から不満を持っていた。そこでこの件を利用して、園側は内々に明淇に自主退職を促した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "そして、ハラスメントの件は、実は真橙がこの人物に対して行った告発だった。",
+      "choices": {
+        "question": "選択してください：",
+        "options": [
+          {
+            "text": "A 行政部・高欢",
+            "correct": false,
+            "reply": "？"
+          },
+          {
+            "text": "B 行政部・王喆",
+            "correct": true
+          },
+          {
+            "text": "C 飲食部・劉哲",
+            "correct": false,
+            "reply": "？"
+          }
+        ]
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "そして、彼女がこの件を蒋威に話した後、蒋威は暗がりで王喆を襲撃し、王喆はその後すぐに退職した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "真橙は蒋威の助けに感謝していた。そしてこの時期、蒋威は明らかに明淇と対立状態にあった。真橙の心の天秤は蒋威に傾き、投稿内で真実を明らかにすることを意図的に避けた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "明淇が去った後、蒋威は昇進を待たず、代わりに「コネ入社」の石輝がやってきた。彼と石輝の関係はこうだった……",
+      "choices": {
+        "question": "選択してください：",
+        "options": [
+          {
+            "text": "A 互いに軽蔑し合っている",
+            "correct": false,
+            "reply": "？"
+          },
+          {
+            "text": "B 共に成長している",
+            "correct": false,
+            "reply": "？"
+          },
+          {
+            "text": "C 表面的には和やか",
+            "correct": true
+          }
+        ]
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "石輝は決して蒋威の対抗馬になることはなかった。彼は自分が平凡な能力であることを自覚しており、楽園は実際にはこうした優秀なベテラン社員によって運営されていることを知っていた。だから石輝は蒋威を非常に尊重していた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "一方蒋威は、石輝に対しては、明淇のように衝突を表面化させることができなかった。石輝に対しては、まるで拳で綿を打つようなもので、まったく手応えがなかった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "能力においては、彼は社外から来た管理職と互角に渡り合うことはできたが、自分には後ろ盾となり、道を切り開いてくれる親戚がいなかった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "蒋威は自分が得意とし、信じてきたやり方でここまで来たが、ついに見えない天井にぶつかった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "そして彼は、忍耐力に欠け、短気な一面を見せ始めた。彼は常に明確な倫理観を持っていなかった。目的達成のために人心を操ることは、彼にとって簡単なことだった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "阿祐の距離を置く態度に対しては、肖華の死に関係があるとほのめかし、バッテリーの老朽化による爆発では、美羽に自分の行動が重大な公演事故を引き起こしたと告げた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "彼は自分に近い者だけを守り、忠誠を示さなかった者にはためらわずに罰を与えた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "その上、この件が彼に、訪れた観客に対して復讐心を抱かせることになった。",
+      "autoPresent": "なぜ蒋威が観客に復讐したいと思ったのか指摘してください",
+      "present": {
+        "ev_shihui_testimony1": {
+          "resolved": false,
+          "dialogue": []
+        }
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "彼は「目には目を」という方針で、真橙と共にお化け屋敷で観客の財物を盗むことにした。もちろん、発見を避けるため、使用頻度の低い物を標的にすることが多かった。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "阿祐は彼に対してますます恐怖を感じ、また彼と真橙の行動を発見した。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "彼は最終的に一つの方法を考えた。自分の友人・安童にお化け屋敷内で観客の重要な物を盗ませることで、園側が蒋威たちの行動を発見し、罰を与えたり、彼らを解雇したり、自分も解雇されたりすることを望んだ。阿祐はもうこれ以上続けたくなかったのだ。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "安童は盗みの後、阿祐から蒋威の死亡を知り、盗んだ物を比較的発見されやすい場所に置いた。以前の尋問で、彼は私たちに重要な情報を提供した。",
+      "autoPresent": "安童が提供した重要な情報を指摘してください",
+      "present": {
+        "ev_tourist_at_back": {
+          "resolved": false,
+          "dialogue": []
+        }
+      }
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "お化け屋敷の中で、彼は常に自分が観客の最後尾にいることを確認し、同時に蒋威や真橙が盗みを働いていないか注意していた。そのため、常に警戒して自分と他者の位置関係に気を配っていた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "2番スポットからずっと、彼はすべての観客と俳優が自分の視野に入るよう繰り返し確認していたが、6番スポットに近づいた時、自分の背後にもう一人いることに気づいた。"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "2番スポットの公演が終わる前に姿を消し、また6番スポットに現れる……これは普通の観客がすることには聞こえない。おそらく、この人物が公演の途中で蒋威を殺害したのだ！"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "そして捜査の過程で、ある人物がアリバイを偽造していることが判明した。その人物は……",
+      "choices": {
+        "question": "アリバイを偽造した人物は？",
+        "options": [
+          {
+            "text": "A 美羽",
+            "correct": false,
+            "reply": "そうなのか？"
+          },
+          {
+            "text": "B 茹蘭",
+            "correct": true
+          },
+          {
+            "text": "C 安童",
+            "correct": false,
+            "reply": "そうなのか？"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "彼女はどうやってアリバイを偽造したんだ？"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "これを利用したんだ……",
+      "choices": {
+        "question": "茹蘭は何を利用してアリバイを偽造した？",
+        "options": [
+          {
+            "text": "A 映画を観ること",
+            "correct": true
+          },
+          {
+            "text": "B 証拠品の偽造",
+            "correct": false,
+            "reply": "違う……"
+          },
+          {
+            "text": "C 往復の距離",
+            "correct": false,
+            "reply": "違う……"
+          }
+        ]
+      }
+    },
+    {
+      "s": "npc",
+      "speaker": "char_xiaozhi",
+      "t": "でも、どうやってそれがその夜の映画と関係していることを確認するんだ？"
+    },
+    {
+      "s": "player",
+      "speaker": "none",
+      "t": "この重要な情報のせいだ。",
+      "autoPresent": "茹蘭がアリバイを偽造した証拠を指摘してください",
+      "present": {
+        "ev_ticket_checker_testimony": {
+          "resolved": false,
+          "wrongReply": {
+            "speaker": "char_xiaozhi",
+            "t": "どうも違うみたい……"
+          },
+          "dialogue": [
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "検札員が、茹蘭のことを覚えていたのは、彼女が途中で出て行って長い間トイレに行っていたからだ。"
+            },
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "特に問題ないように聞こえるよ。茹蘭は18:30のチケットを買って、かぼちゃの王様が魔法の杖を盗んだ後——つまり開演から約40分のシーンで——一時的にホールを離れて、検札員に目撃されている。"
+            },
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "彼女が離れていた時間は短くはないけど、10数分では、映画館から楽園のお化け屋敷までタクシーで片道行くのがやっとだよ。"
+            },
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "彼女が10数分で蒋威を殺害したわけではない。"
+            },
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "実際には、私は検札員の一言の中に矛盾を発見した。"
+            },
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "問題は……",
+              "choices": {
+                "question": "検札員の証言で本当に矛盾しているのは？",
+                "options": [
+                  {
+                    "text": "A その夜の観客が多かった",
+                    "correct": false,
+                    "reply": "人が多いのは、普通のことだろう。"
+                  },
+                  {
+                    "text": "B 10数分経ってから再入場した",
+                    "correct": false,
+                    "reply": "10数分では短すぎて、楽園を往復するには足りない。"
+                  },
+                  {
+                    "text": "C ちょうどロビーに人がいなかった",
+                    "correct": true
+                  }
+                ]
+              }
+            },
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "祝日で観客は多かったけど、ロビーもずっと人がいるわけじゃないだろう。だからこの言葉の何が問題なの？"
+            },
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "そう、問題はここにある。もし茹蘭が本当に自分が言う通り、18:30開演の映画を観ていたのなら、「ロビーに人がいなかった」という状況はありえない。"
+            },
+            {
+              "s": "npc",
+              "speaker": "char_xiaozhi",
+              "t": "何だって？！"
+            },
+            {
+              "s": "player",
+              "speaker": "none",
+              "t": "この証拠は証明できる……",
+              "autoPresent": "ロビーに人がいなかったことがありえないことを証明できる証拠を指摘してください",
+              "present": {
+                "ev_cinema_schedule": {
+                  "resolved": false,
+                  "wrongReply": {
+                    "speaker": "char_xiaozhi",
+                    "t": "どうも違うみたい……"
+                  },
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "その夜の上映スケジュールによると、もし茹蘭が開演から40分後に出てきたなら、必ずその映画を観る観客たちと出会うはずだ。"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "彼女が出会う観客は……",
+                      "choices": {
+                        "question": "19時10分ごろに順次入場するのはどの映画？",
+                        "options": [
+                          {
+                            "text": "A 『諜戦1999』",
+                            "correct": false,
+                            "reply": "そうなのか？"
+                          },
+                          {
+                            "text": "B 『最後の一匹の恐竜』",
+                            "correct": false,
+                            "reply": "ちょっと違う気がする……"
+                          },
+                          {
+                            "text": "C 『秋の日より』",
+                            "correct": true
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "映画『秋の日より』は19:15の回がある。もし茹蘭が19:10に出てきたなら、ちょうど入場中の観客と遭遇するはずだ。検札員の印象が「ロビーに人がいなかった」になるはずがない。"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "！！！"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "ということは、茹蘭は2枚チケットを買っていたのかもしれない？自分が実際に観ていたのは別の回の映画だったってこと？"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "そうだ！"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "その夜の『ハロウィン・ワンダーナイト』の何回の上映が、開演40分後にロビーに人がいない状況を作り出せるんだ？"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "その状況を作り出せる回は……",
+                      "choices": {
+                        "question": "何回がその状況を作り出せる？",
+                        "options": [
+                          {
+                            "text": "A 一回",
+                            "correct": true
+                          },
+                          {
+                            "text": "B 二回",
+                            "correct": false,
+                            "reply": "もう一度計算してみて？"
+                          },
+                          {
+                            "text": "C 三回",
+                            "correct": false,
+                            "reply": "そんなに多いの？"
+                          }
+                        ]
+                      }
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "各映画の入場・退場時間をすべて計算に入れると、実際には19:40の回だけがこの状況を作り出せる。"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "それなら、もし被害者の死亡時刻から推測すると……犯人は遅くとも19:15までに殺人計画を実行し、その後19:40の映画を観に行くとしても、時間的には十分間に合う！"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "そうだ！"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_xiaozhi",
+                      "t": "でも、茹蘭はアリバイを偽造していて、犯行時間はあるけど、それだけでは彼女が犯人だとは証明できないよね？なぜ自分の彼氏を殺さなきゃいけないんだ？"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "そこが重要なポイント——殺人動機だ。実は茹蘭には確かに殺人動機がある。彼女は蒋威の彼女であるだけでなく、もう一つの身分があるからだ。それは……",
+                      "autoPresent": "茹蘭のもう一つの身分を指摘してください",
+                      "present": {
+                        "char_aling": {
+                          "resolved": false,
+                          "wrongReply": {
+                            "speaker": "char_xiaozhi",
+                            "t": "どうも違うみたい……"
+                          },
+                          "dialogue": [
+                            {
+                              "s": "npc",
+                              "speaker": "char_xiaozhi",
+                              "t": "この名前……肖華の婚約者？なぜ茹蘭が阿凌だと思うんだ？"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "なぜなら、前に誰かが言った言葉が気になっていたからだ。今になってようやくわかった。"
+                            },
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "その言葉は……",
+                              "autoPresent": "気になっていた言葉を指摘してください",
+                              "present": {
+                                "ev_zhencheng_testimony4": {
+                                  "resolved": false,
+                                  "wrongReply": {
+                                    "speaker": "char_xiaozhi",
+                                    "t": "どうも違うみたい……"
+                                  },
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "以前、真橙に肖華の婚約者のことを尋ねたことがある。真橙は、その女性はよく病院に注射に行くと言っていた。"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_xiaozhi",
+                                      "t": "注射……それは普通のことじゃないか？"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "普通、誰かが病気になったら、病院に行って診察を受けたり、薬をもらったりする、と表現する。なぜ彼はわざわざ「注射」と強調したのだろうか？"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "この情報を見るまで、なぜ「注射」なのか理解できなかった。"
+                                    },
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "その情報は……",
+                                      "autoPresent": "気になるその情報を指摘してください",
+                                      "present": {
+                                        "char_rulan": {
+                                          "resolved": false,
+                                          "wrongReply": {
+                                            "speaker": "char_xiaozhi",
+                                            "t": "どうも違うみたい……"
+                                          },
+                                          "dialogue": [
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_xiaozhi",
+                                              "t": "つまり……"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "私が気になったのは……",
+                                              "choices": {
+                                                "question": "気になったのは茹蘭のどんな情報？",
+                                                "options": [
+                                                  {
+                                                    "text": "A 年齢",
+                                                    "correct": false,
+                                                    "reply": "なぜ？ある年齢になったら注射を打たなきゃいけないってこと……？"
+                                                  },
+                                                  {
+                                                    "text": "B 職業",
+                                                    "correct": true
+                                                  },
+                                                  {
+                                                    "text": "C 健康状態",
+                                                    "correct": false,
+                                                    "reply": "あ？彼女は病気なの……？"
+                                                  }
+                                                ]
+                                              }
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "職業だ。茹蘭は市内の動物救助センターで働いている。この職業は動物の咬傷や引っかき傷に繰り返しさらされるリスクがあり、そのため狂犬病ワクチンや破傷風の注射を繰り返し打つ必要がある。"
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_xiaozhi",
+                                              "t": "ああ……"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "そのため、私は茹蘭が蒋威の彼女になる前、肖華の婚約者・阿凌だったと推測した！"
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_xiaozhi",
+                                              "t": "！！！"
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_xiaozhi",
+                                              "t": "もしそうなら……動機は、3年前に死んだ肖華の復讐……だけどなぜ今なんだ……"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "それについては、後で彼女に尋問できる。しかし、もう一人、この件の別の側面を知る手助けをしてくれるかもしれない人物がいる。"
+                                            },
+                                            {
+                                              "s": "npc",
+                                              "speaker": "char_xiaozhi",
+                                              "t": "つまり、他にもこの件を知っている可能性がある人がいるってこと？"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "そうだ。蒋威が殺害されたこの時期、この人物の行動がとても怪しいと思わないか？"
+                                            },
+                                            {
+                                              "s": "player",
+                                              "speaker": "none",
+                                              "t": "行動が怪しい人物は……",
+                                              "autoPresent": "行動が怪しい人物を指摘してください",
+                                              "present": {
+                                                "char_meiyu": {
+                                                  "resolved": false,
+                                                  "wrongReply": {
+                                                    "speaker": "char_xiaozhi",
+                                                    "t": "どうも違うみたい……"
+                                                  },
+                                                  "dialogue": [
+                                                    {
+                                                      "s": "npc",
+                                                      "speaker": "char_xiaozhi",
+                                                      "t": "美羽が嘘をついた件のこと？"
+                                                    },
+                                                    {
+                                                      "s": "player",
+                                                      "speaker": "none",
+                                                      "t": "そうだ。警察の調査によると、美羽は確かに26日午前9時に河溪市行きのバスに乗り、28日午前9時に帰ってきた。しかし、なぜわざわざ母親に協力して、母親が重病で入院したから帰ったと嘘をつかせたのか？"
+                                                    },
+                                                    {
+                                                      "s": "npc",
+                                                      "speaker": "char_xiaozhi",
+                                                      "t": "そうだよ、なぜだろう？"
+                                                    },
+                                                    {
+                                                      "s": "player",
+                                                      "speaker": "none",
+                                                      "t": "美羽が嘘をついた理由は、おそらく……",
+                                                      "choices": {
+                                                        "question": "美羽が嘘をついた理由は？",
+                                                        "options": [
+                                                          {
+                                                            "text": "A 彼女は犯人の共犯者だ",
+                                                            "correct": false,
+                                                            "reply": "彼女の行動はむしろ恐怖と逃避のように見える。"
+                                                          },
+                                                          {
+                                                            "text": "B 自分が犯人だと思われるのを恐れた",
+                                                            "correct": false,
+                                                            "reply": "それだけなら、母親に協力を頼む必要はない。"
+                                                          },
+                                                          {
+                                                            "text": "C 蒋威の死を予見していた",
+                                                            "correct": true
+                                                          }
+                                                        ]
+                                                      }
+                                                    },
+                                                    {
+                                                      "s": "player",
+                                                      "speaker": "none",
+                                                      "t": "美羽はおそらくその2日間に何かが起こることを予想していた。だから事件が起きても、同僚からの電話にも出られなかったのだ。"
+                                                    },
+                                                    {
+                                                      "s": "npc",
+                                                      "speaker": "char_xiaozhi",
+                                                      "t": "なぜ美羽がそのことを知っていたんだ？"
+                                                    },
+                                                    {
+                                                      "s": "player",
+                                                      "speaker": "none",
+                                                      "t": "なぜなら美羽と茹蘭、つまり阿凌は実はずっと接触していたからだ。この証拠がそれを証明している！"
+                                                    },
+                                                    {
+                                                      "s": "player",
+                                                      "speaker": "none",
+                                                      "t": "美羽と茹蘭の関連性を証明する証拠は……",
+                                                      "autoPresent": "美羽と茹蘭の関連性を証明する証拠を指摘してください",
+                                                      "present": {
+                                                        "ev_meiyu_locker": {
+                                                          "resolved": false,
+                                                          "wrongReply": {
+                                                            "speaker": "char_xiaozhi",
+                                                            "t": "どうも違うみたい……"
+                                                          },
+                                                          "dialogue": [
+                                                            {
+                                                              "s": "player",
+                                                              "speaker": "none",
+                                                              "t": "美羽のロッカーには「Sweet」と書かれた猫の頭のボランティアバッジがある。甘いと猫、何か連想しないか？"
+                                                            },
+                                                            {
+                                                              "s": "npc",
+                                                              "speaker": "char_xiaozhi",
+                                                              "t": "甘い……猫……？あ！思いついた！"
+                                                            },
+                                                            {
+                                                              "s": "player",
+                                                              "speaker": "none",
+                                                              "t": "そう、この言葉はどこかで見覚えがあるよね？"
+                                                            },
+                                                            {
+                                                              "s": "player",
+                                                              "speaker": "none",
+                                                              "t": "似たような言葉がどこにあったか……",
+                                                              "autoPresent": "似たような言葉をどこで見たか指摘してください",
+                                                              "present": {
+                                                                "char_rulan": {
+                                                                  "resolved": false,
+                                                                  "wrongReply": {
+                                                                    "speaker": "char_xiaozhi",
+                                                                    "t": "どうも違うみたい……"
+                                                                  },
+                                                                  "dialogue": [
+                                                                    {
+                                                                      "s": "npc",
+                                                                      "speaker": "char_xiaozhi",
+                                                                      "t": "茹蘭が働いているところは、\"甜咪動物救助センター\"だ！"
+                                                                    },
+                                                                    {
+                                                                      "s": "player",
+                                                                      "speaker": "none",
+                                                                      "t": "そうだ！もし確認を頼めば、救助センターがそんなボランティアバッジを配布していたと分かるはずだ。"
+                                                                    },
+                                                                    {
+                                                                      "s": "npc",
+                                                                      "speaker": "char_xiaozhi",
+                                                                      "t": "でも、なぜ二人が知り合いなんだ？蒋威とより親しい人たちでさえ茹蘭という彼女を知らなかったのに、なぜ美羽が知っているんだ？"
+                                                                    },
+                                                                    {
+                                                                      "s": "player",
+                                                                      "speaker": "none",
+                                                                      "t": "彼女たちの知り合いのきっかけは、おそらくこの人物だ……",
+                                                                      "autoPresent": "彼女たちが誰を通じて知り合ったか指摘してください",
+                                                                      "present": {
+                                                                        "char_xiaohua": {
+                                                                          "resolved": false,
+                                                                          "wrongReply": {
+                                                                            "speaker": "char_xiaozhi",
+                                                                            "t": "どうも違うみたい……"
+                                                                          },
+                                                                          "dialogue": [
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "彼女たちは最近知り合ったのではなく、肖華——阿凌の婚約者、3年前のあの死者——を通じて知り合ったのだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "なるほど……だから美羽はずっと茹蘭が阿凌だと知っていたのか、あるいは茹蘭が蒋威に近づいた本当の目的も知っていたのかもしれない……"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "これで手がかりは整理できた。しかし、美羽と阿凌については、やはり彼女たちと話し、我々の推測が真実かどうか確認する必要がある。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_qin",
+                                                                              "t": "よし、少し休んでくれ。美羽と阿凌を連れて最終尋問を行う。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "2025年10月30日、16時30分、朝夜遊園地、ビジターセンター"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "美羽は緊張しながら尋問エリアに入ってきた。あなたは美羽に推測を話す。彼女は長い沈黙の後、ついに真実を語り始めた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "あなたの推測は正しい。茹蘭は肖華の婚約者・阿凌だ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "私と肖華は同期で楽園に入り、グループ分けも同じだったから、ずっと親しかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "肖華が生きていた頃、私たち——肖華、阿凌、私、それに当時の彼氏——でよく一緒に動物保護活動をしていた。あの頃は本当に楽しかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "その後、肖華が亡くなった。私もとても悲しかった。彼が亡くなる前、肖華は時々、お化け屋敷グループのリハーサルのプレッシャーが非常に大きく、古傷が再発したと言っていた。蒋威はよく彼に、彼から見れば意義のない派手な動きをさせていた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "だから私は肖華の死が、彼らの言うようなものではないかもしれないと疑っていた。しかし、自分の目で見たわけではないことは判断できなかった。阿凌に答えを出すこともできなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "それでも私たちは時々会ってメッセージをやり取りしていた。私が彼氏と別れた時は、阿凌が一番つらい時期を乗り越えるのを助けてくれた。去年のパレード花車事故も……阿凌に話したことがある。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "半年以上前、阿凌がまるで別人のように変わったことに気づいた。髪型、メイク、服装……以前とは全く違っていた。そして、彼女は今年の公演に特に注目していた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "彼女は私にお化け屋敷を案内させ、自分で各隠し扉を開け、各スポットの道具を細かく確認し、公演の詳細——動作の順序、誰が先か後か、衣装の様子——を尋ね、練習のビデオも要求した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "肖華が亡くなってから、彼女が自らこのプロジェクトに関連したことを知りたいと思ったのは初めてだった。しかも、あの出来事からもうそんなに経っているのに、なぜ突然そんなに気にするんだ？"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "当時は理解できなかった。しかし、非常に奇妙なことに気づいたんだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "阿凌が蒋威と恋愛しているんだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "わざと見たわけじゃないんだ……彼女がハートマークを連続で送っている時、一瞬だけ見えたアバターが蒋威だった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "すぐに彼女に尋ねた。どうしてそうなったのか？なぜ蒋威なのか？彼女は、名前を茹蘭に変えたから、もう阿凌とは呼ばないでほしい、肖華のことももう話さないでほしいと言った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "私はすごくすごく心配になった。何か良くないことが起こる気がした。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "理解できなかった……でもわかったのは、彼女が蒋威に何かを探っているようだということだ。おそらく肖華のことについて……時には私にも関係があることだった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "彼女は私に、当時の事故の本当の原因を調べろと言った。物事は私が思っているようにはなっていないかもしれないと。調べてみて、衝撃を受けて彼女にどうして知っているのか尋ねた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "彼女は言った。「清算の時が来た」と。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "家に帰って、母に疲れたから休みたいけど楽園は休ませてくれないと言って、母が病気だという嘘をつくしかなかった。母は、もし誰かから電話があれば、その通りに言うと言ってくれた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "その2日間、私は電話に出られなかった。ずっと母と一緒にいて、そばにいることでしか頭の中の妄想を止められなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "そして案の定、蒋威は死んだ。私だけが真実を知っていた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "警察に通報しようとも思った。でも決断できなかった。阿凌のやったことを絶対に肯定はできない。でも彼女を刑務所に送ることもできなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_meiyu",
+                                                                              "t": "私が間違っていた？こんなことを言って、私は彼女と肖華を裏切ったのか？"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "2025年10月30日、19時42分、朝夜遊園地、ビジターセンター"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "あなたは琴に状況を説明した。琴は後で茹蘭を殺人罪で逮捕すると言った。しかし今は、あなたが彼女と話しても構わないと言った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "あなたが尋問エリアに入った瞬間、茹蘭は顔を上げてあなたを見た。彼女はあなたの表情を読み取ろうとしていた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "彼女は何かを読み取ったのかもしれない。彼女はため息をつき、眉を下げた。まるで仮面が剥がれ落ちたかのようだった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "茹蘭、いや阿凌。君のやったことはもう分かっている。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "うん。美羽さんが話したの？"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "違う。私たちが推理したんだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "ああ……そうなんだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "美羽さんは本当に優しい人だ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "いいだろう……君は何を推理したんだ？"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は肖華の死に別の事情があると考えた。自分を別人に変え、お化け屋敷チームの中心人物・蒋威に近づき、彼と恋愛しているふりをしながら復讐計画を練り、最終的に肖華が死んだ場所で彼を殺した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "じゃあ、私はどうやってやったんだ？"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は普通の観客のふりをして、見物人の群れに紛れ込んだ。そして……",
+                                                                              "choices": {
+                                                                                "question": "どこで蒋威を絞殺した？",
+                                                                                "options": [
+                                                                                  {
+                                                                                    "text": "A 1番スポットで蒋威を絞殺した",
+                                                                                    "correct": false,
+                                                                                    "reply": "できない……"
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "B 4番スポットで蒋威を絞殺した",
+                                                                                    "correct": false,
+                                                                                    "reply": "それだと難易度が高い……"
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "C 5番スポットで蒋威を絞殺した",
+                                                                                    "correct": true
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は蒋威を尾行して5番スポットに来て、彼を絞殺した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私の力では、成人男性を直接絞殺するのは難しい。彼が抵抗すれば、私は制圧されてしまう。"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は仕事中に比較的入手しやすい物を使った……",
+                                                                              "choices": {
+                                                                                "question": "何を使った？",
+                                                                                "options": [
+                                                                                  {
+                                                                                    "text": "A 止血鉗子",
+                                                                                    "correct": false,
+                                                                                    "reply": "うん？"
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "B ガーゼ",
+                                                                                    "correct": false,
+                                                                                    "reply": "えっと……"
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "C 麻酔薬",
+                                                                                    "correct": true
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は救助センターでよく使う麻酔薬を使って彼を眠らせて絞殺し、死体を暗がりに置き、赤死病のマントを着せ、仮面をつけ、真橙さんとデュエットダンスを踊った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "……"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "あれが初めて観客の前で踊った時だった。初めて肖華がやっていたことを理解しようとした時だった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私はわざと一番高いヒールを履いた。蒋威と同じくらいの身長に見えるようにするためだ。ヒールで踊るのはすごく難しかった。ただ相手の手を握ってくるくる回るだけでも難しい。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "踊っている間、頭の中ではずっと馬鹿げた映像が流れていた——ヒールがマントに引っかかって、くるっと回った拍子にマントと仮面が一緒に引きずり落ちる。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "真橙がすぐに私が蒋威ではないと気づき、怪しみ始める。そして、彼女は隅にある死体を見つけ、悲鳴を上げる。それで全ての俳優や観客が集まり、彼らはあたかも私が疫病そのものであるかのように見つめる。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "パトカーのサイレンが鳴り響き、赤と青の光がお化け屋敷の奥まで照らし出す。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私の手首には冷たいブレスレットが一瞬で現れ、私は車に乗せられ、人々の驚愕の視線の中で、悲しみと怨念に満ちたこの場所を去る。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "しかし、そのどれも現実にはならなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私はすべてを滞りなくやり遂げた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そして私は他の観客たちの後ろについて出口から出て行き、何の妨害も受けなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "それからあの映画を観に行った……心臓はずっと制御不能にドキドキしていて、手は痙攣していたけど、映画の内容を無理にでも覚えなければならなかった……警察の尋問に備えて。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "映画の途中で吐き気がして、あの時トイレに行って検札員に見られたのは、策略ではなかった……本当に気分が悪くて、しばらく経ってからホールに戻った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "席に戻ってからも、またずっと長い間待って、ようやく映画が終わった。私はそこから逃げ出して家に帰った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "この2日間、私はまるで真空の中で生きているようだった。夢と現実の区別もつかなくなっていた。夢の中で、時には私の隣に肖華が寝ていて、時には蒋威が寝ていた。目が覚めると、一瞬だけ彼らがまだ生きていて、世界のどこか私の見つけられない場所にいるような気がした。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そして私はここに来て、君たちに嘘をつかなければならなかった。無実の被害者のふりをしなければならなかった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "あなたは何も言わなかった。茹蘭にはしばらく静かにする時間が必要だと思った。しばらくして、あなたは再び疑問を投げかけた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は一体どんな気持ちで蒋威のそばに生きていたんだ？"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私は真実を知りたくて彼に近づいた。でも、そのことを深く尋ねる機会はなかなか見つからなかった。試すたびに、彼ははぐらかした。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "同時に、彼が楽園での仕事がうまくいっていないのを感じ取っていた。彼は頻繁に誰かと酒を飲みに行くようになった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "時々酔っぱらうと、彼は私を「おふくろ」と呼んだ。言った。「おふくろ、これから俺たちちゃんとやっていこう。お前に良くするから」と。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私はこう思うようになった。このまま続けてもいいんじゃないか？肖華はもういないし、目の前のこの人は生きている。ご飯を作ってくれて、階下に行く時にゴミを捨ててくれて、風呂上がりには髪を乾かしてくれる。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そういう確かな温もりに、私は少しぼんやりした。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そんな考えが浮かんだ時、自分に驚いた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私は最初に彼に近づいた目的を忘れたのか？私はそんなに弱くて、簡単に変えられてしまう人間なのか？"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "さっきの君の推理は完全には正しくない。私は彼と恋愛を装いながら復讐を計画していたなんてことはない。実はずっと迷っていたんだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "その時、あることが起きた。美羽がメッセージで、自分が重大な事故を起こして仕事を失いそうになったけど、蒋威が隠してくれたと言ってきた。彼女は蒋威は悪い人ではないと思うと言った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そのことで、蒋威の良い面に対する私の印象は強まった……そして、私はこうも考え始めた。こんなに追究し続ける必要があるのか？"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "しかし、ある日彼が酔っぱらって、普段は決して口にしないことを言い始めた……"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼は言った……「あの愚かな同僚たちは頭のないクズだ。俺が女の同僚に、お前のミスでバッテリーを壊したと言ったら、本当に信じやがった……毎日びくびくしてるのが可笑しい」"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "「じゃあ、前に自殺したあの俳優は？」私はすぐに尋ねた——「自殺したあの俳優も、愚かな奴だったのか？」"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "蒋威は言った……「一番役立たずなのがあいつだ……安全ロックもちゃんとつけられないなんて、絞首刑になるのが当然だ。他人まで巻き添えにする……」"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "あの顔の得意げな表情がどれほど吐き気を催させるか、君は知らないだろう——「俺はあの厄介者の安全ロックを外して、ロープを首に巻き付けて、吊り戻してやった。自殺したって言ってな」"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼は自分が手を汚さずに事態をひっくり返したと言った。そうすることで、自分は罰せられなかっただけでなく、この件を利用して、ずっと気に入らなかった部門の主管を追い出したんだと。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "茹蘭の表情はますます怒りに満ちていった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私はついにこの人物を見抜いた。何ヶ月もの混沌と迷いが、その瞬間に消え去った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼の言葉には一片の罪悪感もなく、自分がいかに賢く行動したかを誇示するだけだった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "これこそが本当の彼だ。嫌悪すべき、小心者の、決して改心しない小人。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "まさにその時、私は初めて殺意を抱いた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼は死ぬべきだ。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "その後、私は美羽に会い、正式に復讐計画を始動させた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "公演当日、私は帽子とマスクで顔を隠し、公演会場に入り、麻酔薬で彼を眠らせて絞殺した。真橙さんと一曲踊った後、事前に用意しておいた滑り止めの靴に履き替え、赤死病のマントで蒋威を包み、死体をテーブルの下に引きずり込み、マントを抜き取って5番公演スポットに戻した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "この件は信じられないほど順調だった。特に、暗くて騒がしい部屋で、彼の名前を呼んだあの瞬間が。"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "わかった。さっき君が説明した計画には、非常に重要な不確定要素がある。",
+                                                                              "choices": {
+                                                                                "question": "不確定要素とは？",
+                                                                                "options": [
+                                                                                  {
+                                                                                    "text": "A 公演",
+                                                                                    "correct": false,
+                                                                                    "reply": "実は難しくない……"
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "B 仮面",
+                                                                                    "correct": true
+                                                                                  },
+                                                                                  {
+                                                                                    "text": "C 衣装",
+                                                                                    "correct": false,
+                                                                                    "reply": "マントは大きいから、身長を隠すのに十分……"
+                                                                                  }
+                                                                                ]
+                                                                              }
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "仮面だ。仮面と顔が完全に密着するわけではない。もし被害者が仮面を外さなければ、麻酔薬を染み込ませたタオルで口と鼻を覆って意識を失わせるのは難しい。違うか？"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "そうだ。だから私は彼の名前を呼んだ。『蒋威、私だよ、君に会いに来た』と言った。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼は最初は信じられないといった様子で私を見つめ、それから近づいてきた。私は彼の仮面を外した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "気を失う直前まで、彼はまだ信じられないという顔をしていた。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "しかし、最後に彼はあの部屋とあのロープが何を意味するのかを理解したと思う。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "茹蘭は目を閉じて、蒋威の最期の表情を思い出しているかのようだった。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "この件で、最大の不確定要素は実は美羽だった。もし彼女が私の正体を明かしていれば、私はもっと早く見つかり、罰を逃れるチャンスは決してなかっただろう。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "彼女は言わなかった。しかし君たちはそれでも真実を推理した。"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_rulan",
+                                                                              "t": "私の話は終わった。もう、私を連れて行っていい。"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "2025年10月30日、20時22分、朝夜遊園地、大門",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "琴が茹蘭を連れて楽園を去った。彼女が予想していたような、暗闇に赤と青の光がきらめく幻想的な光景はなく、多くの人々の驚愕の視線もなく、夜の闇に紛れてパトカーは黒い魚のように音もなく彼女を深みへと運び去った。",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "美羽は脇で顔を覆って泣いていたが、やがて耐えられなくなったように、暗がりの中へと駆け出していった。",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "皆がまだ衝撃から立ち直っていない中、突然スリの安童がこっそりとあなたの前に現れた。",
+                                                                              "bgm": "silence",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "あの……探偵さん？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "うん？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "さっきの……かっこよかったっすね！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "あはは……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "実は……こういう見た目ですけど、俺にも探偵になりたいって気持ちがあるんですよ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "君は大怪盗になるんじゃなかったのか？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "ああ、大怪盗は警察に目をつけられやすいんだよ。",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "それもそうだな？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "そうです！それに、シャーロック・ホームズとアルセーヌ・ルパンは、親友なんですよ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "誰がホームズとルパンが親友だって言ったんだよ？あれは宿敵だよ、宿敵！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "もしかしたらルパンも、ホームズになりたかったのかもしれないっすよ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "名作を勝手に改変するなよ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "だから、探偵さん、怪盗の友達が欲しくないっすか？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "ああ、何も言わないってことは、OKってことですよね！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "琴に君を数日拘留してもらおうかと考えてるんだ……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "ううう……探偵さんは心が冷たい……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "私が考えを変える前に、3秒以内に現場を離れることだ……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_antong",
+                                                                              "t": "うわああああ……",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "安童は叫びながら逃げていった。本当に変なスリだ。",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "コホン。",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "お姉ちゃん、探偵助手としての今日の私の出来はどうだった？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "すごく、すごく良かった！私の大事な妹・希枝は世界で一番の助手だ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "それは当然だよ。だからお姉ちゃん、あの金髪のスリには適当に返事しないでね〜",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "何を返事したって？",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "全部聞こえてたよ！あの金髪のスリが、自分のことを助手にしろって言ってたんだ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "私は承諾なんてしてない！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "ならいいよ！お姉ちゃんには私一人の助手がいれば十分だからね！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "player",
+                                                                              "speaker": "none",
+                                                                              "t": "わかったわかった、さあ、夜食をご馳走するよ！",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "npc",
+                                                                              "speaker": "char_xiaozhi",
+                                                                              "t": "やった〜",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "朝夜遊園地の事件は、こうして混乱の中に幕を閉じた。",
+                                                                              "_cutscene": true
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "これからも、どんな奇妙な事件が君を待っているのだろうか？",
+                                                                              "_cutscene": true
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "『見えざる線』体験版DEMOは、ここで全ての体験が終了です。",
+                                                                              "_cutscene": true
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "もし気に入っていただけましたら、ウィッシュリストへの登録や、ソーシャルメディアでのプレイ体験の共有をお願いいたします。",
+                                                                              "_cutscene": true
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
+                                                                              "t": "ご質問やご意見がございましたら、いつでもお問い合わせください。",
+                                                                              "endGame": true
+                                                                            }
+                                                                          ]
+                                                                        }
+                                                                      }
+                                                                    }
+                                                                  ]
+                                                                }
+                                                              }
+                                                            }
+                                                          ]
+                                                        }
+                                                      }
+                                                    }
+                                                  ]
+                                                }
+                                              }
+                                            }
+                                          ]
+                                        }
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            }
+                          ]
+                        }
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

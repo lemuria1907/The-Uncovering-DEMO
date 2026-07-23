@@ -1,0 +1,347 @@
+{
+  "CHAR_COLORS": {
+    "char_changwei": "#555555",
+    "char_zhencheng": "#e06c3a",
+    "char_ayou": "#3a8ee0",
+    "char_shihui": "#964b00",
+    "char_andy": "#005f5f",
+    "char_qin": "#002fa7",
+    "char_mingqi": "#2e8b57",
+    "char_xiaohua": "#8b008b",
+    "char_meiyu": "#ff8c00",
+    "char_xiaozhi": "#ff69b4",
+    "char_rulan": "#9b59b6",
+    "char_antong": "#f1c40f",
+    "char_aling": "#e84393",
+    "system": "#666666",
+    "none": "#cccccc"
+  },
+  "EVIDENCE_DICT": {
+    "ev_missing_actor": {
+      "name": "失踪した俳優",
+      "desc": "失踪した俳優はチェリスト役の蒋威。19:00回の公演中、共演者が彼の不在に気づいたが、残りの公演を続行。出口付近の鐘つき人のポジションで観客を見送った後、俳優たちは自力で蒋威を探したが発見できず、演出部主管の石輝に報告した。",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_autopsy": {
+      "name": "検死報告書",
+      "desc": "被害者・蒋威は絞殺。死亡推定時刻は18:15～19:15の間。口鼻部から強力な麻酔薬成分が検出された。",
+      "origin": "system",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_rehearsal_details": {
+      "name": "演出マニュアル",
+      "desc": "お化け屋敷の公演は17:00から、30分ごとに1回。\nポジション1（入口付近）、所要約2分。嘆きのチェリスト——音楽で公演の幕を開ける。（生演奏ではなく、音楽と独白はループ再生。以下同様）\nポジション2 所要約3分、ペスト医師——独白「ペストはこの地に蔓延している……」\nポジション3 所要約5分、仮面の踊り子——複数の鏡で多人数のダンサーを演出。花びらを撒き、次第に乱れ、最後に叫び声とともに倒れる。\nポジション4 所要約3分、狂気のプリンス——長テーブルに腐った食べ物とマネキンの死体が散乱。テーブルの向こうで狂ったプリンスがロープで人形の首を絞める。\nポジション5 所要約3分、赤死病の仮面とプリンスの妻——純白のウェディングドレスを着たプリンスの妻が赤死病と踊る。ダンスの途中で彼女の体は脱力し、完全に赤死病に支配される。\nポジション6 所要約4分、せむしの鐘つき人——公演の最後。「出ていけ、亡霊たちよ、鐘の音でこの崩れゆく墓場から送り出してやろう！」という台詞で観客を出口へ導く。",
+      "origin": "system",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_time_table": {
+      "name": "公演スケジュール",
+      "desc": "ハロウィン特別イベント期間中、お化け屋敷の初回公演は毎日17:00開始。各公演は約20分間、その後10分間の休憩。この休憩時間に俳優は移動と準備を行う。つまり、1サイクルは30分。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_ghost_house_map": {
+      "name": "お化け屋敷図",
+      "desc": "演出部主管の石輝が提供したお化け屋敷の見取り図。観客が集まる位置は通常、演出スペースの片側。",
+      "origin": "system",
+      "sourceChapter": "c1_s1",
+      "img": "images/chapter1/map_ghost_ja.jpg"
+    },
+    "ev_actor_transfer_rules": {
+      "name": "俳優の転換ルール",
+      "desc": "観客の没入感を損なわずに俳優がポジションを移動できるよう、以下の手順を再確認する：\n1）衣装替え：すべての衣装は着脱しやすい構造。公演中、俳優は黒のインナーを着用。各ポジションの衣装は、あらかじめ暗がりに配置されている。\n2）移動経路：観客が現在の演出に注目している間、俳優は隠し扉を使うか、観客の背後から死角を通って次のポジションに移動する。\n3）間隔ルール：同じ俳優が連続して二つ以上のポジションを通過してはならない。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_zhencheng_testimony1": {
+      "name": "真橙・供述1",
+      "desc": "第4回公演時、真橙はポジション5で通常通りデュエットを演じた。",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s1"
+    },
+    "ev_zhencheng_testimony2": {
+      "name": "真橙・供述2",
+      "desc": "第5回公演時、蒋威が不在だったため、真橙は自ら赤死病に扮し、プリンスの妻の人形を使ってデュエットを完成させた。",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_testimony1": {
+      "name": "阿祐・供述1",
+      "desc": "肖華と真橙は一緒にお化け屋敷の振付を担当し、関係は比較的良好だった。",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_testimony2": {
+      "name": "阿祐・供述2",
+      "desc": "肖華の本当の死因は安全ロックの故障による不幸な絞殺だった。蒋威の指示により、阿祐は安全ロックを外し、ロープを肖華の首にかけて自殺に見せかけた。",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_ayou_testimony3": {
+      "name": "阿祐・供述3",
+      "desc": "三年前、別のパーク幹部が女性俳優へのセクハラ行為を行っていた。パーク従業員の小琳と高歓が不満を持っており、真橙もそのことを話していたようだ。",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_shihui_testimony1": {
+      "name": "石輝・供述1",
+      "desc": "このお化け屋敷は三年間運営されている。来場者による小道具の損壊が多いため、演出部は今年度予備の小道具予算を増額した。増額分の一部は演出部が負担し、残りは俳優のボーナス削減で賄っている。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_ayou_prop_design": {
+      "name": "演出道具設計",
+      "desc": "阿祐は三年前、お化け屋敷プロジェクトが立ち上がった当初、演出用の仕掛け設計を担当していた。今は小道具が壊れた時だけ修理を手伝う程度。",
+      "origin": "char_ayou",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_shihui_testimony2": {
+      "name": "石輝・供述2",
+      "desc": "石輝は蒋威が阿祐と仲違いしたように感じていたが、阿祐はそれを認めなかった。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_shihui_testimony3": {
+      "name": "石輝・供述3",
+      "desc": "石輝は前任の演出部主管・明淇の評判が悪く、女性俳優へのセクハラなどの悪質な行為があり、多くの人が彼を避けていたと話した。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_prop_box": {
+      "name": "道具箱",
+      "desc": "約1.5×2×1.5メートルの大きな箱。",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_cello_case_items": {
+      "name": "チェロケース内",
+      "desc": "チェリストのチェロケースの中に、口紅と女性用ヘアピンの二点が、暗い色の花柄のシルクで隠されていた。",
+      "origin": "system",
+      "sourceChapter": "c1_s2",
+      "img": "images/chapter1/itembox.png"
+    },
+    "ev_beam_marks": {
+      "name": "梁のロープ痕",
+      "desc": "ポジション5の梁には小さな金属ローラーがあり、その横の木製の梁の端には数本のロープ痕がある。そのうち二本の痕は深いが、ほこりで覆われている。",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_hanged_reddeath": {
+      "name": "吊るされた赤死病",
+      "desc": "赤死病をより威圧的に見せるため、当初は梁から赤死病の人形を吊るす演出が考案されたが、恒常的には採用されなかった。",
+      "origin": "system",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_changwei_locker": {
+      "name": "蒋威ロッカー内",
+      "desc": "被害者・蒋威のロッカーには、二枚のシャツ、カートゥーンのキーホルダー、パークのロゴ入り記念スタンプ、パークの専用書類用紙があり、その用紙には多数のロゴ印が押され、日付が手書きされている。日付はお化け屋敷の公演日と重なるようだ。",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemjiangwei.png"
+    },
+    "ev_zhencheng_locker": {
+      "name": "真橙ロッカー内",
+      "desc": "真橙のロッカーには、暖かい黄色のロングドレス、ハイヒール一足、子供のおもちゃ、パークのロゴ入り記念スタンプ、たくさんのロゴ印が押された絵はがきがある。絵はがきは某ミルクティーブランドの景品。",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemzhencheng.png"
+    },
+    "ev_ayou_locker": {
+      "name": "阿祐ロッカー内",
+      "desc": "阿祐のロッカーには、パークのロゴ入りTシャツ二枚と、黒いズボン。",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemayou.png"
+    },
+    "ev_mingqi_testimony1": {
+      "name": "明淇・供述1",
+      "desc": "明淇は石輝が言っていた女性俳優へのセクハラ行為を否定した。そして、身に覚えのないことだから、わざわざ潔白を証明する必要もないと考えている。",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_mingqi_testimony2": {
+      "name": "明淇・供述2",
+      "desc": "明淇は、パークが噂を検証もせず、不祥事の責任を一方的に自分に押し付けていると考えている。セクハラの告発と肖華の死の両方で、彼は不当に扱われたと感じている。怒ってはいるが、自分の大切な時間を割く価値もないと思い、パーク側を追及しなかった。",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_public_outcry_screenshot": {
+      "name": "炎上スクショ",
+      "desc": "Uka（楼主）：もう耐えられない……某パークの某幹部、表向きは立派そうに見えるのに、プライベートでは延々とセクハラしてくる。「スカートが短いのはわざと見せるためだろ」とか、話しながらわざと肩に触ってくるとか、キリがない……気持ち悪い。\nコメント——\nSunrise：あの新しく引き抜かれたディレクターってやつ？\nUka：言わないでよ！",
+      "origin": "system",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_antong_testimony1": {
+      "name": "安童・供述1",
+      "desc": "阿祐は蒋威と真橙が来場者の持ち物を盗むゲームをしているのを知っていて、安童にわざと貴重品を盗ませて、パーク側が調査に乗り出して二人を暴くことを期待した。",
+      "origin": "char_antong",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_shihui_testimony4": {
+      "name": "石輝・供述4",
+      "desc": "パレードフロート事故後、蒋威が真橙の目の前で石輝に寛大な処置を求めた。石輝は、自分は最初から真橙を罰するつもりはなかったと語った。",
+      "origin": "char_shihui",
+      "sourceChapter": "c1_s3"
+    },
+"ev_meiyu_testimony1": {
+      "name": "美羽・供述1",
+      "desc": "2024年5月2日、パレードフロート事故が発生。美羽はたまたま事故のあった車両に乗っていた。その事故の後、美羽はセルトラリンを服用し始めた。",
+      "origin": "char_meiyu",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_meiyu_testimony2": {
+      "name": "美羽・供述2",
+      "desc": "蒋威は酒の席で冗談めかして、阿祐と肖華の死に関係があるとほのめかすことがあった。",
+      "origin": "char_meiyu",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_meiyu_locker": {
+      "name": "美羽ロッカー内",
+      "desc": "美羽のロッカーには、白いTシャツ、ジーンズ、「Sweet」と書かれた猫のボランティアバッジ。一年前の事故調査報告書のコピー——2024年5月2日のパレードフロート事故の原因をバッテリーの経年劣化によるショートと分析している。三ヶ月前に処方されたセルトラリン（抗不安/強迫性障害薬）、ボトルは半分以上空。",
+      "origin": "system",
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemmeiyu.png"
+    },
+    "ev_float_accident": {
+      "name": "フロート事故",
+      "desc": "2024年5月2日、パレードフロートの車両内でバッテリーが爆発した。美羽は事故のあった車両に乗っており、強いショックを受けた。同様の事故を防ぐため、パークは安全教育を強化した。",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_mingqi_changwei_mail": {
+      "name": "明淇と蒋威の通信",
+      "desc": "From: mingqi@chaoye.com\n蒋威、来週中にパーク管理部に報告書を提出してほしい。あの件に私が無関係であることを明記してくれ。\n蒋威の返信：俺の知ったことか。あんたはディレクターだが、俳優のことは俺と直接話すべきだ。肖華には古傷があって、無理な動きをしていた。普段現場にいないくせに状況も知らず、問題が起きれば指を指すだけで、今さら無傷で逃げようってか？",
+      "origin": "system",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_rulan_testimony2": {
+      "name": "茹蘭・供述",
+      "desc": "茹蘭は映画の途中でお腹が痛くなりトイレに立った。パンプキンキングが魔法の杖を盗んだあたりだった。",
+      "origin": "char_rulan",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_rulan_ticket": {
+      "name": "茹蘭の半券",
+      "desc": "人気映画『ハロウィン・ワンダーナイト』の半券。場所は耀華映画館、日付は2025年10月27日18:30の回、座席は5列6番。",
+      "origin": "system",
+      "sourceChapter": "c1_s4",
+      "img": "images/chapter1/itemrulan.png"
+    },
+    "ev_ticket_checker_testimony": {
+      "name": "チケ確認係証言",
+      "desc": "耀華映画館の係員によると、その夜は観客が多く、一人ひとりを覚えてはいない。しかし茹蘭は下痢で途中退席し、たまたまロビーに人がいなかったため、係員の印象に残った。",
+      "origin": "char_xiaozhi",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_cinema_schedule": {
+      "name": "映画館スケ",
+      "desc": "耀華映画館 10月27日夜間上映スケジュール（開場は上映5分前）\n『ハロウィン・ワンダーナイト』17:45、18:30、19:40、20:45、21:55、23:30\n『スパイゲーム1999』17:30、18:45、20:00、21:15\n『最後の恐竜』18:20、20:15、21:50\n『秋の手紙』18:00、19:15、20:45、22:20",
+      "origin": "system",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_andy_investigation": {
+      "name": "Andyの調査",
+      "desc": "Andyは当時のパーク内セクハラ事件後の人事異動に関する情報をいくつか見つけた。その際に退職した幹部は明淇のほか、行政グループの王喆もいたことが確認された。また、この件に関わっていた従業員には、飲食部門の小琳や検札係の高歓も含まれている。",
+      "origin": "char_andy",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_tourist_at_back": {
+      "name": "列の後ろの来場者",
+      "desc": "スリの安童は、出口付近で本来なら最後尾にいるはずの自分よりも後ろに、別の来場者がいるのを視界の隅に捉えた。",
+      "origin": "char_antong",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_relative": {
+      "name": "コネ採用",
+      "desc": "明淇によると、現在の演出部主管・石輝は、取締役会の李総経理の甥である。",
+      "origin": "char_mingqi",
+      "sourceChapter": "c1_s3"
+    },
+    "ev_zhencheng_testimony3": {
+      "name": "真橙・供述3",
+      "desc": "肖華は赤死病の衣装を着たまま死亡した。真橙は警備員が梁から彼の遺体を降ろすのを目撃した。",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s2"
+    },
+    "ev_zhencheng_testimony4": {
+      "name": "真橙・供述4",
+      "desc": "真橙によると、肖華の婚約者は頻繁に病院で注射を受けなければならず、肖華はそれをとても心配していた。",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s4"
+    },
+    "ev_zhencheng_testimony5": {
+      "name": "真橙・供述5",
+      "desc": "炎上騒動を引き起こした投稿は真橙が書いた。蒋威がセクハラ問題を解決してくれたことへの恩返しとして、真橙は意図的に曖昧な表現を使い、投稿の対象が明淇であるかのように皆に誤解させた。",
+      "origin": "char_zhencheng",
+      "sourceChapter": "c1_s4"
+    }
+  },
+  "PROFILE_DICT": {
+    "char_changwei": {
+      "name": "蒋威",
+      "desc": "被害者。お化け屋敷の俳優。男性。三十代半ばに見える。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_zhencheng": {
+      "name": "真橙",
+      "desc": "お化け屋敷の俳優。女性。若く清楚な顔立ちだが、どこか距離を置くような雰囲気がある。ダンスを得意とする。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_ayou": {
+      "name": "阿祐",
+      "desc": "お化け屋敷の俳優。男性。痩せ型だががっしりしており、素朴な印象。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_shihui": {
+      "name": "石輝",
+      "desc": "演出部主管。男性。少し時代遅れの作業ジャケットを着ており、実年齢より老けて見える。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_andy": {
+      "name": "Andy",
+      "desc": "遊園地の警備責任者。非常に信頼でき、あなたの親友。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_qin": {
+      "name": "琴",
+      "desc": "あなたの旧知の刑事で、本件の捜査を担当。あなたの能力を高く評価しており、管轄外の事件をよく紹介してくる。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_mingqi": {
+      "name": "明淇",
+      "desc": "阿祐が言及した、前・朝夜遊園地の演出部主管。男性。お化け屋敷プロジェクトを最初に立ち上げた人物。主な仕事は総合プロデュース、テーマパッケージ、脚本。",
+      "sourceChapter": "c1_s2"
+    },
+    "char_xiaohua": {
+      "name": "肖華",
+      "desc": "元お化け屋敷俳優。男性。三年前にお化け屋敷内で死亡。ダンスを得意とした。",
+      "sourceChapter": "c1_s2"
+    },
+    "char_meiyu": {
+      "name": "美羽",
+      "desc": "パークの俳優。お化け屋敷の臨時俳優。女性。ダンスを得意とする。",
+      "sourceChapter": "c1_s3"
+    },
+    "char_xiaozhi": {
+      "name": "希枝",
+      "desc": "あなたの妹・希枝。嵩山大学の学生。幼い頃からあなたにとても懐いている。",
+      "sourceChapter": "c1_s1"
+    },
+    "char_rulan": {
+      "name": "茹蘭",
+      "desc": "甜咪動物救助センターの介護員。女性。",
+      "sourceChapter": "c1_s4"
+    },
+    "char_antong": {
+      "name": "安童",
+      "desc": "スリ。男性。琴刑事の調査によると、窃盗の前歴はなく、常習犯ではない。",
+      "sourceChapter": "c1_s4"
+    },
+    "char_aling": {
+      "name": "阿凌",
+      "desc": "琴刑事の調査で判明した、三年前に死亡した俳優・肖華の婚約者。近所の人によると、すでに地元を離れて暮らしている。",
+      "sourceChapter": "c1_s4"
+    }
+  }
+}

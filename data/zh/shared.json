@@ -111,7 +111,7 @@
     },
     "ev_prop_box": {
       "name": "道具箱",
-      "desc": "一个约为1.5x2x1.5米的大箱子，里面放置着一套亲王之妻的人偶。",
+      "desc": "一个约为1.5x2x1.5米的大箱子。",
       "origin": "system",
       "sourceChapter": "c1_s2"
     },
@@ -119,7 +119,8 @@
       "name": "琴箱内杂物",
       "desc": "在大提琴手的琴箱里面，有口红、女式发夹两件物品，被一块暗色的花纹丝绸遮挡着。",
       "origin": "system",
-      "sourceChapter": "c1_s2"
+      "sourceChapter": "c1_s2",
+      "img": "images/chapter1/itembox.png"
     },
     "ev_beam_marks": {
       "name": "顶梁上的绳痕",
@@ -137,19 +138,22 @@
       "name": "蒋威柜内物品",
       "desc": "死者蒋威的柜中，有他的两件衬衫，一个卡通挂件，一枚乐园LOGO纪念印章，一张乐园专用文件纸，上面盖印了很多乐园LOGO，旁边手写着日期，日期似乎与鬼屋演出日期重叠。",
       "origin": "system",
-      "sourceChapter": "c1_s3"
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemjiangwei.png"
     },
     "ev_zhencheng_locker": {
       "name": "真橙柜内物品",
-      "desc": "真橙的柜中，有一件暖黄色长裙，一双高跟鞋，一枚乐园LOGO纪念印章，一张贴盖印了很多乐园LOGO的明信片。明信片是某奶茶品牌的赠品。",
+      "desc": "真橙的柜中，有一件暖黄色长裙，一双高跟鞋，一个儿童玩具，一枚乐园LOGO纪念印章，一张贴盖印了很多乐园LOGO的明信片。明信片是某奶茶品牌的赠品。",
       "origin": "system",
-      "sourceChapter": "c1_s3"
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemzhencheng.png"
     },
     "ev_ayou_locker": {
       "name": "阿祐柜内物品",
       "desc": "阿祐的柜中，是两件印着乐园LOGO的T恤，和一条黑色长裤。",
       "origin": "system",
-      "sourceChapter": "c1_s3"
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemayou.png"
     },
     "ev_mingqi_testimony1": {
       "name": "明淇·供述1",
@@ -181,13 +185,7 @@
       "origin": "char_shihui",
       "sourceChapter": "c1_s3"
     },
-    "ev_zhencheng_call_time": {
-      "name": "真橙来电时间",
-      "desc": "真橙在19:25给石辉打电话告知蒋威失踪。",
-      "origin": "char_shihui",
-      "sourceChapter": "c1_s4"
-    },
-    "ev_meiyu_testimony1": {
+"ev_meiyu_testimony1": {
       "name": "美羽·供述1",
       "desc": "2024年5月2日，发生一起花车巡游事故，美羽正巧在出事的那节车厢上，那件事故之后，美羽开始服用舍曲林。",
       "origin": "char_meiyu",
@@ -203,7 +201,8 @@
       "name": "美羽柜内物品",
       "desc": "美羽的柜中，有一件白色的T恤，一条牛仔裤，一个写着Sweet字样的猫头志愿者徽章。一张一年前的事故调查报告复印件，报告详细分析了2024年5月2日花车巡游事故原因，为电池老化短路。一瓶舍曲林（抗焦虑/强迫药物），处方日期是三个月前，药已经吃完大半瓶。",
       "origin": "system",
-      "sourceChapter": "c1_s3"
+      "sourceChapter": "c1_s3",
+      "img": "images/chapter1/itemmeiyu.png"
     },
     "ev_float_accident": {
       "name": "花车巡游事故",
@@ -227,11 +226,12 @@
       "name": "茹兰的票根",
       "desc": "热门电影《万圣节奇妙夜》的票根，地点是在耀华电影院，时间是2025年10月27日18:30场，座位是5排6号。",
       "origin": "system",
-      "sourceChapter": "c1_s4"
+      "sourceChapter": "c1_s4",
+      "img": "images/chapter1/itemrulan.png"
     },
     "ev_ticket_checker_testimony": {
       "name": "检票员的证言",
-      "desc": "耀华电影院的检票员表示，当晚观影的人很多，她无法辨认每场检票的人，但因为茹兰中途因腹泻而离场，当时正好大厅没什么人，所以给她留下了印象。",
+      "desc": "耀华电影院的检票员表示，当晚观影的人很多，她无法辨认每场检票的人，但茹兰中途似乎因腹泻而离场，当时正好大厅没什么人，所以给她留下了印象。",
       "origin": "char_xiaozhi",
       "sourceChapter": "c1_s4"
     },
@@ -243,7 +243,7 @@
     },
     "ev_andy_investigation": {
       "name": "Andy的调查",
-      "desc": "Andy找到了当年乐园骚扰事件的一些人事信息。确认当时离职的领导是行政组的王喆。另外，饱受其害的员工有乐园餐饮部的小琳、检票员高欢和演出部的真橙。",
+      "desc": "Andy找到了当年乐园骚扰事件后的一些人事调动信息。确认当时离职的领导除了明淇，还有行政组的王喆。另外，涉及这件事的员工还有餐饮部的小琳、检票员高欢，她们已经离职很久了。",
       "origin": "char_andy",
       "sourceChapter": "c1_s4"
     },
@@ -331,12 +331,12 @@
     },
     "char_rulan": {
       "name": "茹兰",
-      "desc": "甜咪动物救助中心护理员，女，穿着简单的浅蓝色上衣，面色苍白。",
+      "desc": "甜咪动物救助中心护理员，女。",
       "sourceChapter": "c1_s4"
     },
     "char_antong": {
       "name": "安童",
-      "desc": "扒手，男，看上去很年轻，像个不起眼的大学生，据琴警官调查，他没有任何盗窃记录，并非惯犯。",
+      "desc": "扒手，男。据琴警官调查，他没有任何盗窃记录，并非惯犯。",
       "sourceChapter": "c1_s4"
     },
     "char_aling": {

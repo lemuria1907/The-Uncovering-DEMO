@@ -1,0 +1,1596 @@
+{
+  "locations": {
+    "locker_room": {
+      "name": "更衣室",
+      "desc": "場所：更衣室",
+      "chars": [
+        "char_andy"
+      ],
+      "bg": "images/chapter1/bg_locker_room.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "男女2つの更衣室はどちらも静かで、警官が一人見張りに立っている。Andyは入り口の前を不安そうに行ったり来たりしている。"
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "changwei_locker",
+          "title": "蒋威のロッカー",
+          "desc": "被害者・蒋威のロッカーの中には、彼のシャツ二枚、カートゥーンキャラクターのストラップ、そしてオフィス用のラベルが多数貼られた横罫紙が入っている。その紙は楽園専用の書類用紙だ。",
+          "giveEv": "ev_changwei_locker"
+        },
+        {
+          "id": "zhencheng_locker",
+          "title": "真橙のロッカー",
+          "desc": "真橙のロッカーの中には、暖かみのあるイエローのロングドレス、ハイヒール、一箱の安全ピン、そしてオフィス用のラベルが多数貼られたポストカードが入っている。ポストカードは某ミルクティーブランドのノベルティだ。",
+          "giveEv": "ev_zhencheng_locker"
+        },
+        {
+          "id": "ayou_locker",
+          "title": "阿祐のロッカー",
+          "desc": "阿祐のロッカーの中には、楽園のロゴが入ったTシャツ2枚と、黒のロングパンツが入っている。",
+          "giveEv": "ev_ayou_locker"
+        },
+        {
+          "id": "meiyu_locker",
+          "title": "美羽のロッカー",
+          "desc": "美羽のロッカーの中には、白いTシャツ、ジーンズ、\"Sweet\"と書かれた猫の頭のボランティアバッジ、1年前の事故調査報告書（2024年5月2日のパレード花車事故の原因を詳細に分析したもので、バッテリーの老朽化によるショートが原因）、そして一箱のセルトラリン（抗不安・強迫薬）。処方日は3ヶ月前で、薬は既に半分以上消費されている。",
+          "giveEv": "ev_meiyu_locker"
+        }
+      ]
+    },
+    "interrogation": {
+      "name": "尋問エリア",
+      "desc": "場所：尋問エリア",
+      "chars": [
+        "char_meiyu",
+        "char_mingqi"
+      ],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "onEnter": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "蒋威……本当に死んだの？",
+          "unlockProfile": [
+            "char_meiyu"
+          ]
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "残念ながら、そうだ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "信じられない、本当に怖い。"
+        }
+      ],
+      "hotspots": []
+    },
+    "office": {
+      "name": "主管執務室",
+      "desc": "場所：主管オフィス",
+      "chars": [
+        "char_shihui"
+      ],
+      "bg": "images/chapter1/bg_office.jpg",
+      "onEnter": [],
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_andy": {
+      "name": "Andy",
+      "info": "警備責任者",
+      "sprite": "images/chapter1/char_andy.png"
+    },
+    "char_meiyu": {
+      "name": "美羽",
+      "info": "パーク臨時俳優",
+      "sprite": "images/chapter1/char_meiyu.png"
+    },
+    "char_mingqi": {
+      "name": "明淇",
+      "info": "前演出部主管",
+      "sprite": "images/chapter1/char_mingqi.png"
+    },
+    "char_shihui": {
+      "name": "石輝",
+      "info": "演出部主管",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_qin": {
+      "name": "琴",
+      "info": "知り合いの刑事",
+      "sprite": "images/chapter1/char_qin.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "2025年10月28日、12時30分、朝夜遊園地、俳優更衣室",
+      "unlockLoc": [
+        "locker_room"
+      ],
+      "unlockTopic": [
+        "t_andy_chat",
+        "t_andy_investigate"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_andy": [
+      {
+        "s": "npc",
+        "speaker": "char_andy",
+        "t": "希泉、来たか！"
+      }
+    ],
+    "char_meiyu": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "美羽はとても緊張しているようだ。"
+      }
+    ],
+    "char_mingqi": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "明淇は全く口を開きたくない様子だ。"
+      }
+    ],
+    "char_shihui": [
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "やあ、希泉さん、また会ったね。何かあれば遠慮なく聞いてくれ。"
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_andy_chat": {
+      "char": "char_andy",
+      "title": "Andyとの会話",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "俺たちは琴の指示で、被害者のプライベートロッカーを開けたんだ。それから、真橙、阿祐、美羽にも頼んで、ロッカーを確認させてもらった。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "何か変なものはあった？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "着替えやら小物やら書類やら薬やら、そんなもんだったよ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "よし、自分で見てみるよ。それと、昨日琴が言ってた、観客がお化け屋敷で物をなくしたって話はどうなった？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "ああ……実はもう見つかったんだ。お化け屋敷の中じゃなくてな。お化け屋敷の近くに東屋があって、観客が電話した時に、携帯が鳴ったんだ。そしたら、そこで休んでいた別の観客が、後ろの茂みの中から音が聞こえたって言うんだよ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それは何時ごろの話だ？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "ついさっき、10時過ぎだ。見つけたらすぐに観客に連絡して、住所を聞いて郵送したよ。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "琴が言ってたんだが、こっちの確認が終わったら、臨時の尋問エリアに行けるって。明淇と美羽はもう着いてるはずだ。",
+          "unlockLoc": [
+            "interrogation",
+            "office"
+          ],
+          "unlockTopic": [
+            "t_meiyu_self",
+            "t_meiyu_relation_dead",
+            "t_meiyu_day",
+            "t_meiyu_float_accident",
+            "t_mingqi_self",
+            "t_mingqi_relation_dead",
+            "t_mingqi_day",
+            "t_shihui_about_mingqi",
+            "t_shihui_float_accident"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "ああ、そうだ。琴が蒋威の仕事用のパソコンとかメールを調べさせてるんだ。これには興味が湧くかもしれないな。",
+          "unlockEv": [
+            "ev_mingqi_changwei_mail"
+          ]
+        }
+      ]
+    },
+    "t_andy_investigate": {
+      "char": "char_andy",
+      "title": "Andyに調査を依頼する",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "何か手伝えることはあるか？楽園のことで何でも聞いてくれ。",
+          "present": {
+            "ev_meiyu_locker": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "うん？美羽のロッカーで、何か気になるものがあったのか？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "気になるのは……",
+                  "choices": {
+                    "question": "気になるのは？",
+                    "options": [
+                      {
+                        "text": "A \"Sweet\"と書かれた猫の頭のボランティアバッジ",
+                        "correct": false,
+                        "reply": "これ、俺も見たことないな。"
+                      },
+                      {
+                        "text": "B パレード花車事故報告書",
+                        "correct": true
+                      },
+                      {
+                        "text": "C セルトラリン",
+                        "correct": false,
+                        "reply": "どうやら、俳優たちのストレスは本当に大きいみたいだな……"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "この事故調査報告書について、心当たりはある？日付は2024年5月2日だ。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "覚えているよ。ちょうど労働節の大型連休だったんだ。パレードの花車から突然大きな音がして、白い煙がもうもうと立ち込めた。美羽はその事故のあった車両に乗っていて、かなり怖い思いをしたんだ。調査結果はこの報告書の通りだ。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "当時は通報処分にもなって、点検修理を担当していた同僚は多額のボーナスをカットされたんだ。この件の影響はかなり大きくて、楽園側はみんなを集めて何度も会議を開き、年に少なくとも4回の安全訓練を行うことを義務付けたんだ。",
+                  "unlockEv": [
+                    "ev_float_accident"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_meiyu_self": {
+      "char": "char_meiyu",
+      "title": "自己紹介をしてください",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "私は美羽です。楽園のダンス俳優で、主に昼間の公演を担当しています。夜間はお化け屋敷プロジェクトの臨時俳優として、必要に応じて出演することもあります。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "楽園で働いて4年になります。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "お化け屋敷が立ち上がった時、当時のお化け屋敷チームの俳優事情について知っていますか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "はい、知っています。最初は明淇が中心となって企画書を書き上げて提出し、その後、上から蒋威が彼をサポートするよう指示されました。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "真橙は蒋威と仲が良かったので、早い段階でこのプロジェクトに参加しました。肖華は真橙について行く形で参加しました。",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "ということは、あなたも肖華を知っているんですね？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "ええ、知っています……"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "あなたたちの関係は？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "普通の関係です……"
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "では、彼に家族や友人、恋人がいたかどうかはご存知ですか？"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "それは知りません。"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "阿祐は後から来ました。最初は設営や道具係のような役割だったんじゃないかな？それから俳優になりました。"
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_meiyu_relation_dead": {
+      "char": "char_meiyu",
+      "title": "被害者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "ただの同僚関係です。リハーサルの時だけこの人と接していました。"
+        }
+      ]
+    },
+    "t_meiyu_day": {
+      "char": "char_meiyu",
+      "title": "事件当日の状況",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "母が病気で、故郷の河溪市に2日間帰って付き添っていました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "具体的には何時の便ですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "行きは27日の午前9時発の便で、帰りは今朝の9時です。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "家に帰ったらしっかり家族と過ごしたいと思って、あまりスマホを見ていませんでした。蒋威のことを知ったのは昨夜遅くなってからです。"
+        }
+      ]
+    },
+    "t_meiyu_float_accident": {
+      "char": "char_meiyu",
+      "title": "パレード花車事故",
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "2024年5月2日のパレード花車事故について教えてください。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "ああ……ただの普通の事故です。こういうことはよくあることで、大したことじゃありません。",
+          "present": {
+            "ev_float_accident": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "でも警備員の話では、この件は普通の事故ではなく、影響が大きく、楽園側はその後、毎年の安全訓練の回数を増やしたそうですよ。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_meiyu",
+                  "t": "ええ……そうなんですけど、もうずいぶん前のことなので、少し忘れてしまいました……",
+                  "present": {
+                    "ev_meiyu_locker": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "忘れたのなら、なぜ当時の事故調査報告書をまだ見ているんですか？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "最近……たまたま手に入れたんです。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "あなたはとても怖い思いをしたんですよね？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "はい……その後、大きな音がすると今でもびっくりしてしまいます。"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "それで、その後は抗不安薬を服用するようになったんですか？"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "はい……",
+                          "unlockEv": [
+                            "ev_meiyu_testimony1"
+                          ]
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "当時、石主管も私を責めたりしませんでした。この件はそのまま終わりました。",
+                          "present": {
+                            "ev_shihui_testimony4": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "石輝は、元々あなたを罰するつもりはなかったと言っていました。",
+                                  "bgm": "tension"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "あなたが石輝に罰せられると思った理由は、実は……",
+                                  "choices": {
+                                    "question": "あなたが石輝に罰せられると思った理由は、実は……",
+                                    "options": [
+                                      {
+                                        "text": "A 蒋威が石輝がとても怒っていると言っていたから",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "B 石輝が怒っているように見えたから",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "C 自分が事故の原因だと思っていたから",
+                                        "correct": true
+                                      }
+                                    ]
+                                  },
+                                  "bgm": "tension"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "あなたは、この事故が自分の行動に関係があると思っていたんです。"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "私の行動？私が何をしたっていうんですか？",
+                                  "choices": {
+                                    "question": "あなたの行動とは？",
+                                    "options": [
+                                      {
+                                        "text": "A ヘッドピースをバッテリーの上に置いた",
+                                        "correct": true
+                                      },
+                                      {
+                                        "text": "B あなたの演技にミスがあった",
+                                        "correct": false,
+                                        "reply": "私はミスなんてしていません……"
+                                      },
+                                      {
+                                        "text": "C あなたは公演前に安全確認をしなかった",
+                                        "correct": false,
+                                        "reply": "私はただの俳優で、安全確認は担当していません……"
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "楽園特注のヘッドピースが、バッテリーの自然発火による火災で燃えてしまった。事故調査報告書によれば、これはまったくあなたのせいではありません。普通の人はそう思うはずですよね？"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "そうなると、蒋威の行動が怪しくなります。なぜ彼はわざわざあなたの前で石輝に、あなたを罰しないようにと言ったのでしょうか？"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "もし私の推測が正しければ、蒋威が本当にやろうとしていたことは……",
+                                  "choices": {
+                                    "question": "蒋威が本当にやろうとしていたことは……",
+                                    "options": [
+                                      {
+                                        "text": "A あなたの不安を取り除くこと",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "B 同僚への気遣いを見せること",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "C あなたに恩を着せること",
+                                        "correct": true
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "蒋威は、あなたに自分が大きな問題を解決してやったと思わせたかったんじゃないですか？"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "そして最近、あなたは蒋威が当時言っていたことと、実際の事故調査結果が一致しないことに気づいた。だからその報告書をコピーしたんです。"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "それに、もし私の推測が正しければ、あなたはその報告書を作成した担当者に、事故の本当の原因を確認したんですよね？"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "はい。",
+                                  "unlockTopic": [
+                                    "t_meiyu_real_accident_reason"
+                                  ],
+                                  "bgm": "main"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_meiyu_real_accident_reason": {
+      "char": "char_meiyu",
+      "title": "事故の本当の原因",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "おっしゃる通りです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "私はその事故の調査報告書を見つけてコピーし、当時調査を担当していたスタッフのところに持って行って聞きました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "彼は確かにバッテリーの老朽化が原因だと言いました。私は、では当時燃えたヘッドピースとは関係があるのかと尋ねました。すると、関係はあるがあまり大きな関係ではないと。そのバッテリーの内部抵抗は既に深刻な基準を超えており、何も置かなくても自然発火する可能性は十分にあったそうです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "でも、蒋威は当時そうは言いませんでした。彼は私には常識がない、厚手の公演用ヘッドピースをバッテリーケースの上に置いたせいでバッテリーの放熱が十分にできず、それが事故の主な原因だと言ったんです。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "彼は、修繕部の人と仲が良いから、調査報告書でバッテリーの自然発火ということに改ざんしてくれると言いました。そうすれば楽園は私を責めないだろうと。そして、この件について誰にも話してはいけないと言われました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "私はその話を本当に信じて、ずっと恐怖と罪悪感を抱えてきました。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "つまり、あなたには蒋威を恨む理由があったわけですね？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "真実を知った時、確かにすごく怒りました。でも、私は犯人じゃありません！こんなことで人を殺したりしませんよ？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "むしろ、蒋威に怒って手を出すとしたら、阿祐の方じゃないでしょうか？",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "なぜ阿祐だと思うんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "だってあの言葉ですよ……蒋威はよくあのことをネタに冗談を言ってたんです……"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "どんな言葉ですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "蒋威は酒の席で何度も人に言ってましたよ。阿祐はロープを引く動作がどんどん上手くなってきた、さすが本物で練習しただけはあるって。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "それはもしかして……阿祐と肖華の死に関係があるという暗示？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "おそらく、あなたが考えている通りです。",
+                "unlockEv": [
+                  "ev_meiyu_testimony2"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_mingqi_self": {
+      "char": "char_mingqi",
+      "title": "自己紹介をしてください",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "私は演劇監督で、以前この遊園地で公演の総合デザインを担当していました。その後、いくつかの理由で去りました。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "どんな理由ですか？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "あなたたちはもう知っているんじゃないですか？そうでなければ私を呼んだりしませんよね？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "それでも、あなたの口から説明してください。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "むしろ、あなたは何が理由だと思いますか？ん？",
+          "choices": {
+            "question": "何が理由だと思いますか？",
+            "options": [
+              {
+                "text": "A ハラスメント",
+                "correct": false,
+                "reply": "ふん……違うね。"
+              },
+              {
+                "text": "B いじめ",
+                "correct": false,
+                "reply": "ちっ……"
+              },
+              {
+                "text": "C 肖華の死",
+                "correct": true
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "楽園は、俳優・肖華の死について私に責任があると考えている。チーム内であのようなことが起きたことは、私も非常に悲しく思っているが、私の問題だとは思わない。楽園の対応方法にも同意できない。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "楽園はどのように対応しましたか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "どう対応するって？話し合いをして、この件は影響が大きいと言われた。楽園が解雇する形になると、もっと私が恥をかくことになるだろうと。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "要するに、自主退職するように勧められたんだ。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "この場所は上から下まで腐りきっている。私の貴重な時間を費やす価値はない。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "それで自主退職したのですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "ああ、その時はいくつかの劇作の仕事も忙しかったので、そのまま去った。楽園の公式発表にも私の名前は出ていない。まあいいや。どうでもいい。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "その他は、私には関係ない。",
+          "present": {
+            "ev_shihui_testimony3": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "あなたが去った理由の一つは、女優へのハラスメントだと言う人もいます。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "はっ、私が去ってからもう随分経つのに、まだそんなことでデタラメを言う人がいるのか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "私は誰にもハラスメントなんてしていない、いいか？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "もしやっていないなら、それをはっきりさせようとは思いませんか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "ふん……こんな馬鹿げた話、相手にする必要はない。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "私はやってもいないことを、なぜ証明しなければならないんだ？",
+                  "unlockEv": [
+                    "ev_mingqi_testimony1"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "あなたは蒋威の殺人事件を調べているんじゃないのか？なぜ私を調べるんだ？"
+        }
+      ]
+    },
+    "t_mingqi_relation_dead": {
+      "char": "char_mingqi",
+      "title": "被害者との関係",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "彼は以前私の部下で、ガラは悪いが、なかなか有能だった。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "ガラが悪い？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "そうだ。まるで街のチンピラみたいな奴で、タバコを吸い、酒を飲み、誰とでも兄弟分のように振る舞い、会議の度にだらしなく椅子に寄りかかって斜めに人を見るんだ。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼はあなたに対して態度が悪かったんですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "はっ、悪いどころじゃない。この男は、私が書く脚本に対して常に非常な軽蔑の態度を取っていた。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "私が真面目に話をして、私の考えや全体的な計画を伝えても、彼は嫌味ったらしく言葉を曲げて、聞かず、やらない。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "彼はあなたにあまり服従していなかったようですね。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "そうだ。それに、彼には彼の言いなりになる取り巻きが大勢いるんだ。この楽園の人間のレベルがどれだけ低いか分かるだろ？私の当初のデザインがいくつも実現できなかったのは、そのせいだ。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "「なかなか有能」というのはどういうことですか？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "公平に言えば、彼が興味を持っている分野の仕事については、確かに文句のつけようがなかった。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "公演の精密さへのこだわりや、衣装・メイク・道具のクリエイティビティは、私の期待を超えていた。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "人形の使用も彼がデザインしたのですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "そうだ。例えば、人形の道具を腰に付けてデュエットダンスをするなんてアイデアは、なかなか面白い。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "彼が俳優たちと何度も何度も動きを詰めてリハーサルしているのをよく見かけた。出来栄えも確かに良かった。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "だが、この男は、本当に私をいいように嵌めたものだ。",
+          "present": {
+            "ev_mingqi_changwei_mail": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "これが原因ですか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "あなた……どこで見つけたんだ？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "彼の仕事用パソコンに、このメールがずっと保存されていて、お気に入りにも入れていた。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "……",
+                  "unlockTopic": [
+                    "t_mingqi_trapped"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_mingqi_day": {
+      "char": "char_mingqi",
+      "title": "事件当日の状況",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "私は家で脚本を書いていたよ。まさか私を容疑者だと思っているんじゃないだろうな？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "こんなこと、私を呼んで何になる？あのコネ入社の奴を調べるべきだろう。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "コネ入社？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "そうだ。蒋威が私に逆らっていたのも、自分が上のポジションに上がれると思っていたからだ。だが結果はどうだ？私が去って、コネ入社の奴が来た。彼らを調べるべきだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "あなたが言うコネ入社とは、現在の演出部主管である石輝のことですか？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "そうだ。彼は取締役会の李総の甥だ。あなたはこのことを知らなかったのか？蒋威の性格なら、彼らは確実に対立しているはずだ。だから私ではなく、彼を調べるべきだ。",
+          "unlockEv": [
+            "ev_relative"
+          ]
+        }
+      ]
+    },
+    "t_mingqi_trapped": {
+      "char": "char_mingqi",
+      "title": "嵌められた件について",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "もちろん、肖華の死によって私が自主退職に追い込まれたことだ。"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "なぜ皆があなたが彼の死に責任があると思うのですか？"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "私が知るか。私は彼のリハーサルを何度か見て、何度か叱っただけだ。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "つまり、あなたは彼にプレッシャーをかけていたというわけですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "はっ。これらはすべて普通の仕事上のやりとりじゃないか？もしこんなことでさえ我慢できないなら、仕事なんてやめてしまえ。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "私は自分の死に責任があるとはまったく思っていない。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "しかし、蒋威はこの件について何も明らかにしなかった。もちろん、これも予想通りだ。彼が私の不運を喜んでいるのは分かっている。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "とはいえ、この件自体がそもそも非常識に思える。肖華の自殺の本当の原因は、私とは全く関係ないはずだ。もしかしたら家族の問題かもしれないし、振られたのかもしれない。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "誰もそんな可能性を考えようとしない。それに、私がハラスメントをしたって話、証拠があるのか？全部一方的な言い分で、実際には誰も本当に事実を明らかにしようとは思っていないんじゃないか？",
+                "unlockEv": [
+                  "ev_mingqi_testimony2"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_shihui_about_mingqi": {
+      "char": "char_shihui",
+      "title": "明淇の発言について",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "うん？明淇に会ったのか？どうだい、彼は道徳的に見えるタイプだと思ったか？",
+          "present": {
+            "ev_mingqi_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "明淇に楽園を去った理由を尋ねたところ、肖華の死が原因で、楽園がスケープゴートを必要としたからだと言っていました。あなたが言っていたハラスメント事件とは関係ないそうです。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "ああ……そうなのか？そうか……",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "それで、あなたが言っていたハラスメントというのは、どういうことですか？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "私も噂で聞いただけですよ。楽園で働く女性がソーシャルメディアに匿名で、楽園のある管理職が女性俳優にハラスメントをしていると投稿したんです。"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "明淇ではないかと推測する人がいて、その方向で質問もされましたが、投稿者は名乗り出ず……明淇も特に何も言わなかったので、そのまま事実として確定したようです……",
+                        "present": {
+                          "ev_mingqi_testimony2": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "彼は公に反論しなかっただけで、それは彼がそれらのことをしたという証拠にはなりません。事実がどうだったのかは、きちんと調査されていないのではないですか？楽園が慌てて彼に悪いことを全て押し付けたのは、他に何か理由があるのですか？"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_shihui",
+                                "t": "ああ……これはですね……ちょっと言いにくいんですが……",
+                                "question": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "どう言いにくいんですか？"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "実はあなたの推測は正しいんです……明淇は確かにどこからでも狙われていました……楽園では、彼は地位は高かったものの、常に孤立した状態にありました。",
+                                      "question": {
+                                        "resolved": false,
+                                        "dialogue": [
+                                          {
+                                            "s": "player",
+                                            "speaker": "none",
+                                            "t": "なぜそうなったんですか？"
+                                          },
+                                          {
+                                            "s": "npc",
+                                            "speaker": "char_shihui",
+                                            "t": "ああ、でははっきり言いますね……",
+                                            "unlockTopic": [
+                                              "t_shihui_mingqi_targeted"
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_shihui_float_accident": {
+      "char": "char_shihui",
+      "title": "パレード花車事故",
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "2024年5月2日のパレード花車のバッテリー爆発事故について教えてください。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "ああ、あの件ですか。覚えていますよ。確かに花車のバッテリーが突然爆発して、みんなびっくりしましたね。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "なぜ突然この件を尋ねるんですか？",
+          "present": {
+            "ev_meiyu_locker": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "美羽のロッカーに当時の事故調査報告書を見つけました。これは1年前の話です。なぜ今美羽がこの報告書を持っているのか、気になりました。"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "具体的にはどういうことだったんですか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "パレードの公演の合間だったんですが、突然ドンという音がして、何かが爆発したような音がしたんです。私が駆けつけると、白い煙が車両全体を覆い尽くしていて、車両の後部からは火の手も上がっていました。後で分かったことですが、美羽が車両の後ろに置いてあった公演道具が直に燃えていました。",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "どんな公演道具ですか？"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "着替え用のカートゥーンヘッドピースです。楽園特注で、結構高価なやつです。その時、蒋威がわざわざ来て私に言ったんです。これは美羽のせいにはできない、罰しないでほしいと。でも、私も元々俳優を罰するべきだとは思っていませんでしたよ？何より俳優たちに怪我がなかったのが一番大事ですからね。",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "ちょっと待ってください。なぜ蒋威はあなたが彼女を罰すると仮定したんですか？"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "おそらく、そのヘッドピースが重要な道具として燃えてしまったからでしょう？これは私の推測ですが。私も蒋威がなぜあんなことを言ったのか理解できません。しかも美羽の前で言うなんて、まるで私がわざと彼女を困らせようとしているように見えましたよ。",
+                              "unlockEv": [
+                                "ev_shihui_testimony4"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_shihui_mingqi_targeted": {
+      "char": "char_shihui",
+      "title": "明淇が狙われた理由",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "私も楽園で働く親戚から聞いたんです。明淇が来たのは、当時楽園が改革を行っていて、取締役会が楽園のエンターテイメントプロジェクトを全面的に刷新することを決定したからです。",
+          "present": {
+            "ev_relative": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "あなたが言う親戚とは、李総のことですか？"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "あははは、よくご存知で。"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "楽園は大手機関企業である弧光グループから、経歴も卒業校も非常に優秀な明淇をわざわざ引き抜いてきました。明淇は優秀でしたが、彼が来てから、楽園の経営陣とかなりの衝突がありました。",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "どのような衝突ですか？"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "明淇の企画は、楽園には過激でコストが高すぎると考えられました。うちの朝夜楽園はどうしても娯楽企業ほどお金を持っているわけではありませんから、多くのリソースを提供できませんでした。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "実際に実現したプロジェクトは、お化け屋敷だけです。パレード花車の件も彼の企画ではありましたが、実際に実行されたのは彼が去った後でした。"
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "一種のカルチャーショックかもしれません。明淇はここで明らかにやればやるほどやる気を失っていきました。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "その後、彼は外部の仕事を受け始め、一日中姿を見せないこともありました。彼の職位は非常に高く、楽園が多額の費用をかけて招いた人物だったため、総務部もあまり彼を管理できませんでした。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "取締役会はそれを知った後、ずっと彼を解雇する口実を探していましたが、そうすれば自分の首を絞めることになるということで……",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "だから、冷却処理を選び、世論が彼に向いた時に擁護せず、肖華の件が起きたのを機に、この大きな問題をうまく排除したんですね？",
+                "bgm": "tension"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "はい……"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "それなら、その状況下で、とても疑わしいことが一つあります。",
+                "choices": {
+                  "question": "あなたが疑わしいと思うことは？",
+                  "options": [
+                    {
+                      "text": "A 投稿した告発者の身元",
+                      "correct": false,
+                      "reply": "ああ、この二つに何か関係があるんですか？"
+                    },
+                    {
+                      "text": "B 肖華の死の責任追及",
+                      "correct": true
+                    },
+                    {
+                      "text": "C いじめの本当の原因",
+                      "correct": false,
+                      "reply": "うん？何を言ってるんですか？"
+                    }
+                  ]
+                },
+                "bgm": "tension"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "楽園は肖華の死を明淇解雇の口実にしようとした。だから、もしかすると肖華の死は、本来なら明淇のせいにはできなかったかもしれない。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "あなたも言っていたように、明淇は頻繁に外出し、園内で働いていなかった。数回叱っただけで肖華が自殺するなんて、非常にありえない話だ。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "ああ、そう言われると確かに……"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "では、明淇を第一責任者としないなら、本当に肖華の死に責任があるのは、あの人物かもしれない。",
+                "choices": {
+                  "question": "本当に肖華の死に責任があるのは？",
+                  "options": [
+                    {
+                      "text": "A 真橙",
+                      "correct": false,
+                      "reply": "え？違うんじゃないかな……"
+                    },
+                    {
+                      "text": "B 蒋威",
+                      "correct": true
+                    },
+                    {
+                      "text": "C 美羽",
+                      "correct": false,
+                      "reply": "な、なんでですか？"
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "蒋威はリハーサルの責任者で、実際に実施される公演の細部を多く管理していた。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "本来なら、俳優が公演会場で首を吊って死んだ場合、第一責任者は彼のはずだ。なぜ彼はこの件で影を潜めているのか？"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "この視点で考えると、犯人が蒋威を殺害した動機は、もしかすると……",
+                "choices": {
+                  "question": "犯人が蒋威を殺害した動機は、もしかすると……",
+                  "options": [
+                    {
+                      "text": "A 嫉妬",
+                      "correct": false,
+                      "reply": "うん？何を言ってるんですか……"
+                    },
+                    {
+                      "text": "B 口封じ",
+                      "correct": false,
+                      "reply": "ということは、犯人は二人殺したってことですか……"
+                    },
+                    {
+                      "text": "C 復讐",
+                      "correct": true
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "犯人はおそらく、被害者が直接的または間接的に肖華を死なせたと確信している。"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "だから、当時事件が起きたのと同じお化け屋敷で、同じ方法で蒋威を殺害した。"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "なんてことだ……一体誰なんだ？",
+                "unlockTopic": [
+                  "t_current_suspects"
+                ],
+                "bgm": "main"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_current_suspects": {
+      "char": "char_shihui",
+      "title": "現時点での容疑者",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "あらあら、容疑者なんて言わないでくださいよ。私たちのチームはとても和やかですから、そんなことあるわけないじゃないですか。",
+          "bgm": "tension"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "どこが和やかなんだ……自分を欺かないでくれ……"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "では言ってみてください。チーム外はともかく、楽園の従業員の中で誰が怪しいんですか？"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "怪しい人物の動機は、おそらく二つに分けられる。一つは肖華の死が蒋威に関係していると考えていること、もう一つは蒋威の行い自体に不満を持っていることだ。例えば阿祐。"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "阿祐？ありえませんよ……",
+          "present": {
+            "ev_meiyu_testimony2": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "蒋威は時折、酒の席で冗談めかして阿祐と肖華の死が関係しているとほのめかしていた。では、当時いったい何が起きたのか？"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "それから、美羽もだ。"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "美羽にも容疑が……",
+                  "present": {
+                    "ev_meiyu_testimony1": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "そうだ、さっき話したように、パレード花車事故は調査の結果、美羽のせいではなかった。しかし蒋威の誤導により、美羽は自分が事故を引き起こしたと思い込み、強迫や不安の症状が出始め、薬を服用せざるを得なくなった。",
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "彼らは皆肖華と関連があるから、復讐の動機がある可能性もある。だがそれ以外にも、肖華の人間関係を調査する必要がある。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_shihui",
+                          "t": "ああ……そうなんですか……"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "どうやら、まだ調査すべきことがたくさんありそうだ。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "肖華の生前の人間関係について調査を命じた。明日には何か新しい手がかりが出るかもしれない。それと、先ほど警察官が美羽の母親と電話で話し、この2日間、美羽が確かに母親と一緒にいたことを確認した。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "そして、肖華の死について、真橙と阿祐に再度事情聴取を行う必要があると思う。"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "では、この段階の調査はひとまずここまでにしよう。今日得た手がかりを基に、次のラウンドの検証と尋問を行う。泉、また明日。"
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "なぜ蒋威は阿祐にあのような意味深な言葉を言ったのか？なぜ美羽に自分が重大なミスをしたと思わせたのか？",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "3年前の出来事が徐々に明らかになってきたが、疑問は次から次へと湧いてくる。",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "もし本当に復讐が目的なら、犯人は肖華に近しい人物のはずだ。",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "犯人はなぜ蒋威が肖華を死なせたと確信したのか？そして公演の最中にどのように犯罪を実行したのか？",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "今調査すべきは、目の前の事件の容疑者だけでなく、3年前の肖華の自殺の真相だ。",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "明日、これらの問題を一つ一つ検証していこう。",
+                          "endChapter": true,
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  },
+                  "bgm": "tension"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

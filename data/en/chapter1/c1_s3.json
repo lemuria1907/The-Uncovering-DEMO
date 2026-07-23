@@ -1,0 +1,1596 @@
+{
+  "locations": {
+    "locker_room": {
+      "name": "Locker Room",
+      "desc": "Location: Locker Room",
+      "chars": [
+        "char_andy"
+      ],
+      "bg": "images/chapter1/bg_locker_room.jpg",
+      "onEnter": [
+        {
+          "s": "system",
+          "speaker": "none",
+          "t": "Both the men's and women's locker rooms are quiet, with only one officer on duty. Andy Liu is pacing anxiously by the door."
+        }
+      ],
+      "hotspots": [
+        {
+          "id": "changwei_locker",
+          "title": "Victor's Locker",
+          "desc": "In the late Victor Jiang's locker are two of his shirts, a cartoon charm, a park logo commemorative stamp, and a sheet of park stationery covered with many park logo stamps. Dates are handwritten beside them, and they seem to overlap with the haunted house performance dates.",
+          "giveEv": "ev_changwei_locker"
+        },
+        {
+          "id": "zhencheng_locker",
+          "title": "Sunny's Locker",
+          "desc": "In Sunny Chen's locker are a warm yellow dress, a pair of high heels, a children's toy, a park logo commemorative stamp, and a postcard covered with many park logo stamps. The postcard is a giveaway from a milk tea brand.",
+          "giveEv": "ev_zhencheng_locker"
+        },
+        {
+          "id": "ayou_locker",
+          "title": "Aiden's Locker",
+          "desc": "In Aiden Li's locker are two T-shirts printed with the park logo and a pair of black trousers.",
+          "giveEv": "ev_ayou_locker"
+        },
+        {
+          "id": "meiyu_locker",
+          "title": "Faye's Locker",
+          "desc": "In Faye Liu's locker are a white T-shirt, a pair of jeans, and a cat-head volunteer badge with the word SWEET on it. There is an accident investigation report from one year ago; it analyzes in detail the cause of the May 2, 2024 float parade accident: an aging battery short-circuited. There is also a bottle of sertraline (an anti-anxiety medication), prescribed three months ago, with more than half the bottle already taken.",
+          "giveEv": "ev_meiyu_locker"
+        }
+      ]
+    },
+    "interrogation": {
+      "name": "Interrogation Area",
+      "desc": "Location: Interrogation Area",
+      "chars": [
+        "char_meiyu",
+        "char_mingqi"
+      ],
+      "bg": "images/chapter1/bg_interrogation.jpg",
+      "onEnter": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "Victor Jiang... is he really dead?",
+          "unlockProfile": [
+            "char_meiyu"
+          ]
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Unfortunately, yes."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "Oh my god, that is horrifying."
+        }
+      ],
+      "hotspots": []
+    },
+    "office": {
+      "name": "Director's Office",
+      "desc": "Location: Director's Office",
+      "chars": [
+        "char_shihui"
+      ],
+      "bg": "images/chapter1/bg_office.jpg",
+      "onEnter": [],
+      "hotspots": []
+    }
+  },
+  "characters": {
+    "char_andy": {
+      "name": "Andy Liu",
+      "info": "Head of Security",
+      "sprite": "images/chapter1/char_andy.png"
+    },
+    "char_meiyu": {
+      "name": "Faye Liu",
+      "info": "Temporary park performer",
+      "sprite": "images/chapter1/char_meiyu.png"
+    },
+    "char_mingqi": {
+      "name": "Celeste Ming",
+      "info": "Former Performance Department director",
+      "sprite": "images/chapter1/char_mingqi.png"
+    },
+    "char_shihui": {
+      "name": "Ray Shi",
+      "info": "Performance Department director",
+      "sprite": "images/chapter1/char_shihui.png"
+    },
+    "char_qin": {
+      "name": "Officer Lyra Qin",
+      "info": "An old acquaintance",
+      "sprite": "images/chapter1/char_qin.png"
+    }
+  },
+  "introDialogue": [
+    {
+      "s": "system",
+      "speaker": "none",
+      "t": "October 28, 2025, 12:30 PM, Chaoye Park, Performer Locker Room",
+      "unlockLoc": [
+        "locker_room"
+      ],
+      "unlockTopic": [
+        "t_andy_chat",
+        "t_andy_investigate"
+      ]
+    }
+  ],
+  "greetings": {
+    "char_andy": [
+      {
+        "s": "npc",
+        "speaker": "char_andy",
+        "t": "Sylva Xi, you are here!"
+      }
+    ],
+    "char_meiyu": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "Faye Liu looks very nervous."
+      }
+    ],
+    "char_mingqi": [
+      {
+        "s": "system",
+        "speaker": "none",
+        "t": "Celeste Ming looks like he has absolutely no intention of talking."
+      }
+    ],
+    "char_shihui": [
+      {
+        "s": "npc",
+        "speaker": "char_shihui",
+        "t": "Hey, Sylva, good to see you again. Feel free to ask whatever you need."
+      }
+    ]
+  },
+  "globalPresent": {},
+  "topics": {
+    "t_andy_chat": {
+      "char": "char_andy",
+      "title": "Chat with Andy",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Following Officer Lyra Qin's instructions, we opened Victor Jiang's locker. Then we also asked Sunny Chen, Aiden Li, and Faye Liu to open their lockers so we could inspect them."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Anything strange?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Mostly changes of clothes, personal items, documents, medicine, that kind of thing."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "All right, I will take a look myself. Also, yesterday Officer Lyra Qin mentioned that a visitor lost something in the haunted house. What was that about?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Ah... actually, it has already been found. There is a small pavilion near the haunted house. When the visitor who lost the item called it, the ringtone went off, and a visitor resting there heard a sound in the grass behind them. They quickly picked it up and handed it to staff."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What time was that?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "It was a little after ten. Once we found it, we contacted the visitor right away, got their address, and mailed it to them."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Officer Lyra Qin said that after you finish checking here, you can go to the temporary interrogation area. Celeste Ming and Faye Liu should already be there.",
+          "unlockLoc": [
+            "interrogation",
+            "office"
+          ],
+          "unlockTopic": [
+            "t_meiyu_self",
+            "t_meiyu_relation_dead",
+            "t_meiyu_day",
+            "t_meiyu_float_accident",
+            "t_mingqi_self",
+            "t_mingqi_relation_dead",
+            "t_mingqi_day",
+            "t_shihui_about_mingqi",
+            "t_shihui_float_accident"
+          ]
+        },
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Oh, right. Officer Lyra Qin asked us to investigate Victor's office computer, email, and so on. This may interest you.",
+          "unlockEv": [
+            "ev_mingqi_changwei_mail"
+          ]
+        }
+      ]
+    },
+    "t_andy_investigate": {
+      "char": "char_andy",
+      "title": "Check with Andy",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_andy",
+          "t": "Need any help? If it's about park stuff, please feel free to ask.",
+          "present": {
+            "ev_meiyu_locker": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "Faye's locker? Is there something here that caught your interest?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "The one that caught my attention is...",
+                  "choices": {
+                    "question": "Which item caught my attention?",
+                    "options": [
+                      {
+                        "text": "A. The cat-head volunteer badge with the word SWEET on it",
+                        "correct": false,
+                        "reply": "This one? I haven't seen it before either."
+                      },
+                      {
+                        "text": "B. The float parade accident report",
+                        "correct": true
+                      },
+                      {
+                        "text": "C. Sertraline",
+                        "correct": false,
+                        "reply": "It seems the performers really are under a lot of pressure..."
+                      }
+                    ]
+                  }
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Do you remember anything about this accident investigation report? The date is May 2, 2024."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "I do. It was during a holiday, and one of the parade floats suddenly made a loud bang and gave off a huge cloud of white smoke. Faye was on the carriage where the accident happened, and it scared her badly. The investigation result was just as this report says."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_andy",
+                  "t": "There was even a public criticism notice at the time. The colleague responsible for maintenance inspections had a large bonus deducted. The incident had quite an impact. The park called everyone into meetings several times, and it also made it standard policy to hold at least four safety trainings every year.",
+                  "unlockEv": [
+                    "ev_float_accident"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_meiyu_self": {
+      "char": "char_meiyu",
+      "title": "About You",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "I am Faye Liu, a dancer. I mainly work the day shift. For night shifts, I am a temporary performer for the haunted house project, and I go onstage if needed."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "I've been working at the park for four years.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "If you have worked here for four years, did you know anything about the haunted house performer group when the project first started three years ago?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "Yes. At first, former Performance Department director Celeste Ming led it, wrote the proposal, and submitted it. Then management assigned Victor Jiang to assist him."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "Sunny Chen had a good relationship with Victor Jiang, so she joined the project very early. Daniel Xiao was joined after Sunny Chen.",
+                "question": {
+                  "resolved": false,
+                  "dialogue": [
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "So you knew Daniel Xiao too, right?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "Yes, I knew him..."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "What was your relationship like?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "Average, I guess..."
+                    },
+                    {
+                      "s": "player",
+                      "speaker": "none",
+                      "t": "Do you know whether he had any family, friends, a lover, or anything like that?"
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "I don't know about that."
+                    },
+                    {
+                      "s": "npc",
+                      "speaker": "char_meiyu",
+                      "t": "Aiden Li came later. At first he was something like stage crew and prop master? Something like that? Then he became a performer."
+                    }
+                  ]
+                }
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_meiyu_relation_dead": {
+      "char": "char_meiyu",
+      "title": "About Victor",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "Just colleagues. He was always in the team leader role, so in practice maybe we counted as supervisor and subordinate?"
+        }
+      ]
+    },
+    "t_meiyu_day": {
+      "char": "char_meiyu",
+      "title": "The Day of the Incident",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "My mother was sick, so I went back to my hometown, Hexi City, and stayed with her for two days.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What time was your train, exactly?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "My outbound train left at 9 a.m. on the 27th, and my return train was at 9 this morning."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "I feel that once you're home, you should spend proper time with your family, so I barely looked at my phone. I only found out last night that something had happened to Victor Jiang."
+        }
+      ]
+    },
+    "t_meiyu_float_accident": {
+      "char": "char_meiyu",
+      "title": "Float Parade Accident",
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What happened in that float parade accident on May 2, 2024?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "Ah... it was just a regular accident. Things like that happen all the time. It wasn't a big deal.",
+          "present": {
+            "ev_float_accident": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "But according to security staff, it wasn't an ordinary accident. It had a major impact, and the park even increased the number of safety training sessions each year because of it."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_meiyu",
+                  "t": "Mm... that's true, but it was a long time ago. I've almost forgotten about it...",
+                  "present": {
+                    "ev_meiyu_locker": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "If you've forgotten it, then why were you looking through the accident investigation report from that year?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "Recently... I happened to get hold of it."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "You were badly frightened, weren't you?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "Yes... After that, even loud noises would make me jump."
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "So after that, you needed to take anti-anxiety medication?"
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "Yes...",
+                          "unlockEv": [
+                            "ev_meiyu_testimony1"
+                          ]
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_meiyu",
+                          "t": "Director Shi didn't make things difficult for me at the time, either. And that was the end of it.",
+                          "present": {
+                            "ev_shihui_testimony4": {
+                              "resolved": false,
+                              "dialogue": [
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "Ray Shi said he never intended to make things difficult for you in the first place.",
+                                  "bgm": "tension"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "The reason you thought Ray Shi would make things difficult for you was actually...",
+                                  "choices": {
+                                    "question": "The reason you thought Ray Shi would make things difficult for you was actually...",
+                                    "options": [
+                                      {
+                                        "text": "A Victor told you Ray was furious",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "B Ray looked furious",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "C You thought the accident was your fault",
+                                        "correct": true
+                                      }
+                                    ]
+                                  },
+                                  "bgm": "tension"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "You thought this accident had something to do with what you did."
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "What I did? What did I do?",
+                                  "choices": {
+                                    "question": "What did you do?",
+                                    "options": [
+                                      {
+                                        "text": "A You placed the headpiece above the battery",
+                                        "correct": true
+                                      },
+                                      {
+                                        "text": "B You made a mistake during the performance",
+                                        "correct": false,
+                                        "reply": "I didn't make any mistake..."
+                                      },
+                                      {
+                                        "text": "C You failed to do a safety check before the show",
+                                        "correct": false,
+                                        "reply": "I was just an actor. I wasn't responsible for safety checks..."
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "The park's custom-made headpiece was ignited and destroyed by the fire from the battery's spontaneous combustion. According to the accident investigation report, it wasn't your fault at all. Any normal person would think that, wouldn't they?"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "That makes Victor Jiang's actions very suspicious. Why would he deliberately tell Ray Shi, right in front of you, not to punish you?"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "If I'm guessing correctly, what Victor actually wanted was...",
+                                  "choices": {
+                                    "question": "What Victor actually wanted was...",
+                                    "options": [
+                                      {
+                                        "text": "A To ease your anxiety",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "B To show his concern for a colleague",
+                                        "correct": false,
+                                        "reply": "……"
+                                      },
+                                      {
+                                        "text": "C To make you feel indebted to him",
+                                        "correct": true
+                                      }
+                                    ]
+                                  }
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "Victor wanted you to think he had solved a big problem for you, didn't he?"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "Until recently, when you realized that what Victor told you back then didn't match the actual findings of the accident investigation. Right? That's why you copied that report."
+                                },
+                                {
+                                  "s": "player",
+                                  "speaker": "none",
+                                  "t": "And if I'm not mistaken, you've already confirmed the real cause of the accident with the staff member who issued the report, haven't you?"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "……"
+                                },
+                                {
+                                  "s": "npc",
+                                  "speaker": "char_meiyu",
+                                  "t": "Yes.",
+                                  "unlockTopic": [
+                                    "t_meiyu_real_accident_reason"
+                                  ],
+                                  "bgm": "main"
+                                }
+                              ]
+                            }
+                          }
+                        }
+                      ]
+                    }
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_meiyu_real_accident_reason": {
+      "char": "char_meiyu",
+      "title": "The Real Cause of the Accident",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "You're right."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "I found the investigation report for that accident, made a copy, and took it to ask the staff member who had been in charge of the investigation at the time."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "He said it really was battery aging. I asked whether it had anything to do with the headpiece that caught fire. He said there was some connection, but not much. That battery's internal resistance had already severely exceeded the acceptable limit. Even if nothing had been placed on it, it still might have combusted on its own."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "But that wasn't what Victor told me at the time. He said I had no common sense, that I put the heavy performance headpiece on top of the battery compartment and blocked the battery's heat dissipation, and that this was the main cause of the accident."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "He said he was on good terms with people in the maintenance department and would help me change the investigation report so it said the battery had combusted on its own. That way, the park wouldn't come after me. And he told me never to mention it to anyone again."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "I really believed that explanation, and I lived in fear and guilt all this time."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "So you did have a reason to resent Victor Jiang, didn't you?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "After seeing the truth, I was indeed furious, but I'm not the killer! How could I kill someone over something like this?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_meiyu",
+          "t": "If we're talking about someone more likely to have been angered by Victor and acted on it, wouldn't that actually be Aiden?",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Why Aiden Li?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "Because of what Victor used to say... Victor often joked about that incident..."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What joke?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "Victor said more than once while drinking with other people that Aiden was getting more and more skilled at pulling ropes, no wonder he had practice on a real person."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What? Was he implying... that Aiden Li had something to do with Daniel Xiao's death?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_meiyu",
+                "t": "It's probably exactly what you're thinking.",
+                "unlockEv": [
+                  "ev_meiyu_testimony2"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_mingqi_self": {
+      "char": "char_mingqi",
+      "title": "About You",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "I'm a theater director. I used to be the overall performance designer at this park. Later, for certain reasons, I left."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What reasons?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "You already know, don't you? Otherwise you wouldn't have come to me, right?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Could you explain it yourself?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Then let me ask you: what do you think the reason was? Hm?",
+          "choices": {
+            "question": "What do you think the reason was?",
+            "options": [
+              {
+                "text": "A Harassment",
+                "correct": false,
+                "reply": "Hmph... wrong."
+              },
+              {
+                "text": "B Bullying",
+                "correct": false,
+                "reply": "Tch..."
+              },
+              {
+                "text": "C Daniel Xiao's death",
+                "correct": true
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "The park believes I should be held responsible for actor Daniel Xiao's death. I was deeply upset that something like that happened in the team, but I don't agree that it was my fault. I also do not agree with how the park handled it.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "How did the park handle it?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "How else? They had a talk with me and said the incident reflected badly on everyone. If the park stepped in to dismiss me, they said it would only make things more humiliating for me."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "In short, they persuaded me to resign voluntarily."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "To be honest, I didn't want to stay there anymore anyway. That place was rotten from top to bottom. It was not worth any more of my valuable time."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "So you left voluntarily?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Yes. I also had some theater work to deal with at the time, so I just left. The park's official notice did not name me, so that was that. I did not care anymore."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "As for anything else, it has nothing to do with me.",
+          "present": {
+            "ev_shihui_testimony3": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Someone said one reason you left was that you had harassed female performers."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "Hah. I have been gone for so long, and people are still spouting nonsense about that?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "I never harassed anyone, all right?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "If you did not do it, didn't you want to clear things up?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "Hmph... That kind of absurd rumor was not worth responding to at all."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "Why should I have to clarify something I never did in the first place?",
+                  "unlockEv": [
+                    "ev_mingqi_testimony1"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Aren't you looking into Victor's death? Then why are you picking on me?"
+        }
+      ]
+    },
+    "t_mingqi_relation_dead": {
+      "char": "char_mingqi",
+      "title": "About Victor",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "He used to be my subordinate. Rough around the edges, but quite capable."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Rough around the edges?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Yes. He was practically like some street punk. Smoking, drinking, acting like best buddies with everyone. At every meeting, he would slump sideways in his chair and look at people out of the corner of his eye.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Did he treat you badly?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Hah, badly is putting it mildly. That man always looked down on the scripts I wrote."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "When I tried to discuss serious work with him and explain my ideas and the overall arrangements, he would answer in that snide, roundabout way of his. He wouldn't listen or do the work."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Sounds like he did not respect your authority very much."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Exactly. The key point is, he really did have a bunch of followers who did whatever he said. That tells you what kind of people work at this park. It made some of my original designs impossible to realize."
+              }
+            ]
+          }
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Then what did you mean by quite capable?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "To be fair and objective, when it came to the parts of the work he was interested in, he was beyond reproach."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "His control over the precision of the performances and his creativity with costumes, makeup, and props exceeded my expectations.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Was he the one who designed the use of the dolls too?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Yes. Those things should originally have been under my control, but he relied on his good relationship with the props team to shut me out. I was quite angry at first, but later I felt he did seem suited to that kind of work. For example, attaching doll props to the waist for a duet and so on. Those ideas were rather interesting."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "I often saw him drilling movements and rehearsing with the performers over and over. The effect was good. So I let him be, and it lightened my workload a bit too."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "But when it came to Daniel Xiao... that man really did put me in a terrible position.",
+          "present": {
+            "ev_mingqi_changwei_mail": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Was it because of this?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "Where... where did you find that?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "On his office computer. He had kept this email the whole time, and even starred it."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_mingqi",
+                  "t": "……",
+                  "unlockTopic": [
+                    "t_mingqi_trapped"
+                  ]
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_mingqi_day": {
+      "char": "char_mingqi",
+      "title": "The Day of the Incident",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "I was at home writing scripts. You are not treating me as a suspect, are you?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Why did you bring me in for something like this? Shouldn't you be investigating that relative of the board member?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Who?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Victor Jiang was against me because he thought he could take my job, right? And look what happened—I left, and they brought in some guy with connections. You should be looking into him, not me."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Wait. Do you mean Ray Shi, the current head of the Performance Department?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Yeah. He's the nephew of one of the board members—Director Li. You didn't know that? Knowing Victor's personality, those two must have clashed. That's the guy you should be looking into, not me.",
+          "unlockEv": [
+            "ev_relative"
+          ]
+        }
+      ]
+    },
+    "t_mingqi_trapped": {
+      "char": "char_mingqi",
+      "title": "Being Set Up",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "Of course I mean the fact that I was forced to resign because of Daniel Xiao's death."
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "Why did everyone think you were responsible for his death?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_mingqi",
+          "t": "How would I know? I only watched him rehearse a couple of times and yelled at him a few times. Wasn't he supposed to be a top student from Jiangpu Dance Academy? With that kind of performance, it's just unacceptable.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "So you were pressuring him, then?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Hah. Isn't that all perfectly normal work communication? If someone cannot even take that much, they might as well not come to work."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "I do not think I should be held responsible for his death at all."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "But Victor Jiang never clarified the matter. Of course, that was exactly what I expected. I knew he would love to see me suffer."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "Then again, I think the whole thing sounds absurd in itself. The real reason Daniel Xiao killed himself had nothing to do with me, did it? Maybe it was something in his family. Maybe someone dumped him."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_mingqi",
+                "t": "No one considered possibilities like that. And as for the claim that I harassed people, is there any evidence? It is all one-sided talk. In reality, no one actually wanted to get to the bottom of anything, did they?",
+                "unlockEv": [
+                  "ev_mingqi_testimony2"
+                ]
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_shihui_about_mingqi": {
+      "char": "char_shihui",
+      "title": "About Celeste",
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Hm? You met Celeste Ming? Well? Do you think he is that kind of hypocritical person? Did he admit what happened back then?",
+          "present": {
+            "ev_mingqi_testimony1": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "I asked Celeste Ming why he left the park. He said it was because Daniel Xiao died and the park needed a scapegoat. It had nothing to do with the harassment incident you mentioned."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "Ah... is that so? I see...",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "So what was the harassment you mentioned about?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "It was just something I heard. A person who worked at the park posted anonymously on social media, saying that a certain park leader had harassed female performers."
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "Some people guessed it was Celeste Ming and asked leading questions about it, but the poster never came forward to clarify... Celeste also did not say anything, so it seemed to become accepted as fact...",
+                        "present": {
+                          "ev_mingqi_testimony2": {
+                            "resolved": false,
+                            "dialogue": [
+                              {
+                                "s": "player",
+                                "speaker": "none",
+                                "t": "He only never refuted it publicly. That does not prove he did those things. The truth was never properly investigated, was it? Was there some other reason the park was so eager to pin every bad thing on him?"
+                              },
+                              {
+                                "s": "npc",
+                                "speaker": "char_shihui",
+                                "t": "Sigh... well... some things are hard to talk about...",
+                                "question": {
+                                  "resolved": false,
+                                  "dialogue": [
+                                    {
+                                      "s": "player",
+                                      "speaker": "none",
+                                      "t": "Why are they hard to talk about?"
+                                    },
+                                    {
+                                      "s": "npc",
+                                      "speaker": "char_shihui",
+                                      "t": "Actually, your guess is right... Celeste Ming really was targeted from all sides... In the park, even though his position was high, he was always relatively isolated.",
+                                      "question": {
+                                        "resolved": false,
+                                        "dialogue": [
+                                          {
+                                            "s": "player",
+                                            "speaker": "none",
+                                            "t": "Why was that?"
+                                          },
+                                          {
+                                            "s": "npc",
+                                            "speaker": "char_shihui",
+                                            "t": "Alright, I'll be straight with you...",
+                                            "unlockTopic": [
+                                              "t_shihui_mingqi_targeted"
+                                            ]
+                                          }
+                                        ]
+                                      }
+                                    }
+                                  ]
+                                }
+                              }
+                            ]
+                          }
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_shihui_float_accident": {
+      "char": "char_shihui",
+      "title": "Float Parade Accident",
+      "dialogue": [
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What happened with the parade float battery explosion on May 2, 2024?"
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Oh, that incident. I remember it. A float's battery really did suddenly explode, and it gave everyone quite a scare."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Why are you suddenly asking about that?",
+          "present": {
+            "ev_meiyu_locker": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "I found the accident investigation report from back then in Faye's locker. It happened a year ago, so I am curious why Faye has that report now."
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "What exactly happened?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "It was between parade performances. Suddenly there was a bang, like something exploding. When I rushed over, the whole carriage was almost covered in white smoke, and there were flames at the rear. Later we found out that Faye's performance prop at the back of the float had caught fire.",
+                  "question": {
+                    "resolved": false,
+                    "dialogue": [
+                      {
+                        "s": "player",
+                        "speaker": "none",
+                        "t": "What kind of performance prop was it?"
+                      },
+                      {
+                        "s": "npc",
+                        "speaker": "char_shihui",
+                        "t": "A cartoon mascot head used for performances, custom-made by the park, and pretty expensive. Victor even came over to tell me not to blame Faye for it, and not to penalize her. But honestly, I didn't think an actor should be punished for that in the first place. If an actor had been hurt, that would have been far more serious than a burned mascot head.",
+                        "question": {
+                          "resolved": false,
+                          "dialogue": [
+                            {
+                              "s": "player",
+                              "speaker": "none",
+                              "t": "Wait, why did Victor assume you would punish her?"
+                            },
+                            {
+                              "s": "npc",
+                              "speaker": "char_shihui",
+                              "t": "Probably because that mascot head was an important prop and got burned? That's just my guess. To be honest, I don't understand why Victor said that either, especially right in front of Faye. It made it sound like I was going to deliberately make things difficult for her.",
+                              "unlockEv": [
+                                "ev_shihui_testimony4"
+                              ]
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "t_shihui_mingqi_targeted": {
+      "char": "char_shihui",
+      "title": "Why Celeste Ming Was Targeted",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Well... I learned about this from a relative who works at the park. Celeste Ming came here because the park was undergoing reforms at the time, and the board had decided to overhaul all of the park's entertainment projects.",
+          "present": {
+            "ev_relative": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "A relative...are you talking about Ms Li from the board?"
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "Ahahaha, yes... how did you know?"
+                }
+              ]
+            }
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "The park specifically poached Celeste Ming from ArcLight Group, a major entertainment company. His resume and education were both extremely impressive. Celeste Ming really is very capable, but after he arrived, he had quite a few conflicts with the park's management.",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "What kind of conflicts?"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "The park thought Celeste's proposals were too aggressive and too expensive. Chaoye Park doesn't have as much money as those entertainment companies, after all. A lot of the resources just couldn't be provided."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "The only project that was actually implemented was the haunted house. The float parade was also planned by him, but it wasn't officially carried out until after he left."
+              }
+            ]
+          }
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Maybe it was just a bad fit. Celeste Ming was clearly losing more and more motivation here."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Later, he started taking outside work, and sometimes no one would see him for an entire day. Because his rank was very high, and the park had paid a lot to bring him in, the administration department didn't really dare to manage him."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "After the board found out, they kept wanting to find a reason to dismiss him, but that would have been like slapping themselves in the face...",
+          "question": {
+            "resolved": false,
+            "dialogue": [
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "So they chose to let the matter go cold. When public opinion turned against him, they didn't step forward to defend him, and once the Daniel Xiao incident happened, they used the opportunity to get rid of this huge problem. Is that right?",
+                "bgm": "tension"
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Yes..."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Then, under those circumstances, one thing becomes highly suspicious.",
+                "choices": {
+                  "question": "What do you find suspicious?",
+                  "options": [
+                    {
+                      "text": "A. The identity of the person who posted the accusation",
+                      "correct": false,
+                      "reply": "Ah, is there any connection between those two things?"
+                    },
+                    {
+                      "text": "B. Accountability for Daniel Xiao's death",
+                      "correct": true
+                    },
+                    {
+                      "text": "C. The real reason for the bullying",
+                      "correct": false,
+                      "reply": "Huh? What are you talking about?"
+                    }
+                  ]
+                },
+                "bgm": "tension"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "The park wanted to use Daniel Xiao's death as a reason to fire Celeste Ming. So maybe, strictly speaking, Celeste wasn't really the one to blame for it in the first place."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "You also said Celeste Ming was often out and not working in the park. Could a few reprimands really have driven Daniel Xiao to suicide? That sounds extremely hard to believe."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Ah, now that you mention it, that's true..."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Then, if we don't treat Celeste Ming as the person primarily responsible, the person who truly should have been held responsible for Daniel Xiao's death might be that person.",
+                "choices": {
+                  "question": "Who truly should have been held responsible for Daniel Xiao's death?",
+                  "options": [
+                    {
+                      "text": "A. Sunny Chen",
+                      "correct": false,
+                      "reply": "Huh? That doesn't seem right..."
+                    },
+                    {
+                      "text": "B. Victor Jiang",
+                      "correct": true
+                    },
+                    {
+                      "text": "C. Faye Liu",
+                      "correct": false,
+                      "reply": "W-why?"
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Victor Jiang was in charge of rehearsals and managed many of the practical details of the performances."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "Logically, if an actor hanged himself at a performance venue, Victor Jiang should have been the person primarily responsible. Why did he disappear from the matter?"
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "If we think about it from that angle, the killer's motive for murdering Victor Jiang might have been...",
+                "choices": {
+                  "question": "The killer's motive for murdering Victor Jiang might have been...",
+                  "options": [
+                    {
+                      "text": "A. Jealousy",
+                      "correct": false,
+                      "reply": "Huh? What are you talking about..."
+                    },
+                    {
+                      "text": "B. Silencing him",
+                      "correct": false,
+                      "reply": "You mean the killer murdered two people...?"
+                    },
+                    {
+                      "text": "C. Revenge",
+                      "correct": true
+                    }
+                  ]
+                }
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "The killer probably believed the victim had directly or indirectly caused Daniel Xiao's death."
+              },
+              {
+                "s": "player",
+                "speaker": "none",
+                "t": "So the killer chose the haunted house, the same place where the incident happened back then, and murdered Victor Jiang in the same way."
+              },
+              {
+                "s": "npc",
+                "speaker": "char_shihui",
+                "t": "Oh my god... who could it be?",
+                "unlockTopic": [
+                  "t_current_suspects"
+                ],
+                "bgm": "main"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "t_current_suspects": {
+      "char": "char_shihui",
+      "title": "Suspects So Far",
+      "hidden": true,
+      "dialogue": [
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Oh, suspects? Look, we're a good team. There's no way something like that happened.",
+          "bgm": "tension"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "What do you mean, a good team? Stop kidding yourself..."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Then tell me, leaving aside anyone outside the team for now, who is suspicious?"
+        },
+        {
+          "s": "player",
+          "speaker": "none",
+          "t": "The suspicious people might have two kinds of motives. First, believing Daniel Xiao's death was connected to Victor Jiang. Second, already having issues with Victor Jiang's behavior. For example, Aiden Li."
+        },
+        {
+          "s": "npc",
+          "speaker": "char_shihui",
+          "t": "Aiden? How is that possible...",
+          "present": {
+            "ev_meiyu_testimony2": {
+              "resolved": false,
+              "dialogue": [
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Victor Jiang would occasionally hint, as a joke over drinks, that Aiden Li was connected to Daniel Xiao's death. So what exactly happened back then?"
+                },
+                {
+                  "s": "player",
+                  "speaker": "none",
+                  "t": "Also, Faye Liu too."
+                },
+                {
+                  "s": "npc",
+                  "speaker": "char_shihui",
+                  "t": "Faye is suspicious too...?",
+                  "present": {
+                    "ev_meiyu_testimony1": {
+                      "resolved": false,
+                      "dialogue": [
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Yes. As we just discussed, the float parade accident was investigated and found not to be Faye's fault at all. But under Victor Jiang's misleading influence, Faye believed she had caused the accident, and she began developing compulsive behaviors and anxiety, so bad that she had to take medication.",
+                          "bgm": "tension"
+                        },
+                        {
+                          "s": "player",
+                          "speaker": "none",
+                          "t": "Because they both knew Daniel Xiao, they may also have had a motive for revenge. But beyond that, we also need to investigate Daniel Xiao's relationships."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_shihui",
+                          "t": "Ah... is that so..."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "Looks like there is still a lot to investigate."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "I've already sent people to investigate Daniel Xiao's relationships before his death. There may be some new leads tomorrow. Also, an officer just spoke with Faye Liu's mother and confirmed that Faye and her mother really have been together these past two days."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "And regarding Daniel Xiao's death, I think we need to conduct a second round of questioning with Sunny Chen and Aiden Li."
+                        },
+                        {
+                          "s": "npc",
+                          "speaker": "char_qin",
+                          "t": "Then let's leave this stage of the investigation here for now. Based on the clues we obtained today, we'll proceed with the next round of verification and questioning. Sylva, see you tomorrow."
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "Why did Victor Jiang say those suggestive things to Aiden Li? Why did he make Faye Liu believe she had made a serious mistake at work?",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "The events from three years ago are gradually surfacing, but questions keep emerging one after another.",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "If this really is about revenge, the killer should be someone close to Daniel Xiao.",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "Why was the killer convinced that Victor Jiang was the one who caused Daniel Xiao's death? And how did the killer commit the crime during the performance?",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "What we need to investigate now is not only the suspects in the case before us, but also the truth behind Daniel Xiao's suicide three years ago.",
+                          "_cutscene": true
+                        },
+                        {
+                          "s": "system",
+                          "speaker": "none",
+                          "t": "Tomorrow, let's verify each of these questions one by one.",
+                          "endChapter": true,
+                          "bgm": "main"
+                        }
+                      ]
+                    }
+                  },
+                  "bgm": "tension"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "chapterInfo": {
+    "1": { "name": "The Masque of Red Death" },
+    "2": { "name": "The Disappearing Designer" },
+    "3": { "name": "TBA" },
+    "4": { "name": "TBA" }
+  },
+  "chapters": [
+    { "chapter": 1, "section": 1, "file": "c1_s1.json", "name": "Commotion at the Haunt" },
+    { "chapter": 1, "section": 2, "file": "c1_s2.json", "name": "Clues & Queries" },
+    { "chapter": 1, "section": 3, "file": "c1_s3.json", "name": "Locker Room Secrets" },
+    { "chapter": 1, "section": 4, "file": "c1_s4.json", "name": "Shadow from the Past" },
+    { "chapter": 1, "section": 5, "file": "c1_s5.json", "name": "Revenge Finale" }
+  ]
+}

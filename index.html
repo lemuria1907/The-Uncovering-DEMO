@@ -2,7 +2,7 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>案件推演 - 终极手账版</title>
+<title>案件推演</title>
 <style>
     /* ================= 网点漫画核心色卡与素材 ================= */
     :root {
@@ -568,7 +568,6 @@
         <h1 data-i18n="game.title"></h1>
         <button class="menu-btn" onclick="playSound('click');continueGame()" data-i18n="menu.continue">读取存档</button>
         <button class="menu-btn" onclick="playSound('click');newGame()" data-i18n="menu.newGame">新游戏</button>
-        <button class="menu-btn" onclick="playSound('click');showChapterSelect()" data-i18n="menu.chapterSelect">选择章节</button>
         <button class="menu-btn" onclick="showSettings()" data-i18n="menu.settings">设置</button>
         <button class="menu-btn" onclick="showCredits()" data-i18n="menu.credits">制作</button>
         <button class="menu-btn" onclick="playSound('click');exitGame()" data-i18n="menu.exit" style="color: #b34a36; border-color: #b34a36;">退出</button>
@@ -785,11 +784,18 @@ const I18N = {
         "tab.save": "存<br>档",
         "tab.load": "读<br>档",
         "tab.log": "回<br>顾",
+        "log.you": "你",
+        "log.system": "系统",
         "log.title": "对话回顾",
         "present.loaded": "已装载",
         "present.confirmBtn": "确认出示",
         "sl.save": "归档记录",
         "sl.load": "提取档案",
+        "sl.slot": "档案",
+        "sl.autoSaveTag": "自动存档",
+        "sl.emptySlot": "空白档案",
+        "sl.waitingAutoSave": "等待自动存档",
+        "sl.deleteBtn": "X 销毁",
         "detail.dropZone": "拖拽右侧卡片至此",
         "investigate.title": "异常点调查",
         "sys.questionSuccess": "追问成功！",
@@ -799,6 +805,8 @@ const I18N = {
         "sys.presentMismatch": "不对，线索似乎不匹配...再仔细想想！",
         "sys.alreadyPresented": "已经出示过这个了。",
         "sys.evidenceMismatch": "证据不匹配，再试试别的。",
+        "sys.wrongPresent": "我不知道你在说什么。这跟我刚才说的话有关系吗？",
+        "sys.wrongPresentGlobal": "……你给我看这个是什么意思？",
         "sys.noQuestion": "对方似乎没有什么好说的。",
         "sys.noMoreQuestion": "关于这点似乎没有什么好追问的了。",
         "sys.cantQuestionSelf": "无法对自己进行追问。",
@@ -828,7 +836,7 @@ const I18N = {
         "panel.statements": "Statements",
         "panel.topics": "Topics",
         "btn.search": "👁 Search Scene",
-        "btn.question": "Ask",
+        "btn.question": "Question",
         "btn.present": "Present",
         "settings.title": "Settings",
         "settings.window": "Window Size",
@@ -874,11 +882,18 @@ const I18N = {
         "tab.save": "SA<br>VE",
         "tab.load": "LO<br>AD",
         "tab.log": "LO<br>G",
+        "log.you": "You",
+        "log.system": "System",
         "log.title": "Dialogue Review",
         "present.loaded": "Loaded",
         "present.confirmBtn": "Confirm",
         "sl.save": "Save",
         "sl.load": "Load",
+        "sl.slot": "Slot",
+        "sl.autoSaveTag": "Auto Save",
+        "sl.emptySlot": "Empty",
+        "sl.waitingAutoSave": "Waiting for auto-save...",
+        "sl.deleteBtn": "X Delete",
         "detail.dropZone": "Drag card here",
         "investigate.title": "Investigate",
         "sys.questionSuccess": "Question success!",
@@ -888,6 +903,8 @@ const I18N = {
         "sys.presentMismatch": "That doesn't match... Think again!",
         "sys.alreadyPresented": "Already presented.",
         "sys.evidenceMismatch": "Evidence doesn't match. Try another.",
+        "sys.wrongPresent": "I don't know what you're talking about. What does that have to do with what I just said?",
+        "sys.wrongPresentGlobal": "...What do you expect me to say to that?",
         "sys.noQuestion": "They have nothing more to say.",
         "sys.noMoreQuestion": "Nothing more to ask about this.",
         "sys.cantQuestionSelf": "Can't question yourself.",
@@ -963,11 +980,18 @@ const I18N = {
         "tab.save": "セ<br>ー<br>ブ",
         "tab.load": "ロ<br>ー<br>ド",
         "tab.log": "ロ<br>グ",
+        "log.you": "あなた",
+        "log.system": "システム",
         "log.title": "会話振り返り",
         "present.loaded": "ロード済み",
         "present.confirmBtn": "確認",
         "sl.save": "セーブ",
         "sl.load": "ロード",
+        "sl.slot": "スロット",
+        "sl.autoSaveTag": "自動セーブ",
+        "sl.emptySlot": "空き",
+        "sl.waitingAutoSave": "自動セーブ待機中...",
+        "sl.deleteBtn": "X 削除",
         "detail.dropZone": "カードをドラッグ",
         "investigate.title": "異常点調査",
         "sys.questionSuccess": "追及成功！",
@@ -977,6 +1001,8 @@ const I18N = {
         "sys.presentMismatch": "手がかりが一致しません…もう一度考えてください！",
         "sys.alreadyPresented": "すでに提示済みです。",
         "sys.evidenceMismatch": "証拠が一致しません。別のものを試してください。",
+        "sys.wrongPresent": "何のことを言っているのか分かりません。それが今の話とどう関係あるんですか？",
+        "sys.wrongPresentGlobal": "……これを私に見せて、どうしろと？",
         "sys.noQuestion": "これ以上話すことはないようです。",
         "sys.noMoreQuestion": "これ以上追及することはなさそうです。",
         "sys.cantQuestionSelf": "自分自身を追及することはできません。",
@@ -1002,7 +1028,7 @@ const I18N = {
 function t(key) { return I18N[currentLang]?.[key] || I18N.zh[key] || key; }
 function applyAllUIText() {
     document.querySelectorAll('[data-i18n]').forEach(el => {
-        if (el.children.length > 0 && !el.classList.contains('menu-btn')) return;
+        if (el.children.length > 0 && !el.classList.contains('menu-btn') && !el.classList.contains('side-tab')) return;
         const text = t(el.dataset.i18n);
         if (text) el.innerHTML = text;
     });
@@ -1037,6 +1063,15 @@ async function fetchJsonWithFallback(path, fallbackPath) {
     }
     throw new Error(path);
 }
+async function loadLanguageData() {
+    const langData = getStoryDataPath();
+    const fallbackData = 'data/zh';
+    const sharedData = await fetchJsonWithFallback(langData + '/shared.json', fallbackData + '/shared.json');
+    EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {};
+    PROFILE_DICT = sharedData.PROFILE_DICT || {};
+    CHAR_COLORS = sharedData.CHAR_COLORS || {};
+    state.storyIndex = await fetchJsonWithFallback(langData + '/story_index.json', fallbackData + '/story_index.json');
+}
 
 // ================= 引擎底层逻辑 =================
 let EVIDENCE_DICT = {}; let PROFILE_DICT = {}; let GAME_DATA = {}; let CHAR_COLORS = {};
@@ -1052,7 +1087,8 @@ let state = {
     topicRuntime: {}, topicProgress: {},
     visitedLocs: [],
     pendingCharSelect: null,
-    completedChapters: []
+    completedChapters: [],
+    isAdvancingChapter: false
 };
 
 let currentSLMode = "save"; let isLoading = false; let bgmAudio = null; let tensionAudio = null; let customBgmAudio = null; let audioCtx = null;
@@ -1072,12 +1108,8 @@ document.addEventListener('keydown', (e) => {
     }
     if(e.code === 'KeyA' || e.code === 'KeyD') {
         const dm = document.getElementById("detail-modal");
-        if (dm && dm.style.display !== "none") { e.preventDefault(); navDetail(e.code === 'KeyA' ? -1 : 1); return; }
-        if (!state.isTyping && state.dialogueMode !== "greeting" && state.dialogueMode !== "temp_wrong") {
-            e.preventDefault();
-            if (e.code === 'KeyA' && state.dialogueIdx > 0) { prevDialogue(); }
-            else if (e.code === 'KeyD' && state.dialogueIdx < state.activeDialogue.length - 1) { nextDialogue(); }
-        }
+        if (dm && dm.style.display !== "none") { e.preventDefault(); navDetail(e.code === 'KeyA' ? -1 : 1); }
+        return;
     }
     // 三选一 / 举证框 键盘操作
     if (e.code === 'Enter' || e.code === 'KeyW' || e.code === 'KeyS' || e.code === 'ArrowUp' || e.code === 'ArrowDown') {
@@ -1176,14 +1208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function bootGame(directLoad) {
     try {
-        const langData = getStoryDataPath();
-        const fallbackData = 'data/zh';
-        const sharedData = await fetchJsonWithFallback(langData + '/shared.json', fallbackData + '/shared.json');
-        EVIDENCE_DICT = sharedData.EVIDENCE_DICT || {};
-        PROFILE_DICT = sharedData.PROFILE_DICT || {};
-        CHAR_COLORS = sharedData.CHAR_COLORS || {};
-
-        state.storyIndex = await fetchJsonWithFallback(langData + '/story_index.json', fallbackData + '/story_index.json');
+        await loadLanguageData();
         // 恢复已完成的章节
         try { state.completedChapters = JSON.parse(localStorage.getItem('rdsm_completed_chapters') || '[]'); } catch(e) { state.completedChapters = []; }
 
@@ -1390,10 +1415,11 @@ function newGame() {
     showConfirm(t("menu.confirmNewGame"), async () => {
         localStorage.removeItem('rdsm_autosave');
         localStorage.removeItem('mystery_game_saves');
+        await loadLanguageData();
         await fetchChapterData(0);
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
-        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = ""; state.topicRuntime = {}; state.topicProgress = {};
+        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueMode = "none"; state.activeDialogue = []; state.dialogueIdx = 0; state.waitingForAction = false; state.isAdvancingChapter = false; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = ""; state.topicRuntime = {}; state.topicProgress = {};
         document.getElementById("main-menu").style.display = "none";
         document.getElementById("game-container").style.display = "grid";
         startBGM(); initGame();
@@ -1642,14 +1668,24 @@ function checkChapterEnd() {
     return false;
 }
 function confirmChapterEnd() {
-    document.getElementById('chapter-end-overlay').style.display = 'none';
+    if (state.isAdvancingChapter) return;
+    state.isAdvancingChapter = true;
+    const overlay = document.getElementById('chapter-end-overlay');
+    const btn = overlay.querySelector('button');
+    if (btn) btn.disabled = true;
+    overlay.style.display = 'none';
     state.waitingForAction = false;
     autoSave(0);
     const nextIdx = state.currentChapterIdx + 1;
+    const advance = async () => {
+        await goToNextChapter();
+        state.isAdvancingChapter = false;
+        if (btn) btn.disabled = false;
+    };
     if (nextIdx < (state.storyIndex?.chapters?.length || 0)) {
-        showChapterLogo(() => goToNextChapter(), nextIdx);
+        showChapterLogo(advance, nextIdx);
     } else {
-        goToNextChapter();
+        advance();
     }
 }
 
@@ -1774,15 +1810,15 @@ function renderSaveSlots() {
         if(saves[i]) {
             let infoDiv = document.createElement("div"); infoDiv.style.flex="1";
             const chapterInfo = saves[i].chapterText ? `<br><span style="font-size:12px;color:#888;">${saves[i].chapterText}</span>` : "";
-            const autoTag = isAutoSlot ? ` <span style="font-size:10px;color:#e67e22;font-weight:normal;">[自动存档]</span>` : "";
-            infoDiv.innerHTML = `<strong style="color:${isAutoSlot?'#e67e22':'var(--stamp-red)'}">档案 0${i+1}${autoTag}</strong>${chapterInfo}<br><span style="font-size:12px;color:#555;">${saves[i].locName} - ${saves[i].time}</span>`;
+            const autoTag = isAutoSlot ? ` <span style="font-size:10px;color:#e67e22;font-weight:normal;">[${t('sl.autoSaveTag')}]</span>` : "";
+            infoDiv.innerHTML = `<strong style="color:${isAutoSlot?'#e67e22':'var(--stamp-red)'}">${t('sl.slot')} 0${i+1}${autoTag}</strong>${chapterInfo}<br><span style="font-size:12px;color:#555;">${saves[i].locName} - ${saves[i].time}</span>`;
             if (currentSLMode === 'save' && isAutoSlot) {
                 infoDiv.onclick = () => { playSound('click'); showSysMsg(t('sys.autoSlotLocked')); };
             } else {
                 infoDiv.onclick = ()=> { playSound('click'); currentSLMode==='save' ? saveGame(i) : loadGame(i); };
             }
             if (!isAutoSlot) {
-                let delBtn = document.createElement("button"); delBtn.className="delete-btn"; delBtn.innerText="X 销毁";
+                let delBtn = document.createElement("button"); delBtn.className="delete-btn"; delBtn.innerText = t('sl.deleteBtn');
                 delBtn.onclick=(e)=>{ e.stopPropagation(); deleteSave(i); };
                 slotDiv.appendChild(infoDiv); slotDiv.appendChild(delBtn);
             } else {
@@ -1790,9 +1826,9 @@ function renderSaveSlots() {
             }
         } else {
             if (isAutoSlot) {
-                slotDiv.innerHTML = `<div class="slot-empty" style="color:#b7956b;">档案 01 <span style="font-size:10px;color:#c9a87c;">[自动存档]</span> - 等待自动存档</div>`;
+                slotDiv.innerHTML = `<div class="slot-empty" style="color:#b7956b;">${t('sl.slot')} 01 <span style="font-size:10px;color:#c9a87c;">[${t('sl.autoSaveTag')}]</span> - ${t('sl.waitingAutoSave')}</div>`;
             } else {
-                slotDiv.innerHTML = `<div class="slot-empty">档案 0${i+1} - 空白档案</div>`;
+                slotDiv.innerHTML = `<div class="slot-empty">${t('sl.slot')} 0${i+1} - ${t('sl.emptySlot')}</div>`;
                 slotDiv.onclick = ()=>{ if(currentSLMode==='save') saveGame(i); };
             }
         }
@@ -1858,6 +1894,7 @@ function hydrateState(loadedState) {
     hydrated.typingInterval = null;
     hydrated.isTyping = false;
     hydrated.waitingForAction = false;
+    hydrated.isAdvancingChapter = false;
     return hydrated;
 }
 function saveGame(index) {
@@ -1878,6 +1915,7 @@ async function loadGame(index, silent=false) {
         const chapterIdx = loadedState.currentChapterIdx ?? 0;
         clearInterval(state.typingInterval);
         clearTimeout(autoPlayTimer);
+        await loadLanguageData();
         await fetchChapterData(chapterIdx);
         state = hydrateState(loadedState);
         if(saves[index].topicsData) GAME_DATA.topics = saves[index].topicsData;
@@ -1898,7 +1936,11 @@ async function loadGame(index, silent=false) {
     }
 }
 function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg(t('sys.saveDeleted')); renderSaveSlots(); }
-function closeModal(modalId) { document.getElementById(modalId).style.display="none"; }
+function closeModal(modalId) {
+    const modal = document.getElementById(modalId);
+    modal.style.display="none";
+    if (modalId === "present-modal" && modal.dataset.mode === "manual" && state.activeDialogue?.length > 0) renderDialogueLine();
+}
 
 // ================= UI 提示 =================
 function showFlyingNotif(text) { const container = document.getElementById("flying-notifs"); const el = document.createElement("div"); el.className="fly-item"; el.innerText=text; container.appendChild(el); setTimeout(()=>{ if(el.parentNode) el.remove(); }, 3000); }
@@ -2136,6 +2178,7 @@ function showCutsceneLine(line) {
         else { clearInterval(cutsceneTimer); cutsceneTimer = null;
             if(line.endChapter || line.endGame) {
                 const btn = document.getElementById("cutscene-next-btn");
+                btn.disabled = false;
                 btn.style.display = "block";
                 btn.innerText = line.endGame ? t('chapter.endGameBtn') : t('chapter.endBtn');
                 state.waitingForAction = true;
@@ -2151,6 +2194,7 @@ function advanceCutscene(e) {
     document.getElementById("cutscene-text").textContent = line.t || "";
     if(line.endChapter || line.endGame) {
         const btn = document.getElementById("cutscene-next-btn");
+        btn.disabled = false;
         btn.style.display = "block";
         btn.innerText = line.endGame ? t('chapter.endGameBtn') : t('chapter.saveNextBtn');
         state.waitingForAction = true;
@@ -2159,19 +2203,25 @@ function advanceCutscene(e) {
     }
 }
 function finishCutscene() {
+    if (state.isAdvancingChapter) return;
+    state.isAdvancingChapter = true;
     playSound('click');
     const overlay = document.getElementById("cutscene-overlay");
     overlay.style.opacity = "0";
-    document.getElementById("cutscene-next-btn").style.display = "none";
+    const btn = document.getElementById("cutscene-next-btn");
+    btn.disabled = true;
+    btn.style.display = "none";
     setTimeout(() => { overlay.style.display = "none"; }, 1000);
     const line = state.activeDialogue?.[state.dialogueIdx];
     state.waitingForAction = false;
-    if(line && line.endGame) {
+    const isLastSection = state.currentChapterIdx >= (state.storyIndex?.chapters?.length || 0) - 1;
+    if(line && line.endGame && isLastSection) {
         // 游戏结束，返回主界面
         document.getElementById("game-container").style.display = "none";
         document.getElementById("main-menu").style.display = "flex";
         if(bgmAudio) bgmAudio.pause(); if(tensionAudio) tensionAudio.pause(); currentBGM = "main";
         state.activeDialogue = []; state.dialogueIdx = 0; state.dialogueMode = "none";
+        state.isAdvancingChapter = false;
         autoSave(0);
         return;
     }
@@ -2187,17 +2237,22 @@ function finishCutscene() {
     }
     autoSave(0);
     const nextIdx = state.currentChapterIdx + 1;
+    const advance = async () => {
+        await goToNextChapter();
+        state.isAdvancingChapter = false;
+        btn.disabled = false;
+    };
     if (nextIdx < (state.storyIndex?.chapters?.length || 0)) {
-        showChapterLogo(() => goToNextChapter(), nextIdx);
+        showChapterLogo(advance, nextIdx);
     } else {
-        goToNextChapter();
+        advance();
     }
 }
 
 function renderSceneChars() {
     const box = document.getElementById("character-list"); box.innerHTML = "";
     const locChars = GAME_DATA.locations[state.currLoc]?.chars ||[];
-    if (locChars.length === 0) { box.innerHTML = '<div style="color:#888;text-align:center;width:100%;padding:20px;">剧情人物</div>'; return; }
+    if (locChars.length === 0) { box.innerHTML = ''; return; }
     locChars.forEach(charId => {
         const charData = GAME_DATA.characters[charId];
         const baseName = charId.replace('char_', '').replace(/_p\d+$/, '');
@@ -2464,9 +2519,9 @@ function renderDialogueLine() {
     
     // 记录对话历史（去重）
     if (!line.titleCard && !line._cutscene && !line.endChapter && !line.endGame && !line.autoPresent) {
-        let spName = "系统";
+        let spName = t("log.system");
         let spType = "system";
-        if (line.s === "player") { spName = "你"; spType = "player"; }
+        if (line.s === "player") { spName = t("log.you"); spType = "player"; }
         else if (line.s === "npc" && line.speaker) { spName = (PROFILE_DICT[line.speaker]?.name || GAME_DATA.characters?.[line.speaker]?.name || line.speaker); spType = "npc"; }
         const fingerPrint = spType+"|"+spName+"|"+(line.t||"");
         if (!state._seenLines.has(fingerPrint)) {
@@ -2534,8 +2589,6 @@ function checkLineActions(line) {
     else if (line.autoPresent && hasPendingPresent(line)) {
         state.waitingForAction = true;
         setTimeout(() => openPresentModal(false, line.autoPresent), 800);
-    } else if (hasPendingQuestion(line) || hasPendingPresent(line)) {
-        state.waitingForAction = true;
     } else {
         state.waitingForAction = false;
     }
@@ -2547,10 +2600,7 @@ async function advanceDialogue(e) {
     if(state.waitingForAction) return;
     clearTimeout(autoPlayTimer);
     if(state.isTyping) {
-        clearInterval(state.typingInterval); state.isTyping = false; const line = state.activeDialogue[state.dialogueIdx];
-        document.getElementById("dialogue-text").innerHTML = (line.isNew && !line.autoPresent && !line.choices ? `<span class="new-badge">NEW</span> ` : "") + line.t; 
-        document.getElementById("dialogue-text").scrollTop = document.getElementById("dialogue-text").scrollHeight; 
-        checkLineActions(line);
+        finishTypingCurrentLine();
         if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
         return;
     }
@@ -2695,9 +2745,20 @@ function unlockTopic(ids, silent=false) {
     if(added && !silent) { showFlyingNotif(t("sys.newTopic")); renderTopics(); playSound('unlock'); } else if(added && silent) renderTopics();
 }
 
+function finishTypingCurrentLine() {
+    if (!state.isTyping) return false;
+    clearInterval(state.typingInterval);
+    state.isTyping = false;
+    const line = state.activeDialogue[state.dialogueIdx];
+    const textDiv = document.getElementById("dialogue-text");
+    textDiv.innerHTML = (line.isNew && !line.autoPresent && !line.choices ? `<span class="new-badge">NEW</span> ` : "") + line.t;
+    textDiv.scrollTop = textDiv.scrollHeight;
+    checkLineActions(line);
+    return true;
+}
 function doQuestion() {
     if(blockDuringChoice()) return;
-    if(state.isTyping) return;
+    if(finishTypingCurrentLine()) return;
     if(state.dialogueMode!=="topic" || state.activeDialogue.length===0) return;
     const line = state.activeDialogue[state.dialogueIdx];
     if(state.waitingForAction && !hasPendingQuestion(line)) { playSound('click'); return; }
@@ -2716,12 +2777,15 @@ function doQuestion() {
 
 function openPresentModal(isGlobal=false, promptText=null) {
     if(blockDuringChoice()) return;
+    if(finishTypingCurrentLine()) return;
     if(!isGlobal && !state.waitingForAction && (state.dialogueMode!=="topic" || state.activeDialogue.length===0)) { showSysMsg(t('sys.presentInDialogue')); return; }
     if(!isGlobal && !state.waitingForAction && state.activeDialogue[state.dialogueIdx].s==="player") { showSysMsg(t('sys.presentOnNpc')); return; }
     playSound('click');
     document.getElementById("arrow-left").style.display = "none";
     document.getElementById("arrow-right").style.display = "none";
-    const m = document.getElementById("present-modal"); m.style.display="block";
+    const m = document.getElementById("present-modal");
+    m.dataset.mode = promptText ? "auto" : "manual";
+    m.style.display="block";
     const dz = document.getElementById("drop-zone-present"); 
     document.getElementById("present-header").innerText = promptText || t("present.title");
     dz.innerText = t("present.drop"); 
@@ -2772,7 +2836,7 @@ function confirmPresent() {
             else { showSysMsg(t('sys.alreadyPresented')); }
         } else {
             state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
-            state.activeDialogue =[{ s:"npc", speaker: state.currChar, t:"……你给我看这个是什么意思？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+            state.activeDialogue =[{ s:"npc", speaker: state.currChar, t: t('sys.wrongPresentGlobal') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
             loseLife();
         }
         return;
@@ -2790,7 +2854,7 @@ function confirmPresent() {
         } else { showSysMsg(t('sys.evidencePresented')); }
     } else {
         state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
-        state.activeDialogue =[{ s:"npc", speaker: line.speaker, t:"我不知道你在说什么。这跟我刚才说的话有关系吗？" }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+        state.activeDialogue =[{ s:"npc", speaker: line.speaker, t: t('sys.wrongPresent') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
         loseLife();
     }
 }
@@ -2820,13 +2884,10 @@ function setSfxVolume(v) {
 }
 function setWindowSize(w, h) {
     try {
-        const win = nw.Window.get();
         if (w === 'fullscreen') {
-            win.enterFullscreen();
+            window.electronAPI.enterFullscreen();
         } else {
-            win.leaveFullscreen();
-            win.resizeTo(w, h);
-            win.center();
+            window.electronAPI.setWindowSize(w, h);
         }
     } catch(e) { showSysMsg('窗口调整仅支持桌面版'); }
 }
@@ -3047,9 +3108,13 @@ document.addEventListener("mouseup", () => { dragModal = null; });
     <div class="modal-close" onclick="closeModal('credits-modal')"></div>
     <div class="modal-header" data-i18n="credits.title">制作</div>
     <div class="modal-body" style="padding:22px 28px; line-height:2; font-size:14px; color:#444; text-align:center; align-items:center;">
-        文案 / 程序 / 美术：YIFANG（@灰烬马戏团）；音乐：Mubert；
+        游戏制作：YIFANG（@灰烬马戏团）；音乐：Mubert；
         音效：game-sfx-generator音效生成器 ；
         视觉特效：Mirage-stylizer图像风格化应用
+        Contect - lemuriawang@163.com
+为方便玩家们重复游玩5个关卡，本游戏有个快速切关卡/跳过剧情的隐藏按钮，Ctrl+H调出控制台。
+To replay levels or skip story scenes quickly, use the hidden button. Press Ctrl+H to open the console.
+ステージ切り替えやスキップ用の隠しボタンがあります。Ctrl+H でコンソールを開きます。
     </div>
 </div>
 

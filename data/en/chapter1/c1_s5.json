@@ -69,13 +69,13 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "October 30, 2025, 10:30 AM, Chaoye Park, Visitor Center",
+      "t": "October 31, 2025, 10:30 AM, Chaoye Park, Visitor Center",
       "bgm": "bgm_c1s5"
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Now, let's sort through the whole incident from beginning to end."
+      "t": "Alright, let's go over the whole case from start to finish."
     },
     {
       "s": "npc",
@@ -158,12 +158,12 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Aiden Li entered the haunted house, passed by performance Spot 5, and discovered the \"Red Death\" hanging crookedly from the beam."
+      "t": "Aiden went into the haunted house, passed Spot 5, and found the \"Red Death\" hanging crookedly from the beam."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "But based on one premise, Aiden Li was not initially panicked.",
+      "t": "But because of one thing, Aiden didn't panic at first.",
       "autoPresent": "Point out why Aiden Li did not panic",
       "present": {
         "ev_hanged_reddeath": {
@@ -180,17 +180,17 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "At the time, Aiden had just been made an exception and brought into the haunted house project performer team by Victor. He looked up to Victor like an older brother, so he reported the matter to Victor immediately."
+      "t": "At the time, Aiden had just been brought into the performer team by Victor as a special exception. He looked up to Victor like an older brother, so he reported it to him right away."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Victor came to the scene and confirmed Daniel's condition. He concluded that if it were handled as a safety accident, he himself would definitely be held accountable, and the performance would most likely be postponed-perhaps even canceled."
+      "t": "Victor came to the scene and saw Daniel's body. He realized right away that if this was reported as a safety accident, he'd be held responsible—and the show would probably be delayed, maybe even canceled."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "He quickly thought of a method.",
+      "t": "He came up with a plan fast.",
       "choices": {
         "question": "Please choose:",
         "options": [
@@ -263,7 +263,7 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "After Celeste resigned, Victor did not get the promotion he had waited for. Instead, Ray Shi, a \"connection hire,\" arrived. Their relationship was like this...",
+      "t": "After Celeste left, Victor didn't get the promotion he'd been waiting for. Instead, they brought in Ray Shi\u2014a guy with connections. Their relationship was like this...",
       "choices": {
         "question": "Please choose:",
         "options": [
@@ -287,37 +287,37 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "Ray never put himself in opposition to Victor. He knew the park truly ran on the strength of these outstanding veteran employees. So Ray had great respect for Victor."
+      "t": "Ray never positioned himself against Victor. He knew the park really relied on these veteran employees to keep things running, so he respected Victor quite a bit."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Given this situation, Victor could not put their conflict out in the open the way. With Ray Shi, it was like punching a pillow: he had strength, but nowhere to use it."
+      "t": "But with Ray, Victor couldn't pick a fight the way he had with Celeste. With Ray, it was like punching a pillow—he had all this force, but nowhere to land it."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "In terms of ability, he could still compete with a parachuted-in supervisor, but he did not have a relative who could back him up and pave the way for him."
+      "t": "He could match an outside hire in skill, but he didn't have any relatives in high places to back him up or open doors for him."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Victor had come this far using the way of doing things he was good at and deeply believed in, but in the end, he still ran into an invisible ceiling."
+      "t": "Victor had gotten this far by doing things his own way—the way he trusted. But in the end, he still hit an invisible ceiling."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "So he began to reveal his impatience and irritable side. And he had never had clear moral boundaries. Manipulating people to achieve his goals came naturally to him."
+      "t": "So he started showing his impatience and his temper. And he'd never had a strong moral compass—manipulating people to get what he wanted just came naturally to him."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Faced with Aiden distancing himself, he hinted that Aiden was connected to Daniel's death; when an aging battery exploded, he told Faye that her actions had caused a serious performance accident."
+      "t": "When Aiden started pulling away, Victor hinted that Aiden had something to do with Daniel's death. And when that battery exploded, he convinced Faye that she'd caused a major accident."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "He only protected those who were close to him and supported him, and he did not hesitate to punish anyone who failed to show him loyalty."
+      "t": "He only looked out for people who were loyal to him—and didn't hesitate to punish anyone who wasn't."
     },
     {
       "s": "player",
@@ -334,17 +334,17 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "He decided to give them a taste of their own medicine, so he and Sunny stole visitors' belongings in the haunted house. Of course, to avoid being discovered, they usually targeted items that were used less often."
+      "t": "He decided to give them a taste of their own medicine—so he and Sunny started stealing visitors' stuff in the haunted house. Of course, they usually went after things people wouldn't notice right away."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Aiden became increasingly afraid of him, and also discovered what he and Sunny were doing."
+      "t": "Aiden grew more and more afraid of him—and he also found out what Victor and Sunny were up to."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "In the end, he came up with a plan: have his friend Anton Han steal important items from visitors inside the haunted house. He hoped the park would discover what Victor and the others were doing, whether that led to punishment, their dismissal, or even his own dismissal. Aiden Li did not want to keep going anymore."
+      "t": "In the end, he came up with a plan—get his friend Anton to steal something valuable from a visitor inside the haunted house. He hoped the park would catch on and expose Victor and the others, even if it meant all of them getting fired. Aiden just couldn't keep going like that."
     },
     {
       "s": "player",
@@ -366,17 +366,17 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "From Spot 2 onward, he kept looking around, keeping every visitor and performer within his field of view. But when he was approaching Spot 6, he found that one more person had appeared behind him."
+      "t": "From Spot 2 on, he kept checking his surroundings, making sure every visitor and performer was in sight. But as he got close to Spot 6, he realized there was someone else behind him."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Disappearing before the performance at Spot 2 ended, then appearing again at Spot 6... That does not sound like something an ordinary visitor would do. Maybe that person was the one who killed Victor Jiang during the performance!"
+      "t": "Disappearing before Spot 2's performance ended, then showing up again at Spot 6... that doesn't sound like something a normal visitor would do. That person might have been the one who killed Victor during the show!"
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "And during the investigation, we discovered that someone fabricated an alibi. That person was...",
+      "t": "And during the investigation, we found that someone had faked their alibi. That person was...",
       "choices": {
         "question": "Who fabricated an alibi?",
         "options": [
@@ -400,7 +400,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "How did she fabricate her alibi?"
+      "t": "How did she fake her alibi?"
     },
     {
       "s": "player",
@@ -434,7 +434,7 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "Because of this key piece of information.",
+      "t": "Because of this one key detail.",
       "autoPresent": "Point out the evidence that Orchid Ru fabricated her alibi.",
       "present": {
         "ev_ticket_checker_testimony": {
@@ -457,17 +457,17 @@
             {
               "s": "npc",
               "speaker": "char_xiaozhi",
-              "t": "Although she was gone for quite a while, a dozen minutes or so would barely be enough time to take a taxi one way from the cinema to the park's haunted house."
+              "t": "She was gone for a while, sure—but ten or fifteen minutes would barely be enough for a one-way cab ride from the cinema to the haunted house."
             },
             {
               "s": "player",
               "speaker": "none",
-              "t": "She can't manage to kill Victor in that brief span of a dozen minutes."
+              "t": "She couldn't have killed Victor in just ten or fifteen minutes."
             },
             {
               "s": "player",
               "speaker": "none",
-              "t": "In fact, I found the contradiction in something the ticket checker said."
+              "t": "But I did find a contradiction in what the ticket checker said."
             },
             {
               "s": "player",
@@ -496,12 +496,12 @@
             {
               "s": "npc",
               "speaker": "char_xiaozhi",
-              "t": "Even if there were many moviegoers during the holiday, the lobby would not always have people in it, right? So what is wrong with that statement?"
+              "t": "Even if the holiday crowd was big, the lobby wouldn't be packed all the time, right? So what's wrong with what she said?"
             },
             {
               "s": "player",
               "speaker": "none",
-              "t": "Exactly. The problem is that if Orchid Ru really watched the 18:30 screening as she claimed, then it would have been impossible for the lobby to be \"nearly empty.\""
+              "t": "Exactly. The problem is\u2014if Orchid really watched the 18:30 show like she said, the lobby couldn't have been \"nearly empty.\""
             },
             {
               "s": "npc",
@@ -524,7 +524,7 @@
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "According to that evening's screening schedule, if Orchid Ru came out 40 minutes after the film started, she definitely would have run into the audience for this movie."
+                      "t": "According to that night's schedule, if Orchid came out 40 minutes into her movie, she definitely would have run into the audience for another movie."
                     },
                     {
                       "s": "player",
@@ -563,12 +563,12 @@
                     {
                       "s": "npc",
                       "speaker": "char_xiaozhi",
-                      "t": "So Orchid Ru may have bought two tickets? The movie she actually watched was a different screening?"
+                      "t": "So Orchid might have bought two tickets? She actually watched a different screening?"
                     },
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "Yes!"
+                      "t": "Bingo!"
                     },
                     {
                       "s": "npc",
@@ -602,22 +602,22 @@
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "After factoring in the entry and exit times for every movie, only the 19:40 screening could have produced that situation."
+                      "t": "After accounting for all the entry and exit times, the only screening that would create that situation is the 19:40 one."
                     },
                     {
                       "s": "npc",
                       "speaker": "char_xiaozhi",
-                      "t": "Then, if we work backward from the victim's time of death... the killer could have completed the murder plan by 19:15 at the latest, then gone to the cinema to watch the 19:40 movie. There would have been plenty of time!"
+                      "t": "Then if we work backward from the time of death... the killer could've finished everything by 19:15 at the latest, then gone to the 19:40 movie. There'd be plenty of time!"
                     },
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "Yes!"
+                      "t": "Exactly!"
                     },
                     {
                       "s": "npc",
                       "speaker": "char_xiaozhi",
-                      "t": "So, Orchid Ru fabricated an alibi and had time to commit the crime, but that still doesn't prove she is the culprit, does it? Why would she kill her own boyfriend?"
+                      "t": "So Orchid faked an alibi and had time to commit the crime—but that still doesn't prove she's the killer, does it? Why would she kill her own boyfriend?"
                     },
                     {
                       "s": "player",
@@ -640,13 +640,13 @@
                             {
                               "s": "player",
                               "speaker": "none",
-                              "t": "Because something someone said earlier had been bothering me a little. Only now did it finally dawn on me."
+                              "t": "Because something someone said earlier kept bugging me. And now it finally clicked."
                             },
                             {
                               "s": "player",
                               "speaker": "none",
                               "t": "That statement was...",
-                              "autoPresent": "Point out the statement that bothered you",
+                              "autoPresent": "Point out the statement that caught your attention",
                               "present": {
                                 "ev_zhencheng_testimony4": {
                                   "resolved": false,
@@ -720,7 +720,7 @@
                                             {
                                               "s": "player",
                                               "speaker": "none",
-                                              "t": "Her occupation. Orchid Ru works at an animal rescue center in this city. That job carries a frequent risk of exposure to animal scratches and bites, so she needs repeated rabies vaccinations and tetanus shots."
+                                              "t": "Her job. Orchid works at an animal rescue center. That kind of work means she's at constant risk of scratches and bites—so she'd need regular rabies and tetanus shots."
                                             },
                                             {
                                               "s": "npc",
@@ -730,7 +730,7 @@
                                             {
                                               "s": "player",
                                               "speaker": "none",
-                                              "t": "That's why I inferred that before she became Victor's girlfriend, Orchid Ru was none other than Lynn, Daniel's fiancée!"
+                                              "t": "That's why I figured out that before she became Victor's girlfriend, Orchid was actually Lynn—Daniel's fiancée!"
                                             },
                                             {
                                               "s": "npc",
@@ -745,7 +745,7 @@
                                             {
                                               "s": "player",
                                               "speaker": "none",
-                                              "t": "We can ask her about that later. But there is someone else who may be able to help us learn more sides of the story."
+                                              "t": "We can ask her about that later. But there's someone else who might help us see more sides of the story."
                                             },
                                             {
                                               "s": "npc",
@@ -778,7 +778,7 @@
                                                     {
                                                       "s": "player",
                                                       "speaker": "none",
-                                                      "t": "Yes. According to the police investigation, Faye did take a train to Hexi City before the incident, but why did she specifically ask her mother to help her lie and say she had gone home because her mother was seriously ill and hospitalized?"
+                                                      "t": "Yes. The police confirmed Faye did take the train to Hexi City—but why would she ask her mom to lie and say she was hospitalized?"
                                                     },
                                                     {
                                                       "s": "npc",
@@ -812,17 +812,17 @@
                                                     {
                                                       "s": "player",
                                                       "speaker": "none",
-                                                      "t": "Faye had probably foreseen what would happen over those two days. So when the incident happened, she didn't even dare answer calls."
+                                                      "t": "Faye probably knew something was going to happen during those days. That's why she didn't even dare answer the phone when it happened."
                                                     },
                                                     {
                                                       "s": "npc",
                                                       "speaker": "char_xiaozhi",
-                                                      "t": "Why would Faye know about this?"
+                                                      "t": "How would Faye know about that?"
                                                     },
                                                     {
                                                       "s": "player",
                                                       "speaker": "none",
-                                                      "t": "Because Faye and Orchid — or rather, Lynn — had actually been in contact all along. This evidence can prove it!"
+                                                      "t": "Because Faye and Orchid—I mean Lynn—had actually been in touch all along. And this evidence proves it!"
                                                     },
                                                     {
                                                       "s": "player",
@@ -845,7 +845,7 @@
                                                             {
                                                               "s": "npc",
                                                               "speaker": "char_xiaozhi",
-                                                              "t": "Sweet... cats...? Ah! I thought of it!"
+                                                              "t": "Sweet... cats...? Ah! I got it!"
                                                             },
                                                             {
                                                               "s": "player",
@@ -868,12 +868,12 @@
                                                                     {
                                                                       "s": "npc",
                                                                       "speaker": "char_xiaozhi",
-                                                                      "t": "The place where Orchid Ru works is called Sweet Meow Animal Rescue Center!"
+                                                                      "t": "Orchid works at Sweet Meow Animal Rescue Center!"
                                                                     },
                                                                     {
                                                                       "s": "player",
                                                                       "speaker": "none",
-                                                                      "t": "Yes! I believe if we ask someone to verify it, the rescue center must have handed out volunteer badges like this."
+                                                                      "t": "Exactly! I bet if we check, the rescue center must have given out those volunteer badges."
                                                                     },
                                                                     {
                                                                       "s": "npc",
@@ -883,7 +883,7 @@
                                                                     {
                                                                       "s": "player",
                                                                       "speaker": "none",
-                                                                      "t": "They probably met because of this person...",
+                                                                      "t": "They probably met through this person...",
                                                                       "autoPresent": "Please point out who introduced them to each other.",
                                                                       "present": {
                                                                         "char_xiaohua": {
@@ -901,22 +901,22 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_xiaozhi",
-                                                                              "t": "I see... So Faye actually knew all along that Orchid was Lynn Zhao — or perhaps she also knew what Orchid's true purpose was in approaching Victor..."
+                                                                              "t": "So... Faye knew all along that Orchid was Lynn—maybe she even knew Orchid's real reason for getting close to Victor..."
                                                                             },
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "Now the clues are clear, but regarding Faye and Lynn, I think we still need to talk to them and confirm whether our deductions are the truth."
+                                                                              "t": "The clues are pretty clear now, but I still think we need to talk to Faye and Lynn directly and confirm our deductions."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_qin",
-                                                                              "t": "All right. Please rest for a moment; I'll bring Faye and Lynn over for the final questioning."
+                                                                              "t": "Alright. Take a short break—I'll bring Faye and Lynn in for the final round."
                                                                             },
                                                                             {
                                                                               "s": "system",
                                                                               "speaker": "none",
-                                                                              "t": "October 30, 2025, 4:30 PM, Chaoye Park, Visitor Center"
+                                                                              "t": "October 31, 2025, 4:30 PM, Chaoye Park, Visitor Center"
                                                                             },
                                                                             {
                                                                               "s": "system",
@@ -936,17 +936,17 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "When Daniel was still alive, the four of us—Daniel, Lynn, me, and my boyfriend at the time — often did pet rescue work together. We were really happy back then."
+                                                                              "t": "When Daniel was still alive, the four of us—Daniel, Lynn, me, and my boyfriend back then—used to do pet rescue work together. We had some really good times."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "Later, Daniel died. I was also deeply saddened. Before he died, Daniel would occasionally tell me that rehearsals for the haunted house team were extremely stressful, that his old injury had flared up again, and that Victor often arranged for him to perform flashy moves that he felt were meaningless."
+                                                                              "t": "Later, Daniel died. I was also deeply saddened. Before he died, Daniel would sometimes tell me how stressed the haunted house rehearsals were, how his old injury was acting up again, and how Victor kept making him do these flashy moves he thought were pointless."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "So I suspected Daniel's death might not have been what they claimed. But I couldn't judge something I hadn't seen with my own eyes. I couldn't give her any answers."
+                                                                              "t": "So I suspected Daniel's death might not have been what they claimed. But since I hadn't seen it myself, I couldn't say for sure. I couldn't give her any answers."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -956,12 +956,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "More than half a year ago, I noticed Lynn seemed like a completely different person—her hairstyle, makeup, clothes... everything was totally different. And she was especially focused on this year's performance."
+                                                                              "t": "About a year ago, I noticed Lynn had changed completely—her hair, makeup, clothes... everything was different. And she was especially interested in this year's show."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "Recently, she asked me to show her around the haunted house. She pushed every hidden door, carefully inspected the props at each spot, asked me about the details of the performance—the movements, who went first and who followed, what the costumes were like—and even asked for training videos."
+                                                                              "t": "She asked me to give her a tour of the haunted house. She went through every hidden door, checked every prop, asked about every detail of the show—the choreography, the timing, the costumes—even asked for rehearsal footage."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -986,12 +986,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "I asked her right then why things had turned out this way, and why it had to be Victor. She told me she had changed her name to Orchid Ru, and that from then on I should not call her Lynn or bring up Daniel again."
+                                                                              "t": "I asked her right then why things had turned out this way, and why it had to be Victor. She said she'd changed her name to Orchid Ru, and that I should stop calling her Lynn and never mention Daniel again."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "I was so worried. I knew Lynn loved Daniel very much, and this reaction from her was far too strange... I felt that something bad was going to happen."
+                                                                              "t": "I was really worried. I knew how much Lynn had loved Daniel—this was way too strange... I had a bad feeling something terrible was going to happen."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1006,7 +1006,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "She said it was time for a reckoning."
+                                                                              "t": "She said it was time to settle the score."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1016,7 +1016,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "I was terribly panicked, so I took two days off... I wanted to get away from this place, even if only temporarily."
+                                                                              "t": "I was so panicked that I took two days off... I just wanted to get away from this place, even for a little while."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1026,7 +1026,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "For those two days, I did not dare answer the phone. I stayed with Mom every moment; only by her side could I stop the wild thoughts in my head."
+                                                                              "t": "I didn't dare pick up the phone for two days. I stayed with my mom the whole time—only being with her could quiet the thoughts in my head."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1036,7 +1036,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_meiyu",
-                                                                              "t": "I did think about calling the police. But I could not make up my mind. I absolutely did not approve of what Lynn did. But I also could not bring myself to send her to prison."
+                                                                              "t": "I thought about calling the police—but I couldn't make up my mind. I absolutely did not approve of what Lynn did, but I also couldn't bring myself to send her to prison."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1046,7 +1046,7 @@
                                                                             {
                                                                               "s": "system",
                                                                               "speaker": "none",
-                                                                              "t": "October 30, 2025, 7:42 PM, Chaoye Amusement Park, Visitor Center"
+                                                                              "t": "October 31, 2025, 7:42 PM, Chaoye Amusement Park, Visitor Center"
                                                                             },
                                                                             {
                                                                               "s": "system",
@@ -1076,7 +1076,7 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "No. When we suspected her, even though she was terrified, she still did not give you up. It was your alibi that gave you away."
+                                                                              "t": "No. Even when we suspected her, she was too scared to say anything—she didn't give you up. Your alibi is what gave you away."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1091,7 +1091,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "Faye is such a kind person."
+                                                                              "t": "Faye is such a kind soul."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1111,7 +1111,7 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "You pretended to be an visitor and blended into the crowd touring the place. Then...",
+                                                                              "t": "You pretended to be a visitor and blended into the crowd. Then...",
                                                                               "choices": {
                                                                                 "question": "Where did Lynn strangle Victor?",
                                                                                 "options": [
@@ -1169,7 +1169,7 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "You used an anesthetic commonly used at the animal rescue center to drug him and strangle him to death. You placed his body in a dark corner, put on the Red Death robe and mask yourself, and danced a duet with Sunny."
+                                                                              "t": "You used anesthetic from the rescue center to knock him out, then strangled him. You hid the body in the corner, put on the Red Death robe and mask yourself, and danced the duet with Sunny."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1179,12 +1179,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "That was the first time I danced in front of an audience. The first time I tried to understand what Daniel had once done."
+                                                                              "t": "That was the first time I'd ever danced in front of an audience. The first time I tried to understand what Daniel used to do."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "I deliberately wore my highest heels so I would look about the same height as Victor Jiang. Dancing in heels was really hard; even just holding someone's hand and spinning in a circle was difficult."
+                                                                              "t": "I deliberately wore my highest heels to make myself look about Victor's height. Dancing in heels was hard—even just holding someone's hand and turning was tough."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1209,12 +1209,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "But none of that happened."
+                                                                              "t": "But none of that happened in the end."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "I completed everything smoothly."
+                                                                              "t": "Everything went off without a hitch."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1234,12 +1234,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "I returned to my seat and waited for a very, very long time before the movie finally ended. I fled from there and went home."
+                                                                              "t": "I went back to my seat and waited forever for the movie to end. Then I fled and went home."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "These past two days, it feels like I have been living in a vacuum. I can barely tell dreams from reality. In my dreams, sometimes Daniel is lying beside me, and sometimes Victor is. When I wake up, there are occasional moments when I feel that the two of them might still be alive, living in some corner of the world I cannot find."
+                                                                              "t": "These past two days, I feel like I've been living in a haze—I can barely tell dreams from reality anymore. In my dreams, sometimes Daniel is lying beside me, and sometimes Victor is. When I wake up, there are occasional moments when I feel that the two of them might still be alive, living in some corner of the world I cannot find."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1284,12 +1284,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "When that thought came to me, I startled myself."
+                                                                              "t": "When that thought hit me, I was shocked at myself."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "Had I forgotten my purpose in approaching him? Was I really such a weak person, someone so easily changed?"
+                                                                              "t": "Had I forgotten why I got close to him in the first place? Am I really that weak—that easily swayed?"
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1314,7 +1314,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "He said... those stupid coworkers were all brainless trash. He tricked a female coworker into thinking it was her mistake that broke the battery, and she actually believed him... living in fear every day. Hilarious."
+                                                                              "t": "He said... those stupid colleagues were all brainless trash. He'd tricked a female coworker into thinking she'd caused the battery to break, and she actually bought it—walking around terrified every day. Hilarious, he said."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1329,7 +1329,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "You have no idea how disgusting the smug expression on that face was. He said, \"I removed the safety buckle that unlucky bastard had fastened, had someone put the rope around his neck and hang him back up, and then said he had ended his own life.\""
+                                                                              "t": "You should have seen the smug look on his face\u2014it made me sick. He said, \"I unfastened that unlucky bastard's safety buckle, had someone put the rope around his neck and hoist him back up, and told everyone he'd hanged himself.\""
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1344,7 +1344,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "I finally saw that person clearly. Months of confusion and wavering disappeared in that moment."
+                                                                              "t": "That's when I finally saw him for who he really was. All those months of confusion and hesitation vanished in that moment."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1354,12 +1354,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "That was the real him. A repulsive, petty, unrepentant man."
+                                                                              "t": "That was the real him. A disgusting, petty, unrepentant coward."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "It was also at that moment that I first felt the urge to kill."
+                                                                              "t": "That was the first moment I truly wanted to kill him."
                                                                             },
                                                                             {
                                                                               "s": "npc",
@@ -1374,12 +1374,12 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "On the day of the performance, I covered my face with a hat and mask, entered the performance venue, drugged him unconscious with anesthetic, and strangled him. After dancing with Sunny Chen, I changed into the non-slip shoes I had prepared in advance, wrapped Victor in the Red Death robe, dragged the body under the dining table, then pulled the robe out and threw it back to performance Spot 5."
+                                                                              "t": "On the day of the show, I covered my face with a hat and mask, went in, drugged him, and strangled him. After dancing with Sunny, I changed into the non-slip shoes I'd prepared, wrapped Victor in the Red Death robe, dragged him under the table, then pulled the robe off and tossed it back at Spot 5."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "It all went unbelievably smoothly. Especially the moment I called out his name in that dark, noisy room."
+                                                                              "t": "It went unbelievably smoothly. Especially the moment I called his name in that dark, noisy room."
                                                                             },
                                                                             {
                                                                               "s": "player",
@@ -1413,22 +1413,22 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "Yes. So I called his name. I said, Victor, it's me. I'm here."
+                                                                              "t": "Yes. So I called his name. I said, Victor, it's me. I'm here to see you."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "First he looked at me in disbelief, then he came closer. I took off his mask."
+                                                                              "t": "He stared at me in disbelief at first, then he stepped closer. I took off his mask."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "Even as he was about to pass out, his face was still full of disbelief."
+                                                                              "t": "Even as he was losing consciousness, he still had that look of disbelief on his face."
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_rulan",
-                                                                              "t": "But I think, in the end, he understood what that room and that rope meant."
+                                                                              "t": "But I think in the end, he understood what that room and that rope stood for."
                                                                             },
                                                                             {
                                                                               "s": "system",
@@ -1453,7 +1453,7 @@
                                                                             {
                                                                               "s": "system",
                                                                               "speaker": "none",
-                                                                              "t": "October 30, 2025, 8:22 PM, Chaoye Park, in front of the haunted house",
+                                                                              "t": "October 31, 2025, 8:22 PM, Chaoye Park, in front of the haunted house",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1508,13 +1508,13 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "Did you not want to become the greatest master thief of all time?",
+                                                                              "t": "I thought you wanted to be the greatest phantom thief of all time?",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_antong",
-                                                                              "t": "Ah, being the greatest master thief of all time makes it easy for the police to keep an eye on you.",
+                                                                              "t": "Yeah, but being a famous phantom thief makes you an easy target for the cops.",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1532,13 +1532,13 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "Who told you those two were good friends? They were rivals, rivals!",
+                                                                              "t": "Who told you that? They were rivals—rivals!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_antong",
-                                                                              "t": "Maybe Arsène Lupin also dreamed of being Holmes!",
+                                                                              "t": "Maybe Lupin also dreamed of being Holmes!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1562,13 +1562,13 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_antong",
-                                                                              "t": "Ah, if you do not say anything, I will take that as a yes!",
+                                                                              "t": "Silence means consent! I'll take that as a yes!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "I am wondering whether I should ask Officer Qin to detain you for a few days...",
+                                                                              "t": "I'm thinking about asking Officer Qin to lock you up for a few days...",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1610,13 +1610,13 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_xiaozhi",
-                                                                              "t": "Sis, how did I do today as your detective assistant?",
+                                                                              "t": "Sis, how'd I do today as your assistant?",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "Absolutely, incredibly well! My precious little sister Sidney is the best assistant in the whole world!",
+                                                                              "t": "Absolutely amazing! My precious little sister is the best assistant in the whole world!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1652,7 +1652,7 @@
                                                                             {
                                                                               "s": "player",
                                                                               "speaker": "none",
-                                                                              "t": "I know, I know. Come on, let's go grab some late-night snacks — my treat!",
+                                                                              "t": "Okay, okay. Come on, let's grab some late-night food—my treat!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {

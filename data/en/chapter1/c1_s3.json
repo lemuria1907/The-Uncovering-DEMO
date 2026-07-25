@@ -11,20 +11,20 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "Both the men's and women's locker rooms are quiet, with only one officer on duty. Andy Liu is pacing anxiously by the door."
+          "t": "Both locker rooms are quiet, with just one officer keeping watch. Andy is pacing nervously by the door."
         }
       ],
       "hotspots": [
         {
           "id": "changwei_locker",
           "title": "Victor's Locker",
-          "desc": "In the late Victor Jiang's locker are two of his shirts, a cartoon charm, a park logo commemorative stamp, and a sheet of park stationery covered with many park logo stamps. Dates are handwritten beside them, and they seem to overlap with the haunted house performance dates.",
+          "desc": "In Victor's locker are two shirts, a cartoon keychain, a park logo stamp, and a sheet of park stationery stamped with the logo multiple times. Handwritten dates next to them seem to match the haunted house performance dates.",
           "giveEv": "ev_changwei_locker"
         },
         {
           "id": "zhencheng_locker",
           "title": "Sunny's Locker",
-          "desc": "In Sunny Chen's locker are a warm yellow dress, a pair of high heels, a children's toy, a park logo commemorative stamp, and a postcard covered with many park logo stamps. The postcard is a giveaway from a milk tea brand.",
+          "desc": "In Sunny's locker: a warm yellow dress, high heels, a children's toy, a park logo stamp, and a postcard stamped with the logo multiple times. The postcard is a promotional item from a bubble tea brand.",
           "giveEv": "ev_zhencheng_locker"
         },
         {
@@ -36,7 +36,7 @@
         {
           "id": "meiyu_locker",
           "title": "Faye's Locker",
-          "desc": "In Faye Liu's locker are a white T-shirt, a pair of jeans, and a cat-head volunteer badge with the word SWEET on it. There is an accident investigation report from one year ago; it analyzes in detail the cause of the May 2, 2024 float parade accident: an aging battery short-circuited. There is also a bottle of sertraline (an anti-anxiety medication), prescribed three months ago, with more than half the bottle already taken.",
+          "desc": "In Faye's locker: a white T-shirt, jeans, and a cat-shaped volunteer badge that says SWEET. There's also an accident report from a year ago, detailing the May 2, 2024 float parade accident—caused by a battery short circuit due to aging. Plus a bottle of sertraline (anti-anxiety meds), prescribed three months ago, more than half gone.",
           "giveEv": "ev_meiyu_locker"
         }
       ]
@@ -113,7 +113,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "October 28, 2025, 12:30 PM, Chaoye Park, Performer Locker Room",
+      "t": "October 29, 2025, 12:30 PM, Chaoye Park, Performer Locker Room",
       "unlockLoc": [
         "locker_room"
       ],
@@ -128,7 +128,7 @@
       {
         "s": "npc",
         "speaker": "char_andy",
-        "t": "Sylva Xi, you are here!"
+        "t": "Sylva, you're here!"
       }
     ],
     "char_meiyu": [
@@ -149,7 +149,7 @@
       {
         "s": "npc",
         "speaker": "char_shihui",
-        "t": "Hey, Sylva, good to see you again. Feel free to ask whatever you need."
+        "t": "Hey, Sylva, good to see you again. Ask me anything you need."
       }
     ]
   },
@@ -162,7 +162,7 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Following Officer Lyra Qin's instructions, we opened Victor Jiang's locker. Then we also asked Sunny Chen, Aiden Li, and Faye Liu to open their lockers so we could inspect them."
+          "t": "We opened Victor's locker on Officer Lyra's orders. Then we had Sunny, Aiden, and Faye open theirs too so we could take a look."
         },
         {
           "s": "player",
@@ -172,17 +172,17 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Mostly changes of clothes, personal items, documents, medicine, that kind of thing."
+          "t": "Just clothes, personal stuff, papers, meds—that kind of thing."
         },
         {
           "s": "player",
           "speaker": "none",
-          "t": "All right, I will take a look myself. Also, yesterday Officer Lyra Qin mentioned that a visitor lost something in the haunted house. What was that about?"
+          "t": "Alright, I'll take a look myself. Also, yesterday Officer Lyra Qin mentioned that a visitor lost something in the haunted house. What was that about?"
         },
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Ah... actually, it has already been found. There is a small pavilion near the haunted house. When the visitor who lost the item called it, the ringtone went off, and a visitor resting there heard a sound in the grass behind them. They quickly picked it up and handed it to staff."
+          "t": "Ah... actually, it has already been found. There's a pavilion near the haunted house. When the visitor called their phone, it rang, and someone resting there heard it from the bushes behind them. They grabbed it and turned it in to staff."
         },
         {
           "s": "player",
@@ -197,7 +197,7 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Officer Lyra Qin said that after you finish checking here, you can go to the temporary interrogation area. Celeste Ming and Faye Liu should already be there.",
+          "t": "Officer Lyra said you can head to the temporary interrogation area once you're done here. Celeste and Faye should already be there.",
           "unlockLoc": [
             "interrogation",
             "office"
@@ -273,12 +273,12 @@
                 {
                   "s": "npc",
                   "speaker": "char_andy",
-                  "t": "I do. It was during a holiday, and one of the parade floats suddenly made a loud bang and gave off a huge cloud of white smoke. Faye was on the carriage where the accident happened, and it scared her badly. The investigation result was just as this report says."
+                  "t": "I do. It was during a holiday. One of the floats suddenly made a loud bang and blew out a huge cloud of white smoke. Faye was on the carriage where the accident happened, and it scared her badly. The investigation result was just as this report says."
                 },
                 {
                   "s": "npc",
                   "speaker": "char_andy",
-                  "t": "There was even a public criticism notice at the time. The colleague responsible for maintenance inspections had a large bonus deducted. The incident had quite an impact. The park called everyone into meetings several times, and it also made it standard policy to hold at least four safety trainings every year.",
+                  "t": "There was even an official reprimand. The maintenance guy got a big bonus cut. The whole thing was a big deal—the park held multiple meetings and made it standard policy to run safety training at least four times a year.",
                   "unlockEv": [
                     "ev_float_accident"
                   ]
@@ -330,7 +330,7 @@
                     {
                       "s": "npc",
                       "speaker": "char_meiyu",
-                      "t": "Yes, I knew him..."
+                      "t": "Yeah, I knew him..."
                     },
                     {
                       "s": "player",
@@ -345,17 +345,17 @@
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "Do you know whether he had any family, friends, a lover, or anything like that?"
+                      "t": "Do you know if he had any family, friends, or a girlfriend?"
                     },
                     {
                       "s": "npc",
                       "speaker": "char_meiyu",
-                      "t": "I don't know about that."
+                      "t": "I don't know about that stuff."
                     },
                     {
                       "s": "npc",
                       "speaker": "char_meiyu",
-                      "t": "Aiden Li came later. At first he was something like stage crew and prop master? Something like that? Then he became a performer."
+                      "t": "Aiden Li came later. At first he was more like stage crew and prop guy, I think? Then he became a performer."
                     }
                   ]
                 }
@@ -372,7 +372,7 @@
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "Just colleagues. He was always in the team leader role, so in practice maybe we counted as supervisor and subordinate?"
+          "t": "Just colleagues. He was the team leader, so I guess you could say he was my supervisor."
         }
       ]
     },
@@ -419,7 +419,7 @@
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "Ah... it was just a regular accident. Things like that happen all the time. It wasn't a big deal.",
+          "t": "Ah... it was just a normal accident. Stuff like that happens all the time. No big deal.",
           "present": {
             "ev_float_accident": {
               "resolved": false,
@@ -440,7 +440,7 @@
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "If you've forgotten it, then why were you looking through the accident investigation report from that year?"
+                          "t": "If you've forgotten, then why were you going through that accident report?"
                         },
                         {
                           "s": "npc",
@@ -450,7 +450,7 @@
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "You were badly frightened, weren't you?"
+                          "t": "It really scared you, didn't it?"
                         },
                         {
                           "s": "npc",
@@ -546,7 +546,7 @@
                                 {
                                   "s": "player",
                                   "speaker": "none",
-                                  "t": "The park's custom-made headpiece was ignited and destroyed by the fire from the battery's spontaneous combustion. According to the accident investigation report, it wasn't your fault at all. Any normal person would think that, wouldn't they?"
+                                  "t": "The park's custom-made headpiece was ignited and destroyed by the fire from the battery's spontaneous combustion. The accident report says it wasn't your fault at all. Anyone would see that, right?"
                                 },
                                 {
                                   "s": "player",
@@ -585,7 +585,7 @@
                                 {
                                   "s": "player",
                                   "speaker": "none",
-                                  "t": "Victor wanted you to think he had solved a big problem for you, didn't he?"
+                                  "t": "Victor wanted you to think he'd done you a huge favor, didn't he?"
                                 },
                                 {
                                   "s": "npc",
@@ -600,7 +600,7 @@
                                 {
                                   "s": "player",
                                   "speaker": "none",
-                                  "t": "And if I'm not mistaken, you've already confirmed the real cause of the accident with the staff member who issued the report, haven't you?"
+                                  "t": "And if I'm right, you've already checked the real cause with the staff member who wrote that report, haven't you?"
                                 },
                                 {
                                   "s": "npc",
@@ -648,17 +648,17 @@
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "He said it really was battery aging. I asked whether it had anything to do with the headpiece that caught fire. He said there was some connection, but not much. That battery's internal resistance had already severely exceeded the acceptable limit. Even if nothing had been placed on it, it still might have combusted on its own."
+          "t": "He confirmed it was battery aging. I asked if the burned headpiece had anything to do with it, and he said there was some connection but not much. That battery's internal resistance was already way past the limit. Even without anything on top of it, it could have ignited on its own."
         },
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "But that wasn't what Victor told me at the time. He said I had no common sense, that I put the heavy performance headpiece on top of the battery compartment and blocked the battery's heat dissipation, and that this was the main cause of the accident."
+          "t": "But that wasn't what Victor told me at the time. He said I had no common sense—that I'd put the heavy headpiece on the battery box and blocked the heat from dissipating, which caused the accident."
         },
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "He said he was on good terms with people in the maintenance department and would help me change the investigation report so it said the battery had combusted on its own. That way, the park wouldn't come after me. And he told me never to mention it to anyone again."
+          "t": "He said he knew people in maintenance and would help change the report to say the battery just caught fire on its own, so the park wouldn't come after me. And he told me never to tell anyone."
         },
         {
           "s": "npc",
@@ -668,12 +668,12 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "So you did have a reason to resent Victor Jiang, didn't you?"
+          "t": "So you did have a reason to hate Victor, didn't you?"
         },
         {
           "s": "npc",
           "speaker": "char_meiyu",
-          "t": "After seeing the truth, I was indeed furious, but I'm not the killer! How could I kill someone over something like this?"
+          "t": "After seeing the truth, I was indeed furious, but I'm not the killer! I wouldn't kill someone over something like that!"
         },
         {
           "s": "npc",
@@ -700,7 +700,7 @@
               {
                 "s": "npc",
                 "speaker": "char_meiyu",
-                "t": "Victor said more than once while drinking with other people that Aiden was getting more and more skilled at pulling ropes, no wonder he had practice on a real person."
+                "t": "Victor said more than once, over drinks, that Aiden was getting really good at working the ropes—no wonder he'd had practice on a real person."
               },
               {
                 "s": "player",
@@ -737,7 +737,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "You already know, don't you? Otherwise you wouldn't have come to me, right?"
+          "t": "You already know, don't you? Otherwise you wouldn't be here."
         },
         {
           "s": "player",
@@ -793,7 +793,7 @@
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "To be honest, I didn't want to stay there anymore anyway. That place was rotten from top to bottom. It was not worth any more of my valuable time."
+                "t": "To be honest, I didn't want to stay there anymore anyway. That place was rotten from top to bottom. Not worth wasting any more of my time on."
               },
               {
                 "s": "player",
@@ -844,7 +844,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_mingqi",
-                  "t": "Why should I have to clarify something I never did in the first place?",
+                  "t": "Why should I have to prove something I never did?",
                   "unlockEv": [
                     "ev_mingqi_testimony1"
                   ]
@@ -856,7 +856,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "Aren't you looking into Victor's death? Then why are you picking on me?"
+          "t": "Aren't you investigating Victor's death? So why are you grilling me?"
         }
       ]
     },
@@ -877,19 +877,19 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "Yes. He was practically like some street punk. Smoking, drinking, acting like best buddies with everyone. At every meeting, he would slump sideways in his chair and look at people out of the corner of his eye.",
+          "t": "Yes. He was like some street thug. Smoked, drank, acted like he was everyone's best friend. At every meeting he'd slouch in his chair and glare at people sideways.",
           "question": {
             "resolved": false,
             "dialogue": [
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "Did he treat you badly?"
+                "t": "Did he give you a hard time?"
               },
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "Hah, badly is putting it mildly. That man always looked down on the scripts I wrote."
+                "t": "Hah, that's putting it mildly. That man always looked down on the scripts I wrote."
               },
               {
                 "s": "npc",
@@ -917,7 +917,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "To be fair and objective, when it came to the parts of the work he was interested in, he was beyond reproach."
+          "t": "To be fair, when it came to the stuff he actually cared about, he was really good."
         },
         {
           "s": "npc",
@@ -934,7 +934,7 @@
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "Yes. Those things should originally have been under my control, but he relied on his good relationship with the props team to shut me out. I was quite angry at first, but later I felt he did seem suited to that kind of work. For example, attaching doll props to the waist for a duet and so on. Those ideas were rather interesting."
+                "t": "Yes. Those things were supposed to be under my control, but he used his connections with the props team to cut me out. I was pretty mad at first, but honestly, he did seem suited for that kind of work—like the idea of strapping a doll prop to your waist for a duet. That was actually pretty clever."
               }
             ]
           }
@@ -947,7 +947,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "But when it came to Daniel Xiao... that man really did put me in a terrible position.",
+          "t": "But with Daniel Xiao... that bastard really set me up.",
           "present": {
             "ev_mingqi_changwei_mail": {
               "resolved": false,
@@ -1013,7 +1013,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "Yeah. He's the nephew of one of the board members—Director Li. You didn't know that? Knowing Victor's personality, those two must have clashed. That's the guy you should be looking into, not me.",
+          "t": "Yeah. He's the nephew of Director Li on the board. You didn't know that? Given Victor's personality, those two must have butted heads. That's who you should be looking into, not me.",
           "unlockEv": [
             "ev_relative"
           ]
@@ -1028,7 +1028,7 @@
         {
           "s": "npc",
           "speaker": "char_mingqi",
-          "t": "Of course I mean the fact that I was forced to resign because of Daniel Xiao's death."
+          "t": "Of course I mean being forced to resign over Daniel Xiao's death."
         },
         {
           "s": "player",
@@ -1045,17 +1045,17 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "So you were pressuring him, then?"
+                "t": "So you were putting pressure on him?"
               },
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "Hah. Isn't that all perfectly normal work communication? If someone cannot even take that much, they might as well not come to work."
+                "t": "Hah. Isn't that just normal work communication? If someone can't even handle that, they might as well quit."
               },
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "I do not think I should be held responsible for his death at all."
+                "t": "I don't think I should be blamed for his death at all."
               },
               {
                 "s": "npc",
@@ -1070,7 +1070,7 @@
               {
                 "s": "npc",
                 "speaker": "char_mingqi",
-                "t": "No one considered possibilities like that. And as for the claim that I harassed people, is there any evidence? It is all one-sided talk. In reality, no one actually wanted to get to the bottom of anything, did they?",
+                "t": "No one even considered those possibilities. And that harassment claim—where's the evidence? It's all just hearsay. Nobody actually wanted to find out the truth, did they?",
                 "unlockEv": [
                   "ev_mingqi_testimony2"
                 ]
@@ -1142,7 +1142,7 @@
                                     {
                                       "s": "npc",
                                       "speaker": "char_shihui",
-                                      "t": "Actually, your guess is right... Celeste Ming really was targeted from all sides... In the park, even though his position was high, he was always relatively isolated.",
+                                      "t": "Actually, you're right... Celeste really was targeted from all sides... Even though he had a high position, he was always kind of isolated in the park.",
                                       "question": {
                                         "resolved": false,
                                         "dialogue": [
@@ -1203,7 +1203,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "I found the accident investigation report from back then in Faye's locker. It happened a year ago, so I am curious why Faye has that report now."
+                  "t": "I found that old accident report in Faye's locker. It's from a year ago—why would she still have it?"
                 },
                 {
                   "s": "player",
@@ -1213,7 +1213,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_shihui",
-                  "t": "It was between parade performances. Suddenly there was a bang, like something exploding. When I rushed over, the whole carriage was almost covered in white smoke, and there were flames at the rear. Later we found out that Faye's performance prop at the back of the float had caught fire.",
+                  "t": "It was between parade sets. Suddenly there was a loud bang—like an explosion. When I ran over, the whole float was filled with white smoke, and flames were coming from the back. Turned out Faye's prop at the rear had caught fire.",
                   "question": {
                     "resolved": false,
                     "dialogue": [
@@ -1225,7 +1225,7 @@
                       {
                         "s": "npc",
                         "speaker": "char_shihui",
-                        "t": "A cartoon mascot head used for performances, custom-made by the park, and pretty expensive. Victor even came over to tell me not to blame Faye for it, and not to penalize her. But honestly, I didn't think an actor should be punished for that in the first place. If an actor had been hurt, that would have been far more serious than a burned mascot head.",
+                        "t": "A cartoon mascot head used for performances, custom-made by the park, and pretty expensive. Victor even came over to tell me not to blame Faye or punish her. But honestly, I never thought an actor should be punished for that anyway—an injured actor would've been way worse than a burned mascot head.",
                         "question": {
                           "resolved": false,
                           "dialogue": [
@@ -1275,7 +1275,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_shihui",
-                  "t": "Ahahaha, yes... how did you know?"
+                  "t": "Ahahaha, yeah... how'd you know?"
                 }
               ]
             }
@@ -1309,7 +1309,7 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Maybe it was just a bad fit. Celeste Ming was clearly losing more and more motivation here."
+          "t": "Maybe it was just a bad match. You could tell Celeste was losing motivation more and more."
         },
         {
           "s": "npc",
@@ -1319,7 +1319,7 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "After the board found out, they kept wanting to find a reason to dismiss him, but that would have been like slapping themselves in the face...",
+          "t": "After the board found out, they kept looking for an excuse to fire him, but that would've meant admitting they'd made a mistake...",
           "question": {
             "resolved": false,
             "dialogue": [
@@ -1362,7 +1362,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "The park wanted to use Daniel Xiao's death as a reason to fire Celeste Ming. So maybe, strictly speaking, Celeste wasn't really the one to blame for it in the first place."
+                "t": "The park wanted to use Daniel Xiao's death as an excuse to fire Celeste. So maybe Celeste wasn't really the one to blame in the first place."
               },
               {
                 "s": "player",
@@ -1372,7 +1372,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "Ah, now that you mention it, that's true..."
+                "t": "Ah, when you put it that way, yeah..."
               },
               {
                 "s": "player",
@@ -1464,13 +1464,13 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Oh, suspects? Look, we're a good team. There's no way something like that happened.",
+          "t": "Oh, suspects? Come on, we're a tight team. There's no way something like that happened.",
           "bgm": "tension"
         },
         {
           "s": "player",
           "speaker": "none",
-          "t": "What do you mean, a good team? Stop kidding yourself..."
+          "t": "A good team? Don't kid yourself..."
         },
         {
           "s": "npc",
@@ -1527,22 +1527,22 @@
                         {
                           "s": "npc",
                           "speaker": "char_qin",
-                          "t": "Looks like there is still a lot to investigate."
+                          "t": "Looks like we still have a lot to dig into."
                         },
                         {
                           "s": "npc",
                           "speaker": "char_qin",
-                          "t": "I've already sent people to investigate Daniel Xiao's relationships before his death. There may be some new leads tomorrow. Also, an officer just spoke with Faye Liu's mother and confirmed that Faye and her mother really have been together these past two days."
+                          "t": "I've already got people looking into Daniel Xiao's personal connections. We might get some new leads tomorrow. Also, an officer just spoke with Faye Liu's mother and confirmed that Faye and her mother really have been together these past two days."
                         },
                         {
                           "s": "npc",
                           "speaker": "char_qin",
-                          "t": "And regarding Daniel Xiao's death, I think we need to conduct a second round of questioning with Sunny Chen and Aiden Li."
+                          "t": "And about Daniel Xiao's death—I think we need to question Sunny and Aiden again."
                         },
                         {
                           "s": "npc",
                           "speaker": "char_qin",
-                          "t": "Then let's leave this stage of the investigation here for now. Based on the clues we obtained today, we'll proceed with the next round of verification and questioning. Sylva, see you tomorrow."
+                          "t": "Let's wrap it up here for now. We'll move forward with the next round of verification and questioning based on today's clues. Sylva, see you tomorrow."
                         },
                         {
                           "s": "system",

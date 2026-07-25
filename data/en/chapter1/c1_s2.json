@@ -11,12 +11,12 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "The haunted house that was crowded with people and brightly lit just now is now lying there quietly like a loosely wound music box."
+          "t": "The haunted house that was crowded with people and brightly lit just now is now lying there quietly like a music box with its spring unwound."
         },
         {
           "s": "system",
           "speaker": "none",
-          "t": "You and Sidney stood at the entrance, ready to go in and check."
+          "t": "You and Sidney stand at the entrance, ready to go in and check."
         }
       ],
       "hotspots": []
@@ -37,7 +37,7 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "Standing in the corner was a cello that had been painted with acrylic to create a damaged and moth-eaten effect. The body of the violin was covered with dark red scratches—probably also painted. Scattered next to it were several pages of sheet music, heavily trampled and wrinkled."
+          "t": "In the corner stood a cello painted with acrylic to look damaged and moth-eaten. Its body was covered with dark red scratches—probably also painted. Scattered next to it were several pages of sheet music, heavily trampled and wrinkled."
         },
         {
           "s": "system",
@@ -49,7 +49,7 @@
         {
           "id": "cello_case",
           "title": "Cello Case",
-          "desc": "There was a piece of dark patterned silk covering something in the piano case. You opened the silk and found two items inside: lipstick and a women's hairpin.",
+          "desc": "There was a piece of dark patterned silk covering something inside the cello case. You opened the silk and found two items inside: lipstick and a women's hairpin.",
           "giveEv": "ev_cello_case_items"
         }
       ]
@@ -70,12 +70,12 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "The dummy model of the Prince's Wife fell to the ground, wearing a white mask on its face, and its empty eye sockets looked a bit scary."
+          "t": "The Prince's Wife mannequin lay on the ground, wearing a white mask on its face, and its empty eye sockets looked a bit scary."
         },
         {
           "s": "system",
           "speaker": "none",
-          "t": "In a corner on the left, there is a blower. It turns out that the wind caused the dancers' clothes to fly during the performance."
+          "t": "In a corner on the left, there is a blower. It turns out a fan was used to make the dancer's costume flutter during the performance."
         },
         {
           "s": "system",
@@ -122,7 +122,7 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "The cart next to it was filled with bottles and cans, with some incomprehensible words written on the labels. Some bottles had been knocked over, leaving dark stains after the liquid dried."
+          "t": "The cart next to it was filled with bottles and jars, with unreadable labels. Some bottles had been knocked over, leaving dark stains after the liquid dried."
         }
       ],
       "hotspots": []
@@ -164,7 +164,7 @@
         {
           "s": "system",
           "speaker": "none",
-          "t": "Some of the \"corpses\" still held wine glasses in their hands, and their bodies were stained with blood. The tablecloth was pulled and wrinkled, as if there had been a real chaos."
+          "t": "Some of the \"corpses\" still held wine glasses in their hands, and their bodies were stained with blood. The tablecloth was rumpled, as if there had been a struggle."
         },
         {
           "s": "system",
@@ -279,7 +279,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "October 27, 2025, 9:04 PM, Chaoye Park, entrance of the haunted house",
+      "t": "October 28, 2025, 9:04 PM, Chaoye Park, entrance of the haunted house",
       "unlockLoc": [
         "loc_entrance"
       ],
@@ -293,24 +293,24 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p1",
-        "t": "This is the first scene players will encounter at the entrance to the haunted house."
+        "t": "This is the entrance—the first scene players will see."
       }
     ],
     "char_xiaozhi_p2": [
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p2",
-        "t": "These props don't look scary when you look closely!"
+        "t": "These props aren't scary at all up close!"
       },
       {
         "s": "player",
         "speaker": "none",
-        "t": "yes. The reason why the haunted house is so dark is probably because it needs to be difficult for everyone to see clearly."
+        "t": "Yes. They probably keep it dark so people can't see the details."
       },
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p2",
-        "t": "What is this strange machine for?"
+        "t": "What's this weird machine for?"
       },
       {
         "s": "player",
@@ -320,12 +320,12 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p2",
-        "t": "oh oh! It's used for this purpose. I really like the effect. It's very fairy-like!"
+        "t": "Oh! That's what it's for! I really like the effect—it's so dreamy!"
       },
       {
         "s": "player",
         "speaker": "none",
-        "t": "Do you think the ghosts in the haunted house look fairy-like?"
+        "t": "You think the ghosts look magical?"
       },
       {
         "s": "npc",
@@ -344,7 +344,7 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p4",
-        "t": "Is this where Sunny Chen dances? one person?"
+        "t": "Is this where Sunny dances? All by herself?"
       },
       {
         "s": "player",
@@ -359,14 +359,14 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p4",
-        "t": "What an interesting design."
+        "t": "That's a cool design."
       }
     ],
     "char_xiaozhi_p5": [
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p5",
-        "t": "Sis, I'm too scared to go in."
+        "t": "Sis, I don't think I can go in. I'm too scared."
       },
       {
         "s": "player",
@@ -381,7 +381,7 @@
       {
         "s": "player",
         "speaker": "none",
-        "t": "Yeah. . . I get chills down my spine just thinking about it."
+        "t": "Yeah. . . Just thinking about it gives me the creeps."
       },
       {
         "s": "npc",
@@ -401,12 +401,12 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p5",
-        "t": "Gah! Sis, you're freaking me out!"
+        "t": "Whoa! Sis, you're freaking me out!"
       },
       {
         "s": "player",
         "speaker": "none",
-        "t": "I didn't mean to."
+        "t": "Sorry, didn't mean to."
       }
     ],
     "char_xiaozhi_p6": [
@@ -428,7 +428,7 @@
       {
         "s": "player",
         "speaker": "none",
-        "t": "You've pretty much spoiled it all."
+        "t": "You've basically given it all away."
       },
       {
         "s": "npc",
@@ -450,7 +450,7 @@
       {
         "s": "npc",
         "speaker": "char_ayou",
-        "t": "I. . . I occasionally tidy up and inventory the props after the performance. Today I feel that the dummies are a bit messy. . . Originally there were some half-parts of the dummies under the table, but now it seems that a lot of them are exposed."
+        "t": "I... I sometimes tidy up and count the props after the show. Today I noticed the dummies looked a bit off... Usually parts of them are tucked under the table, but now a lot more is sticking out."
       },
       {
         "s": "npc",
@@ -472,7 +472,7 @@
       {
         "s": "npc",
         "speaker": "char_shihui",
-        "t": "How could this be? What a terrible situation! ! !"
+        "t": "How could this happen? This is terrible!!!"
       },
       {
         "s": "npc",
@@ -482,7 +482,7 @@
       {
         "s": "player",
         "speaker": "none",
-        "t": "I know you're anxious, but try not to be... yet."
+        "t": "I know you're anxious, but try to stay calm..."
       }
     ],
     "char_zhencheng": [
@@ -499,7 +499,7 @@
       {
         "s": "npc",
         "speaker": "char_zhencheng",
-        "t": "Victor... I had barbecue with him after work yesterday. And now he's just... gone?"
+        "t": "Victor... we had barbecue together after work yesterday. And now he's just... gone?"
       },
       {
         "s": "player",
@@ -548,7 +548,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "Yeah, the hand-painted textures on it look real. But. . . there's something quite strange here."
+          "t": "Yeah, the hand-painted textures look real. But... something's off here."
         },
         {
           "s": "npc",
@@ -599,7 +599,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "The actor at point 1, the deceased, is a male. Why is there lipstick and hairpins?"
+          "t": "The actor at point 1—the victim—is male. How come there's lipstick and hairpins?"
         },
         {
           "s": "npc",
@@ -624,7 +624,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p1",
-          "t": "It's really strange to say that.",
+          "t": "That is strange, now that you mention it.",
           "unlockLoc": [
             "loc_point5"
           ],
@@ -685,7 +685,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "This means that one person can complete the pas de deux as long as someone else plays the Red Death."
+          "t": "So one person can do the duet as long as someone else is playing the Red Death."
         },
         {
           "s": "npc",
@@ -729,7 +729,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "The murderer needs to dress up as the Red Death and dance with Miss Sunny Chen."
+          "t": "The killer would have to dress as the Red Death and dance with Sunny."
         },
         {
           "s": "npc",
@@ -805,7 +805,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "Well, the green light matches this scene very well. But fortunately, it's just a light on. The performances here are basically in the inner part of the scene, keeping a good distance from the audience."
+          "t": "Yeah, the green light fits the scene. But it's just a light—nothing scary. The performances here are basically in the inner part of the scene, keeping a good distance from the audience."
         },
         {
           "s": "npc",
@@ -815,7 +815,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "It would be really exciting to open it up against your face in a completely dark place."
+          "t": "Now imagine it popping up right in your face in pitch darkness—that would be thrilling."
         },
         {
           "s": "npc",
@@ -864,7 +864,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "You see, this room also has a secret door. It leads to point 6, which is the exit location."
+          "t": "See, this room also has a secret door—it leads to point 6, the exit."
         },
         {
           "s": "npc",
@@ -903,7 +903,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p4",
-          "t": "It is true that the next point for the dancer is scene No. 5, so just go from the front. If you go through the secret door, you have to walk a long corridor."
+          "t": "Exactly. The dancer's next spot is scene 5—just go straight ahead. The secret door would make you walk all the way around."
         },
         {
           "s": "player",
@@ -975,7 +975,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "It is known that the actor in Mad Prince, Aiden Li, is also the actor in position 2. He needs to start the performance immediately after the actor in position 1 performs. The actor in position 3 only performs for 5 minutes. After the performance, he is needed again."
+          "t": "Aiden—who plays the Mad Prince—also performs at spot 2. He has to start right after spot 1 finishes, and spot 3 only lasts 5 minutes. As soon as that's over, he's needed again."
         },
         {
           "s": "player",
@@ -1065,12 +1065,12 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "The distance of the portrait reflected in the mirror should be the same as the distance between the person and the mirror. If the actor performs actions far away in position 6, the \"prince\" and \"corpse\" in the mirror will also be far away from the dining table. Even if the audience can see it, they will find that the image seems to be floating in another space and does not match the real dining table."
+          "t": "The image in the mirror would be the same distance as the real person. If the actor is far away at spot 6, the \"prince\" and \"corpse\" in the mirror would also appear far from the table\u2014looking like they're floating in another space, not matching the real setup."
         },
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p5",
-          "t": "Ah. . . yes! distance! How could I forget this. . .",
+          "t": "Ah... right! Distance! How could I forget that...",
           "unlockLoc": [
             "loc_point6"
           ],
@@ -1107,7 +1107,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "If it were that simple, there'd be no need for detective novels."
+          "t": "If it were that simple, detective novels wouldn't exist."
         },
         {
           "s": "npc",
@@ -1117,7 +1117,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "In this business, you have to draw nutrients from all aspects."
+          "t": "In this line of work, you gotta learn from everything."
         },
         {
           "s": "npc",
@@ -1142,7 +1142,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "A green dot marks topics with unresolved questions or evidence. It disappears once you've reviewed all content and moved to another topic."
+          "t": "A green dot means there are still unanswered questions or evidence to check in that topic. It goes away after you've gone through everything and switched topics."
         },
         {
           "s": "npc",
@@ -1306,7 +1306,7 @@
     },
     "t_s2_11": {
       "char": "char_zhencheng",
-      "title": "What were you doing before and after the incident?",
+      "title": "Before & After the Incident",
       "dialogue": [
         {
           "s": "npc",
@@ -1429,7 +1429,7 @@
                       {
                         "s": "player",
                         "speaker": "none",
-                        "t": "You were both actors in the dance group before, and you were also choreographers in the haunted house. Why do you still say you are not familiar with it?"
+                        "t": "You two were both in the dance group and worked on choreography for the haunted house. Why do you say you weren't close?"
                       },
                       {
                         "s": "npc",
@@ -1655,7 +1655,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "director?"
+                "t": "Director?"
               },
               {
                 "s": "npc",
@@ -1752,7 +1752,7 @@
                                     {
                                       "s": "player",
                                       "speaker": "none",
-                                      "t": "Are you talking about Daniel Xiao?",
+                                      "t": "You mean Daniel Xiao?",
                                       "bgm": "tension"
                                     },
                                     {
@@ -1816,7 +1816,7 @@
     },
     "t_s2_17": {
       "char": "char_ayou",
-      "title": "What were you doing before and after the incident?",
+      "title": "Before & After the Incident",
       "dialogue": [
         {
           "s": "npc",
@@ -1879,7 +1879,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "On the roof beam? I saw a roller there on the top beam. Is that some kind of mechanism? Does it have anything to do with you?"
+                  "t": "On the beam? I saw a roller up there. Is that some kind of rigging? Did you have anything to do with it?"
                 },
                 {
                   "s": "npc",
@@ -1976,7 +1976,7 @@
                                       {
                                         "s": "player",
                                         "speaker": "none",
-                                        "t": "Your statement is obviously inconsistent with certain evidence.",
+                                        "t": "Your story doesn't match some of the evidence.",
                                         "autoPresent": "Point out which evidence reveals the contradiction in Aiden Li's statement.",
                                         "present": {
                                           "ev_hanged_reddeath": {
@@ -2186,7 +2186,7 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "I am responsible for the overall performance scheduling of the park, as well as the general planning of performance content and theme packaging. The haunted houses, float parades, night light shows, fireworks shows, etc. that's all my work.",
+          "t": "I am responsible for the overall performance scheduling of the park, as well as the general planning and production of performance content and thematic design. The haunted houses, float parades, night light shows, fireworks shows, etc.—that's all my work.",
           "present": {
             "char_mingqi": {
               "resolved": false,
@@ -2218,7 +2218,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "Every year? You mean, the \"Masque of the Red Death\" theme was played for more than a year, right?"
+                "t": "Every year? So you've been doing \"The Masque of the Red Death\" for several years?"
               },
               {
                 "s": "npc",
@@ -2228,7 +2228,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "So why do we need to have spare decorative props?"
+                "t": "So why do you need spare props?"
               },
               {
                 "s": "npc",
@@ -2358,7 +2358,7 @@
     },
     "t_s2_22": {
       "char": "char_shihui",
-      "title": "What were you doing before and after the incident?",
+      "title": "Before & After the Incident",
       "dialogue": [
         {
           "s": "npc",
@@ -2407,7 +2407,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "This. . . is a bit embarrassing to say. . . It is said that he has harassed actresses before. . ."
+                "t": "This. . . is a bit embarrassing to say. . . There were rumors he harassed some actresses..."
               },
               {
                 "s": "npc",
@@ -2551,7 +2551,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "suicide?"
+          "t": "Suicide?"
         },
         {
           "s": "npc",
@@ -2591,7 +2591,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "Moreover, in order to appease the anger of the family members, the paradise fired Celeste Ming and recruited me."
+                "t": "Moreover, in order to appease the anger of the family members, the park fired Celeste Ming and recruited me."
               }
             ]
           }
@@ -2651,7 +2651,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "By exposing each other's contradictions or lies, we may get new clues or open up new topics. In the \"Topic\" and \"Clue\" pop-up windows, you can use the keyboard's A/D keys to quickly switch between sentences and clues."
+          "t": "By exposing each other's contradictions or lies, we may get new clues or open up new topics. In the \"Clue\" pop-up windows, you can use the keyboard's A/D keys to quickly switch."
         },
         {
           "s": "player",

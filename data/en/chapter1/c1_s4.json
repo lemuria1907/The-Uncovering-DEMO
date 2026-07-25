@@ -92,7 +92,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "October 29, 2025, 12:30 PM, Chaoye Park, Haunted House Entrance"
+      "t": "October 30, 2025, 12:30 PM, Chaoye Park, Haunted House Entrance"
     },
     {
       "s": "system",
@@ -107,22 +107,22 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "One of our officers wanted to use surveillance footage to check whether any of the haunted house visitors at the time looked suspicious. Unfortunately, the queue area is blocked by an awning, and the exit footage only shows people from behind, so faces cannot be identified."
+      "t": "One of our officers tried checking the surveillance footage for any suspicious visitors in the haunted house that night. Unfortunately, the queue area is blocked by an awning, and the exit footage only shows people from behind, so faces cannot be identified."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "But there was an unexpected lead. We found that the phone reported missing by a visitor on the day of the incident was indeed stolen."
+      "t": "But we did get an unexpected lead—the phone a visitor reported missing that day was indeed stolen."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "A man who came out of the exit appeared two hours later at a rest pavilion near the haunted house, bent down, and put something into the grass. That is suspicious."
+      "t": "A man who came out of the exit showed up at a pavilion near the haunted house two hours later, bent down, and slipped something into the grass. That's suspicious."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "After comparing the footage with the gate guards and investigating, we found this pickpocket. His name is Anton Han. The strange thing is, he has no theft record at all. In other words, he is not a habitual offender.",
+      "t": "After cross-referencing with the gate guards, we identified him—a pickpocket named Anton Han. The strange thing is, he has no theft record at all—not a habitual offender.",
       "unlockProfile": [
         "char_antong"
       ]
@@ -130,7 +130,7 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Also, regarding the public outcry caused by an actor being harassed, our investigation found that the person involved has already deleted the post. The officers found netizens who saw it back then and took screenshots, allowing us to reconstruct the key information.",
+      "t": "Also, about the harassment scandal that went viral—the original post has been deleted, but we found netizens who took screenshots back then and we've reconstructed the key info.",
       "unlockEv": [
         "ev_public_outcry_screenshot"
       ]
@@ -148,7 +148,7 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "She did buy only two tickets, one outbound and one return, and both have ride records. In other words, her suspicion can basically be cleared. But for now, we still do not know why she lied."
+      "t": "She did buy only two tickets—one outbound, one return—and both have been validated. So her suspicion can basically be cleared. But we still don't know why she lied."
     },
     {
       "s": "npc",
@@ -174,7 +174,7 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "The pickpocket Anton Han and Ru should both be in the Interrogation Area. You can talk to them later.",
+      "t": "Anton Han and Ru are both in the Interrogation Area. You can talk to them whenever you're ready.",
       "unlockLoc": [
         "ghost_house_gate_c1s4",
         "interrogation_c1s4"
@@ -221,14 +221,14 @@
       {
         "s": "npc",
         "speaker": "char_antong",
-        "t": "I know I was wrong, okay! I returned the stuff too, so please do not arrest me!"
+        "t": "Okay, I messed up! I returned the stuff too—please don't arrest me!"
       }
     ],
     "char_rulan": [
       {
         "s": "system",
         "speaker": "none",
-        "t": "Orchid Ru's eyes are red and swollen, and she looks extremely worn out. She probably has not slept much these past two days."
+        "t": "Orchid Ru's eyes are red and swollen—she looks exhausted. She probably hasn't slept much the past two days."
       }
     ],
     "char_zhencheng": [
@@ -274,7 +274,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_qin",
-                  "t": "Then, in the incident from three years ago, what is the truth behind the anonymous post and Celeste Ming's harassment incident?",
+                  "t": "And the anonymous post and Celeste Ming's harassment scandal—what's the real story behind those?",
                   "present": {
                     "ev_zhencheng_testimony5": {
                       "resolved": false,
@@ -288,7 +288,7 @@
                         {
                           "s": "npc",
                           "speaker": "char_qin",
-                          "t": "Why did the pickpocket we caught put the stolen items in the grass?",
+                          "t": "Why did the pickpocket stash the stolen stuff in the grass?",
                           "present": {
                             "ev_antong_testimony1": {
                               "resolved": false,
@@ -296,7 +296,7 @@
                                 {
                                   "s": "npc",
                                   "speaker": "char_qin",
-                                  "t": "I did not expect this matter to be connected to Victor's death too."
+                                  "t": "I didn't expect this to be connected to Victor's death too."
                                 },
                                 {
                                   "s": "npc",
@@ -327,7 +327,7 @@
                                                 {
                                                   "s": "player",
                                                   "speaker": "none",
-                                                  "t": "She gave me the ticket stub for the movie that night."
+                                                  "t": "She gave me the ticket stub from the movie that night."
                                                 },
                                                 {
                                                   "s": "npc",
@@ -365,17 +365,17 @@
                                                 {
                                                   "s": "npc",
                                                   "speaker": "char_qin",
-                                                  "t": "Let us stop here for today! Tomorrow, stay fully focused and clear up every last doubt in one go!"
+                                                  "t": "Let's call it a day! Tomorrow, we go all in and clear up every last doubt!"
                                                 },
                                                 {
                                                   "s": "npc",
                                                   "speaker": "char_xiaozhi",
-                                                  "t": "Twenty times fully focused!"
+                                                  "t": "Twenty times that!"
                                                 },
                                                 {
                                                   "s": "player",
                                                   "speaker": "none",
-                                                  "t": "Haha, I am ready!"
+                                                  "t": "Haha, ready when you are!"
                                                 },
                                                 {
                                                   "s": "system",
@@ -445,7 +445,7 @@
     },
     "t_andy_public_outcry": {
       "char": "char_andy",
-      "title": "The Public Outcry Three Years Ago",
+      "title": "The Online Uproar Three Years Ago",
       "dialogue": [
         {
           "s": "npc",
@@ -465,12 +465,12 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "The poster's current answer is so ambiguous that it is actually somewhat suspicious. We need to pin down exactly who the poster is, and who she was accusing."
+          "t": "The poster's answers are so vague it's actually suspicious. We need to find out exactly who posted it—and who she was really accusing. We need to check for similar accusations that year."
         },
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Okay. Besides the people currently being questioned, do you have anyone else in mind to investigate?",
+          "t": "Okay. Besides the ones we're questioning now, anyone else you want me to look into?",
           "present": {
             "ev_ayou_testimony3": {
               "resolved": false,
@@ -513,7 +513,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_andy",
-                  "t": "After the period when the post was made, two executives left. One was Jasper Wang from the administrative team, and the other was Celeste Ming. Since then, there do not seem to have been any similar rumors.",
+                  "t": "After that period, two executives left—Jasper Wang from admin, and Celeste Ming. No similar rumors have surfaced since.",
                   "unlockEv": [
                     "ev_andy_investigation"
                   ]
@@ -539,7 +539,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "I need to confirm Orchid Ru's alibi. For example, we can ask the cinema staff whether Orchid Ru really had her ticket checked and appeared at the theater. You can take her photo with you."
+                  "t": "I need to confirm Orchid Ru's alibi—can you ask the cinema staff if she actually had her ticket checked and showed up that night? Take her photo with you."
                 },
                 {
                   "s": "system",
@@ -554,7 +554,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_xiaozhi",
-                  "t": "But the ticket inspector recognized Orchid Ru because midway through the film, she came out of the screening room to use the restroom. There weren't many people in the lobby then, so she stood out. She looked like she had diarrhea and had a very bad complexion, and only came back after more than ten minutes.",
+                  "t": "But the ticket inspector did remember Orchid Ru—midway through the film, she left the screening room to use the bathroom. The lobby was empty, so she stood out. She looked pale and sick—probably had an upset stomach—and didn't come back for over ten minutes.",
                   "unlockEv": [
                     "ev_ticket_checker_testimony"
                   ]
@@ -594,7 +594,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "Orchid Ru said that midway through the movie, she went to the restroom because her stomach hurt. At that point, the movie was probably around the scene after the Pumpkin King stole the magic wand. Could you help me confirm roughly how many minutes after the start that scene happens?"
+                  "t": "Orchid Ru said she went to the bathroom midway through because her stomach hurt—around the scene where the Pumpkin King steals the magic wand. Could you check roughly how many minutes into the movie that scene happens?"
                 },
                 {
                   "s": "system",
@@ -667,7 +667,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "What did you steal? Tell me."
+          "t": "What did you take? Tell me."
         },
         {
           "s": "npc",
@@ -712,7 +712,7 @@
                               {
                                 "s": "player",
                                 "speaker": "none",
-                                "t": "Why do the police not have a criminal record for you?"
+                                "t": "How come the police have no record of you?"
                               },
                               {
                                 "s": "npc",
@@ -729,7 +729,7 @@
                                     {
                                       "s": "npc",
                                       "speaker": "char_antong",
-                                      "t": "Aaaah... I got careless! Even a good horse stumbles!"
+                                      "t": "Aaaah... I slipped up! Even the best can make mistakes!"
                                     },
                                     {
                                       "s": "player",
@@ -758,7 +758,7 @@
                                     {
                                       "s": "player",
                                       "speaker": "none",
-                                      "t": "You are not really in this line of work, are you? Tell me, what is the real reason you stole the phone? If you keep hemming and hawing, I will have Ms Qin detain you for seven days first."
+                                      "t": "You're not really in this line of work, are you? Tell me the real reason you took that phone. If you keep stalling, I'll have Ms Qin lock you up for a week."
                                     },
                                     {
                                       "s": "npc",
@@ -815,7 +815,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "You mean him, right? He is already dead, so it does not matter anymore.",
+                  "t": "You mean him, don't you? He's already dead, so it doesn't matter now.",
                   "bgm": "tension"
                 },
                 {
@@ -836,7 +836,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "But he never stole valuables, so visitors never reported anything. Or rather, by the time they noticed, they had usually already left the haunted house, and they couldn't be sure where they had lost the items."
+                  "t": "But he never took anything valuable, so visitors never reported it—by the time they noticed, they'd usually already left the haunted house and had no idea where they'd lost it."
                 },
                 {
                   "s": "player",
@@ -846,7 +846,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "So you deliberately stole something easy to notice, hoping to frame the habitual offender Victor and lead the park to investigate him. Am I right?"
+                  "t": "So you deliberately stole something that would be noticed, hoping to frame Victor and get the park to investigate him. Am I right?"
                 },
                 {
                   "s": "npc",
@@ -886,7 +886,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "It couldn't have been her. First, Aiden said that both Sunny and Victor were very unhappy about the bonus deductions. Also, one of Sunny's personal belongings had traces of a special habit on it, and coincidentally, Victor had the same habit.",
+                  "t": "It couldn't have been her. First, Aiden said Sunny and Victor were both unhappy about the bonus cuts. Also, Sunny's personal items showed signs of a habit that Victor had too.",
                   "autoPresent": "Point out what led you to this guess.",
                   "present": {
                     "ev_zhencheng_locker": {
@@ -920,7 +920,7 @@
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "Those were things they used to count the items they stole for themselves, right? I thought it was strange from the start. Why did both of their cases contain things like that, and why had Victor written dates beside them?"
+                          "t": "Those were their little tally system for the stuff they took, weren't they? I found it strange from the start—why did both of them have that in their lockers, and why did Victor write dates next to his?"
                         },
                         {
                           "s": "player",
@@ -930,12 +930,12 @@
                         {
                           "s": "npc",
                           "speaker": "char_antong",
-                          "t": "Yes... You figured all of that out..."
+                          "t": "Yeah... you figured all that out..."
                         },
                         {
                           "s": "npc",
                           "speaker": "char_antong",
-                          "t": "Aiden is my buddy. He thought what those two were doing was very wrong, but he didn't have the courage to report it himself."
+                          "t": "Aiden's my buddy. He knew what those two were doing was wrong, but he didn't have the courage to report it himself."
                         },
                         {
                           "s": "npc",
@@ -982,12 +982,12 @@
         {
           "s": "npc",
           "speaker": "char_antong",
-          "t": "During the fourth show, while lining up, I observed more carefully where everyone kept their belongings. After going in, I finally stole a phone in the dark and came out with it. I was so nervous my whole palm was sweating, and I kept close to the crowd the entire time."
+          "t": "During the fourth show, I watched more carefully while in line to see where everyone kept their stuff. Inside, I finally nabbed a phone in the dark—I was sweating so bad, my whole hand was clammy, and I stuck close to the crowd the whole time."
         },
         {
           "s": "player",
           "speaker": "none",
-          "t": "Did you sense any sounds or anything unusual?"
+          "t": "Did you hear anything unusual?"
         },
         {
           "s": "npc",
@@ -1007,7 +1007,7 @@
         {
           "s": "npc",
           "speaker": "char_antong",
-          "t": "I felt that at the exit, someone was walking behind me."
+          "t": "I had the feeling someone was following me at the exit."
         },
         {
           "s": "player",
@@ -1027,7 +1027,7 @@
         {
           "s": "npc",
           "speaker": "char_antong",
-          "t": "I'm sure. I can recognize actors' costumes. Out of the corner of my eye, I saw... the person seemed to be just an ordinary visitor.",
+          "t": "I'm sure. I can tell actors by their costumes. Out of the corner of my eye, I saw—the person looked like just an ordinary visitor.",
           "unlockEv": [
             "ev_tourist_at_back"
           ]
@@ -1041,7 +1041,7 @@
         {
           "s": "npc",
           "speaker": "char_rulan",
-          "t": "I... I was his girlfriend. We had been dating for over a year..."
+          "t": "I... I was his girlfriend. We had been dating for about two years..."
         },
         {
           "s": "npc",
@@ -1087,7 +1087,7 @@
         {
           "s": "npc",
           "speaker": "char_rulan",
-          "t": "I often heard him say he couldn't stand so-and-so, or that he'd argued with someone again... There were quite a lot of things like that. That temper really did cause him plenty of trouble..."
+          "t": "I'd hear him complain about this person or that—he was always arguing with someone. That temper of his got him into a lot of trouble..."
         },
         {
           "s": "npc",
@@ -1099,7 +1099,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "Then what happened to the wounds on your arms and hands?"
+                "t": "Then what about the marks on your arms and hands?"
               },
               {
                 "s": "npc",
@@ -1130,7 +1130,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "Have you ever watched their haunted house performance?"
+                "t": "Have you ever seen their haunted house show?"
               },
               {
                 "s": "npc",
@@ -1158,7 +1158,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "Which screening did you see? Do you have a ticket as proof?"
+          "t": "Which screening did you see? Got a ticket stub?"
         },
         {
           "s": "npc",
@@ -1171,7 +1171,7 @@
         {
           "s": "npc",
           "speaker": "char_rulan",
-          "t": "The movie was good. It ended a little before eight, so I went home.",
+          "t": "The movie was great. I just went home afterwards.",
           "present": {
             "ev_ticket_checker_testimony": {
               "resolved": false,
@@ -1184,7 +1184,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_rulan",
-                  "t": "Yes. During the movie my stomach started hurting a bit, and later I really couldn't hold it anymore, so I went out to use the restroom."
+                  "t": "Yeah. My stomach started bothering me, and I couldn't hold it anymore—so I went out."
                 },
                 {
                   "s": "player",
@@ -1250,17 +1250,17 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "Anton Han, the pickpocket caught today, said so. He said Aiden had known about what you and Victor were doing for a long time."
+                  "t": "Anton—the pickpocket we caught—told us. He said Aiden knew what you and Victor were up to."
                 },
                 {
                   "s": "npc",
                   "speaker": "char_zhencheng",
-                  "t": "Wh-what? Aiden? He really makes me mad..."
+                  "t": "Wh-what? Aiden? That really gets me..."
                 },
                 {
                   "s": "npc",
                   "speaker": "char_zhencheng",
-                  "t": "If he didn't want us to continue, he could have come straight to me and Victor to say so, couldn't he? What was the point of stabbing us in the back? Seriously, enough already."
+                  "t": "If he didn't want us to keep doing it, he could've just come to me and Victor directly, couldn't he? Why go behind our backs? Seriously, I've had enough of him."
                 },
                 {
                   "s": "player",
@@ -1280,7 +1280,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_zhencheng",
-                  "t": "Masks have gone missing three times, light stands have been knocked over four times, and there have been countless little trinkets and decorations... Every time something goes wrong, we have to fill out a Prop Damage/Loss Report Form in duplicate: one copy to the Performance Department, one to Operations. It's absolutely maddening."
+                  "t": "Masks have gone missing three times, light stands knocked over four times, and countless little props and decorations—every time something happens, we have to fill out a damage report in duplicate: one for Performance, one for Operations. It's maddening."
                 },
                 {
                   "s": "npc",
@@ -1295,7 +1295,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_zhencheng",
-                  "t": "Later I heard from a coworker that he did coordinate with them, but Operations felt adding barriers would affect the visitor experience, and every other measure was rejected too. So Ray just spinelessly squeezed the Performance Department's budget to buy backup props."
+                  "t": "Later I heard from a coworker that he did coordinate with them, but Operations felt adding barriers would affect the visitor experience, and every other measure was rejected too. So Ray just caved and cut the Performance Department's budget to buy backup props himself."
                 },
                 {
                   "s": "npc",
@@ -1305,7 +1305,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_zhencheng",
-                  "t": "In reality, we only took a few small things! And we were never caught! Compared to the backup props that cost so much money, these things hardly count for anything, right?"
+                  "t": "We only took small stuff! And we never got caught! Compared to all those expensive backup props we had to buy, this doesn't even count, right?"
                 }
               ]
             }
@@ -1433,7 +1433,7 @@
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "Judging by your expression, it doesn't look like you don't know him..."
+                          "t": "Your expression says otherwise..."
                         },
                         {
                           "s": "npc",
@@ -1522,7 +1522,7 @@
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "During work hours, food-service staff and ticket inspectors must wear the park's standard uniforms. That wording only works if a woman in her own skirt walks up to him. Outside performance hours, only performers aren't required to wear uniforms, right?"
+                          "t": "During work hours, food-service staff and ticket inspectors have to wear park uniforms. That line only makes sense if a woman in her own clothes walked up to him. Outside performance hours, only performers don't have to wear uniforms, right?"
                         },
                         {
                           "s": "npc",
@@ -1537,12 +1537,12 @@
                         {
                           "s": "npc",
                           "speaker": "char_zhencheng",
-                          "t": "Celeste Ming and Jasper Wang have both been gone for so long. Even if you're sure I made the post, what can you do about it? Tell Ray? Have them issue a formal criticism saying I caused negative impact?"
+                          "t": "Celeste and Jasper have both been gone for years. Even if you prove I posted it, what can you do—tell Ray? Have him write me up for causing a bad impact?"
                         },
                         {
                           "s": "player",
                           "speaker": "none",
-                          "t": "Being harassed and making that post weren't your fault. Telling the truth will only prove that you're a brave, outstanding employee who isn't afraid of authority."
+                          "t": "You didn't ask to be harassed—and posting about it wasn't wrong. Speaking the truth proves you're brave and not afraid to stand up for yourself."
                         },
                         {
                           "s": "player",
@@ -1557,7 +1557,7 @@
                         {
                           "s": "npc",
                           "speaker": "char_zhencheng",
-                          "t": "All right. You're right. It's just that I've heard too many stories like that... After a problem appears, nobody solves the problem; instead, they go after the person who raised it... So I was really worried..."
+                          "t": "All right. You're right. I've just seen it happen too many times—when a problem comes up, they don't solve it, they go after whoever pointed it out... So I was really worried..."
                         },
                         {
                           "s": "npc",
@@ -1596,7 +1596,7 @@
         {
           "s": "npc",
           "speaker": "char_zhencheng",
-          "t": "During that period, I felt that person was getting more and more out of line, but I didn't dare confront him directly, so I posted online."
+          "t": "That guy just kept crossing the line, but I didn't dare say it to his face—so I posted online."
         },
         {
           "s": "npc",
@@ -1616,7 +1616,7 @@
         {
           "s": "npc",
           "speaker": "char_zhencheng",
-          "t": "He also warned him not to harass anyone again. That guy was a coward. After that, not only did he not dare touch us, he was scared even when we got near him, like a filthy rat, always avoiding our eyes and scurrying away."
+          "t": "He warned him not to harass anyone again. The guy was a total coward. After that, he wouldn't even come near us—when we got close, he'd scurry off like a scared rat, avoiding eye contact."
         },
         {
           "s": "npc",
@@ -1828,7 +1828,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "His feet were honestly just a tiny distance away from the prop box, but that tiny distance cost him his life..."
+          "t": "His feet were just inches from the box—but those few inches cost him his life..."
         },
         {
           "s": "npc",
@@ -1861,7 +1861,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "In my heart, I had still been making excuses for what he did. But this incident showed me how Victor could twist the truth..."
+          "t": "I kept making excuses for him in my head. But this incident opened my eyes to how Victor could twist the truth..."
         },
         {
           "s": "npc",
@@ -1871,7 +1871,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "Later, I realized more and more that he had calmly weighed the pros and cons and manipulated a person like a prop... Is that really how a normal person would react? I felt a chill run through me."
+          "t": "Later, it hit me how calmly he weighed the pros and cons, treating a person like a prop... Is that what a normal person would do? It sent a chill down my spine."
         },
         {
           "s": "npc",
@@ -1886,7 +1886,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "But... I hesitated a lot... If I spoke up, would Victor keep smearing me? If I said Victor had ordered me to do it, would anyone really believe me? Would he turn around and bite back at me? I was too afraid... so I kept silent the whole time... I-I'm truly sorry...",
+          "t": "But... I hesitated a lot... If I spoke up, would Victor keep smearing me? If I said Victor had ordered me to do it, would anyone really believe me? Would he turn around and bite back at me? I was too scared... so I just kept quiet... I'm so sorry...",
           "unlockEv": [
             "ev_ayou_testimony2"
           ]
@@ -1906,12 +1906,12 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "This might sound a little ridiculous, but ever since I was young, I've been interested in performing on stage."
+          "t": "This might sound silly, but I've always wanted to be on stage since I was a kid."
         },
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "But my family thought becoming an actor was a pipe dream. And I look very ordinary, so I had no confidence in myself."
+          "t": "My family thought acting was a pipe dream. And I'm just a plain-looking guy—I had no confidence at all."
         },
         {
           "s": "npc",
@@ -1936,7 +1936,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "Back then, he probably saw his former self in me."
+          "t": "I think he saw himself in me back then."
         },
         {
           "s": "player",

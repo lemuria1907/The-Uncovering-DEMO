@@ -54,7 +54,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "October 28, 2025, 6:00 PM, Chaoye Park, in front of the haunted house"
+      "t": "October 27, 2025, 6:00 PM, Chaoye Park, in front of the haunted house"
     },
     {
       "s": "npc",
@@ -64,22 +64,22 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "You're squeezing my arm a bit too tight."
+      "t": "You're squeezing my arm too tight."
     },
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Sis, that was amazing, I wanna go again!"
+      "t": "Sis, that was amazing — I wanna go again!"
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "You were about to cry, and now you're asking for round two? Sure you can handle it?"
+      "t": "You were about to cry, and now you're asking for round two? Sure you can handle that?"
     },
     {
       "s": "system",
       "speaker": "none",
-      "t": "During the Halloween season, the city's most famous Chaoye Park launched its annual haunted house carnival, drawing crowds of visitors eager to experience it."
+      "t": "During the Halloween season, the city's most famous Chaoye Park held its annual haunted house carnival, drawing crowds of eager visitors."
     },
     {
       "s": "system",
@@ -89,27 +89,27 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "Sidney — your darling little sister — was naturally not one to miss the excitement. Though easily frightened, the haunted house is her annual must-do attraction."
+      "t": "Sidney — your darling little sister — was naturally not one to miss the excitement. Though easily frightened, the haunted house is her annual must-see."
     },
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Come on, let's go again later! I'll treat you to a drink!"
+      "t": "Come on, let's go again later! I'll get you a drink!"
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Fine, fine. Let's go."
+      "t": "Alright, alright. Let's go."
     },
     {
       "s": "system",
       "speaker": "none",
-      "t": "Sidney grabs your wrist and pulls you briskly toward a drink stand with a giant cartoon sign nearby."
+      "t": "Sidney grabs your wrist and briskly pulls you toward a drink stand with a giant cartoon sign nearby."
     },
     {
       "s": "system",
       "speaker": "none",
-      "t": "Though evening has fallen, the plaza is still bustling. Several NPCs dressed as ghosts and monsters weave through the crowd, making people shriek with laughter one moment and scream in terror the next."
+      "t": "Though evening has fallen, the plaza is still bustling. Several NPCs dressed as ghosts and monsters weave through the crowd, making people laugh one moment and scream in terror the next."
     },
     {
       "s": "system",
@@ -144,7 +144,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Huh? What's going on?"
+      "t": "Wait, what's going on?"
     },
     {
       "s": "system",
@@ -169,7 +169,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Aaaah! Seriously! I wanted to see it again!"
+      "t": "Aaaah! Seriously? I wanted to watch it again!"
     },
     {
       "s": "player",
@@ -266,7 +266,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "At this moment, the haunted house looks nothing like its sinister performance self. Every spot is lit up, and the props that were terrifying in the dark now look as crude as children's toys under the lights."
+      "t": "At this moment, the haunted house looks nothing like it does during performances. Every spot is lit up, and the props that were terrifying in the dark now look as crude as children's toys under the lights."
     },
     {
       "s": "system",
@@ -385,7 +385,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "\"Yes! Exactly! This lady is remarkable!\" A man in his thirties walks over smiling, addressing you and your sister."
+      "t": "\"Yes! Exactly! This lady is brilliant!\" A man walks over smiling, speaking to you and your sister."
     },
     {
       "s": "npc",
@@ -401,7 +401,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Mr. Ray, did you design this show? I absolutely loved it!"
+      "t": "Mr. Shi, did you create this show? I absolutely loved it!"
     },
     {
       "s": "npc",
@@ -421,7 +421,7 @@
     {
       "s": "npc",
       "speaker": "char_shihui",
-      "t": "First — do you know what the theme of tonight's performance is? (*Please select the correct answer*)",
+      "t": "First, do you know what the theme of tonight's performance is? (*Please select the correct answer, supports mouse or W/S key selection and Enter confirmation*)",
       "choices": {
         "question": "What is the theme of this performance?",
         "options": [
@@ -763,7 +763,7 @@
                             {
                               "s": "system",
                               "speaker": "none",
-                              "t": "October 28, 2025, 8:18 PM, Chaoye Park, inside the haunted house",
+                              "t": "October 27, 2025, 8:18 PM, Chaoye Park, inside the haunted house",
                               "bg": "images/chapter1/bg_room4.jpg"
                             },
                             {
@@ -796,7 +796,7 @@
                             {
                               "s": "system",
                               "speaker": "none",
-                              "t": "October 28, 2025, 8:32 PM, Chaoye Park, beside the haunted house"
+                              "t": "October 27, 2025, 8:32 PM, Chaoye Park, beside the haunted house"
                             },
                             {
                               "s": "npc",

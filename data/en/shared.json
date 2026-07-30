@@ -156,7 +156,7 @@
     },
     "ev_mingqi_testimony1": {
       "name": "Cyrus·Testimony 1",
-      "desc": "Cyrus denied Ray's claim that he harassed female performers. Moreover, he believed that since he had never done such things, he had no need to clear his name.",
+      "desc": "Cyrus denied Ray's claim that he harassed female performers.",
       "origin": "char_mingqi",
       "sourceChapter": "c1_s3"
     },

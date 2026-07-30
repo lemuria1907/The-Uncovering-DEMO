@@ -157,7 +157,7 @@
     },
     "ev_mingqi_testimony1": {
       "name": "明淇·供述1",
-      "desc": "明淇否认了石辉说自己骚扰女演员的事情。并且，他认为，自己既然没有做过，也无需去澄清。",
+      "desc": "明淇否认了石辉说自己骚扰女演员的事情。",
       "origin": "char_mingqi",
       "sourceChapter": "c1_s3"
     },

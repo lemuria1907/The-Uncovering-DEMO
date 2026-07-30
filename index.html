@@ -1416,6 +1416,7 @@ function newGame() {
         await loadLanguageData();
         await fetchChapterData(0);
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
+        state.unlockedTopics = []; state.unlockedLocs = []; state.visitedLocs = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
         state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueMode = "none"; state.activeDialogue = []; state.dialogueIdx = 0; state.waitingForAction = false; state.isAdvancingChapter = false; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = ""; state.topicRuntime = {}; state.topicProgress = {};
         document.getElementById("main-menu").style.display = "none";

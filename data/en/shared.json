@@ -25,7 +25,7 @@
     },
     "ev_autopsy": {
       "name": "Autopsy Report",
-      "desc": "The victim Victor was strangled to death. Estimated time of death is between 18:15 and 19:15. A potent anesthetic compound was detected in the mouth and nose.",
+      "desc": "The victim Victor was strangled to death. Estimated time of death is between 18:15 and 19:15. A powerful anesthetic was found in the mouth and nose.",
       "origin": "system",
       "sourceChapter": "c1_s1"
     },
@@ -37,7 +37,7 @@
     },
     "ev_time_table": {
       "name": "Show Schedule",
-      "desc": "During the Halloween special event, the first show starts at 17:00 daily. Each performance lasts 20 minutes, followed by a 10-minute break for cast transition and rest. Each full cycle is 30 minutes.",
+      "desc": "During the Halloween special event, the first show starts at 17:00 daily. Each performance lasts 20 minutes, followed by a 10-minute break for role transition and rest. Each full cycle is 30 minutes.",
       "origin": "char_shihui",
       "sourceChapter": "c1_s1"
     },
@@ -104,7 +104,7 @@
     },
     "ev_shihui_testimony3": {
       "name": "Ray·Testimony 3",
-      "desc": "Ray brought up the former Performance Director Celeste, saying his reputation was poor and that there were rumors of him harassing female performers. Many people kept their distance from him.",
+      "desc": "Ray brought up the former Performance Director Cyrus, saying his reputation was poor and that there were rumors of him harassing female performers. Many people kept their distance from him.",
       "origin": "char_shihui",
       "sourceChapter": "c1_s2"
     },
@@ -155,14 +155,14 @@
       "img": "images/chapter1/itemayou.png"
     },
     "ev_mingqi_testimony1": {
-      "name": "Celeste·Testimony 1",
-      "desc": "Celeste denied Ray's claim that he harassed female performers. Moreover, he believed that since he had never done such things, he had no need to clear his name.",
+      "name": "Cyrus·Testimony 1",
+      "desc": "Cyrus denied Ray's claim that he harassed female performers. Moreover, he believed that since he had never done such things, he had no need to clear his name.",
       "origin": "char_mingqi",
       "sourceChapter": "c1_s3"
     },
     "ev_mingqi_testimony2": {
-      "name": "Celeste·Testimony 2",
-      "desc": "Celeste feels the park neither investigated the rumors nor took responsibility, unjustly pinning everything on him in both the harassment allegations and Shawn's death. Though angry, he never pursued action against the park, believing these matters were beneath his time.",
+      "name": "Cyrus·Testimony 2",
+      "desc": "Cyrus feels the park neither investigated the rumors nor took responsibility, unjustly pinning everything on him in both the harassment allegations and Shawn's death. Though angry, he never pursued action against the park, believing these matters were beneath his time.",
       "origin": "char_mingqi",
       "sourceChapter": "c1_s3"
     },
@@ -173,7 +173,7 @@
       "sourceChapter": "c1_s4"
     },
     "ev_antong_testimony1": {
-      "name": "Anton·Testimony 1",
+      "name": "Anton·Testimony",
       "desc": "Aiden knew that Victor and Sunny were playing a game of stealing visitors' belongings, so he asked Anton to steal something valuable, hoping the park would investigate and expose them.",
       "origin": "char_antong",
       "sourceChapter": "c1_s4"
@@ -186,7 +186,7 @@
     },
 "ev_meiyu_testimony1": {
       "name": "Faye·Testimony 1",
-      "desc": "On May 2, 2024, a parade float accident occurred. Faye happened to be on the affected float car. After that incident, Faye began taking sertraline.",
+      "desc": "On May 2, 2024, a parade float accident occurred. Faye was on the float car involved. After that incident, Faye began taking sertraline.",
       "origin": "char_meiyu",
       "sourceChapter": "c1_s3"
     },
@@ -198,7 +198,7 @@
     },
     "ev_meiyu_locker": {
       "name": "Faye's Locker Contents",
-      "desc": "Faye's locker contained a white T-shirt, a pair of jeans, a cat-head volunteer badge reading \"Sweet\", a photocopy of a one-year-old accident investigation report detailing the May 2, 2024 parade float accident as caused by aged battery short-circuit, and a half-empty bottle of sertraline (anti-anxiety/OCD medication) prescribed three months ago.",
+      "desc": "Faye's locker contained a white T-shirt, a pair of jeans, a cat-head volunteer badge reading \"Sweet\", a photocopy of an accident investigation report from a year ago, detailing the May 2, 2024 parade float accident as caused by aged battery short-circuit, and a half-empty bottle of sertraline (anti-anxiety/OCD medication) prescribed three months ago.",
       "origin": "system",
       "sourceChapter": "c1_s3",
       "img": "images/chapter1/itemmeiyu.png"
@@ -210,8 +210,8 @@
       "sourceChapter": "c1_s3"
     },
     "ev_mingqi_changwei_mail": {
-      "name": "Celeste & Victor's Correspondence",
-      "desc": "From mingqi@chaoye.com\nVictor, I want you to find time next week to submit a report to park management stating that I had nothing to do with that matter.\nVictor's reply: Not my problem. You're the director, but actors' affairs should be discussed with me directly. Shawn had old injuries and was already struggling with those moves. You're never around and don't know the situation. All you do is point fingers when things go wrong, and now you want to walk away clean?",
+      "name": "Cyrus & Victor's Correspondence",
+      "desc": "From cyrusming@chaoye.com\nVictor, I need you to submit a report to park management stating that I had nothing to do with that suicide case.\nVictor's reply: Not my problem. You're the director, sure, but when it comes to the actors, you should be talking to me directly. Shawn had old injuries and was already struggling with those moves. All you do is point fingers when things go wrong—and now you want to just wash your hands of it?",
       "origin": "system",
       "sourceChapter": "c1_s3"
     },
@@ -242,7 +242,7 @@
     },
     "ev_andy_investigation": {
       "name": "Andy's Investigation",
-      "desc": "Andy found some personnel records relating to the post‑incident staffing changes following that year's sexual harassment case at the park. It was confirmed that, in addition to Celeste Ming, the departing executives at that time also included Jasper Wang from the administrative group. Furthermore, the employees implicated in the incident included Lena Qiu from the catering department and Gwen Gao, a ticket inspector.",
+      "desc": "Andy found some personnel records relating to the post‑incident staffing changes following that year's sexual harassment case at the park. It was confirmed that, in addition to Cyrus Ming, the departing executives at that time also included Jasper Wang from the administrative group. Furthermore, the employees implicated in the incident included Lena Qiu from the catering department and Gwen Gao, a ticket inspector.",
       "origin": "char_andy",
       "sourceChapter": "c1_s4"
     },
@@ -254,7 +254,7 @@
     },
     "ev_relative": {
       "name": "The Nepotism Hire",
-      "desc": "According to Celeste, the current Performance Director Ray is the nephew of Board Director Li.",
+      "desc": "According to Cyrus, the current Performance Director Ray is the nephew of Board Director Li.",
       "origin": "char_mingqi",
       "sourceChapter": "c1_s3"
     },
@@ -272,7 +272,7 @@
     },
     "ev_zhencheng_testimony5": {
       "name": "Sunny·Testimony 5",
-      "desc": "The post that sparked the public outcry was written by Sunny. Because Victor helped her resolve the harassment incident, Sunny deliberately wrote ambiguously to repay him, making readers believe the post was about Celeste.",
+      "desc": "The post that sparked the public outcry was written by Sunny. Because Victor helped her resolve the harassment incident, Sunny deliberately wrote ambiguously to repay him, making readers believe the post was about Cyrus.",
       "origin": "char_zhencheng",
       "sourceChapter": "c1_s4"
     }
@@ -309,7 +309,7 @@
       "sourceChapter": "c1_s1"
     },
     "char_mingqi": {
-      "name": "Celeste Ming",
+      "name": "Cyrus Ming",
       "desc": "The former Performance Director mentioned by Aiden, male. He originally launched the haunted house project. His main work involved creative direction, theme packaging, and story scripting.",
       "sourceChapter": "c1_s2"
     },
@@ -320,7 +320,7 @@
     },
     "char_meiyu": {
       "name": "Faye Liu",
-      "desc": "Park performer, haunted house substitute performer, female. Skilled dancer.",
+      "desc": "Park performer, haunted house fill-in performer, female. Skilled dancer.",
       "sourceChapter": "c1_s3"
     },
     "char_xiaozhi": {
@@ -335,12 +335,12 @@
     },
     "char_antong": {
       "name": "Anton Han",
-      "desc": "Pickpocket, male. According to Lyra's investigation, he has no prior theft record — he is not a habitual offender.",
+      "desc": "Pickpocket, male. According to Lyra's investigation, he has no prior theft record — he is not a regular offender.",
       "sourceChapter": "c1_s4"
     },
     "char_aling": {
       "name": "Lynn Zhao",
-      "desc": "The fiancée of Shawn, the performer who died three years ago, as uncovered by Lyra's investigation. According to neighbors, she no longer lives in the area.",
+      "desc": "Shawn's fiancée, identified during Lyra's investigation. According to neighbors, she has since left the area.",
       "sourceChapter": "c1_s4"
     }
   }

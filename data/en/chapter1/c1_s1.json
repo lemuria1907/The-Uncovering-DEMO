@@ -49,7 +49,7 @@
     {
       "s": "system",
       "speaker": "none",
-      "t": "(*Click the dialogue box or press Space to advance the story*)"
+      "t": "(*Click the dialogue box or press Space to advance the story, and use the save button in the top‑left corner to save anytime.*)"
     },
     {
       "s": "system",
@@ -69,7 +69,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Sis, that was amazing — I wanna go again!"
+      "t": "Sis, that was amazing! We have to go again!"
     },
     {
       "s": "player",

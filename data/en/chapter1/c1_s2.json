@@ -366,7 +366,7 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p5",
-        "t": "Sis, I don't think I can go in. I'm too scared."
+        "t": "I don't think I can go in. I'm too scared."
       },
       {
         "s": "player",
@@ -433,7 +433,7 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p6",
-        "t": "Whoops! My bad, Sis!"
+        "t": "Whoops! My bad!"
       }
     ],
     "char_ayou": [
@@ -667,7 +667,7 @@
               {
                 "text": "B The Prince and his wife's duet",
                 "correct": false,
-                "reply": "Sister, take a look again. . ."
+                "reply": "Sis, take a look again. . ."
               },
               {
                 "text": "C Red Death and the Prince's duet",
@@ -926,7 +926,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p5",
-          "t": "Sis, I suddenly had an idea. According to the autopsy report, there was anesthesia in the mouth and nose of the deceased, indicating that he may have been in a coma before death. The Crazy Prince would strangle the neck of the dummy during the performance. At this time, is it possible that he used the prop rope to directly strangle the deceased?"
+          "t": "I suddenly had an idea. According to the autopsy report, there was anesthesia in the mouth and nose of the deceased, indicating that he may have been in a coma before death. The Crazy Prince would strangle the neck of the dummy during the performance. At this time, is it possible that he used the prop rope to directly strangle the deceased?"
         },
         {
           "s": "player",
@@ -1006,7 +1006,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p5",
-          "t": "Well. . . sis, the distance between the table, the Mad Prince and the audience is quite far, and during the performance, it was extremely dark in here. Only the candlelight on the table illuminated a small area, and even the audience was completely in darkness."
+          "t": "Well. . . the distance between the table, the Mad Prince and the audience is quite far, and during the performance, it was extremely dark in here. Only the candlelight on the table illuminated a small area, and even the audience was completely in darkness."
         },
         {
           "s": "npc",
@@ -1682,7 +1682,7 @@
                     {
                       "s": "npc",
                       "speaker": "char_ayou",
-                      "t": "His name is Celeste Ming, and he is very good at writing stories.",
+                      "t": "His name is Cyrus Ming, and he is very good at writing stories.",
                       "unlockProfile": [
                         "char_mingqi"
                       ]
@@ -1690,7 +1690,7 @@
                     {
                       "s": "player",
                       "speaker": "none",
-                      "t": "What is Celeste Ming doing now? Still working at the park?"
+                      "t": "What is Cyrus Ming doing now? Still working at the park?"
                     },
                     {
                       "s": "npc",
@@ -2065,7 +2065,7 @@
                                               {
                                                 "s": "system",
                                                 "speaker": "none",
-                                                "t": "You informed Lyra Qin of the doubts in Aiden Li and Sunny Chen's words, as well as Daniel Xiao's death three years ago and the rumors of Celeste Ming."
+                                                "t": "You informed Lyra Qin of the doubts in Aiden Li and Sunny Chen's words, as well as Daniel Xiao's death three years ago and the rumors of Cyrus Ming."
                                               },
                                               {
                                                 "s": "npc",
@@ -2090,7 +2090,7 @@
                                               {
                                                 "s": "npc",
                                                 "speaker": "char_qin",
-                                                "t": "I've asked my colleagues to contact Celeste Ming, the former director of the performance department. Also, Faye Liu should be back tomorrow. Maybe we can get some new leads from them."
+                                                "t": "I've asked my colleagues to contact Cyrus Ming, the former director of the performance department. Also, Faye Liu should be back tomorrow. Maybe we can get some new leads from them."
                                               },
                                               {
                                                 "s": "npc",
@@ -2129,7 +2129,7 @@
                                               {
                                                 "s": "system",
                                                 "speaker": "none",
-                                                "t": "Ray Shi has been taking the lead in safety and optimization. . . It seems that he is deliberately avoiding the matter of Celeste Ming and Daniel Xiao.",
+                                                "t": "Ray Shi has been taking the lead in safety and optimization. . . It seems that he is deliberately avoiding the matter of Cyrus Ming and Daniel Xiao.",
                                                 "_cutscene": true
                                               },
                                               {
@@ -2194,7 +2194,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "It is said that the original designer of the haunted house was named Celeste Ming, who was your previous performance manager?"
+                  "t": "It is said that the original designer of the haunted house was named Cyrus Ming, who was your previous performance manager?"
                 },
                 {
                   "s": "npc",
@@ -2385,12 +2385,12 @@
     },
     "t_s2_23": {
       "char": "char_shihui",
-      "title": "About Celeste Ming",
+      "title": "About Cyrus Ming",
       "dialogue": [
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Celeste Ming is indeed the designer of the first version of the haunted house. There are also float parades and other projects, which he also communicated, planned and approved with the park authorities."
+          "t": "Cyrus Ming is indeed the designer of the first version of the haunted house. There are also float parades and other projects, which he also communicated, planned and approved with the park authorities."
         },
         {
           "s": "npc",
@@ -2581,7 +2581,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "It is said that it is because Celeste Ming has been putting pressure on him. Unable to endure it, he chose an extreme method."
+                "t": "It is said that it is because Cyrus Ming has been putting pressure on him. Unable to endure it, he chose an extreme method."
               },
               {
                 "s": "npc",
@@ -2591,7 +2591,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "Moreover, in order to appease the anger of the family members, the park fired Celeste Ming and recruited me."
+                "t": "Moreover, in order to appease the anger of the family members, the park fired Cyrus Ming and recruited me."
               }
             ]
           }

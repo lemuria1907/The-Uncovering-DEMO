@@ -23,7 +23,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi",
-          "t": "If you need us to look into something, just show us the evidence and tell us what to check. We'll dig deeper for you, Sis!"
+          "t": "If you need us to look into something, just show us the evidence and tell us what to check. We'll dig deeper for you!"
         },
         {
           "s": "npc",
@@ -274,7 +274,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_qin",
-                  "t": "And the anonymous post and Celeste Ming's harassment scandal—what's the real story behind those?",
+                  "t": "And the anonymous post and Cyrus Ming's harassment scandal—what's the real story behind those?",
                   "present": {
                     "ev_zhencheng_testimony5": {
                       "resolved": false,
@@ -450,17 +450,17 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Hey, are you still looking into the incident where Celeste Ming was exposed online?"
+          "t": "Hey, are you still looking into the incident where Cyrus Ming was exposed online?"
         },
         {
           "s": "player",
           "speaker": "none",
-          "t": "Yes. Celeste Ming clearly said he never did anything like that, and people generally have not reported experiencing his behave inappropriately."
+          "t": "Yes. Cyrus Ming clearly said he never did anything like that, and people generally have not reported experiencing his behave inappropriately."
         },
         {
           "s": "player",
           "speaker": "none",
-          "t": "In the screenshot Lyra Qin provided, the poster Uka accused a certain park executive without naming anyone. Is it possible she was not referring to Celeste Ming at all?"
+          "t": "In the screenshot Lyra Qin provided, the poster Uka accused a certain park executive without naming anyone. Is it possible she was not referring to Cyrus Ming at all?"
         },
         {
           "s": "player",
@@ -513,7 +513,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_andy",
-                  "t": "After that period, two executives left—Jasper Wang from admin, and Celeste Ming. No similar rumors have surfaced since.",
+                  "t": "After that period, two executives left—Jasper Wang from admin, and Cyrus Ming. No similar rumors have surfaced since.",
                   "unlockEv": [
                     "ev_andy_investigation"
                   ]
@@ -531,7 +531,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi",
-          "t": "Is there anything I can help with, sis?",
+          "t": "Is there anything I can help with?",
           "present": {
             "ev_rulan_ticket": {
               "resolved": false,
@@ -1391,7 +1391,7 @@
     },
     "t_zhencheng_public_outcry": {
       "char": "char_zhencheng",
-      "title": "Celeste Ming's Scandal",
+      "title": "Cyrus Ming's Scandal",
       "dialogue": [
         {
           "s": "npc",
@@ -1537,7 +1537,7 @@
                         {
                           "s": "npc",
                           "speaker": "char_zhencheng",
-                          "t": "Celeste and Jasper have both been gone for years. Even if you prove I posted it, what can you do—tell Ray? Have him write me up for causing a bad impact?"
+                          "t": "Cyrus and Jasper have both been gone for years. Even if you prove I posted it, what can you do—tell Ray? Have him write me up for causing a bad impact?"
                         },
                         {
                           "s": "player",
@@ -1586,7 +1586,7 @@
         {
           "s": "npc",
           "speaker": "char_zhencheng",
-          "t": "That's right. That post wasn't about Celeste Ming. It was about that person in the admin team. I don't even want to say his name. Disgusting."
+          "t": "That's right. That post wasn't about Cyrus Ming. It was about that person in the admin team. I don't even want to say his name. Disgusting."
         },
         {
           "s": "npc",
@@ -1626,7 +1626,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "But what happened with your post? When people hinted that it might have been about Celeste Ming, why didn't you refute them?"
+          "t": "But what happened with your post? When people hinted that it might have been about Cyrus Ming, why didn't you refute them?"
         },
         {
           "s": "npc",
@@ -1636,7 +1636,7 @@
         {
           "s": "npc",
           "speaker": "char_zhencheng",
-          "t": "I knew Victor was very resentful of Celeste back then. And several times, Victor told me he thought that person was annoying and wished he would resign soon too."
+          "t": "I knew Victor was very resentful of Cyrus back then. And several times, Victor told me he thought that person was annoying and wished he would resign soon too."
         },
         {
           "s": "npc",
@@ -1646,7 +1646,7 @@
         {
           "s": "player",
           "speaker": "none",
-          "t": "So this ended up being blamed on Celeste Ming, is that it?"
+          "t": "So this ended up being blamed on Cyrus Ming, is that it?"
         },
         {
           "s": "npc",
@@ -1711,7 +1711,7 @@
     },
     "t_ayou_public_outcry": {
       "char": "char_ayou",
-      "title": "Celeste Ming's Scandal",
+      "title": "Cyrus Ming's Scandal",
       "dialogue": [
         {
           "s": "npc",
@@ -1734,7 +1734,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "Do you think what's written here is true? Have you ever seen Celeste Ming talk to female actors like this, or make inappropriate physical contact?"
+                  "t": "Do you think what's written here is true? Have you ever seen Cyrus Ming talk to female actors like this, or make inappropriate physical contact?"
                 },
                 {
                   "s": "npc",
@@ -1856,7 +1856,7 @@
         {
           "s": "npc",
           "speaker": "char_ayou",
-          "t": "It just so happened that shortly before that, Celeste Ming had been dissatisfied with Daniel's performance and scolded him in front of many people after rehearsal. Victor used that as material, exaggerating the seriousness of the incident and telling people everywhere that Daniel Xiao had been depressed for days because of it."
+          "t": "It just so happened that shortly before that, Cyrus Ming had been dissatisfied with Daniel's performance and scolded him in front of many people after rehearsal. Victor used that as material, exaggerating the seriousness of the incident and telling people everywhere that Daniel Xiao had been depressed for days because of it."
         },
         {
           "s": "npc",

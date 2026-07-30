@@ -80,17 +80,17 @@
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Three years ago, Chaoye Park set out to revamp its existing attractions, so it hired Celeste Ming, who was skilled at planning and writing, as the Performance Department supervisor."
+      "t": "Three years ago, Chaoye Park set out to revamp its existing attractions, so it hired Cyrus Ming, who was skilled at planning and writing, as the Performance Department supervisor."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Victor Jiang, the head of the performer team, had always believed he was better suited for the top role and strongly resented the arrival of the parachuted executive, Celeste Ming."
+      "t": "Victor Jiang, the head of the performer team, had always believed he was better suited for the top role and strongly resented the arrival of the parachuted executive, Cyrus Ming."
     },
     {
       "s": "npc",
       "speaker": "char_qin",
-      "t": "Celeste Ming, for his part, thought highly of himself. He did not gain a deep understanding of the performers or the practical realities of park operations, and when he rashly pushed several projects forward, he met resistance from every side."
+      "t": "Cyrus Ming, for his part, thought highly of himself. He did not gain a deep understanding of the performers or the practical realities of park operations, and when he rashly pushed several projects forward, he met resistance from every side."
     },
     {
       "s": "npc",
@@ -219,12 +219,12 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "After that, he loudly spread the story that Daniel Xiao had become dejected because Performance Department supervisor Celeste Ming had reprimanded him, making everyone think it was all Celeste Ming's fault."
+      "t": "After that, he loudly spread the story that Daniel Xiao had become dejected because Performance Department supervisor Cyrus Ming had reprimanded him, making everyone think it was all Cyrus Ming's fault."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "Because Celeste Ming was believed at the time to be connected to harassment allegations, and because he had long been taking outside work, the park had already been dissatisfied with him. Using this incident, they privately made Celeste Ming resign of his own accord."
+      "t": "Because Cyrus Ming was believed at the time to be connected to harassment allegations, and because he had long been taking outside work, the park had already been dissatisfied with him. Using this incident, they privately made Cyrus Ming resign of his own accord."
     },
     {
       "s": "player",
@@ -258,12 +258,12 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "Sunny was grateful for Victor's help. During that period, Victor was clearly opposed to Celeste Ming. Sunny's sympathies shifted toward Victor, and she deliberately did not clarify the truth in the post."
+      "t": "Sunny was grateful for Victor's help. During that period, Victor was clearly opposed to Cyrus Ming. Sunny's sympathies shifted toward Victor, and she deliberately did not clarify the truth in the post."
     },
     {
       "s": "player",
       "speaker": "none",
-      "t": "After Celeste left, Victor didn't get the promotion he'd been waiting for. Instead, they brought in Ray Shi\u2014a guy with connections. Their relationship was like this...",
+      "t": "After Cyrus left, Victor didn't get the promotion he'd been waiting for. Instead, they brought in Ray Shi\u2014a guy with connections. Their relationship was like this...",
       "choices": {
         "question": "Please choose:",
         "options": [
@@ -292,7 +292,7 @@
     {
       "s": "player",
       "speaker": "none",
-      "t": "But with Ray, Victor couldn't pick a fight the way he had with Celeste. With Ray, it was like punching a pillow—he had all this force, but nowhere to land it."
+      "t": "But with Ray, Victor couldn't pick a fight the way he had with Cyrus. With Ray, it was like punching a pillow—he had all this force, but nowhere to land it."
     },
     {
       "s": "player",
@@ -1465,6 +1465,12 @@
                                                                             {
                                                                               "s": "system",
                                                                               "speaker": "none",
+                                                                              "t": "Before leaving, Officer Qin said that the suicide case of Shawn from three years ago would be reopened, and she instructed Ray, Aiden, and other relevant personnel to come to the police station tomorrow to cooperate with the reinvestigation.",
+                         						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
+                                                                            },
+                                                                            {
+                                                                              "s": "system",
+                                                                              "speaker": "none",
                                                                               "t": "Faye stood to the side, covering her face as she cried. Soon, she seemed unable to sit still any longer and rushed into the night as well.",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
@@ -1622,7 +1628,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_xiaozhi",
-                                                                              "t": "Of course I am. So, Sis, don't just let any thief tag along, okay?",
+                                                                              "t": "Of course I am. So, don't just let any thief tag along, okay?",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {
@@ -1646,7 +1652,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_xiaozhi",
-                                                                              "t": "Good! I'm all the assistant you need, Sis!",
+                                                                              "t": "Good! I'm all the assistant you need!",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {

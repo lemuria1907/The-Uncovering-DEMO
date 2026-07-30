@@ -596,10 +596,8 @@
     
     <div id="debug-panel" style="display:none;">
         <div id="debug-chap-name">载入中...</div>
-        <button class="debug-btn" onclick="skipToNextActionOrEnd()">⏭️ 剧情快进跳跃</button>
-        <button class="debug-btn" onclick="forceNextChapter()" style="color:var(--stamp-red); border-color:var(--stamp-red);">⏭️ 强切下一章节</button>
-        <button class="debug-btn" onclick="jumpToTensionTest()" style="color:#f2b84e; border-color:#f2b84e;">🔊 音效测试（s2石辉·明淇）</button>
-        <button class="debug-btn" onclick="jumpToCutscene()" style="color:#f2b84e; border-color:#f2b84e;">🎬 跳到过场前</button>
+        <button class="debug-btn" onclick="skipToNextActionOrEnd()">⏭️ 快进 Skip Story</button>
+        <button class="debug-btn" onclick="forceNextChapter()" style="color:var(--stamp-red); border-color:var(--stamp-red);">⏭️ 切下节 Next Section</button>
     </div>
 
     <div id="col-1">
@@ -3108,13 +3106,13 @@ document.addEventListener("mouseup", () => { dragModal = null; });
     <div class="modal-close" onclick="closeModal('credits-modal')"></div>
     <div class="modal-header" data-i18n="credits.title">制作</div>
     <div class="modal-body" style="padding:22px 28px; line-height:2; font-size:14px; color:#444; text-align:center; align-items:center;">
-        游戏制作：YIFANG（@灰烬马戏团）；音乐：Mubert；
+        游戏制作：灰烬马戏团（Ashcade Studio）；音乐：Mubert；
         音效：game-sfx-generator音效生成器 ；
         视觉特效：Mirage-stylizer图像风格化应用
         Contect - lemuriawang@163.com
 为方便玩家们重复游玩5个关卡，本游戏有个快速切关卡/跳过剧情的隐藏按钮，Ctrl+H调出控制台。
 To replay levels or skip story scenes quickly, use the hidden button. Press Ctrl+H to open the console.
-ステージ切り替えやスキップ用の隠しボタンがあります。Ctrl+H でコンソールを開きます。
+ステージ切り替えやスキップ用の隠しボタンがあります。Ctrl+H でコンソールを開きます。v1.0.0
     </div>
 </div>
 

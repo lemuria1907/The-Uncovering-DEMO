@@ -94,7 +94,7 @@
       "sprite": "images/chapter1/char_meiyu.png"
     },
     "char_mingqi": {
-      "name": "Celeste Ming",
+      "name": "Cyrus Ming",
       "info": "Former Performance Department director",
       "sprite": "images/chapter1/char_mingqi.png"
     },
@@ -142,7 +142,7 @@
       {
         "s": "system",
         "speaker": "none",
-        "t": "Celeste Ming looks like he has absolutely no intention of talking."
+        "t": "Cyrus Ming looks like he has absolutely no intention of talking."
       }
     ],
     "char_shihui": [
@@ -197,7 +197,7 @@
         {
           "s": "npc",
           "speaker": "char_andy",
-          "t": "Officer Lyra said you can head to the temporary interrogation area once you're done here. Celeste and Faye should already be there.",
+          "t": "Officer Lyra said you can head to the temporary interrogation area once you're done here. Cyrus and Faye should already be there.",
           "unlockLoc": [
             "interrogation",
             "office"
@@ -313,7 +313,7 @@
               {
                 "s": "npc",
                 "speaker": "char_meiyu",
-                "t": "Yes. At first, former Performance Department director Celeste Ming led it, wrote the proposal, and submitted it. Then management assigned Victor Jiang to assist him."
+                "t": "Yes. At first, former Performance Department director Cyrus Ming led it, wrote the proposal, and submitted it. Then management assigned Victor Jiang to assist him."
               },
               {
                 "s": "npc",
@@ -1082,12 +1082,12 @@
     },
     "t_shihui_about_mingqi": {
       "char": "char_shihui",
-      "title": "About Celeste",
+      "title": "About Cyrus",
       "dialogue": [
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Hm? You met Celeste Ming? Well? Do you think he is that kind of hypocritical person? Did he admit what happened back then?",
+          "t": "Hm? You met Cyrus Ming? Well? Do you think he is that kind of hypocritical person? Did he admit what happened back then?",
           "present": {
             "ev_mingqi_testimony1": {
               "resolved": false,
@@ -1095,7 +1095,7 @@
                 {
                   "s": "player",
                   "speaker": "none",
-                  "t": "I asked Celeste Ming why he left the park. He said it was because Daniel Xiao died and the park needed a scapegoat. It had nothing to do with the harassment incident you mentioned."
+                  "t": "I asked Cyrus Ming why he left the park. He said it was because Daniel Xiao died and the park needed a scapegoat. It had nothing to do with the harassment incident you mentioned."
                 },
                 {
                   "s": "npc",
@@ -1117,7 +1117,7 @@
                       {
                         "s": "npc",
                         "speaker": "char_shihui",
-                        "t": "Some people guessed it was Celeste Ming and asked leading questions about it, but the poster never came forward to clarify... Celeste also did not say anything, so it seemed to become accepted as fact...",
+                        "t": "Some people guessed it was Cyrus Ming and asked leading questions about it, but the poster never came forward to clarify... Cyrus also did not say anything, so it seemed to become accepted as fact...",
                         "present": {
                           "ev_mingqi_testimony2": {
                             "resolved": false,
@@ -1142,7 +1142,7 @@
                                     {
                                       "s": "npc",
                                       "speaker": "char_shihui",
-                                      "t": "Actually, you're right... Celeste really was targeted from all sides... Even though he had a high position, he was always kind of isolated in the park.",
+                                      "t": "Actually, you're right... Cyrus really was targeted from all sides... Even though he had a high position, he was always kind of isolated in the park.",
                                       "question": {
                                         "resolved": false,
                                         "dialogue": [
@@ -1256,13 +1256,13 @@
     },
     "t_shihui_mingqi_targeted": {
       "char": "char_shihui",
-      "title": "Why Celeste Ming Was Targeted",
+      "title": "Why Cyrus Ming Was Targeted",
       "hidden": true,
       "dialogue": [
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Well... I learned about this from a relative who works at the park. Celeste Ming came here because the park was undergoing reforms at the time, and the board had decided to overhaul all of the park's entertainment projects.",
+          "t": "Well... I learned about this from a relative who works at the park. Cyrus Ming came here because the park was undergoing reforms at the time, and the board had decided to overhaul all of the park's entertainment projects.",
           "present": {
             "ev_relative": {
               "resolved": false,
@@ -1284,7 +1284,7 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "The park specifically poached Celeste Ming from ArcLight Group, a major entertainment company. His resume and education were both extremely impressive. Celeste Ming really is very capable, but after he arrived, he had quite a few conflicts with the park's management.",
+          "t": "The park specifically poached Cyrus Ming from ArcLight Group, a major entertainment company. His resume and education were both extremely impressive. Cyrus Ming really is very capable, but after he arrived, he had quite a few conflicts with the park's management.",
           "question": {
             "resolved": false,
             "dialogue": [
@@ -1296,7 +1296,7 @@
               {
                 "s": "npc",
                 "speaker": "char_shihui",
-                "t": "The park thought Celeste's proposals were too aggressive and too expensive. Chaoye Park doesn't have as much money as those entertainment companies, after all. A lot of the resources just couldn't be provided."
+                "t": "The park thought Cyrus's proposals were too aggressive and too expensive. Chaoye Park doesn't have as much money as those entertainment companies, after all. A lot of the resources just couldn't be provided."
               },
               {
                 "s": "npc",
@@ -1309,7 +1309,7 @@
         {
           "s": "npc",
           "speaker": "char_shihui",
-          "t": "Maybe it was just a bad match. You could tell Celeste was losing motivation more and more."
+          "t": "Maybe it was just a bad match. You could tell Cyrus was losing motivation more and more."
         },
         {
           "s": "npc",
@@ -1362,12 +1362,12 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "The park wanted to use Daniel Xiao's death as an excuse to fire Celeste. So maybe Celeste wasn't really the one to blame in the first place."
+                "t": "The park wanted to use Daniel Xiao's death as an excuse to fire Cyrus. So maybe Cyrus wasn't really the one to blame in the first place."
               },
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "You also said Celeste Ming was often out and not working in the park. Could a few reprimands really have driven Daniel Xiao to suicide? That sounds extremely hard to believe."
+                "t": "You also said Cyrus Ming was often out and not working in the park. Could a few reprimands really have driven Daniel Xiao to suicide? That sounds extremely hard to believe."
               },
               {
                 "s": "npc",
@@ -1377,7 +1377,7 @@
               {
                 "s": "player",
                 "speaker": "none",
-                "t": "Then, if we don't treat Celeste Ming as the person primarily responsible, the person who truly should have been held responsible for Daniel Xiao's death might be that person.",
+                "t": "Then, if we don't treat Cyrus Ming as the person primarily responsible, the person who truly should have been held responsible for Daniel Xiao's death might be that person.",
                 "choices": {
                   "question": "Who truly should have been held responsible for Daniel Xiao's death?",
                   "options": [

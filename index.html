@@ -1216,6 +1216,13 @@ document.addEventListener("mousemove", e => {
     particles.forEach(p => { p.style.transform = `translate(${mx*2.5}px, ${my*2.5}px)`; });
 });
 
+// 滑轮阻尼：证物/人物列表滚动减速
+document.querySelectorAll('.grid-list, .list-container').forEach(el => {
+    el.addEventListener('wheel', (ev) => {
+        ev.preventDefault();
+        el.scrollTop += ev.deltaY * 0.35;
+    }, { passive: false });
+});
 document.addEventListener('DOMContentLoaded', () => {
     if (localStorage.getItem('open_load_menu') === 'true') {
         localStorage.removeItem('open_load_menu'); bootGame(true); 

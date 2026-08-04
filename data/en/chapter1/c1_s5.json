@@ -197,12 +197,12 @@
           {
             "text": "A Falsify the time of death",
             "correct": false,
-            "reply": "Sis, wake up."
+            "reply": "Sylva, wake up."
           },
           {
             "text": "B Move the body quickly",
             "correct": false,
-            "reply": "Sis, wake up."
+            "reply": "Sylva, wake up."
           },
           {
             "text": "C Disguise the body as a suicide",
@@ -1616,7 +1616,7 @@
                                                                             {
                                                                               "s": "npc",
                                                                               "speaker": "char_xiaozhi",
-                                                                              "t": "Sis, how'd I do today as your assistant?",
+                                                                              "t": "Sylva, how'd I do today as your assistant?",
                          						      "bg": "images/chapter1/bg_ghost_entrance.jpg"
                                                                             },
                                                                             {

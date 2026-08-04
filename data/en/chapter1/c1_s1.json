@@ -69,7 +69,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Sis, that was amazing! We have to go again!"
+      "t": "Sylva, that was amazing! We have to go again!"
     },
     {
       "s": "player",
@@ -119,7 +119,7 @@
     {
       "s": "npc",
       "speaker": "char_xiaozhi",
-      "t": "Sis, your favorite! Let's sip slowly, then go on the pirate ship once, then come back and line up again — pretty please?"
+      "t": "Sylva, your favorite! Let's sip slowly, then go on the pirate ship once, then come back and line up again — pretty please?"
     },
     {
       "s": "player",
@@ -519,7 +519,7 @@
     {
       "s": "npc",
       "speaker": "char_shihui",
-      "t": "Look — this is the floor plan of our haunted house. (*Open the 'Evidence' panel on the right to view, then click the pin icon in the upper-right corner to close*)",
+      "t": "Look — this is the floor plan of our haunted house. (*Open the 'Evidence' panel on the right to view, then click the pin icon in the upper-right corner to close. Right-click on an evidence card to mark it*)",
       "unlockEv": "ev_ghost_house_map"
     },
     {
@@ -730,7 +730,7 @@
                             {
                               "s": "npc",
                               "speaker": "char_xiaozhi",
-                              "t": "You're amazing, sis!"
+                              "t": "You're amazing, Sylva!"
                             },
                             {
                               "s": "system",

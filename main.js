@@ -1,7 +1,16 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 
+// 双显卡笔记本GPU兼容性
+if (process.platform === 'win32') {
+  app.commandLine.appendSwitch('force_high_performance_gpu');
+  app.commandLine.appendSwitch('use-angle', 'd3d11');
+}
+app.commandLine.appendSwitch('disable-gpu-vsync');
+app.commandLine.appendSwitch('disable-gpu-driver-bug-workarounds');
+
 let mainWindow;
+let gpuCrashed = false;
 
 function createWindow() {
   mainWindow = new BrowserWindow({
@@ -22,6 +31,23 @@ function createWindow() {
   mainWindow.loadFile('index.html');
   mainWindow.setMenuBarVisibility(false);
 }
+
+// GPU崩溃恢复
+app.on('gpu-process-crashed', (_event, killed) => {
+  gpuCrashed = true;
+  if (!killed) {
+    app.relaunch();
+  }
+  app.quit();
+});
+
+// 渲染进程崩溃恢复
+app.on('render-process-gone', (_event, _webContents, details) => {
+  if (!gpuCrashed) {
+    app.relaunch();
+    app.quit();
+  }
+});
 
 ipcMain.on('set-window-size', (_event, w, h) => {
   if (mainWindow) {

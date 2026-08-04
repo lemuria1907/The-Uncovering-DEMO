@@ -13,7 +13,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi",
-          "t": "If you need any errands done, just come to me, Sis."
+          "t": "If you need any errands done, just come to me, Sylva."
         },
         {
           "s": "npc",
@@ -549,7 +549,7 @@
                 {
                   "s": "npc",
                   "speaker": "char_xiaozhi",
-                  "t": "Sis, I checked with the ticket inspector from that night. Because it was during the holiday and also a weekend, those screenings were especially crowded. She doesn't remember the faces of the people whose tickets she checked at all."
+                  "t": "Sylva, I checked with the ticket inspector from that night. Because it was during the holiday and also a weekend, those screenings were especially crowded. She doesn't remember the faces of the people whose tickets she checked at all."
                 },
                 {
                   "s": "npc",

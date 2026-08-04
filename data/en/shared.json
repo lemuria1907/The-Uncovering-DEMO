@@ -50,7 +50,7 @@
     },
     "ev_actor_transfer_rules": {
       "name": "Actor Transition Rules",
-      "desc": "To ensure actors can switch spots without breaking audience immersion, the following procedures are reiterated:\n1) Costume changes: Every costume set uses easy-on-off construction. During performances, actors wear a black base layer. Each spot's costume is pre-placed in a dim corner of that space.\n2) Transition routes: While the audience's attention is on the current performance, actors may use hidden doors or circle behind the audience through blind spots to reach the next spot.\n3) Spacing rule: No actor may pass through more than two spots consecutively.",
+      "desc": "To ensure actors can switch spots without breaking audience immersion, the following procedures are reiterated:\n1) Costume changes: All costumes should be quick-change friendly. During performances, actors wear a black base layer. Each spot's costume is pre-placed in a dim corner of that space.\n2) Transition routes: While the audience's attention is on the current performance, actors may use hidden doors or circle behind the audience through blind spots to reach the next spot.\n3) Spacing rule: No actor may pass through more than two spots consecutively.",
       "origin": "char_shihui",
       "sourceChapter": "c1_s1"
     },
@@ -80,7 +80,7 @@
     },
     "ev_ayou_testimony3": {
       "name": "Aiden·Testimony 3",
-      "desc": "Three years ago, another park executive had a history of harassing female performers. Park employees Lena and Gwen were unhappy about it, and Sunny seems to have mentioned it as well.",
+      "desc": "Three years ago, another park executive harassed some female employees. Park employees Lena and Gwen were deeply disturbed by it, and Sunny seems to have mentioned it as well.",
       "origin": "char_ayou",
       "sourceChapter": "c1_s4"
     },
@@ -135,14 +135,14 @@
     },
     "ev_changwei_locker": {
       "name": "Victor's Locker Contents",
-      "desc": "Victor's locker contained two shirts, a cartoon keychain, a park logo souvenir stamp, and a park document sheet covered with park logo stamps. Handwritten dates next to the stamps appear to overlap with the haunted house performance dates.",
+      "desc": "Victor's locker contained two shirts, a cartoon keychain, a souvenir seal with the park logo, and a park document sheet covered with its impressions. Dates next to the impressions appear to overlap with the haunted house performance dates.",
       "origin": "system",
       "sourceChapter": "c1_s3",
       "img": "images/chapter1/itemjiangwei.png"
     },
     "ev_zhencheng_locker": {
       "name": "Sunny's Locker Contents",
-      "desc": "Sunny's locker contained a warm yellow dress, a pair of high heels, a children's toy, a park logo souvenir stamp, and a postcard stamped many times with the park logo. The postcard was a freebie from a milk tea brand.",
+      "desc": "Sunny's locker contained a warm yellow dress, a pair of high heels, a children's toy, a souvenir seal with the park logo, and a postcard stamped many times with the same logo. The postcard was a freebie from a milk tea brand.",
       "origin": "system",
       "sourceChapter": "c1_s3",
       "img": "images/chapter1/itemzhencheng.png"
@@ -236,13 +236,13 @@
     },
     "ev_cinema_schedule": {
       "name": "Cinema Schedule",
-      "desc": "Yaohua Cinema evening schedule for October 27 (doors open 5 min before showtime):\n\"Halloween Wonder Night\" 17:45, 18:30, 19:40, 20:45, 21:55, 23:30\n\"Spy Game 1999\" 17:30, 18:45, 20:00, 21:15\n\"The Last Dinosaur\" 18:20, 20:15, 21:50\n\"Autumn Letter\" 18:00, 19:15, 20:45, 22:20",
+      "desc": "Yaohua Cinema evening schedule for October 27 (doors open 5 min before showtime):\n\"Halloween Wonder Night\" (100 min) 17:45, 18:30, 19:40, 20:45, 21:55, 23:30\n\"Spy Game 1999\"(100 min) 17:30, 18:45, 20:00, 21:15\n\"The Last Dinosaur\"(100 min) 18:20, 20:15, 21:50\n\"Autumn Letter\"(110 min) 18:00, 19:15, 20:45, 22:20",
       "origin": "system",
       "sourceChapter": "c1_s4"
     },
     "ev_andy_investigation": {
       "name": "Andy's Investigation",
-      "desc": "Andy found some personnel records relating to the post‑incident staffing changes following that year's sexual harassment case at the park. It was confirmed that, in addition to Cyrus Ming, the departing executives at that time also included Jasper Wang from the administrative group. Furthermore, the employees implicated in the incident included Lena Qiu from the catering department and Gwen Gao, a ticket inspector.",
+      "desc": "Andy obtained some personnel records related to the staffing changes after the harassment incident that year. Besides Cyrus Ming, another executive who left was Jasper Wang from administration. Two other employees linked to the matter — Lena from catering and Gwen from ticketing — had already left the park long ago.",
       "origin": "char_andy",
       "sourceChapter": "c1_s4"
     },
@@ -266,13 +266,13 @@
     },
     "ev_zhencheng_testimony4": {
       "name": "Sunny·Testimony 4",
-      "desc": "According to Sunny, Shawn's fiancée frequently needed to go to the hospital for injections, which pained Shawn deeply.",
+      "desc": "According to Sunny, Shawn's fiancée frequently needed to go to the hospital for injections, and it upset him to see her go through that.",
       "origin": "char_zhencheng",
       "sourceChapter": "c1_s4"
     },
     "ev_zhencheng_testimony5": {
       "name": "Sunny·Testimony 5",
-      "desc": "The post that sparked the public outcry was written by Sunny. Because Victor helped her resolve the harassment incident, Sunny deliberately wrote ambiguously to repay him, making readers believe the post was about Cyrus.",
+      "desc": "The post that sparked the public outcry was written by Sunny. Since Victor had helped her resolve the harassment issue, Sunny deliberately phrased it ambiguously as a way to repay him, making everyone assume the post was about Cyrus.",
       "origin": "char_zhencheng",
       "sourceChapter": "c1_s4"
     }

@@ -28,13 +28,14 @@
         --shadow-hard: 0 0 0 rgba(0,0,0,0.2);
     }
 
+    html, body { height: 100%; }
     body {
-        margin: 0; padding: 2vh 3vw;
+        margin: 0; padding: 2vh clamp(6px, 1.5vw, 3vw);
         background-color: #2b241c;
         background-image: radial-gradient(circle at 25% 40%, rgba(255,215,150,0.15) 2%, transparent 2.5%);
         background-size: 28px 28px;
         font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif;
-        display: flex; height: 100vh; overflow: hidden; user-select: none; box-sizing: border-box;
+        display: flex; overflow: hidden; user-select: none; box-sizing: border-box;
     }
 
     ::-webkit-scrollbar { width: 4px; }
@@ -160,10 +161,10 @@
     /* 命数桃心（场景上部中央） */
     #lives-container {
         position: absolute; top: 14px; left: 50%; transform: translateX(-50%);
-        display: flex; gap: 10px; z-index: 30; pointer-events: none;
+        display: flex; gap: clamp(2px, 0.8vw, 10px); z-index: 30; pointer-events: none;
     }
     .life-heart {
-        width: 18px; height: 18px; background: #e62e2e;
+        width: clamp(8px, 1.5vw, 18px); height: clamp(8px, 1.5vw, 18px); background: #e62e2e;
         clip-path: polygon(50% 80%, 0% 30%, 0% 15%, 15% 5%, 30% 5%, 50% 20%, 70% 5%, 85% 5%, 100% 15%, 100% 30%);
         border: 2px solid #121212; box-shadow: 1px 1px 0 #121212;
         transition: all 0.2s;
@@ -311,7 +312,7 @@
         z-index: 10; box-shadow: 6px 6px 0 rgba(0,0,0,0.25);
         display: none;
     }
-    .dialogue-controls { position: absolute; top: -12px; right: 10px; display: flex; gap: 8px; z-index: 20; }
+    .dialogue-controls { position: absolute; top: -12px; left: 10px; right: 10px; display: flex; gap: 8px; z-index: 20; }
     .ctrl-btn {
         background: #0a0a0a; color: #ffde9c; font-size: 11px; padding: 2px 8px;
         border-radius: 20px; cursor: pointer; border: 2px solid #f5b642; font-weight: bold;
@@ -379,6 +380,7 @@
     .ev-item:nth-child(even) { transform: rotate(1.5deg); } .ev-item:nth-child(odd) { transform: rotate(-1.5deg); }
     .ev-item:hover { transform: scale(1.05); z-index: 10; border-color: #f09d2c; box-shadow: 5px 5px 0 rgba(0,0,0,0.3);}
     .ev-item:active { cursor: grabbing; transform: scale(0.95); box-shadow: none;}
+    .ev-item.marked { background: var(--ink-black); color: var(--accent-yellow); border-color: var(--accent-yellow); }
 
     #action-buttons { display: flex; gap: 15px; height: 60px; flex-shrink: 0; margin-top: 5px; }
     .action-btn {
@@ -634,8 +636,11 @@
                 
                 <div id="dialogue-box" onclick="advanceDialogue(event)">
                     <div class="dialogue-controls">
-                        <div id="speed-btn" class="ctrl-btn" onclick="toggleSpeed(event)">Speed: 1x</div>
-                        <div id="auto-play-btn" class="ctrl-btn" onclick="toggleAutoPlay(event)">Auto: OFF</div>
+                        <div id="speaker-tag" class="ctrl-btn" style="cursor:default;display:none;"></div>
+                        <div style="display:flex;gap:8px;margin-left:auto;">
+                            <div id="speed-btn" class="ctrl-btn" onclick="toggleSpeed(event)">Speed: 1x</div>
+                            <div id="auto-play-btn" class="ctrl-btn" onclick="toggleAutoPlay(event)">Auto: OFF</div>
+                        </div>
                     </div>
                     <div class="arrow" id="arrow-left" onclick="event.stopPropagation(); prevDialogue()">◀</div>
                     <div id="dialogue-text"></div>
@@ -782,6 +787,7 @@ const I18N = {
         "tab.save": "存<br>档",
         "tab.load": "读<br>档",
         "tab.log": "回<br>顾",
+        "player.name": "希泉",
         "log.you": "你",
         "log.system": "系统",
         "log.title": "对话回顾",
@@ -880,6 +886,7 @@ const I18N = {
         "tab.save": "SA<br>VE",
         "tab.load": "LO<br>AD",
         "tab.log": "LO<br>G",
+        "player.name": "Sylva",
         "log.you": "You",
         "log.system": "System",
         "log.title": "Dialogue Review",
@@ -978,6 +985,7 @@ const I18N = {
         "tab.save": "セ<br>ー<br>ブ",
         "tab.load": "ロ<br>ー<br>ド",
         "tab.log": "ロ<br>グ",
+        "player.name": "希泉",
         "log.you": "あなた",
         "log.system": "システム",
         "log.title": "会話振り返り",
@@ -1043,7 +1051,7 @@ function applyAllUIText() {
 }
 async function setLanguage(lang) {
     currentLang = lang;
-    localStorage.setItem('game_lang', lang);
+    try { localStorage.setItem('game_lang', lang); } catch(e) {}
     applyAllUIText();
     if (state.hasSeenIntro) showSysMsg(t('sys.langStoryDeferred'));
 }
@@ -1148,6 +1156,9 @@ document.addEventListener('keydown', (e) => {
         const mainMenu = document.getElementById("main-menu"); const gameContainer = document.getElementById("game-container");
         if(mainMenu.style.display === "none") {
             gameContainer.style.display = "none"; mainMenu.style.display = "flex";
+            // 保存当前BGM状态
+            state._savedBGM = currentBGM;
+            state._savedCustomBgmName = customBgmAudio?._name;
             if(bgmAudio) { bgmAudio.pause(); bgmAudio.currentTime = 0; }
             if(tensionAudio) { tensionAudio.pause(); tensionAudio.volume = 0; }
             if(customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
@@ -1159,7 +1170,14 @@ document.addEventListener('keydown', (e) => {
             if(state.activeDialogue && state.activeDialogue.length > 0) {
                 document.getElementById("dialogue-box").style.display = "flex";
             }
-            if(bgmAudio) bgmAudio.play().catch(()=>{});
+            // 恢复之前的BGM
+            if (state._savedCustomBgmName && state._savedBGM !== "main" && state._savedBGM !== "tension") {
+                crossfadeBGM(state._savedBGM, 1000, true);
+            } else if (state._savedBGM === "tension") {
+                crossfadeBGM("tension", 1000, true);
+            } else if(bgmAudio) {
+                bgmAudio.play().catch(()=>{});
+            }
         }
     }
 });
@@ -1418,7 +1436,7 @@ function newGame() {
         state.seenLines = []; state.readGreetings = []; state.unlockedEv = []; state.unlockedProfiles = [];
         state.unlockedTopics = []; state.unlockedLocs = []; state.visitedLocs = [];
         state.newLocs = []; state.newTopics = []; state.newProfiles = []; state.newEv = [];
-        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueMode = "none"; state.activeDialogue = []; state.dialogueIdx = 0; state.waitingForAction = false; state.isAdvancingChapter = false; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._lastTopicPush = ""; state.topicRuntime = {}; state.topicProgress = {};
+        state.hasSeenIntro = false; state.lives = 8; state.currChar = null; state.currTopic = null; state.dialogueMode = "none"; state.activeDialogue = []; state.dialogueIdx = 0; state.waitingForAction = false; state.isAdvancingChapter = false; state.dialogueHistory = []; state._seenLines = new Set(); state._seenTopics = new Set(); state._logFilter = "all"; state._lastTopicPush = ""; state._markedEv = []; state.topicRuntime = {}; state.topicProgress = {};
         document.getElementById("main-menu").style.display = "none";
         document.getElementById("game-container").style.display = "grid";
         startBGM(); initGame();
@@ -1905,7 +1923,8 @@ function saveGame(index) {
         saveVersion: 2,
         stateData: serializeState(), topicsData: GAME_DATA.topics ? JSON.parse(JSON.stringify(GAME_DATA.topics)) : null, greetingsData: GAME_DATA.greetings ? JSON.parse(JSON.stringify(GAME_DATA.greetings)) : null
     };
-    localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg(t('sys.saveSuccess')); renderSaveSlots();
+    try { localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); } catch(e) {}
+    showSysMsg(t('sys.saveSuccess')); renderSaveSlots();
 }
 async function loadGame(index, silent=false) {
     if(!silent) playSound('click'); let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]');
@@ -1934,7 +1953,7 @@ async function loadGame(index, silent=false) {
         else { document.getElementById("dialogue-box").style.display="none"; }
     }
 }
-function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); showSysMsg(t('sys.saveDeleted')); renderSaveSlots(); }
+function deleteSave(index) { let saves = JSON.parse(localStorage.getItem('mystery_game_saves') || '[]'); saves[index] = null; try { localStorage.setItem('mystery_game_saves', JSON.stringify(saves)); } catch(e) {} showSysMsg(t('sys.saveDeleted')); renderSaveSlots(); }
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     modal.style.display="none";
@@ -2110,6 +2129,8 @@ function renderProfiles() {
         const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
         div.ondragstart = handleDragStart;
         div.onclick = () => { playSound('ui_click'); showDetail('profile', id); };
+        div.oncontextmenu = (e) => { e.preventDefault(); div.classList.toggle('marked'); if (!state._markedEv) state._markedEv = []; const mi = state._markedEv.indexOf(id); if (mi >= 0) state._markedEv.splice(mi,1); else state._markedEv.push(id); };
+        if (state._markedEv && state._markedEv.includes(id)) div.classList.add('marked');
         div.addEventListener('mouseenter', () => playSound('ui_hover', 0.08));
         let newBadge = state.newProfiles.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let color = CHAR_COLORS[id] || "#000";
@@ -2126,6 +2147,8 @@ function renderEvidence() {
         const div = document.createElement("div"); div.className="ev-item"; div.draggable=true; div.id="drag_"+id;
         div.ondragstart = handleDragStart;
         div.onclick = () => { playSound('ui_click'); showDetail('ev', id); };
+        div.oncontextmenu = (e) => { e.preventDefault(); div.classList.toggle('marked'); if (!state._markedEv) state._markedEv = []; const mi = state._markedEv.indexOf(id); if (mi >= 0) state._markedEv.splice(mi,1); else state._markedEv.push(id); };
+        if (state._markedEv && state._markedEv.includes(id)) div.classList.add('marked');
         div.addEventListener('mouseenter', () => playSound('ui_hover', 0.08));
         let newBadge = state.newEv.includes(id) ? `<span class="new-badge" style="position:absolute;top:-10px;right:-5px;">NEW</span>` : "";
         let ori = EVIDENCE_DICT[id]?.origin; let color = (ori && CHAR_COLORS[ori]) ? CHAR_COLORS[ori] : "#666";
@@ -2231,7 +2254,7 @@ function finishCutscene() {
         const lastSection = Math.max(...sameChapter.map(c => c.section));
         if (cur.section === lastSection && !state.completedChapters.includes(cur.chapter)) {
             state.completedChapters.push(cur.chapter);
-            localStorage.setItem('rdsm_completed_chapters', JSON.stringify(state.completedChapters));
+            try { localStorage.setItem('rdsm_completed_chapters', JSON.stringify(state.completedChapters)); } catch(e) {}
         }
     }
     autoSave(0);
@@ -2547,7 +2570,14 @@ function renderDialogueLine() {
     if(line.s==="system") { textDiv.style.color="var(--text-system)"; textDiv.style.fontStyle="italic"; }
     else if(line.s==="player") { textDiv.style.color="var(--text-player)"; textDiv.style.fontStyle="normal"; }
     else { textDiv.style.color="var(--text-npc)"; textDiv.style.fontStyle="normal"; }
-    
+    // 对话名字标签
+    const spTag = document.getElementById("speaker-tag");
+    if (spTag) {
+        if (line.s === "player") { spTag.textContent = t("player.name"); spTag.style.display = "block"; }
+        else if (line.s === "npc" && line.speaker) { spTag.textContent = PROFILE_DICT[line.speaker]?.name || GAME_DATA.characters?.[line.speaker]?.name || ""; spTag.style.display = "block"; }
+        else { spTag.textContent = ""; spTag.style.display = "none"; }
+    }
+
     changeSpriteBySpeaker(line.speaker, line.sprite);
     
     const arrLeft = document.getElementById("arrow-left"), arrRight = document.getElementById("arrow-right");
@@ -2668,14 +2698,43 @@ document.addEventListener("mouseup", () => {
 });
 function renderLogBody() {
     const body = document.getElementById("log-body"); body.innerHTML = "";
+    // 收集所有分幕
+    const sections = [];
     state.dialogueHistory.forEach(item => {
         if (item.type === "chapter_divider") {
+            const sec = item.text.split(" ")[0]; // "1-1 鬼屋前的骚动" → "1-1"
+            if (!sections.find(s => s.key === sec)) sections.push({ key: sec, text: item.text });
+        }
+    });
+    // 渲染分幕筛选标签
+    const bar = document.getElementById("log-filter-bar"); bar.innerHTML = "";
+    const filter = state._logFilter || "all";
+    const makeTab = (key, label) => {
+        const tab = document.createElement("button");
+        tab.style.cssText = `padding:2px 8px;font-size:10px;border-radius:12px;cursor:pointer;border:1px solid ${filter===key?'#f2b84e':'#555'};background:${filter===key?'#f2b84e':'transparent'};color:${filter===key?'#0a0a0a':'#aaa'};font-family:inherit;font-weight:bold;letter-spacing:1px;transition:0.15s;`;
+        tab.textContent = label;
+        tab.onclick = () => { state._logFilter = key; renderLogBody(); };
+        tab.onmouseenter = () => { if (filter!==key) { tab.style.borderColor='#f2b84e'; tab.style.color='#f2b84e'; } };
+        tab.onmouseleave = () => { if (filter!==key) { tab.style.borderColor='#555'; tab.style.color='#aaa'; } };
+        bar.appendChild(tab);
+    };
+    makeTab("all", "全部");
+    sections.forEach(s => makeTab(s.key, s.key));
+    // 如果当前筛选的分幕不存在了，回退到全部
+    if (filter !== "all" && !sections.find(s => s.key === filter)) state._logFilter = "all";
+    // 渲染对话
+    let currentSection = null;
+    state.dialogueHistory.forEach(item => {
+        if (item.type === "chapter_divider") {
+            currentSection = item.text.split(" ")[0];
+            if (filter !== "all" && currentSection !== filter) return;
             const d = document.createElement("div");
             d.style.cssText = "text-align:center;padding:10px 0;margin:6px 0;color:#f2b84e;font-size:13px;font-weight:bold;letter-spacing:2px;border-bottom:2px solid rgba(242,184,78,0.3);";
             d.innerText = "── " + item.text + " ──";
             body.appendChild(d);
             return;
         }
+        if (filter !== "all" && currentSection !== filter) return;
         if (item.type === "topic_divider") {
             const d = document.createElement("div");
             d.style.cssText = "text-align:center;padding:8px 0;margin:4px 0;color:#f2b84e;font-size:12px;letter-spacing:1px;border-bottom:1px dashed #333;";
@@ -2713,6 +2772,7 @@ function updateLogTabVisibility() {
 
 function closeDialogue() {
     rememberTopicProgress();
+    var spTag=document.getElementById("speaker-tag");if(spTag){spTag.textContent="";spTag.style.display="none";}
     clearInterval(state.typingInterval);
     clearTimeout(autoPlayTimer);
     if (currentBGM === "tension" || isAudioAudible(tensionAudio)) crossfadeBGM("main", 2000, true);
@@ -3122,6 +3182,7 @@ To replay levels or skip story scenes quickly, use the hidden button. Press Ctrl
         <span data-i18n="log.title">对话回顾</span>
         <span onclick="toggleLogModal()" style="cursor:pointer;color:#888;font-size:20px;padding:2px 8px;">✕</span>
     </div>
+    <div id="log-filter-bar" style="display:flex;gap:4px;padding:4px 16px;border-bottom:1px solid #333;flex-wrap:wrap;"></div>
     <div id="log-body" style="flex:1;overflow-y:auto;padding:16px 20px;display:flex;flex-direction:column;gap:8px;"></div>
 </div>
 

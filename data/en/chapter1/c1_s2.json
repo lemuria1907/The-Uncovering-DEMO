@@ -401,7 +401,7 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p5",
-        "t": "Whoa! Sis, you're freaking me out!"
+        "t": "Whoa! Sylva, you're freaking me out!"
       },
       {
         "s": "player",
@@ -525,7 +525,7 @@
       {
         "s": "npc",
         "speaker": "char_xiaozhi_p0",
-        "t": "Sis... I'm kind of bummed. I never knew the guy, but his performances always made my day."
+        "t": "Sylva... I'm kind of bummed. I never knew the guy, but his performances always made my day."
       },
       {
         "s": "player",
@@ -667,7 +667,7 @@
               {
                 "text": "B The Prince and his wife's duet",
                 "correct": false,
-                "reply": "Sis, take a look again. . ."
+                "reply": "Sylva, take a look again. . ."
               },
               {
                 "text": "C Red Death and the Prince's duet",
@@ -1112,7 +1112,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p6",
-          "t": "Sis must have read a lot of detective novels."
+          "t": "Sylva must have read a lot of detective novels."
         },
         {
           "s": "player",
@@ -2606,7 +2606,7 @@
         {
           "s": "npc",
           "speaker": "char_xiaozhi_p0",
-          "t": "Sis, what should we do?"
+          "t": "Sylva, what should we do?"
         },
         {
           "s": "player",

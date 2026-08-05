@@ -396,6 +396,8 @@
     .action-btn:nth-child(2) { transform: rotate(1.5deg); background: #ffffff; }
     .action-btn:nth-child(2)::after { transform: translateX(-50%) rotate(4deg); width: 45px; }
     .action-btn:hover { background: #fff; color: var(--stamp-red); border-color: var(--stamp-red); transform: scale(1.05) rotate(0deg); box-shadow: 6px 6px 0 rgba(0,0,0,0.4); }
+    .action-btn.required-action { color: var(--stamp-red); border-color: var(--stamp-red); animation: hintPulse 1.0s ease-in-out infinite; }
+    @keyframes hintPulse { 0%,100% { box-shadow: 3px 3px 0 rgba(0,0,0,0.2); } 50% { box-shadow: 0 0 12px rgba(230,46,46,0.5), 3px 3px 0 rgba(0,0,0,0.2); } }
     .sort-btn { background: #f2b84e; border: 1.5px solid #f2b84e; color: #121212; font-size: 11px; cursor: pointer; border-radius: 10px; padding: 1px 7px; margin-left: 6px; transition: 0.2s; font-family: "Microsoft YaHei", "Segoe UI", Arial, sans-serif; vertical-align: middle; font-weight: bold; }
     .sort-btn:hover { background: #ffc966; color: #000; border-color: #ffc966; transform: scale(1.15); box-shadow: 1px 1px 4px rgba(0,0,0,0.3); }
 
@@ -640,6 +642,7 @@
                         <div style="display:flex;gap:8px;margin-left:auto;">
                             <div id="speed-btn" class="ctrl-btn" onclick="toggleSpeed(event)">Speed: 1x</div>
                             <div id="auto-play-btn" class="ctrl-btn" onclick="toggleAutoPlay(event)">Auto: OFF</div>
+                            <div id="hint-btn" class="ctrl-btn" onclick="toggleHint(event)">HINT: OFF</div>
                         </div>
                     </div>
                     <div class="arrow" id="arrow-left" onclick="event.stopPropagation(); prevDialogue()">◀</div>
@@ -1087,7 +1090,7 @@ let state = {
     currLoc: null, currChar: null, currTopic: null,
     dialogueMode: "none", activeDialogue:[], dialogueIdx: 0, tempDialogueState: null,
     isTyping: false, typingInterval: null, hasSeenIntro: false, pendingHotspots:[],
-    autoPlay: false, fastSpeed: false, waitingForAction: false, sfxVolume: 0.6,
+    autoPlay: false, hintEnabled: false, fastSpeed: false, waitingForAction: false, sfxVolume: 0.6,
     storyIndex: null, currentChapterIdx: 0,
     lives: 8, dialogueHistory: [], _seenLines: new Set(), _seenTopics: new Set(), _lastTopicPush: "",
     topicRuntime: {}, topicProgress: {},
@@ -1164,7 +1167,7 @@ document.addEventListener('keydown', (e) => {
             if(customBgmAudio) { customBgmAudio.pause(); customBgmAudio = null; }
             clearTimeout(autoPlayTimer); stopBgmFadeTimers();
             currentBGM = "main"; document.querySelectorAll(".modal-box").forEach(m => m.style.display="none");
-            if(state.autoPlay) toggleAutoPlay();
+            if(state.autoPlay) toggleAutoPlay(); if(state.hintEnabled) toggleHint({stopPropagation:()=>{}});
         } else if(state.hasSeenIntro) {
             mainMenu.style.display = "none"; gameContainer.style.display = "grid";
             if(state.activeDialogue && state.activeDialogue.length > 0) {
@@ -1639,7 +1642,7 @@ function loseLife() {
     if (state.lives <= 0) return;
     state.lives--;
     updateLivesDisplay();
-    playSound('heart_break');
+    try { const a = new Audio('audio/fail.wav'); a.volume = state.sfxVolume || 0.6; a.play().catch(()=>{}); } catch(e) {}
     showFlyingNotif(t("sys.livesLeft") + state.lives);
     if (state.lives <= 0) {
         setTimeout(() => {
@@ -2479,7 +2482,7 @@ function showChoicesModal(choiceData) {
                 modal.style.display = "none";
                 releaseChoiceModalLock(modal);
                 state.waitingForAction = false;
-                playSound('present_fail');
+                try { const a=new Audio('audio/fail.wav'); a.volume=state.sfxVolume||0.6; a.play().catch(()=>{}); } catch(e) {};
                 loseLife();
                 // 保存状态，显示错误回复
                 state.tempDialogueState = {
@@ -2506,6 +2509,7 @@ function showChoicesModal(choiceData) {
 
 function startDialogue(dialogueArr, mode) {
     resetBGMForDialogue(dialogueArr);
+    setRequiredAction(null);
     state.dialogueMode = mode;
     if (mode === "topic" && state.currTopic) {
         state.activeDialogue = getTopicDialogue(state.currTopic, dialogueArr);
@@ -2600,7 +2604,7 @@ function renderDialogueLine() {
     
     if(state.seenLines.includes(lineId)) {
         state.isTyping = false; textDiv.innerHTML = badgeHtml + line.t; textDiv.scrollTop = textDiv.scrollHeight; 
-        checkLineActions(line); 
+        checkLineActions(line);
         if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
     } else {
         state.seenLines.push(lineId); state.isTyping = true; textDiv.innerHTML = badgeHtml; let i = 0;
@@ -2610,7 +2614,7 @@ function renderDialogueLine() {
             i++; textDiv.scrollTop = textDiv.scrollHeight;
             if(i >= line.t.length) { 
                 clearInterval(state.typingInterval); state.isTyping = false; 
-                checkLineActions(line); 
+                checkLineActions(line);
                 if(state.autoPlay && !state.waitingForAction) { autoPlayTimer = setTimeout(() => advanceDialogue(null), 1500); }
             }
         }, typeSpeed); 
@@ -2625,9 +2629,12 @@ function checkLineActions(line) {
     else if (line.autoPresent && hasPendingPresent(line)) {
         state.waitingForAction = true;
         setTimeout(() => openPresentModal(false, line.autoPresent), 800);
+    } else if (hasPendingQuestion(line) || hasPendingPresent(line)) {
+        state.waitingForAction = true;
     } else {
         state.waitingForAction = false;
     }
+    updateHintButtons(line);
 }
 
 async function advanceDialogue(e) {
@@ -2888,7 +2895,7 @@ function confirmPresent() {
                 nextDialogue(); playSound('present_seccess');
             }
         } else {
-            showSysMsg(t('sys.presentMismatch')); playSound('present_fail');
+            showSysMsg(t('sys.presentMismatch')); try { const a=new Audio('audio/fail.wav'); a.volume=state.sfxVolume||0.6; a.play().catch(()=>{}); } catch(e) {};
             loseLife();
         }
         return; 
@@ -2902,7 +2909,7 @@ function confirmPresent() {
             else { showSysMsg(t('sys.alreadyPresented')); }
         } else {
             state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
-            state.activeDialogue =[{ s:"npc", speaker: state.currChar, t: t('sys.wrongPresentGlobal') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+            state.activeDialogue =[{ s:"npc", speaker: state.currChar, t: t('sys.wrongPresentGlobal') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); try { const a=new Audio('audio/fail.wav'); a.volume=state.sfxVolume||0.6; a.play().catch(()=>{}); } catch(e) {};
             loseLife();
         }
         return;
@@ -2920,7 +2927,7 @@ function confirmPresent() {
         } else { showSysMsg(t('sys.evidencePresented')); }
     } else {
         state.tempDialogueState = { activeDialogue: state.activeDialogue, dialogueIdx: state.dialogueIdx, dialogueMode: state.dialogueMode };
-        state.activeDialogue =[{ s:"npc", speaker: line.speaker, t: t('sys.wrongPresent') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); playSound('present_fail');
+        state.activeDialogue =[{ s:"npc", speaker: line.speaker, t: t('sys.wrongPresent') }]; state.dialogueIdx=0; state.dialogueMode="temp_wrong"; renderDialogueLine(); try { const a=new Audio('audio/fail.wav'); a.volume=state.sfxVolume||0.6; a.play().catch(()=>{}); } catch(e) {};
         loseLife();
     }
 }
@@ -3102,6 +3109,28 @@ function toggleAutoPlay(event) {
     } else {
         clearTimeout(autoPlayTimer);
     }
+}
+function toggleHint(event) {
+    event.stopPropagation();
+    state.hintEnabled = !state.hintEnabled;
+    const btn = document.getElementById("hint-btn");
+    btn.innerText = `HINT: ${state.hintEnabled ? 'ON' : 'OFF'}`;
+    btn.classList.toggle("active", state.hintEnabled);
+    playSound('click');
+    if (!state.hintEnabled) setRequiredAction(null);
+    else { const line = state.activeDialogue?.[state.dialogueIdx]; if (line) updateHintButtons(line); }
+}
+function setRequiredAction(type) {
+    const btns = document.querySelectorAll("#action-buttons .action-btn");
+    btns.forEach(b => b.classList.remove("required-action"));
+    if (type === "question") btns[0]?.classList.add("required-action");
+    if (type === "present") btns[1]?.classList.add("required-action");
+}
+function updateHintButtons(line) {
+    if (!state.hintEnabled) return;
+    if (hasPendingQuestion(line)) setRequiredAction("question");
+    else if (hasPendingPresent(line)) setRequiredAction("present");
+    else setRequiredAction(null);
 }
 
 let dragModal = null, dragOX = 0, dragOY = 0, dragStarted = false;
